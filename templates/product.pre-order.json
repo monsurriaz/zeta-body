@@ -1,0 +1,200 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "80516ecc-54b7-497a-949b-f46fa78df5c0": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "c15eb63d-7dcb-407c-904f-7779c4d65513": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "badges",
+        "price",
+        "80516ecc-54b7-497a-949b-f46fa78df5c0",
+        "rating",
+        "payment_terms",
+        "c15eb63d-7dcb-407c-904f-7779c4d65513",
+        "separator",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons"
+      ],
+      "settings": {
+        "full_width": true,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "56837146-f616-474d-b7a8-ca5333543f7e": {
+      "type": "tabs",
+      "blocks": {
+        "831565d9-bf03-4c29-8dee-0aac3feaf99b": {
+          "type": "tab",
+          "settings": {
+            "title": "Description",
+            "content": "",
+            "page": ""
+          }
+        },
+        "template--14921688678466__56837146-f616-474d-b7a8-ca5333543f7e-tab-1": {
+          "type": "tab",
+          "settings": {
+            "title": "Ingredients",
+            "content": "",
+            "page": ""
+          }
+        },
+        "template--14921688678466__56837146-f616-474d-b7a8-ca5333543f7e-tab-2": {
+          "type": "tab",
+          "settings": {
+            "title": "{{ product.metafields.custom.tab_2_title.value }}",
+            "content": "{{ product.metafields.custom.tab_2_content | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "template--14921688678466__56837146-f616-474d-b7a8-ca5333543f7e-tab-3": {
+          "type": "tab",
+          "settings": {
+            "title": "{{ product.metafields.custom.tab_3_title.value }}",
+            "content": "{{ product.metafields.custom.tab_3_content | metafield_tag }}",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "831565d9-bf03-4c29-8dee-0aac3feaf99b",
+        "template--14921688678466__56837146-f616-474d-b7a8-ca5333543f7e-tab-1",
+        "template--14921688678466__56837146-f616-474d-b7a8-ca5333543f7e-tab-2",
+        "template--14921688678466__56837146-f616-474d-b7a8-ca5333543f7e-tab-3"
+      ],
+      "custom_css": [
+        ".tab-content {text-align: left;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_size": "medium",
+        "subheading": "",
+        "title": "",
+        "first_tab_open": true,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "170365107072bc5998": {
+      "type": "apps",
+      "blocks": {
+        "66e3a608-e380-4472-a1b0-9ab7b6b78a47": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "66e3a608-e380-4472-a1b0-9ab7b6b78a47"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "56837146-f616-474d-b7a8-ca5333543f7e",
+    "170365107072bc5998"
+  ]
+}

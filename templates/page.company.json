@@ -1,0 +1,158 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ea599240-90fa-4d06-b79d-c36cbc440002": {
+      "type": "slideshow",
+      "blocks": {
+        "template--14707966804034__ea599240-90fa-4d06-b79d-c36cbc440002-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/water-molecules-with-copyspace-science-or-medical-2022-12-16-21-55-17-utc.jpg",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-start-center text-center",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "subheading": "",
+            "title": "",
+            "heading_tag": "h2",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14707966804034__ea599240-90fa-4d06-b79d-c36cbc440002-image-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "f3d96c50-3757-4379-a2b2-e4e8dd164e8a": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14707966804034__f3d96c50-3757-4379-a2b2-e4e8dd164e8a-richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our brandis to translate critical scientific advancements in aging research into accessible health products and technologies. Working directly with the world’s leading scientists,  clinicians, and institutions, we develop clinically validated solutions that address some of the most significant needs in healthcare.As an interdisciplinary group, we leverage a multi-factor approach to address the multi-factor problem of aging.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14707966804034__f3d96c50-3757-4379-a2b2-e4e8dd164e8a-richtext-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "25f985f5-ea08-471d-909f-486b7c5a379d": {
+      "type": "media-with-text",
+      "blocks": {
+        "template--14707966804034__25f985f5-ea08-471d-909f-486b7c5a379d-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/sports-woman-takes-supplements-or-vitamins-at-gym-2022-01-18-23-33-57-utc.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "OUR COMMITMENT",
+            "content": "<p>Is to you and results. We get results by being a team. You commit to your health and well-being and we’ll do our part, committing to providing you with only the highest quality, science-backed products. Zeta Body wasn’t started to be just like all the rest. We’ve partnered with some of the best people in the field to help develop, formulate, and manufacture the best, novel and most effective products. Now they’re available to you. Your body is your temple. Treat it as such. Our body’s its strongest, at its best, and optimized when we commit to putting only the best inside of it. </p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14707966804034__25f985f5-ea08-471d-909f-486b7c5a379d-image-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "spacing": "small"
+      }
+    },
+    "f00a18b1-2a49-40fb-bdfe-3b49f0fb092e": {
+      "type": "media-with-text",
+      "blocks": {
+        "e4655068-b14b-4cf3-9fb1-a66b53a9b835": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/men-women-or-diversity-fitness-team-gym-workout-2023-11-27-05-21-30-utc.jpg",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "OUR MISSION",
+            "content": "<p>To produce the best tasting, highest quality, most effective supplements available. </p><p>We are dedicated to reaching and helping as many people as possible.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "e4655068-b14b-4cf3-9fb1-a66b53a9b835"
+      ],
+      "settings": {
+        "full_width": false,
+        "spacing": "small"
+      }
+    }
+  },
+  "order": [
+    "ea599240-90fa-4d06-b79d-c36cbc440002",
+    "main",
+    "f3d96c50-3757-4379-a2b2-e4e8dd164e8a",
+    "25f985f5-ea08-471d-909f-486b7c5a379d",
+    "f00a18b1-2a49-40fb-bdfe-3b49f0fb092e"
+  ]
+}

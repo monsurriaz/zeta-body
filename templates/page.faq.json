@@ -1,0 +1,85 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "6f708b13-a530-4f59-a1e0-02bd071a79bc": {
+      "type": "faq",
+      "blocks": {
+        "template--14702125023298__6f708b13-a530-4f59-a1e0-02bd071a79bc-item-2": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "ae4f593e-9b43-4cb5-82a9-fec37e065d4b": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>Orders default to Ground shipping via UPS, our preferred carrier, and usually arrive within approximately 5-7 business days, pending where you live in relation to our distribution center in San Antonio, TX. If you’d like expedited shipping, you’ll have the option to select that for an additional fee. </p><p>Once your order is received, processed and a label is created, you’ll receive your tracking number via email. </p><p>We can’t wait until you receive your health-in-a-box. You’re on your way to helping your body become its best - your temple!</p>"
+          }
+        },
+        "9b8b8d30-8b14-405f-aad9-0ac730b29cf3": {
+          "type": "item",
+          "settings": {
+            "title": "What if my order comes damaged? ",
+            "content": "<p>Send an email to: <a href=\"mailto:YourHealth@SelfRenew.com\"><span style=\"text-decoration:underline\">YourHealth@ZetaBody.com</span></a> and include pictures of the damaged item(s). You MUST include in your email Subject Line: Damaged Product. This ensures your exchange will be processed timely and is accounted for appropriately. We will then send you a return shipping label.</p><p>Please also click here to see our full “<a href=\"/pages/delivery-returns\" title=\"Delivery & Returns\">Refund Policies</a>” </p>"
+          }
+        },
+        "template--14702125023298__6f708b13-a530-4f59-a1e0-02bd071a79bc-item-3": {
+          "type": "item",
+          "settings": {
+            "title": "Any questions?",
+            "content": "<p>Please email us at <a href=\"mailto:YourHealth@ZetaBody.com\" title=\"mailto:YourHealth@ZetaBody.com\"><span style=\"text-decoration:underline\">YourHealth@ZetaBody.com</span></a> We’re happy to help however we can. Our average response time is within 24 hours. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14702125023298__6f708b13-a530-4f59-a1e0-02bd071a79bc-item-2",
+        "ae4f593e-9b43-4cb5-82a9-fec37e065d4b",
+        "9b8b8d30-8b14-405f-aad9-0ac730b29cf3",
+        "template--14702125023298__6f708b13-a530-4f59-a1e0-02bd071a79bc-item-3"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Help Center",
+        "content": "",
+        "team_avatar_width": 160,
+        "support_hours": "",
+        "answer_time": "",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "6f708b13-a530-4f59-a1e0-02bd071a79bc"
+  ]
+}

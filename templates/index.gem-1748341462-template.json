@@ -1,0 +1,385 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "86a98c3c-aa25-4198-a082-4ef9d9bb0bd2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/sports-woman-takes-supplements-or-vitamins-at-gym-2021-09-04-12-30-04-utc_2.jpg",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center-start sm:text-start",
+            "subheading": "",
+            "title": "Vital NewTrients that",
+            "heading_tag": "h2",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "slide-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/portrait-of-happy-sportive-middle-aged-couple-man-2023-11-27-05-01-15-utc_1_eb423154-5eb9-4eec-b6a0-f90c39eb4d4a.jpg",
+            "content_max_width": 920,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center-start sm:text-start",
+            "subheading": "",
+            "title": "Promote Vitality + Longevity",
+            "heading_tag": "h1",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 10,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "e37d4d7a-63fb-42f1-8a1a-23d82004d55d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/girls-having-full-body-training-2022-02-02-04-49-08-utc.jpg",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center-start sm:text-start",
+            "subheading": "",
+            "title": "Live Healthier + Happier",
+            "heading_tag": "h1",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "slide-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/healthy-lifestyle-people-concept-2021-08-29-09-54-00-utc_1.jpg",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center-start sm:text-start",
+            "subheading": "",
+            "title": "Stay tuned for more",
+            "heading_tag": "h2",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 26,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "86a98c3c-aa25-4198-a082-4ef9d9bb0bd2",
+        "slide-2",
+        "e37d4d7a-63fb-42f1-8a1a-23d82004d55d",
+        "slide-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "image_size": "auto",
+        "controls_type": "numbers",
+        "transition_type": "fade_with_text",
+        "autoplay": true,
+        "cycle_speed": 6,
+        "background": "#f2f2f2",
+        "background_gradient": "linear-gradient(60deg, rgba(60, 65, 68, 1), rgba(23, 29, 33, 1) 98%)"
+      }
+    },
+    "c3ad419c-f02e-4e85-a13e-420a3f72e0bb": {
+      "type": "featured-collection2",
+      "custom_css": [
+        "button {min-width: 10.3125rem; padding: 0.6875rem 2rem 0.8125rem; margin-left: 3rem; margin-bottom: 3rem;}",
+        ".section-header {justify-content: center; grid-template-columns: auto;}",
+        ".section-header h3 {font-size: 2.5rem; font-weight: bold;}",
+        "@media (max-width: 767px) {.oc-product {display: flex !important; flex-direction: column-reverse !important; background: #f0f4f7 !important; padding: 20px !important; } .oc-product .product-card__quick-buy {position: relative; margin-top: 2rem; } .button {margin-left: 0rem; margin-bottom: 1rem; }}"
+      ],
+      "settings": {
+        "collection": "home-page-product",
+        "products": [],
+        "full_width": true,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "products_count": 18,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 2,
+        "subheading": "",
+        "title": "",
+        "content": "<h3>Our Products</h3>",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "#ffffff",
+        "product_card_text_color": ""
+      }
+    },
+    "0bc0ed2f-7c33-492b-97fc-a9ef640d042f": {
+      "type": "text-with-icons",
+      "blocks": {
+        "template--14774722166850__0bc0ed2f-7c33-492b-97fc-a9ef640d042f-item-1": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/physics.png",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "CELLULAR HEALTH",
+            "content": ""
+          }
+        },
+        "template--14774722166850__0bc0ed2f-7c33-492b-97fc-a9ef640d042f-item-3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/dumbbell.png",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "STRENGTH",
+            "content": ""
+          }
+        },
+        "41ca2410-1a2c-432c-8c54-c9811399cf03": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/battery.png",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "ENERGY",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14774722166850__0bc0ed2f-7c33-492b-97fc-a9ef640d042f-item-1",
+        "template--14774722166850__0bc0ed2f-7c33-492b-97fc-a9ef640d042f-item-3",
+        "41ca2410-1a2c-432c-8c54-c9811399cf03"
+      ],
+      "custom_css": [
+        "h2 {font-size: 2.5rem; font-weight: bold;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "A ZETA BODY NEEDS",
+        "heading_tag": "h5",
+        "text_alignment": "center",
+        "icon_spacing": "medium",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "8d581cc2-d2cd-4b5a-a356-de004dfb30d9": {
+      "type": "text-with-icons",
+      "blocks": {
+        "template--14774722166850__8d581cc2-d2cd-4b5a-a356-de004dfb30d9-item-3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/intestines_651878c6-a98b-4303-93df-92cfa4bceb99.png",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "GUT HEALTH",
+            "content": ""
+          }
+        },
+        "template--14774722166850__8d581cc2-d2cd-4b5a-a356-de004dfb30d9-item-2": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/human-brain.png",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "BRAIN HEALTH",
+            "content": ""
+          }
+        },
+        "8b00a231-9832-417f-bc87-327ff2c59d56": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/hourglass.png",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "LONGEVITY",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14774722166850__8d581cc2-d2cd-4b5a-a356-de004dfb30d9-item-3",
+        "template--14774722166850__8d581cc2-d2cd-4b5a-a356-de004dfb30d9-item-2",
+        "8b00a231-9832-417f-bc87-327ff2c59d56"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h5",
+        "text_alignment": "center",
+        "icon_spacing": "medium",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "a0653d42-3823-4a35-85cc-f74ccda0db2b": {
+      "type": "text-with-icons",
+      "blocks": {
+        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-1": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/digestive-system.webp",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "HEALTHY DIGESTION",
+            "content": ""
+          }
+        },
+        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-2": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/strengh-syst.webp",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "STRENGTHEN IMMUNE SYSTEM",
+            "content": ""
+          }
+        },
+        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/reduce-bloating.webp",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "REDUCE BLOATING",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-1",
+        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-2",
+        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h5",
+        "text_alignment": "center",
+        "icon_spacing": "medium",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "f19f1503-bcff-4fd3-9073-c3698b2a8800": {
+      "type": "media-with-text",
+      "blocks": {
+        "template--14702124924994__f19f1503-bcff-4fd3-9073-c3698b2a8800-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/sportive-people-showing-fit-bodies-and-posing-on-c-2023-11-27-04-58-51-utc_e3557036-7d6f-4a11-8a73-005203a62004.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "Strong & Healthy",
+            "content": "<p>Build a Strong & Healthy Immune System with our products! Having a strong immune system and gut is a good way to keep healthy and improve your well-being.</p>",
+            "link_text": "Shop All",
+            "link_url": "shopify://collections/all",
+            "background": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "text_gradient": "",
+            "button_background": "#ffffff",
+            "button_text_color": "#1a1a1a"
+          }
+        }
+      },
+      "block_order": [
+        "template--14702124924994__f19f1503-bcff-4fd3-9073-c3698b2a8800-image-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "spacing": "small"
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "c3ad419c-f02e-4e85-a13e-420a3f72e0bb",
+    "0bc0ed2f-7c33-492b-97fc-a9ef640d042f",
+    "8d581cc2-d2cd-4b5a-a356-de004dfb30d9",
+    "a0653d42-3823-4a35-85cc-f74ccda0db2b",
+    "f19f1503-bcff-4fd3-9073-c3698b2a8800"
+  ]
+}

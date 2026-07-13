@@ -1,0 +1,211 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "513d03b8-4daf-4732-9c45-3aaca61659ec": {
+      "type": "multi-column",
+      "blocks": {
+        "template--14726239486018__513d03b8-4daf-4732-9c45-3aaca61659ec-item-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Z-83__not_official_pic_ea97f259-d79f-4de0-afbd-7c24012eb128.jpg",
+            "column_size": "3",
+            "title": "Z-83",
+            "heading_tag": "h4",
+            "content": "<p>Focused Energy Capsules</p><p>Focused Energy</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "template--14726239486018__513d03b8-4daf-4732-9c45-3aaca61659ec-item-1": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Longevity_Complex__not_official_pic.jpg",
+            "column_size": "3",
+            "title": "Longevity Complex",
+            "heading_tag": "h4",
+            "content": "<p>Essential Rejuvenation</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "d07d3cf1-2aef-4d53-a265-2c27626ef6ba": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/changes-Google-Docs_2.png",
+            "column_size": "3",
+            "title": "#2",
+            "heading_tag": "h4",
+            "content": "<p>Supports Regularity (that’s a capital “eye” - like Gastro Intestinal) </p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "template--14726239486018__513d03b8-4daf-4732-9c45-3aaca61659ec-item-2",
+        "template--14726239486018__513d03b8-4daf-4732-9c45-3aaca61659ec-item-1",
+        "d07d3cf1-2aef-4d53-a265-2c27626ef6ba"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": true,
+        "gap": "small",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "6283cdb2-a65e-48f3-9aa4-3cd0d791b792": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14774722396226__6283cdb2-a65e-48f3-9aa4-3cd0d791b792-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "You may also like",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14774722396226__6283cdb2-a65e-48f3-9aa4-3cd0d791b792-heading-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "45982974-73d1-4ce5-b9ef-356b2e576de1": {
+      "type": "featured-product",
+      "blocks": {
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-title-1": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-badges-1": {
+          "type": "badges",
+          "settings": {}
+        },
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-price-1": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-rating-1": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-separator-1": {
+          "type": "separator",
+          "settings": {}
+        },
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-description-1": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-variant_picker-1": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "size_chart_page": ""
+          }
+        },
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-quantity_selector-1": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-buy_buttons-1": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-pickup_availability-1": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-title-1",
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-badges-1",
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-price-1",
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-rating-1",
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-separator-1",
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-description-1",
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-variant_picker-1",
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-quantity_selector-1",
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-buy_buttons-1",
+        "template--14774722396226__45982974-73d1-4ce5-b9ef-356b2e576de1-pickup_availability-1"
+      ],
+      "custom_css": [
+        ".product-gallery__media img {max-height: 400px; width: auto;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "product": "fruits-veggies-powder",
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "513d03b8-4daf-4732-9c45-3aaca61659ec",
+    "6283cdb2-a65e-48f3-9aa4-3cd0d791b792",
+    "45982974-73d1-4ce5-b9ef-356b2e576de1"
+  ]
+}

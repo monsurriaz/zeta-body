@@ -1,0 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message_mmipLd": {
+          "type": "message",
+          "settings": {
+            "text": "JUNE 15TH IS THE LAUNCH OF OUR CREATINE + DHEA PRODUCTS AND OUR NEW WEBSITE!",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "message_mmipLd"
+      ],
+      "settings": {
+        "enable_sticky": true,
+        "navigation_mode": "arrows",
+        "scrolling_speed": 10,
+        "text_size": "text-lg",
+        "background": "#1a1a1a",
+        "background_gradient": "",
+        "text_color": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "enable_sticky": true,
+        "hide_on_scroll": false,
+        "logo": "shopify://shop_images/zeta-2color-horizontal-lockup.png",
+        "logo_max_width": 300,
+        "logo_mobile_max_width": 165,
+        "menu": "main-menu",
+        "sidebar_menu": "",
+        "secondary_menu": "",
+        "menu_open_trigger": "click",
+        "opening_from": "bottom",
+        "layout": "logo_center_navigation_inline",
+        "show_social_media": true,
+        "show_locale_selector": false,
+        "show_country_selector": false,
+        "show_country_flag": false,
+        "show_country_name": false,
+        "transparent_header_text_color": "#ffffff",
+        "reduce_padding": false,
+        "background_opacity": 100,
+        "background_blur_radius": 0
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

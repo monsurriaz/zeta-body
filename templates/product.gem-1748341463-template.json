@@ -1,0 +1,255 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "766a4685-0efc-40aa-a847-ce5388846e6e": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "307e09cd-b81e-483e-b054-a24a54f1e2c7": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "collapse_content": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "badges",
+        "price",
+        "766a4685-0efc-40aa-a847-ce5388846e6e",
+        "payment_terms",
+        "separator",
+        "variant_picker",
+        "quantity_selector",
+        "307e09cd-b81e-483e-b054-a24a54f1e2c7",
+        "buy_buttons",
+        "description"
+      ],
+      "custom_css": [
+        ".product-gallery__media img {max-height: 400px; width: auto;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "1fbc28b0-e82a-4a48-a490-bb78775c1c7b": {
+      "type": "tabs",
+      "blocks": {
+        "template--14702125154370__1fbc28b0-e82a-4a48-a490-bb78775c1c7b-tab-1": {
+          "type": "tab",
+          "settings": {
+            "title": "Description",
+            "content": "",
+            "page": ""
+          }
+        },
+        "template--14702125154370__1fbc28b0-e82a-4a48-a490-bb78775c1c7b-tab-2": {
+          "type": "tab",
+          "settings": {
+            "title": "Ingredients",
+            "content": "",
+            "page": ""
+          }
+        },
+        "template--14702125154370__1fbc28b0-e82a-4a48-a490-bb78775c1c7b-tab-3": {
+          "type": "tab",
+          "settings": {
+            "title": "{{ product.metafields.custom.tab_2_title.value }}",
+            "content": "{{ product.metafields.custom.tab_2_content | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "da63732f-16db-4500-b34d-795b3b3ec9f8": {
+          "type": "tab",
+          "settings": {
+            "title": "{{ product.metafields.custom.tab_3_title.value }}",
+            "content": "{{ product.metafields.custom.tab_3_content | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "78df0205-5391-4410-8613-89853154bc6c": {
+          "type": "tab",
+          "settings": {
+            "title": "{{ product.metafields.custom.tab_4_title.value }}",
+            "content": "{{ product.metafields.custom.tab_4_content | metafield_tag }}",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14702125154370__1fbc28b0-e82a-4a48-a490-bb78775c1c7b-tab-1",
+        "template--14702125154370__1fbc28b0-e82a-4a48-a490-bb78775c1c7b-tab-2",
+        "template--14702125154370__1fbc28b0-e82a-4a48-a490-bb78775c1c7b-tab-3",
+        "da63732f-16db-4500-b34d-795b3b3ec9f8",
+        "78df0205-5391-4410-8613-89853154bc6c"
+      ],
+      "custom_css": [
+        ".tab-content {text-align: left;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_size": "medium",
+        "subheading": "",
+        "title": "",
+        "first_tab_open": true,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "170229828965b28555": {
+      "type": "apps",
+      "blocks": {
+        "a0346599-b87b-48dd-8fbe-f04396f6b002": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "a0346599-b87b-48dd-8fbe-f04396f6b002"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "1700509709886184a0": {
+      "type": "apps",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "recommendations_count": 4,
+        "products": [
+          "fruits-veggies-powder",
+          "d-k-5000",
+          "b-complete",
+          "zeta-mega"
+        ],
+        "full_width": true,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "You may also like",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1fbc28b0-e82a-4a48-a490-bb78775c1c7b",
+    "170229828965b28555",
+    "1700509709886184a0",
+    "related-products"
+  ]
+}
