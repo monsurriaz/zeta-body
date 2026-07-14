@@ -14,7 +14,7 @@
   </style>
 {%- endif -%}
 
-<div class="footer {% if section.settings.new_footer_design %}new-footer-design{% endif %}">
+<div class="footer">
   <div class="container">
     <div class="footer__wrapper">
       {%- comment -%}
@@ -210,12 +210,6 @@
   "tag": "footer",
   "max_blocks": 5,
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "new_footer_design",
-      "label": "Enable new footer design",
-      "default": true
-    },
     {
       "type": "checkbox",
       "id": "show_social_media",

@@ -1,0 +1,59 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   ZETA BODY — DESIGN TOKENS (single source of truth)
+   ---------------------------------------------------------------------------
+   Canonical V3 tokens from the client handoff (Zeta-design-token.html).
+   Change a value HERE and it propagates everywhere the theme references it.
+   Loaded globally (theme.liquid) BEFORE custom.css, so both Impact sections
+   (header, announcement bar) and our own `.zeta` sections can use them.
+   All names are `--zeta-*` prefixed so they never collide with Impact tokens.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* ── Color (canonical — never approximate) ── */
+  --zeta-bg:            #F4F4F5;
+  --zeta-surface:       #FFFFFF;
+  --zeta-ink:           #0A1320;
+  --zeta-teal:          #006E73;
+  --zeta-bronze:        #B89968;
+  --zeta-sand:          #EFE9DC;
+  --zeta-mid:           #6B7280;
+  --zeta-border:        #E2E0DC;
+  --zeta-dark-bg:       #0A1320;
+  --zeta-dark-surface:  #111B2A;
+
+  /* ── Font families ── */
+  --zeta-font-serif: 'Cormorant Garamond', Georgia, serif;
+  --zeta-font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ── Font weights ── */
+  --zeta-fw-light:     300;
+  --zeta-fw-regular:   400;
+  --zeta-fw-medium:    500;
+  --zeta-fw-semibold:  600;
+  --zeta-fw-bold:      700;
+  --zeta-fw-extrabold: 800;
+
+  /* ── Letter spacing (recurring tracking values) ── */
+  --zeta-tracking-tight:   -0.018em; /* display headings */
+  --zeta-tracking-label:    0.14em;  /* buttons, announcement, nav actions */
+  --zeta-tracking-sub:      0.15em;  /* product banner sub */
+  --zeta-tracking-eyebrow:  0.22em;  /* eyebrows */
+  --zeta-tracking-wide:     0.24em;
+
+  /* ── Layout ── */
+  --zeta-gutter: max(24px, calc((100vw - 1280px) / 2 + 80px));
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   GLOBAL FONT ALIGNMENT
+   Impact builds --heading-font-family / --text-font-family from theme settings
+   in `css-variables` (rendered earlier in <head>). This file loads AFTER it, so
+   these :root overrides win the cascade and align the ENTIRE theme (nav, headings,
+   body, buttons) to the client's Cormorant Garamond + Inter system.
+   ────────────────────────────────────────────────────────────────────────── */
+:root {
+  --heading-font-family: var(--zeta-font-serif);
+  --text-font-family: var(--zeta-font-sans);
+}

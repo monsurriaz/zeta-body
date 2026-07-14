@@ -1,5 +1,222 @@
-/* Claude code will write all the CSS here! */
-.announcement-bar__wrapper {
-  max-width: 600px;
+/* ══════════════════════════════════════════════════════════════════════════
+   ZETA BODY — client V3 design layer for Impact v7.2.0
+   ---------------------------------------------------------------------------
+   Design tokens live in `zeta-variables.css` (loaded first). This file only
+   consumes `var(--zeta-*)` — no literal colors/fonts here. Everything is
+   SCOPED under `.zeta` so it can't clobber Impact component internals
+   (cart drawer, search, product-form, variant-picker).
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.zeta {
+  font-family: var(--zeta-font-sans);
+  color: var(--zeta-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
+/* Reset box-model only inside our sections so utilities behave predictably */
+.zeta *, .zeta *::before, .zeta *::after { box-sizing: border-box; }
+
+/* ── Helpers ── */
+.zeta .zeta-serif  { font-family: var(--zeta-font-serif); }
+.zeta .zeta-teal   { color: var(--zeta-teal); }
+.zeta .zeta-bronze { color: var(--zeta-bronze); }
+
+.zeta .zeta-eyebrow {
+  font-family: var(--zeta-font-sans);
+  font-size: 11px;
+  font-weight: var(--zeta-fw-bold);
+  letter-spacing: var(--zeta-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--zeta-teal);
+  margin: 0 0 14px;
+}
+.zeta .zeta-eyebrow--bronze { color: var(--zeta-bronze); }
+
+.zeta .zeta-h2 {
+  font-family: var(--zeta-font-serif);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: var(--zeta-fw-medium);
+  line-height: 1.05;
+  color: var(--zeta-ink);
+  margin: 0 0 18px;
+}
+.zeta .zeta-h2 em { font-style: italic; color: var(--zeta-teal); }
+
+.zeta .zeta-lede {
+  font-family: var(--zeta-font-serif);
+  font-style: italic;
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.5;
+  color: var(--zeta-ink);
+  opacity: 0.85;
+}
+
+/* ── Buttons (shared across sections) ── */
+.zeta .zeta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--zeta-font-sans);
+  font-size: 11px;
+  font-weight: var(--zeta-fw-bold);
+  letter-spacing: var(--zeta-tracking-label);
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
+}
+.zeta .zeta-btn--teal    { background: var(--zeta-teal); color: #fff; }
+.zeta .zeta-btn--teal:hover { opacity: 0.88; color: #fff; }
+.zeta .zeta-btn--ink     { background: var(--zeta-ink); color: #fff; }
+.zeta .zeta-btn--ink:hover { background: var(--zeta-teal); color: #fff; }
+.zeta .zeta-btn--sand    { background: var(--zeta-sand); color: var(--zeta-ink); }
+.zeta .zeta-btn--sand:hover { opacity: 0.9; }
+.zeta .zeta-btn--outline { background: transparent; color: var(--zeta-ink); border-color: var(--zeta-ink); }
+.zeta .zeta-btn--outline:hover { background: var(--zeta-ink); color: #fff; }
+.zeta .zeta-btn--outline-light { background: transparent; color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.35); }
+.zeta .zeta-btn--outline-light:hover { border-color: #fff; color: #fff; }
+.zeta .zeta-btn--white   { background: #fff; color: var(--zeta-ink); }
+.zeta .zeta-btn--white:hover { background: var(--zeta-sand); }
+
+/* ── Section rhythm ── */
+.zeta.zeta-section,
+.zeta .zeta-section {
+  padding: clamp(56px, 8vw, 80px) var(--zeta-gutter);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ANNOUNCEMENT BAR — 100% match to client `.announce` (product page, canonical)
+   ---------------------------------------------------------------------------
+   Client spec: background teal / text #fff (set via the section's schema color
+   option), text-align center, padding 10px 20px, font Inter 11px, weight 500,
+   letter-spacing 0.12em, uppercase. Impact default padding uses --spacing-2-5/3-5.
+   ══════════════════════════════════════════════════════════════════════════ */
+.announcement-bar__wrapper {
+  max-width: 100%;
+}
+
+.shopify-section--announcement-bar .announcement-bar {
+  padding: 10px 20px;          /* client .announce padding */
+  text-align: center;          /* client .announce */
+}
+
+.shopify-section--announcement-bar .announcement-bar p,
+.shopify-section--announcement-bar .announcement-bar a {
+  font-family: var(--zeta-font-sans);
+  font-size: 11px;
+  font-weight: var(--zeta-fw-medium);   /* 500 */
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.shopify-section--announcement-bar .announcement-bar a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 1px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   HEADER — 100% match to client product-page <nav>
+   ---------------------------------------------------------------------------
+   Client spec:
+     nav        : background #fff · padding 18px 48px · border-bottom 1px #E2E0DC · sticky
+     .nav-logo  : Cormorant 22px · weight 600 · letter-spacing 0.18em · uppercase · ink
+     .nav-links a : Inter 11px · 0.1em · uppercase · 500 · ink · opacity .75 (hover 1) · gap 32px
+     .nav-actions : gap 20px
+     .nav-actions a (search/account) : Inter 11px · 0.08em · uppercase · 500 · ink · opacity .7
+     .nav-cart  : ink bg · #fff · padding 8px 18px · 11px · 0.1em · uppercase · 500 · hover teal
+     mobile (≤900px) : padding 16px 24px
+   Impact renders the wrapper as a grid; we override padding/border/background and
+   restyle logo, menu links, action labels and the cart "button". Drawer wiring
+   (aria-controls, <cart-count>) is untouched — only presentation changes here.
+   ══════════════════════════════════════════════════════════════════════════ */
+.shopify-section--header .header__wrapper {
+  padding: 18px 48px;
+  background: var(--zeta-surface);
+  border-bottom: 1px solid var(--zeta-border);
+}
+
+/* Logo (text) */
+.shopify-section--header .header__logo-text {
+  font-family: var(--zeta-font-serif);
+  font-size: 22px;
+  font-weight: var(--zeta-fw-semibold);   /* 600 */
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--zeta-ink);
+}
+
+/* Primary + secondary menu links */
+.shopify-section--header .header__link-list {
+  gap: 32px;
+}
+.shopify-section--header .header__link-list a,
+.shopify-section--header .header__link-list summary,
+.shopify-section--header .header__link-list button {
+  font-family: var(--zeta-font-sans);
+  font-size: 11px;
+  font-weight: var(--zeta-fw-medium);      /* 500 */
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--zeta-ink);
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.shopify-section--header .header__link-list a:hover,
+.shopify-section--header .header__link-list summary:hover {
+  opacity: 1;
+}
+
+/* Action list spacing (search / account / cart) */
+.shopify-section--header .header__icon-list {
+  gap: 20px;
+}
+
+/* Action link text labels (search, account) */
+.shopify-section--header .header__action-label {
+  font-family: var(--zeta-font-sans);
+  font-size: 11px;
+  font-weight: var(--zeta-fw-medium);      /* 500 */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  white-space: nowrap;
+  color: var(--zeta-ink);
+}
+.shopify-section--header .header__action--text {
+  /* display: inline-flex;
+  align-items: center; */
+  opacity: 0.7;
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+}
+.shopify-section--header .header__action--text:hover {
+  opacity: 1;
+}
+
+/* Cart trigger styled as a button (client .nav-cart) */
+.shopify-section--header .header__action--cart-text {
+  background: var(--zeta-ink);
+  color: #fff;
+  opacity: 1;
+  padding: 8px 18px;
+  transition: background 0.2s;
+}
+.shopify-section--header .header__action--cart-text:hover {
+  background: var(--zeta-teal);
+  opacity: 1;
+}
+.shopify-section--header .header__action--cart-text .header__action-label {
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+.shopify-section--header .header__cart-count-text {
+  opacity: 1 !important;                    /* keep "Cart (0)" visible */
+  font-variant-numeric: tabular-nums;
+}
+
+@media screen and (max-width: 900px) {
+  .shopify-section--header .header__wrapper {
+    padding: 16px 24px;
+  }
+}

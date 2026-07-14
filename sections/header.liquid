@@ -60,6 +60,8 @@
     }
   }
 
+  {%- comment -%} Zeta header styling lives in custom.css (targets .shopify-section--header) {%- endcomment -%}
+
   {%- if section.settings.layout contains 'logo_left' -%}
     @media screen and (min-width: 1150px) {
       {%- if section.settings.secondary_menu != blank or will_show_country_selector or will_show_locale_selector -%}
@@ -310,19 +312,32 @@
             </li>
           {%- endif -%}
 
+          {%- assign action_as_text = false -%}
+          {%- if section.settings.action_link_style == 'text' -%}
+            {%- assign action_as_text = true -%}
+          {%- endif -%}
+
           <li>
-            <a href="{{ routes.search_url }}" class="hidden tap-area sm:block" aria-controls="search-drawer">
+            <a href="{{ routes.search_url }}" class="hidden tap-area sm:block {% if action_as_text %}header__action--text{% endif %}" aria-controls="search-drawer">
               <span class="sr-only">{{ 'header.general.search' | t }}</span>
-              {%- render 'icon' with 'search' -%}
+              {%- if action_as_text -%}
+                <span aria-hidden="true" class="header__action-label">{{ section.settings.search_label | default: 'Search' }}</span>
+              {%- else -%}
+                {%- render 'icon' with 'search' -%}
+              {%- endif -%}
             </a>
           </li>
 
           {%- if shop.customer_accounts_enabled -%}
             <li>
               <shopify-account class="hidden sm:block" menu="{{ section.settings.customer_account_menu }}">
-                <div slot="signed-out-avatar" class="tap-area">
+                <div slot="signed-out-avatar" class="tap-area {% if action_as_text %}header__action--text{% endif %}">
                   <span class="sr-only">{{ 'header.general.login' | t }}</span>
-                  {%- render 'icon' with 'account' -%}
+                  {%- if action_as_text -%}
+                    <span aria-hidden="true" class="header__action-label">{{ section.settings.account_label | default: 'Account' }}</span>
+                  {%- else -%}
+                    {%- render 'icon' with 'account' -%}
+                  {%- endif -%}
                 </div>
               </shopify-account>
             </li>
@@ -332,20 +347,26 @@
             <a
               href="{{ routes.cart_url }}"
               data-no-instant
-              class="relative block tap-area"
+              class="relative block tap-area {% if action_as_text %}header__action--text header__action--cart-text{% endif %}"
               {% if settings.cart_type != 'page' and request.page_type != 'cart' %}
                 aria-controls="cart-drawer"
               {% endif %}
             >
               <span class="sr-only">{{ 'header.general.cart' | t }}</span>
-              {%- render 'icon' with 'cart' -%}
+              {%- if action_as_text -%}
+                <span aria-hidden="true" class="header__action-label">
+                  {{ section.settings.cart_label | default: 'Cart' }}&nbsp;(<cart-count class="header__cart-count-text">{{ cart.item_count }}</cart-count>)
+                </span>
+              {%- else -%}
+                {%- render 'icon' with 'cart' -%}
 
-              <div class="header__cart-count">
-                <cart-count class="count-bubble {% if cart.item_count == 0 %}opacity-0{% endif %}">
-                  <span class="sr-only">{{ 'cart.general.item_count' | t: count: cart.item_count }}</span>
-                  <span aria-hidden="true">{{ cart.item_count }}</span>
-                </cart-count>
-              </div>
+                <div class="header__cart-count">
+                  <cart-count class="count-bubble {% if cart.item_count == 0 %}opacity-0{% endif %}">
+                    <span class="sr-only">{{ 'cart.general.item_count' | t: count: cart.item_count }}</span>
+                    <span aria-hidden="true">{{ cart.item_count }}</span>
+                  </cart-count>
+                </div>
+              {%- endif -%}
             </a>
           </li>
         </ul>
@@ -542,6 +563,48 @@
         }
       ],
       "default": "logo_left_navigation_inline"
+    },
+    {
+      "type": "header",
+      "content": "Action links",
+      "info": "Search, account and cart triggers. Drawer wiring is unchanged either way."
+    },
+    {
+      "type": "select",
+      "id": "action_link_style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "icon",
+          "label": "Icon"
+        },
+        {
+          "value": "text",
+          "label": "Text label"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "text",
+      "id": "search_label",
+      "label": "Search label",
+      "default": "Search",
+      "visible_if": "{{ section.settings.action_link_style == 'text' }}"
+    },
+    {
+      "type": "text",
+      "id": "account_label",
+      "label": "Account label",
+      "default": "Account",
+      "visible_if": "{{ section.settings.action_link_style == 'text' }}"
+    },
+    {
+      "type": "text",
+      "id": "cart_label",
+      "label": "Cart label",
+      "default": "Cart",
+      "visible_if": "{{ section.settings.action_link_style == 'text' }}"
     },
     {
       "type": "header",
