@@ -220,3 +220,140 @@
     padding: 16px 24px;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   FOOTER — 100% match to client product-page <footer> (block-based)
+   ---------------------------------------------------------------------------
+   Client spec:
+     footer     : background #060E18 · padding 60px + widescreen gutter
+     .footer-top: grid 2fr 1fr 1fr 1fr · gap 48px · margin-bottom 48px
+     brand col  : logo Cormorant 28px/600/0.3em/upper/#fff · tagline italic Cormorant
+                  17px/white65% · trinity 13px/0.18em/600/bronze/upper (line-height 1.9)
+     col title  : 10px/0.14em/700/white50%/upper
+     col links  : 13px/white55% → #fff on hover
+     inner desc : 13px/white55%/lh1.6
+     bottom bar : border-top rgba(255,255,255,.1) · padding-top 24px · 11px/white35%/lh1.7
+     mobile ≤900: padding 60px 24px · grid 1fr 1fr gap 32px  ·  ≤540: single column
+   Blocks: brand · links (Shop/Learn/Inner Circle) · newsletter (optional). Impact's
+   newsletter form + social/payment/policy features stay available (defaulted off).
+   ══════════════════════════════════════════════════════════════════════════ */
+.shopify-section--footer .footer {
+  background: var(--zeta-footer-bg);
+  padding: 60px max(80px, calc((100vw - 1280px) / 2 + 80px));
+  /* Drive Impact's own spacing tokens instead of stacking margins:
+     part-gap = columns → bottom bar (client 48px) · block-gap = title → links (client 16px) */
+  --footer-part-gap: 48px;
+  --footer-block-gap: 16px;
+  --footer-aside-gap: 24px;
+}
+/* Neutralise Impact's inner container so the client gutter controls width */
+.shopify-section--footer .footer > .container {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Column grid (client .footer-top). Spacing to the bottom bar is handled by
+   .footer__wrapper's --footer-part-gap above — no margin here (avoids double gap). */
+.shopify-section--footer .footer__block-list {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+/* Brand column — control its internal spacing with explicit margins (client
+   uses logo 12px / tagline 20px), so cancel the block grid-gap here. */
+.shopify-section--footer .footer__block--brand {
+  gap: 0;
+}
+.shopify-section--footer .footer__brand-logo-text {
+  display: block;
+  font-family: var(--zeta-font-serif);
+  font-size: 28px;
+  font-weight: var(--zeta-fw-semibold);   /* 600 */
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.shopify-section--footer .footer__brand-logo-image { margin-bottom: 12px; height: auto; }
+.shopify-section--footer .footer__brand-tagline {
+  font-family: var(--zeta-font-serif);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 20px;
+}
+.shopify-section--footer .footer__brand-trinity {
+  display: flex;
+  flex-direction: column;
+}
+.shopify-section--footer .footer__trinity-line {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: var(--zeta-fw-semibold);    /* 600 */
+  color: var(--zeta-bronze);
+  line-height: 1.9;
+}
+
+/* Column titles (Impact renders menu/text titles as p.bold).
+   Title → links spacing comes from --footer-block-gap (16px) — no margin here. */
+.shopify-section--footer .footer__block--menu > .bold,
+.shopify-section--footer .footer__block--text > .bold {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: var(--zeta-fw-bold);        /* 700 */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Column links */
+.shopify-section--footer .footer__block--menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.shopify-section--footer .footer__block--menu li a {
+  font-family: var(--zeta-font-sans);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.shopify-section--footer .footer__block--menu li a:hover { color: #fff; }
+
+/* Inner Circle intro description (spacing to links handled by --footer-block-gap) */
+.shopify-section--footer .footer__block-description {
+  font-family: var(--zeta-font-sans);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+}
+.shopify-section--footer .footer__block-description p { margin: 0 0 8px; }
+.shopify-section--footer .footer__block-description p:last-child { margin-bottom: 0; }
+
+/* Bottom bar */
+.shopify-section--footer .footer__aside {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+}
+.shopify-section--footer .footer__bottom-text {
+  font-family: var(--zeta-font-sans);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.7;
+}
+.shopify-section--footer .footer__bottom-text p { margin: 0 0 4px; }
+
+/* Client mobile: footer stays a 2-column grid at every width (no single-column) */
+@media screen and (max-width: 900px) {
+  .shopify-section--footer .footer {
+    padding: 60px 24px;
+  }
+  .shopify-section--footer .footer__block-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}

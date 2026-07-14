@@ -78,53 +78,60 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "text": {
-          "type": "text",
+        "brand": {
+          "type": "brand",
           "settings": {
-            "title": "Zeta Body",
-            "content": "<p><strong>Email:</strong> YourHealth@zetabody.com</p><p><strong>Address:</strong> 3683 S. Miami Ave, Suite 460, Miami, FL 33133</p>",
-            "enable_follow_on_shop": false
+            "logo_width": 160,
+            "logo_text": "Z E T A",
+            "tagline": "Manage your ecosystem. Everyday.",
+            "trinity": "Health.\nWealth.\nYouth."
           }
         },
-        "links": {
+        "shop-links": {
           "type": "links",
           "settings": {
             "menu": "footer",
             "show_menu_title": true,
-            "menu_title": ""
+            "menu_title": "Shop"
           }
         },
-        "c9080862-0c8e-4714-adf0-96933a399b77": {
+        "learn-links": {
           "type": "links",
           "settings": {
-            "menu": "polices",
+            "menu": "footer",
             "show_menu_title": true,
-            "menu_title": "Polices"
+            "menu_title": "Learn"
           }
         },
-        "newsletter": {
-          "type": "newsletter",
+        "inner-circle": {
+          "type": "social",
           "settings": {
-            "image_width": 150,
-            "heading_size": "h3",
-            "title": "Sign up for new stories and personal offers",
-            "content": ""
+            "title": "Join the Inner Circle",
+            "description": "<p>1–2 emails a month. First-bottle stories, founder notes.</p><p>Sign up &amp; get 10% off your first bottle.</p>",
+            "newsletter_url": "",
+            "instagram_url": "",
+            "tiktok_url": "",
+            "youtube_url": ""
           }
         }
       },
       "block_order": [
-        "text",
-        "links",
-        "c9080862-0c8e-4714-adf0-96933a399b77",
-        "newsletter"
+        "brand",
+        "shop-links",
+        "learn-links",
+        "inner-circle"
       ],
       "settings": {
-        "show_social_media": true,
-        "show_payment_icons": true,
+        "new_footer_design": true,
+        "bottom_text": "<p>© 2026 ZETA · zetabody.com</p><p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.</p>",
+        "show_social_media": false,
+        "show_payment_icons": false,
+        "show_powered_by_shopify": false,
+        "show_policy_links": false,
         "show_country_selector": false,
-        "show_country_flag": true,
+        "show_country_flag": false,
         "show_country_name": false,
-        "show_locale_selector": true
+        "show_locale_selector": false
       }
     }
   },

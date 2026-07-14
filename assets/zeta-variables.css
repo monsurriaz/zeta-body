@@ -22,6 +22,7 @@
   --zeta-border:        #E2E0DC;
   --zeta-dark-bg:       #0A1320;
   --zeta-dark-surface:  #111B2A;
+  --zeta-footer-bg:     #060E18; /* footer-specific deep navy (client footer) */
 
   /* ── Font families ── */
   --zeta-font-serif: 'Cormorant Garamond', Georgia, serif;

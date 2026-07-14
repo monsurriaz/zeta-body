@@ -26,7 +26,7 @@
         "message_mmipLd"
       ],
       "settings": {
-        "enable_sticky": true,
+        "enable_sticky": false,
         "show_on_homepage_only": false,
         "navigation_mode": "arrows",
         "autoplay": false,
