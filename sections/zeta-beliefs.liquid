@@ -10,7 +10,7 @@
         <p class="zeta-eyebrow">{{ section.settings.eyebrow | escape }}</p>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="zeta-beliefs__h2">{{ section.settings.heading }}</h2>
+        <h2 class="zeta-beliefs__h2">{{ section.settings.heading | newline_to_br }}</h2>
       {%- endif -%}
     </div>
   </div>
@@ -37,7 +37,7 @@
   "max_blocks": 12,
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Who We Are" },
-    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "The ZETA <em>Beliefs</em>" }
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "The ZETA <em>Beliefs</em>" }
   ],
   "blocks": [
     {

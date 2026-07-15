@@ -10,7 +10,7 @@
       <p class="zeta-eyebrow">{{ section.settings.eyebrow | escape }}</p>
     {%- endif -%}
     {%- if section.settings.heading != blank -%}
-      <h2 class="zeta-feel__h2">{{ section.settings.heading }}</h2>
+      <h2 class="zeta-feel__h2">{{ section.settings.heading | newline_to_br }}</h2>
     {%- endif -%}
     {%- if section.settings.intro != blank -%}
       <div class="zeta-feel__intro">{{ section.settings.intro }}</div>
@@ -57,7 +57,7 @@
   "max_blocks": 3,
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How ZETA Works" },
-    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "There's what you <em>feel.</em> And what's quietly working underneath." },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "There's what you <em>feel.</em>\nAnd what's quietly\nworking underneath." },
     { "type": "richtext", "id": "intro", "label": "Intro", "default": "<p>Not all progress announces itself. Here's how ZETA works — and which products belong where in your stack.</p>" }
   ],
   "blocks": [

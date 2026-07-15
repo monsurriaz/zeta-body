@@ -9,7 +9,7 @@
       <p class="zeta-section-eyebrow">{{ section.settings.eyebrow | escape }}</p>
     {%- endif -%}
     {%- if section.settings.heading != blank -%}
-      <h2 class="zeta-section-h2 zeta-section-h2--flush">{{ section.settings.heading }}</h2>
+      <h2 class="zeta-section-h2 zeta-section-h2--flush">{{ section.settings.heading | newline_to_br }}</h2>
     {%- endif -%}
   </div>
 
@@ -43,7 +43,7 @@
   "max_blocks": 4,
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What's inside" },
-    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "One ingredient. <em>~700 clinical trials</em> behind it." }
+    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "One ingredient.\n<em>~700 clinical trials</em> behind it." }
   ],
   "blocks": [
     {

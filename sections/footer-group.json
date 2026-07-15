@@ -92,7 +92,8 @@
           "settings": {
             "menu": "footer",
             "show_menu_title": true,
-            "menu_title": "Shop"
+            "menu_title": "Shop",
+            "description": ""
           }
         },
         "learn-links": {
@@ -100,18 +101,23 @@
           "settings": {
             "menu": "footer",
             "show_menu_title": true,
-            "menu_title": "Learn"
+            "menu_title": "Learn",
+            "description": ""
           }
         },
         "inner-circle": {
           "type": "social",
           "settings": {
             "title": "Join the Inner Circle",
-            "description": "<p>1–2 emails a month. First-bottle stories, founder notes.</p><p>Sign up &amp; get 10% off your first bottle.</p>",
+            "description": "<p>1–2 emails a month. First-bottle stories, founder notes.</p><p>Sign up & get 10% off your first bottle.</p>",
             "newsletter_url": "",
-            "instagram_url": "",
-            "tiktok_url": "",
-            "youtube_url": ""
+            "instagram_url": "#",
+            "tiktok_url": "#",
+            "youtube_url": "#",
+            "facebook_url": "",
+            "twitter_url": "",
+            "custom_label": "",
+            "custom_url": ""
           }
         }
       },

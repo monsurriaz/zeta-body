@@ -330,11 +330,12 @@
 
           {%- if shop.customer_accounts_enabled -%}
             <li>
-              <shopify-account class="hidden sm:block" menu="{{ section.settings.customer_account_menu }}">
+              <shopify-account class="sm:block" menu="{{ section.settings.customer_account_menu }}">
                 <div slot="signed-out-avatar" class="tap-area {% if action_as_text %}header__action--text{% endif %}">
                   <span class="sr-only">{{ 'header.general.login' | t }}</span>
                   {%- if action_as_text -%}
-                    <span aria-hidden="true" class="header__action-label">{{ section.settings.account_label | default: 'Account' }}</span>
+                    <span aria-hidden="true" class="hidden header__action-label sm:block">{{ section.settings.account_label | default: 'Account' }}</span>
+                    {%- render 'icon' with 'account', class: 'sm:hidden' -%}
                   {%- else -%}
                     {%- render 'icon' with 'account' -%}
                   {%- endif -%}

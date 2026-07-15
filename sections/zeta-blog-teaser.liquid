@@ -13,7 +13,7 @@
         <p class="zeta-eyebrow">{{ section.settings.eyebrow | escape }}</p>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="zeta-blog__h2">{{ section.settings.heading }}</h2>
+        <h2 class="zeta-blog__h2">{{ section.settings.heading | newline_to_br }}</h2>
       {%- endif -%}
     </div>
     {%- if section.settings.link_text != blank -%}
@@ -84,7 +84,7 @@
   "class": "shopify-section--zeta-blog",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Knowledge" },
-    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "What we're <em>learning</em>" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "What we're <em>learning</em>" },
     { "type": "blog", "id": "blog", "label": "Blog" },
     { "type": "range", "id": "posts_count", "label": "Posts to show", "min": 1, "max": 4, "step": 1, "default": 3 },
     { "type": "text", "id": "link_text", "label": "Link label", "default": "All Posts →" },

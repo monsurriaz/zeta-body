@@ -11,7 +11,7 @@
     {%- endif -%}
 
     {%- if section.settings.heading != blank -%}
-      <h1 class="zeta-home-hero__h1">{{ section.settings.heading }}</h1>
+      <h1 class="zeta-home-hero__h1">{{ section.settings.heading | newline_to_br }}</h1>
     {%- endif -%}
 
     {%- if section.settings.subheading != blank -%}
@@ -78,11 +78,11 @@
       "default": "Miami · Science-Backed · No Compromises"
     },
     {
-      "type": "inline_richtext",
+      "type": "textarea",
       "id": "heading",
       "label": "Heading",
       "info": "Use italics for the teal emphasis words.",
-      "default": "You only get one <em>brain.</em> One <em>body.</em> Build them both."
+      "default": "You only get\none <em>brain.</em>\nOne <em>body.</em>\nBuild them both."
     },
     {
       "type": "richtext",

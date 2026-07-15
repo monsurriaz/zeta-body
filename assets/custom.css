@@ -218,6 +218,16 @@
 @media screen and (max-width: 900px) {
   .shopify-section--header .header__wrapper {
     padding: 16px 24px;
+    row-gap: 12px;
+  }
+  .shopify-section--header .header__icon-list {
+    row-gap: 14px;
+  }
+  .shopify-section--header .header__action--cart-text {
+    padding: 4px 10px;
+  }
+  .shopify-section--header .header__action-label {
+    font-size: 10px;
   }
 }
 
@@ -322,6 +332,7 @@
   text-decoration: none;
   transition: color 0.2s;
 }
+.footer__block--social .link-faded { opacity: 1;}
 .shopify-section--footer .footer__block--menu li a:hover { color: #fff; }
 
 /* Inner Circle intro description (spacing to links handled by --footer-block-gap) */

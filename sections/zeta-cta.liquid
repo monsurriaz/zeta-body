@@ -8,7 +8,7 @@
     <p class="zeta-cta__eyebrow">{{ section.settings.eyebrow | escape }}</p>
   {%- endif -%}
   {%- if section.settings.heading != blank -%}
-    <h2 class="zeta-cta__h2">{{ section.settings.heading }}</h2>
+    <h2 class="zeta-cta__h2">{{ section.settings.heading | newline_to_br }}</h2>
   {%- endif -%}
   {%- if section.settings.subtext != blank -%}
     <div class="zeta-cta__subtext">{{ section.settings.subtext }}</div>
@@ -32,7 +32,7 @@
   "class": "shopify-section--zeta-cta",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Start Here" },
-    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Don't accept the drain <em>as normal.</em>" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Don't accept\nthe drain\n<em>as normal.</em>" },
     { "type": "richtext", "id": "subtext", "label": "Subtext", "default": "<p>Fix it. You have the choice every single day. One brain. One body. Protect them both.</p>" },
     { "type": "header", "content": "Buttons" },
     { "type": "text", "id": "button_1_text", "label": "Button 1 label", "default": "Shop the Full Lineup" },

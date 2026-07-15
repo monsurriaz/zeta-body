@@ -10,10 +10,10 @@
         <p class="zeta-hwy__eyebrow">{{ section.settings.eyebrow | escape }}</p>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <div class="zeta-hwy__h2">{{ section.settings.heading }}</div>
+        <div class="zeta-hwy__h2">{{ section.settings.heading | newline_to_br }}</div>
       {%- endif -%}
       {%- if section.settings.lede != blank -%}
-        <p class="zeta-hwy__lede">{{ section.settings.lede }}</p>
+        <div class="zeta-hwy__lede">{{ section.settings.lede }}</div>
       {%- endif -%}
     </div>
 
@@ -57,7 +57,7 @@
   "max_blocks": 3,
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The ZETA Philosophy" },
-    { "type": "inline_richtext", "id": "heading", "label": "Heading", "info": "Italics render in bronze.", "default": "Health. <em>Wealth.</em> Youth." },
+    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Italics render in bronze.", "default": "Health.\n<em>Wealth.</em>\nYouth." },
     { "type": "richtext", "id": "lede", "label": "Lede", "default": "<p>Three things worth protecting. One body to do it with.</p>" },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>I was already living these three pillars hard when the seizures hit in 2013. <strong>The world doesn't stop because you need or want it to.</strong> You either adjust, fight back, and keep moving — or you get left behind.</p><p>That's why I built ZETA. Because when your brain and body are strong, everything else expands.</p>" },
     { "type": "header", "content": "Buttons" },

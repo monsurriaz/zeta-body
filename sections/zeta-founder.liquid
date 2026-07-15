@@ -9,7 +9,7 @@
       <p class="zeta-eyebrow">{{ section.settings.eyebrow | escape }}</p>
     {%- endif -%}
     {%- if section.settings.heading != blank -%}
-      <h2 class="zeta-founder__h2">{{ section.settings.heading }}</h2>
+      <h2 class="zeta-founder__h2">{{ section.settings.heading | newline_to_br }}</h2>
     {%- endif -%}
     {%- if section.settings.body != blank -%}
       <div class="zeta-founder__body">{{ section.settings.body }}</div>
@@ -46,7 +46,7 @@
   "settings": [
     { "type": "header", "content": "Copy (left)" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Founder" },
-    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Built from <em>winning and losing</em> the fight." },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Built from <em>winning and losing</em> the fight." },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>I've been on both sides. The winning one. The losing one. In 2013, a grand mal seizure out of nowhere changed everything I knew about my own brain and body.</p><p>ZETA is the daily foundation I built when I refused to accept the drain as normal.</p>" },
     { "type": "text", "id": "sig_role", "label": "Signature role", "default": "Founder & CEO, ZETA Body" },
     { "type": "text", "id": "sig_name", "label": "Signature name", "default": "Zoe Karli" },
