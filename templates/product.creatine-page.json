@@ -10,22 +10,41 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
+      "type": "zeta-product-info",
       "blocks": {
-        "vendor": {
-          "type": "vendor",
-          "settings": {}
-        },
-        "title": {
-          "type": "title",
+        "banner": {
+          "type": "banner",
           "settings": {
-            "heading_tag": "h2"
+            "name": "Zeta Creatine",
+            "sub": "The World's Most Studied Supplement"
           }
         },
-        "price": {
-          "type": "price",
+        "heading": {
+          "type": "heading",
           "settings": {
-            "show_taxes_notice": false
+            "heading": "<em>Strength.</em>\nBrain. Everyday."
+          }
+        },
+        "lede": {
+          "type": "lede",
+          "settings": {
+            "text": "<p>Creatine isn't just a gym thing anymore. Ongoing research continues to show it does as much for your brain as it does for your muscle — developed alongside one of the world's leading biochemists. NSF Certified for Sport.</p>"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "stars": "★★★★★",
+            "label": "4.9 · 312 reviews"
+          }
+        },
+        "subscription": {
+          "type": "subscription",
+          "settings": {
+            "onetime_label": "One bottle, this time",
+            "onetime_sub": "300g powder · 60 servings · 30-day supply",
+            "subscribe_label": "Subscribe & Save",
+            "subscribe_sub": "Free shipping · Pause or cancel any time"
           }
         },
         "variant_picker": {
@@ -39,55 +58,40 @@
             "size_chart_page": ""
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_payment_button": true,
-            "show_gift_card_recipient": true,
-            "atc_button_background": "",
-            "atc_button_text_color": "",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
+            "button_label": "BUY ZETA CREATINE",
+            "show_payment_button": false,
+            "secondary_label": "PAIR WITH MINOS · SAVE 10%",
+            "secondary_link": ""
           }
         },
-        "description": {
-          "type": "description",
+        "trust_badges": {
+          "type": "trust_badges",
           "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "collapse_content": false
+            "badges": "NSF Certified for Sport\n5g Creatine Monohydrate\ncGMP Manufactured"
           }
         }
       },
       "block_order": [
-        "vendor",
-        "title",
-        "price",
+        "banner",
+        "heading",
+        "lede",
+        "rating",
+        "subscription",
         "variant_picker",
-        "quantity_selector",
         "buy_buttons",
-        "description"
+        "trust_badges"
       ],
       "settings": {
-        "full_width": true,
-        "show_fixed_add_to_cart": true,
-        "desktop_media_width": 55,
-        "desktop_media_layout": "carousel_thumbnails_bottom",
-        "mobile_media_size": "expanded",
-        "mobile_carousel_control": "floating_dots",
-        "enable_video_autoplay": false,
-        "enable_video_looping": true,
-        "enable_image_zoom": true,
-        "max_image_zoom_level": 3,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "input_background": "rgba(0,0,0,0)",
-        "input_text_color": ""
+        "column_alignment": "sticky",
+        "media_badge": "NSF Certified for Sport",
+        "main_media_ratio": "portrait",
+        "main_media_fit": "contain",
+        "thumbnails_per_row": 5,
+        "show_thumbnails": false,
+        "show_thumbnails_mobile": true
       }
     },
     "quote": {

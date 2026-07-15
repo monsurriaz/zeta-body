@@ -1,94 +1,396 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "zeta-home-hero",
-      "settings": {}
+      "settings": {
+        "eyebrow": "Miami · Science-Backed · No Compromises",
+        "heading": "You only get\none <em>brain.</em>\nOne <em>body.</em>\nBuild them both.",
+        "subheading": "<p>The world doesn't stop because you need it to. Every day is a choice — to invest in your brain and body, keep them strong, and perform at the level your life demands.</p>",
+        "quote": "<p>We're not perfect. But we can make choices every day that let us perform, move, and stay healthy. That's what ZETA is for.</p>",
+        "button_1_text": "Shop Z-83 — Flagship",
+        "button_1_link": "",
+        "button_2_text": "Our Story",
+        "button_2_link": "",
+        "media_placeholder_text": "Hero video or product image · Z-83",
+        "badge_eyebrow": "Flagship Formula",
+        "badge_name": "Z-83™",
+        "badge_sub": "Daily Energy + Focus"
+      }
     },
     "ticker": {
       "type": "zeta-ticker",
       "blocks": {
-        "p1": { "type": "phrase", "settings": { "text": "Stop The Drain", "highlight": true } },
-        "p2": { "type": "phrase", "settings": { "text": "Clear The Fog", "highlight": false } },
-        "p3": { "type": "phrase", "settings": { "text": "Health. Wealth. Youth.", "highlight": true } },
-        "p4": { "type": "phrase", "settings": { "text": "Science-Backed", "highlight": false } },
-        "p5": { "type": "phrase", "settings": { "text": "Look. Feel. Perform.", "highlight": true } },
-        "p6": { "type": "phrase", "settings": { "text": "Built in Miami", "highlight": false } },
-        "p7": { "type": "phrase", "settings": { "text": "No Compromises", "highlight": true } },
-        "p8": { "type": "phrase", "settings": { "text": "Protect Your Power", "highlight": false } }
+        "p1": {
+          "type": "phrase",
+          "settings": {
+            "text": "Stop The Drain",
+            "highlight": true
+          }
+        },
+        "p2": {
+          "type": "phrase",
+          "settings": {
+            "text": "Clear The Fog",
+            "highlight": false
+          }
+        },
+        "p3": {
+          "type": "phrase",
+          "settings": {
+            "text": "Health. Wealth. Youth.",
+            "highlight": true
+          }
+        },
+        "p4": {
+          "type": "phrase",
+          "settings": {
+            "text": "Science-Backed",
+            "highlight": false
+          }
+        },
+        "p5": {
+          "type": "phrase",
+          "settings": {
+            "text": "Look. Feel. Perform.",
+            "highlight": true
+          }
+        },
+        "p6": {
+          "type": "phrase",
+          "settings": {
+            "text": "Built in Miami",
+            "highlight": false
+          }
+        },
+        "p7": {
+          "type": "phrase",
+          "settings": {
+            "text": "No Compromises",
+            "highlight": true
+          }
+        },
+        "p8": {
+          "type": "phrase",
+          "settings": {
+            "text": "Protect Your Power",
+            "highlight": false
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+      ],
       "settings": {}
     },
     "trust": {
       "type": "zeta-trust-strip",
       "blocks": {
-        "t1": { "type": "item", "settings": { "label": "Formula", "value": "Novel & Exclusive" } },
-        "t2": { "type": "item", "settings": { "label": "Tested", "value": "Third-Party Verified" } },
-        "t3": { "type": "item", "settings": { "label": "Founded", "value": "Miami, Florida" } },
-        "t4": { "type": "item", "settings": { "label": "Our Standard", "value": "Take What We Take" } },
-        "t5": { "type": "item", "settings": { "label": "Commitment", "value": "Zero Compromises" } }
+        "t1": {
+          "type": "item",
+          "settings": {
+            "label": "Formula",
+            "value": "Novel & Exclusive"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "label": "Tested",
+            "value": "Third-Party Verified"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "label": "Founded",
+            "value": "Miami, Florida"
+          }
+        },
+        "t4": {
+          "type": "item",
+          "settings": {
+            "label": "Our Standard",
+            "value": "Take What We Take"
+          }
+        },
+        "t5": {
+          "type": "item",
+          "settings": {
+            "label": "Commitment",
+            "value": "Zero Compromises"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4", "t5"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
       "settings": {}
     },
     "feel": {
       "type": "zeta-feel",
       "blocks": {
-        "c1": { "type": "column", "settings": { "tag": "You'll Feel It", "heading": "The Flagship. Brain First.", "body": "<p>Z-83 is what ZETA is built around. It was designed to stop the daily drain on your brain — the fog, the flat energy, the mood that drags. You'll notice it working. Clean, sustained, no crash.</p>", "tags": "Z-83 - Flagship", "active_tag": "Z-83 - Flagship" } },
-        "c2": { "type": "column", "settings": { "tag": "You'll Measure It", "heading": "Biomarkers. Longevity. The Long Game.", "body": "<p>The rest of the lineup works at a deeper level — supporting what your bloodwork, your energy reserves, and your future self will show over time. These are the formulas you take because the compound interest is worth it.</p>", "tags": "Longevity, Multi, D+K, Creatine, DHEA, Minos", "active_tag": "" } }
+        "c1": {
+          "type": "column",
+          "settings": {
+            "tag": "You'll Feel It",
+            "heading": "The Flagship. Brain First.",
+            "body": "<p>Z-83 is what ZETA is built around. It was designed to stop the daily drain on your <strong>brain</strong> — the fog, the flat energy, the mood that drags. We only have one brain and one body. Z-83 starts them both.</p><p>You'll notice it working. Clean, sustained, no crash.</p>",
+            "tags": "Z-83 - Flagship",
+            "active_tag": "Z-83 - Flagship"
+          }
+        },
+        "c2": {
+          "type": "column",
+          "settings": {
+            "tag": "You'll Measure It",
+            "heading": "Biomarkers. Longevity. The Long Game.",
+            "body": "<p>The rest of the lineup works at a deeper level — <strong>supporting what your bloodwork, your energy reserves, and your future self will show</strong> over time. You won't feel it after day one. That's not how this works.</p><p>These are the formulas you take because the compound interest is worth it.</p>",
+            "tags": "Longevity, Multi, D+K, Creatine, DHEA, Minos",
+            "active_tag": ""
+          }
+        }
       },
-      "block_order": ["c1", "c2"],
-      "settings": {}
+      "block_order": [
+        "c1",
+        "c2"
+      ],
+      "settings": {
+        "eyebrow": "How ZETA Works",
+        "heading": "There's what you <em>feel.</em>\nAnd what's quietly\nworking underneath.",
+        "intro": "<p>Not all progress announces itself. Here's how ZETA works — and which products belong where in your stack.</p>"
+      }
     },
     "lineup": {
       "type": "zeta-product-lineup",
       "blocks": {
-        "l1": { "type": "card", "settings": { "flag": "Flagship", "name": "Z-83", "headline": "Stop the drain. <em>Start the day right.</em>", "description": "Novel nootropic for energy, focus, mood, and clean performance — without the crash.", "price": "From $79 · 30 servings" } },
-        "l2": { "type": "card", "settings": { "flag": "", "name": "D+K", "headline": "Bone. Immune. <em>The essentials.</em>", "description": "D3 + K2 — the most underdiagnosed deficiency combo. 5,000 IU where it counts.", "price": "From $— · 30 capsules" } },
-        "l3": { "type": "card", "settings": { "flag": "", "name": "Creatine", "headline": "Strength that <em>compounds.</em>", "description": "Targeted support for power, recovery, and performance that builds over time.", "price": "From $— · 30 servings" } },
-        "l4": { "type": "card", "settings": { "flag": "", "name": "Megas", "headline": "Highest EPA. <em>Deepest support.</em>", "description": "MaxSimil omega-3 with the highest EPA ratio in its class. The fat your brain actually runs on.", "price": "From $— · 30 softgels" } }
+        "l1": {
+          "type": "card",
+          "settings": {
+            "flag": "Flagship",
+            "image_hint": "Product photo",
+            "name": "Z-83",
+            "headline": "Stop the drain. <em>Start the day right.</em>",
+            "description": "Novel nootropic for energy, focus, mood, and clean performance — without the crash.",
+            "price": "From $79 · 30 servings",
+            "link": ""
+          }
+        },
+        "l2": {
+          "type": "card",
+          "settings": {
+            "flag": "",
+            "image_hint": "Product photo",
+            "name": "D+K",
+            "headline": "Bone. Immune. <em>The essentials.</em>",
+            "description": "D3 + K2 — the most underdiagnosed deficiency combo. 5,000 IU where it counts.",
+            "price": "From $— · 30 capsules",
+            "link": ""
+          }
+        },
+        "l3": {
+          "type": "card",
+          "settings": {
+            "flag": "",
+            "image_hint": "Product photo",
+            "name": "Creatine",
+            "headline": "Strength that <em>compounds.</em>",
+            "description": "Targeted support for power, recovery, and performance that builds over time.",
+            "price": "From $— · 30 servings",
+            "link": ""
+          }
+        },
+        "l4": {
+          "type": "card",
+          "settings": {
+            "flag": "",
+            "image_hint": "Product photo",
+            "name": "Megas",
+            "headline": "Highest EPA. <em>Deepest support.</em>",
+            "description": "MaxSimil omega-3 with the highest EPA ratio in its class. The fat your brain actually runs on.",
+            "price": "From $— · 30 softgels",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["l1", "l2", "l3", "l4"],
-      "settings": {}
+      "block_order": [
+        "l1",
+        "l2",
+        "l3",
+        "l4"
+      ],
+      "settings": {
+        "eyebrow": "The Lineup",
+        "heading": "One body.\n<em>Every edge.</em>",
+        "link_text": "View All Products →",
+        "link_url": ""
+      }
     },
     "what": {
       "type": "zeta-media-copy",
-      "settings": {}
+      "settings": {
+        "media_tag": "A focused lineup. One body.",
+        "media_placeholder": "Lifestyle / founder photo",
+        "eyebrow": "What ZETA Is",
+        "heading": "Built to make <em>everything else</em> in your life work better.",
+        "tagline": "Health. Wealth. Youth. — in that order.",
+        "body": "<p>Your body was never meant to run on just one thing. That's exactly why I started with Z-83 — built to stop the drain, cut through the fog, lift your mood, and deliver <strong>clean energy you can actually trust.</strong></p><p>Then we thoughtfully built out the rest of the lineup: targeted support for longevity, strength, gut health, and foundational nutrients. <strong>All designed to work together — one body, one system</strong> you can believe in and stick with long-term.</p><p>This is the brand I built for the version of you who's done accepting constant drain as normal.</p>",
+        "button_1_text": "Build Your Stack →",
+        "button_1_link": "",
+        "button_2_text": "Take the Mirror Quiz →",
+        "button_2_link": ""
+      }
     },
     "hwy": {
       "type": "zeta-hwy",
       "blocks": {
-        "h1": { "type": "pillar", "settings": { "word": "Health", "definition": "is what you do to yourself." } },
-        "h2": { "type": "pillar", "settings": { "word": "Wealth", "definition": "is what you earn and invest." } },
-        "h3": { "type": "pillar", "settings": { "word": "Youth", "definition": "is what you fight to protect." } }
+        "h1": {
+          "type": "pillar",
+          "settings": {
+            "word": "Health",
+            "definition": "is what you do to yourself."
+          }
+        },
+        "h2": {
+          "type": "pillar",
+          "settings": {
+            "word": "Wealth",
+            "definition": "is what you earn and invest."
+          }
+        },
+        "h3": {
+          "type": "pillar",
+          "settings": {
+            "word": "Youth",
+            "definition": "is what you fight to protect."
+          }
+        }
       },
-      "block_order": ["h1", "h2", "h3"],
-      "settings": {}
+      "block_order": [
+        "h1",
+        "h2",
+        "h3"
+      ],
+      "settings": {
+        "eyebrow": "The ZETA Philosophy",
+        "heading": "Health.\n<em>Wealth.</em>\nYouth.",
+        "lede": "<p>Three things worth protecting. One body to do it with.</p>",
+        "body": "<p>I was already living these three pillars hard — building successful businesses, dialed in — when the seizures hit in 2013. That experience drove the lesson home even deeper: <strong>the world doesn't stop because you need or want it to. It doesn't stop so you can recover.</strong> The sun rises and sets no matter what you're going through. You either adjust, fight back, and keep moving — or you get left behind.</p><p>That's why I built ZETA. To touch millions. To make it simpler for anyone to <strong>deeply invest in their health.</strong> Because when your brain and body are strong, everything else expands.</p><p>Every single day is a choice. Let ZETA be part of the ones that move you forward.</p>",
+        "button_1_text": "Shop the Lineup",
+        "button_1_link": "",
+        "button_2_text": "The Story ↓",
+        "button_2_link": "",
+        "anchor_id": ""
+      }
     },
     "beliefs": {
       "type": "zeta-beliefs",
       "blocks": {
-        "b1": { "type": "belief", "settings": { "text": "<p>The best supplement is the one you actually keep taking. That's why we only create formulas we'd <strong>trust with our own bodies</strong> every single day.</p>" } },
-        "b2": { "type": "belief", "settings": { "text": "<p>You don't need a chemistry degree to read our label — but the science behind why you're taking it? <strong>That's the only degree we care about giving you.</strong> The more you understand, the more committed you'll be.</p>" } },
-        "b3": { "type": "belief", "settings": { "text": "<p>We work with the best minds in the field to develop <strong>novel, exclusive formulations</strong> that actually solve problems — not just add another bottle to the shelf.</p>" } },
-        "b4": { "type": "belief", "settings": { "text": "<p>We never play it safe with science. <strong>Always pushing boundaries</strong> — advancing research, exploring new territory, while respecting proven clinical data.</p>" } },
-        "b5": { "type": "belief", "settings": { "text": "<p>We build for today <strong>and</strong> the long game. Biomarkers, mood, energy, skin health, and how you age all matter. <strong>That's the standard.</strong></p>" } },
-        "b6": { "type": "belief", "settings": { "text": "<p>You deserve to feel strong, sharp, and vibrant for as long as possible. ZETA is here to help you <strong>protect and enhance your energy, clarity, and vitality</strong> — no matter where you are in your journey.</p>" } }
+        "b1": {
+          "type": "belief",
+          "settings": {
+            "text": "<p>The best supplement is the one you actually keep taking. That's why we only create formulas we'd <strong>trust with our own bodies</strong> every single day.</p>"
+          }
+        },
+        "b2": {
+          "type": "belief",
+          "settings": {
+            "text": "<p>You don't need a chemistry degree to read our label — but the science behind why you're taking it? <strong>That's the only degree we care about giving you.</strong> The more you understand, the more committed you'll be.</p>"
+          }
+        },
+        "b3": {
+          "type": "belief",
+          "settings": {
+            "text": "<p>We work with the best minds in the field to develop <strong>novel, exclusive formulations</strong> that actually solve problems — not just add another bottle to the shelf.</p>"
+          }
+        },
+        "b4": {
+          "type": "belief",
+          "settings": {
+            "text": "<p>We never play it safe with science. <strong>Always pushing boundaries</strong> — advancing research, exploring new territory, while respecting proven clinical data.</p>"
+          }
+        },
+        "b5": {
+          "type": "belief",
+          "settings": {
+            "text": "<p>We build for today <strong>and</strong> the long game. Biomarkers, mood, energy, skin health, and how you age all matter. <strong>That's the standard.</strong></p>"
+          }
+        },
+        "b6": {
+          "type": "belief",
+          "settings": {
+            "text": "<p>You deserve to feel strong, sharp, and vibrant for as long as possible. ZETA is here to help you <strong>protect and enhance your energy, clarity, and vitality</strong> — no matter where you are in your journey.</p>"
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
-      "settings": {}
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "settings": {
+        "eyebrow": "Who We Are",
+        "heading": "The ZETA <em>Beliefs</em>"
+      }
     },
     "cta": {
       "type": "zeta-cta",
-      "settings": {}
+      "settings": {
+        "eyebrow": "Start Here",
+        "heading": "Don't accept\nthe drain\n<em>as normal.</em>",
+        "subtext": "<p>Fix it. You have the choice every single day. One brain. One body. Protect them both.</p>",
+        "button_1_text": "Shop the Full Lineup",
+        "button_1_link": "",
+        "button_2_text": "Take the Mirror Quiz →",
+        "button_2_link": ""
+      }
     },
     "founder": {
       "type": "zeta-founder",
-      "settings": {}
+      "settings": {
+        "eyebrow": "The Founder",
+        "heading": "Built from <em>winning and losing</em> the fight.",
+        "body": "<p>I've been on both sides. The winning one. The losing one. In 2013, a grand mal seizure out of nowhere changed everything I knew about my own brain and body. What I lost most was my independence — and from there came the decision to rebuild differently.</p><p>ZETA is the daily foundation I built when I refused to accept the drain as normal.</p>",
+        "sig_role": "Founder & CEO, ZETA Body",
+        "sig_name": "Zoe Karli",
+        "button_text": "Read Our Story →",
+        "button_link": "",
+        "media_placeholder": "Founder photo — Zoe Karli"
+      }
     },
     "blog": {
       "type": "zeta-blog-teaser",
-      "settings": {}
+      "settings": {
+        "eyebrow": "The Knowledge",
+        "heading": "What we're <em>learning</em>",
+        "blog": "",
+        "posts_count": 3,
+        "link_text": "All Posts →",
+        "link_url": "",
+        "note": "<p>📺 <strong>YouTube:</strong> Connect ZETA's YouTube channel here — embedding video alongside posts strengthens authority signals.</p>"
+      }
     }
   },
   "order": [

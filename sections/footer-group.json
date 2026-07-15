@@ -110,7 +110,7 @@
           "settings": {
             "title": "Join the Inner Circle",
             "description": "<p>1–2 emails a month. First-bottle stories, founder notes.</p><p>Sign up & get 10% off your first bottle.</p>",
-            "newsletter_url": "",
+            "newsletter_url": "#",
             "instagram_url": "#",
             "tiktok_url": "#",
             "youtube_url": "#",
