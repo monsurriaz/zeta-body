@@ -1,0 +1,47 @@
+{%- comment -%}
+  ZETA — CTA banner (#cta): ink band, oversized heading + tile buttons.
+  Styles: custom.css (.zeta-cta).
+{%- endcomment -%}
+
+<section class="zeta zeta-cta" {{ section.shopify_attributes }}>
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="zeta-cta__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="zeta-cta__h2">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  {%- if section.settings.subtext != blank -%}
+    <div class="zeta-cta__subtext">{{ section.settings.subtext }}</div>
+  {%- endif -%}
+  {%- if section.settings.button_1_text != blank or section.settings.button_2_text != blank -%}
+    <div class="zeta-cta__tiles">
+      {%- if section.settings.button_1_text != blank -%}
+        <a href="{{ section.settings.button_1_link | default: '#' }}" class="zeta-cta__tile">{{ section.settings.button_1_text | escape }}</a>
+      {%- endif -%}
+      {%- if section.settings.button_2_text != blank -%}
+        <a href="{{ section.settings.button_2_link | default: '#' }}" class="zeta-cta__tile">{{ section.settings.button_2_text | escape }}</a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta CTA Banner",
+  "tag": "section",
+  "class": "shopify-section--zeta-cta",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Start Here" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Don't accept the drain <em>as normal.</em>" },
+    { "type": "richtext", "id": "subtext", "label": "Subtext", "default": "<p>Fix it. You have the choice every single day. One brain. One body. Protect them both.</p>" },
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "button_1_text", "label": "Button 1 label", "default": "Shop the Full Lineup" },
+    { "type": "url", "id": "button_1_link", "label": "Button 1 link" },
+    { "type": "text", "id": "button_2_text", "label": "Button 2 label", "default": "Take the Mirror Quiz →" },
+    { "type": "url", "id": "button_2_link", "label": "Button 2 link" }
+  ],
+  "presets": [
+    { "name": "Zeta CTA Banner" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+{%- comment -%}
+  ZETA — Trust Strip (.trust-strip): row of label + value items, bordered.
+  Items are blocks. Styles: custom.css (.zeta-trust-strip).
+{%- endcomment -%}
+
+{%- if section.blocks.size > 0 -%}
+  <section class="zeta zeta-trust-strip" {{ section.shopify_attributes }}>
+    {%- for block in section.blocks -%}
+      <div class="zeta-trust-strip__item" {{ block.shopify_attributes }}>
+        {%- if block.settings.label != blank -%}
+          <div class="zeta-trust-strip__label">{{ block.settings.label | escape }}</div>
+        {%- endif -%}
+        {%- if block.settings.value != blank -%}
+          <div class="zeta-trust-strip__value">{{ block.settings.value | escape }}</div>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Zeta Trust Strip",
+  "tag": "section",
+  "class": "shopify-section--zeta-trust-strip",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Formula" },
+        { "type": "text", "id": "value", "label": "Value", "default": "Novel & Exclusive" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Trust Strip",
+      "blocks": [
+        { "type": "item", "settings": { "label": "Formula", "value": "Novel & Exclusive" } },
+        { "type": "item", "settings": { "label": "Tested", "value": "Third-Party Verified" } },
+        { "type": "item", "settings": { "label": "Founded", "value": "Miami, Florida" } },
+        { "type": "item", "settings": { "label": "Our Standard", "value": "Take What We Take" } },
+        { "type": "item", "settings": { "label": "Commitment", "value": "Zero Compromises" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

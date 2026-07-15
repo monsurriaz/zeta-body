@@ -1,0 +1,78 @@
+{%- comment -%}
+  ZETA — Bundle (.bundle "Workout Stack"): centered promo, product tiles + CTA.
+  Product tiles are blocks (a "+" is inserted between them). Styles: custom.css (.zeta-bundle).
+{%- endcomment -%}
+
+<section class="zeta zeta-bundle" {{ section.shopify_attributes }}>
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="zeta-bundle__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="zeta-bundle__h2">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  {%- if section.settings.discount != blank -%}
+    <span class="zeta-bundle__discount">{{ section.settings.discount | escape }}</span>
+  {%- endif -%}
+  {%- if section.settings.body != blank -%}
+    <div class="zeta-bundle__body">{{ section.settings.body }}</div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="zeta-bundle__products">
+      {%- for block in section.blocks -%}
+        {%- unless forloop.first -%}
+          <div class="zeta-bundle__plus" aria-hidden="true">+</div>
+        {%- endunless -%}
+        <div class="zeta-bundle__product" {{ block.shopify_attributes }}>
+          {%- if block.settings.name != blank -%}
+            <div class="zeta-bundle__product-name">{{ block.settings.name | escape }}</div>
+          {%- endif -%}
+          {%- if block.settings.sub != blank -%}
+            <div class="zeta-bundle__product-sub">{{ block.settings.sub | escape }}</div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.button_text != blank -%}
+    <a href="{{ section.settings.button_link | default: '#' }}" class="zeta-bundle__btn">{{ section.settings.button_text | escape }}</a>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Bundle",
+  "tag": "section",
+  "class": "shopify-section--zeta-bundle",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Stack It" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "The <em>Workout</em> Stack." },
+    { "type": "text", "id": "discount", "label": "Discount badge", "default": "Save 10% when bundled" },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>CREATINE + MINOS = the ATP recharge and the amino acid engine, working together. The two supplements that do the actual work inside the gym — and beyond.*</p>" },
+    { "type": "header", "content": "Button" },
+    { "type": "text", "id": "button_text", "label": "Button label", "default": "BUY THE WORKOUT STACK" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name", "default": "Zeta Creatine" },
+        { "type": "text", "id": "sub", "label": "Subtext", "default": "5g · ATP recharge · Brain support" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Bundle",
+      "blocks": [
+        { "type": "product", "settings": { "name": "Zeta Creatine", "sub": "5g · ATP recharge · Brain support" } },
+        { "type": "product", "settings": { "name": "Zeta Minos", "sub": "EAAs + L-Arginine · Strength + recovery" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

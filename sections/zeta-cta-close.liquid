@@ -1,0 +1,43 @@
+{%- comment -%}
+  ZETA — Close CTA (.cta-close): ink band, tagline + big heading + two buttons.
+  Styles: custom.css (.zeta-cta-close).
+{%- endcomment -%}
+
+<section class="zeta zeta-cta-close" {{ section.shopify_attributes }}>
+  {%- if section.settings.tagline != blank -%}
+    <p class="zeta-cta-close__tagline">{{ section.settings.tagline | escape }}</p>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <p class="zeta-cta-close__h2">{{ section.settings.heading }}</p>
+  {%- endif -%}
+  {%- if section.settings.button_1_text != blank or section.settings.button_2_text != blank -%}
+    <div class="zeta-cta-close__actions">
+      {%- if section.settings.button_1_text != blank -%}
+        <a href="{{ section.settings.button_1_link | default: '#' }}" class="zeta-cta-close__btn-white">{{ section.settings.button_1_text | escape }}</a>
+      {%- endif -%}
+      {%- if section.settings.button_2_text != blank -%}
+        <a href="{{ section.settings.button_2_link | default: '#' }}" class="zeta-cta-close__btn-ghost">{{ section.settings.button_2_text | escape }}</a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Close CTA",
+  "tag": "section",
+  "class": "shopify-section--zeta-cta-close",
+  "settings": [
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Take what we take." },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Strength. Brain. Everyday." },
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "button_1_text", "label": "Button 1 label", "default": "BUY ZETA CREATINE" },
+    { "type": "url", "id": "button_1_link", "label": "Button 1 link" },
+    { "type": "text", "id": "button_2_text", "label": "Button 2 label", "default": "TAKE THE MIRROR QUIZ" },
+    { "type": "url", "id": "button_2_link", "label": "Button 2 link" }
+  ],
+  "presets": [
+    { "name": "Zeta Close CTA" }
+  ]
+}
+{% endschema %}

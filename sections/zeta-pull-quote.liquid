@@ -1,0 +1,28 @@
+{%- comment -%}
+  ZETA — Pull Quote (.quote-band): ink band, centered editorial quote + attribution.
+  Styles: custom.css (.zeta-quote-band).
+{%- endcomment -%}
+
+<section class="zeta zeta-quote-band" {{ section.shopify_attributes }}>
+  {%- if section.settings.quote != blank -%}
+    <blockquote class="zeta-quote-band__quote">{{ section.settings.quote }}</blockquote>
+  {%- endif -%}
+  {%- if section.settings.attribution != blank -%}
+    <div class="zeta-quote-band__attr">{{ section.settings.attribution | escape }}</div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Pull Quote",
+  "tag": "section",
+  "class": "shopify-section--zeta-quote-band",
+  "settings": [
+    { "type": "inline_richtext", "id": "quote", "label": "Quote", "info": "Italics render in bronze.", "default": "\"I helped bring creatine to the world. The most exciting research on it is happening right now — and it's about the <em>brain</em>, not the bicep.\"" },
+    { "type": "text", "id": "attribution", "label": "Attribution", "default": "One of the World's Leading Biochemists · Creatine Research Pioneer" }
+  ],
+  "presets": [
+    { "name": "Zeta Pull Quote" }
+  ]
+}
+{% endschema %}

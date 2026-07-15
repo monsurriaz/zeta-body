@@ -1,0 +1,69 @@
+{%- comment -%}
+  ZETA — Media + Copy (#what "What ZETA Is"): 2-col media panel + editorial copy.
+  Styles: custom.css (.zeta-media-copy).
+{%- endcomment -%}
+
+<section class="zeta zeta-media-copy" {{ section.shopify_attributes }}>
+  <div class="zeta-media-copy__media">
+    {%- if section.settings.media_tag != blank -%}
+      <span class="zeta-media-copy__media-tag">{{ section.settings.media_tag | escape }}</span>
+    {%- endif -%}
+    {%- if section.settings.image != blank -%}
+      {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(max-width: 960px) 100vw, 50vw', widths: '600,900,1200,1400', class: 'zeta-media-copy__img' }}
+    {%- else -%}
+      <span class="zeta-media-copy__media-hint">{{ section.settings.media_placeholder | default: 'Lifestyle / founder photo' | escape }}</span>
+    {%- endif -%}
+  </div>
+
+  <div class="zeta-media-copy__copy">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="zeta-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="zeta-media-copy__h2">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.tagline != blank -%}
+      <div class="zeta-media-copy__tagline">{{ section.settings.tagline }}</div>
+    {%- endif -%}
+    {%- if section.settings.body != blank -%}
+      <div class="zeta-media-copy__body">{{ section.settings.body }}</div>
+    {%- endif -%}
+    {%- if section.settings.button_1_text != blank or section.settings.button_2_text != blank -%}
+      <div class="zeta-media-copy__btns">
+        {%- if section.settings.button_1_text != blank -%}
+          <a href="{{ section.settings.button_1_link | default: '#' }}" class="zeta-btn zeta-btn--teal">{{ section.settings.button_1_text | escape }}</a>
+        {%- endif -%}
+        {%- if section.settings.button_2_text != blank -%}
+          <a href="{{ section.settings.button_2_link | default: '#' }}" class="zeta-btn zeta-btn--outline">{{ section.settings.button_2_text | escape }}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Media + Copy",
+  "tag": "section",
+  "class": "shopify-section--zeta-media-copy",
+  "settings": [
+    { "type": "header", "content": "Media (left)" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "media_tag", "label": "Media tag", "default": "A focused lineup. One body." },
+    { "type": "text", "id": "media_placeholder", "label": "Placeholder text", "default": "Lifestyle / founder photo" },
+    { "type": "header", "content": "Copy (right)" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What ZETA Is" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Built to make <em>everything else</em> in your life work better." },
+    { "type": "inline_richtext", "id": "tagline", "label": "Tagline", "default": "Health. Wealth. Youth. — in that order." },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Your body was never meant to run on just one thing. That's exactly why I started with Z-83 — built to stop the drain, cut through the fog, lift your mood, and deliver <strong>clean energy you can actually trust.</strong></p><p>This is the brand I built for the version of you who's done accepting constant drain as normal.</p>" },
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "button_1_text", "label": "Button 1 label", "default": "Build Your Stack →" },
+    { "type": "url", "id": "button_1_link", "label": "Button 1 link" },
+    { "type": "text", "id": "button_2_text", "label": "Button 2 label", "default": "Take the Mirror Quiz →" },
+    { "type": "url", "id": "button_2_link", "label": "Button 2 link" }
+  ],
+  "presets": [
+    { "name": "Zeta Media + Copy" }
+  ]
+}
+{% endschema %}

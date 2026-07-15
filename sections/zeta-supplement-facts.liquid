@@ -1,0 +1,146 @@
+{%- comment -%}
+  ZETA — Supplement Facts (.supp-facts-section): FDA-style facts panel + how-to + "NOs" panel.
+  Block types: fact (panel rows), direction (how-to list), exclusion (NO list).
+  Styles: custom.css (.zeta-facts).
+{%- endcomment -%}
+
+{%- assign facts = section.blocks | where: 'type', 'fact' -%}
+{%- assign directions = section.blocks | where: 'type', 'direction' -%}
+{%- assign exclusions = section.blocks | where: 'type', 'exclusion' -%}
+
+<section class="zeta zeta-facts" {{ section.shopify_attributes }}>
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="zeta-section-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="zeta-section-h2">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
+  <div class="zeta-facts__grid">
+    {%- comment -%} Facts panel {%- endcomment -%}
+    <div class="zeta-facts__panel">
+      <div class="zeta-facts__panel-header">
+        <div class="zeta-facts__panel-title">{{ section.settings.facts_title | default: 'Supplement Facts' | escape }}</div>
+        {%- if section.settings.serving_line != blank -%}
+          <div class="zeta-facts__panel-serving">{{ section.settings.serving_line | escape }}</div>
+        {%- endif -%}
+      </div>
+      <div class="zeta-facts__panel-body">
+        <div class="zeta-facts__row zeta-facts__row--head">
+          <span></span><span>{{ section.settings.amount_header | default: 'Amount Per Serving   % DV' | escape }}</span>
+        </div>
+        {%- for block in facts -%}
+          <div class="zeta-facts__row {% if block.settings.is_main %}zeta-facts__row--main{% endif %} {% if block.settings.indent %}zeta-facts__row--indent{% endif %}" {{ block.shopify_attributes }}>
+            <span>{{ block.settings.name | escape }}</span>
+            <span>{{ block.settings.amount | escape }}</span>
+          </div>
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.facts_note != blank -%}
+        <div class="zeta-facts__note">{{ section.settings.facts_note | escape }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} How-to + NOs {%- endcomment -%}
+    <div class="zeta-facts__bottom">
+      {%- if directions.size > 0 or section.settings.how_to_label != blank -%}
+        <div class="zeta-facts__howto">
+          {%- if section.settings.how_to_label != blank -%}
+            <div class="zeta-facts__howto-label">{{ section.settings.how_to_label | escape }}</div>
+          {%- endif -%}
+          <ul>
+            {%- for block in directions -%}
+              <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      {%- if exclusions.size > 0 or section.settings.exclude_heading != blank -%}
+        <div class="zeta-facts__exclude">
+          {%- if section.settings.exclude_heading != blank -%}
+            <div class="zeta-facts__exclude-heading">{{ section.settings.exclude_heading }}</div>
+          {%- endif -%}
+          {%- if section.settings.exclude_sub != blank -%}
+            <div class="zeta-facts__exclude-sub">{{ section.settings.exclude_sub | escape }}</div>
+          {%- endif -%}
+          <div class="zeta-facts__no-list">
+            {%- for block in exclusions -%}
+              <div class="zeta-facts__no-item" {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</div>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Supplement Facts",
+  "tag": "section",
+  "class": "shopify-section--zeta-facts",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What's in the canister" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Simple label. <em>No filler.</em>" },
+    { "type": "header", "content": "Facts panel" },
+    { "type": "text", "id": "facts_title", "label": "Panel title", "default": "Supplement Facts" },
+    { "type": "text", "id": "serving_line", "label": "Serving line", "default": "Serving Size: 1 Scoop (about 5g) · Servings Per Container: 30" },
+    { "type": "text", "id": "amount_header", "label": "Amount column header", "default": "Amount Per Serving   % DV" },
+    { "type": "text", "id": "facts_note", "label": "Panel note", "default": "** Daily Value not established.   Other Ingredients: None.   Unflavored." },
+    { "type": "header", "content": "How to take it" },
+    { "type": "text", "id": "how_to_label", "label": "Label", "default": "How to take it" },
+    { "type": "header", "content": "Exclusions (\"NOs\")" },
+    { "type": "inline_richtext", "id": "exclude_heading", "label": "Heading", "default": "Formulated with a lot of NOs." },
+    { "type": "text", "id": "exclude_sub", "label": "Subtext", "default": "Here's everything we left out." }
+  ],
+  "blocks": [
+    {
+      "type": "fact",
+      "name": "Fact row",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name", "default": "Creatine Monohydrate" },
+        { "type": "text", "id": "amount", "label": "Amount", "default": "5 g   **" },
+        { "type": "checkbox", "id": "is_main", "label": "Emphasized row", "default": false },
+        { "type": "checkbox", "id": "indent", "label": "Indented (sub-component)", "default": false }
+      ]
+    },
+    {
+      "type": "direction",
+      "name": "Direction",
+      "settings": [
+        { "type": "inline_richtext", "id": "text", "label": "Text", "default": "<strong>1 scoop (5g) daily</strong> — dissolve in 8 oz of water or any beverage" }
+      ]
+    },
+    {
+      "type": "exclusion",
+      "name": "Exclusion (NO)",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "No Gluten" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Supplement Facts",
+      "blocks": [
+        { "type": "fact", "settings": { "name": "Creatine Monohydrate", "amount": "5 g   **", "is_main": true } },
+        { "type": "direction", "settings": { "text": "<strong>1 scoop (5g) daily</strong> — dissolve in 8 oz of water or any beverage" } },
+        { "type": "direction", "settings": { "text": "<strong>When</strong> — any time of day. Consistency beats timing" } },
+        { "type": "direction", "settings": { "text": "<strong>No loading phase needed</strong> — steady daily dosing reaches saturation in ~3–4 weeks" } },
+        { "type": "direction", "settings": { "text": "One canister lasts <strong>30 days</strong>" } },
+        { "type": "exclusion", "settings": { "text": "No Gluten" } },
+        { "type": "exclusion", "settings": { "text": "No Dairy" } },
+        { "type": "exclusion", "settings": { "text": "No Soy" } },
+        { "type": "exclusion", "settings": { "text": "No Artificial Colors" } },
+        { "type": "exclusion", "settings": { "text": "No Artificial Flavors" } },
+        { "type": "exclusion", "settings": { "text": "No Artificial Sweeteners" } },
+        { "type": "exclusion", "settings": { "text": "No Proprietary Blends" } },
+        { "type": "exclusion", "settings": { "text": "No Fillers" } },
+        { "type": "exclusion", "settings": { "text": "No GMOs" } },
+        { "type": "exclusion", "settings": { "text": "No Banned Substances" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

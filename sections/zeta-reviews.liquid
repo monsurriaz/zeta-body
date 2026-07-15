@@ -1,0 +1,65 @@
+{%- comment -%}
+  ZETA — Reviews (.reviews): eyebrow + heading + testimonial cards.
+  Cards are blocks. Styles: custom.css (.zeta-reviews).
+{%- endcomment -%}
+
+<section class="zeta zeta-reviews" {{ section.shopify_attributes }}>
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="zeta-section-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="zeta-section-h2">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="zeta-reviews__grid">
+      {%- for block in section.blocks -%}
+        <div class="zeta-reviews__card" {{ block.shopify_attributes }}>
+          {%- if block.settings.stars != blank -%}
+            <div class="zeta-reviews__stars">{{ block.settings.stars | escape }}</div>
+          {%- endif -%}
+          {%- if block.settings.body != blank -%}
+            <div class="zeta-reviews__body">{{ block.settings.body }}</div>
+          {%- endif -%}
+          {%- if block.settings.attribution != blank -%}
+            <div class="zeta-reviews__attr">{{ block.settings.attribution | escape }}</div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Reviews",
+  "tag": "section",
+  "class": "shopify-section--zeta-reviews",
+  "max_blocks": 9,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Real reviews" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Strength. Brain. <em>Both.</em>" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "text", "id": "stars", "label": "Stars", "default": "★★★★★" },
+        { "type": "inline_richtext", "id": "body", "label": "Quote", "default": "\"My deadlift jumped 20 lbs in 6 weeks. I'm 52.\"" },
+        { "type": "text", "id": "attribution", "label": "Attribution", "default": "Marcus T. · Verified Buyer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Reviews",
+      "blocks": [
+        { "type": "review", "settings": { "stars": "★★★★★", "body": "\"My deadlift jumped 20 lbs in 6 weeks. I'm 52.\"", "attribution": "Marcus T. · Verified Buyer" } },
+        { "type": "review", "settings": { "stars": "★★★★★", "body": "\"I take it for the brain story, honestly. Sharper afternoons. Less mental fatigue.\"", "attribution": "Lauren M. · Verified Buyer" } },
+        { "type": "review", "settings": { "stars": "★★★★★", "body": "\"Started with my husband. Both of us notice strength holding up between sessions.\"", "attribution": "Joanna B. · Verified Buyer" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

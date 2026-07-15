@@ -1,0 +1,101 @@
+{%- comment -%}
+  ZETA — Product Lineup (#products): teal band, head + grid of dark editorial product cards.
+  Cards are blocks (editorial copy + optional image/link). Styles: custom.css (.zeta-lineup).
+{%- endcomment -%}
+
+<section class="zeta zeta-lineup" {{ section.shopify_attributes }}>
+  <div class="zeta-lineup__head">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="zeta-lineup__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="zeta-lineup__h2">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.link_text != blank -%}
+      <a href="{{ section.settings.link_url | default: '#' }}" class="zeta-lineup__link">{{ section.settings.link_text | escape }}</a>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="zeta-lineup__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.link != blank -%}
+          <a href="{{ block.settings.link }}" class="zeta-lineup__card" {{ block.shopify_attributes }}>
+        {%- else -%}
+          <div class="zeta-lineup__card" {{ block.shopify_attributes }}>
+        {%- endif -%}
+          {%- if block.settings.flag != blank -%}
+            <span class="zeta-lineup__flag">{{ block.settings.flag | escape }}</span>
+          {%- endif -%}
+          <div class="zeta-lineup__img">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', sizes: '(max-width: 960px) 50vw, 25vw', widths: '300,450,600', alt: block.settings.name | default: '' }}
+            {%- else -%}
+              <span class="zeta-lineup__img-hint">{{ block.settings.image_hint | default: 'Product photo' | escape }}</span>
+            {%- endif -%}
+          </div>
+          {%- if block.settings.name != blank -%}
+            <div class="zeta-lineup__name">{{ block.settings.name | escape }}</div>
+          {%- endif -%}
+          {%- if block.settings.headline != blank -%}
+            <div class="zeta-lineup__headline">{{ block.settings.headline }}</div>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <div class="zeta-lineup__desc">{{ block.settings.description | escape }}</div>
+          {%- endif -%}
+          {%- if block.settings.price != blank -%}
+            <div class="zeta-lineup__price">{{ block.settings.price | escape }}</div>
+          {%- endif -%}
+        {%- if block.settings.link != blank -%}
+          </a>
+        {%- else -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Product Lineup",
+  "tag": "section",
+  "class": "shopify-section--zeta-lineup",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Lineup" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "One body. <em>Every edge.</em>" },
+    { "type": "text", "id": "link_text", "label": "Link label", "default": "View All Products →" },
+    { "type": "url", "id": "link_url", "label": "Link URL" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Product card",
+      "settings": [
+        { "type": "text", "id": "flag", "label": "Flag", "info": "Optional badge (e.g. Flagship)." },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_hint", "label": "Image placeholder text", "default": "Product photo" },
+        { "type": "text", "id": "name", "label": "Product name", "default": "Z-83™" },
+        { "type": "inline_richtext", "id": "headline", "label": "Headline", "default": "Stop the drain. <em>Start the day right.</em>" },
+        { "type": "text", "id": "description", "label": "Description", "default": "Novel nootropic for energy, focus, mood, and clean performance — without the crash." },
+        { "type": "text", "id": "price", "label": "Price line", "default": "From $79 · 30 servings" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Product Lineup",
+      "blocks": [
+        { "type": "card", "settings": { "flag": "Flagship", "name": "Z-83™", "headline": "Stop the drain. <em>Start the day right.</em>", "description": "Novel nootropic for energy, focus, mood, and clean performance — without the crash.", "price": "From $79 · 30 servings" } },
+        { "type": "card", "settings": { "name": "D+K", "headline": "Bone. Immune. <em>The essentials.</em>", "description": "D3 + K2 — the most underdiagnosed deficiency combo. 5,000 IU where it counts.", "price": "From $— · 30 capsules" } },
+        { "type": "card", "settings": { "name": "Creatine", "headline": "Strength that <em>compounds.</em>", "description": "Targeted support for power, recovery, and performance that builds over time.", "price": "From $— · 30 servings" } },
+        { "type": "card", "settings": { "name": "Megas", "headline": "Highest EPA. <em>Deepest support.</em>", "description": "MaxSimil omega-3 with the highest EPA ratio in its class. The fat your brain actually runs on.", "price": "From $— · 30 softgels" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

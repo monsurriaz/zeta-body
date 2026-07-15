@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "vendor", "settings": {} },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": {} },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": {} },
+        "description": { "type": "description", "settings": {} }
+      },
+      "block_order": ["vendor", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "description"],
+      "settings": {
+        "desktop_media_layout": "carousel_thumbnails_bottom"
+      }
+    },
+    "quote": {
+      "type": "zeta-pull-quote",
+      "settings": {}
+    },
+    "timeline": {
+      "type": "zeta-timeline",
+      "blocks": {
+        "d1": { "type": "phase", "settings": { "label": "Day 1", "title": "Stored.", "body": "<p>Creatine starts saturating into muscle and brain tissue. Your cells are filling their tanks. Nothing dramatic yet — but the work is already happening.*</p>" } },
+        "w1": { "type": "phase", "settings": { "label": "Week 1", "title": "Stronger.", "body": "<p>Slightly more reps in the tank. Faster recovery between sets. Your muscles have more ATP to draw from. You'll feel it before you can fully explain it.*</p>" } },
+        "m1": { "type": "phase", "settings": { "label": "Months", "title": "Sharper.", "body": "<p>Newer studies show improved executive function — especially under sleep debt or stress. Your brain runs on energy too. Creatine feeds both.*</p>" } },
+        "y1": { "type": "phase", "settings": { "label": "Years", "title": "Protected.", "body": "<p>Anti-sarcopenia. Neuroprotection. The muscle + brain longevity bet that decades of research keeps confirming. This is why you don't stop.*</p>" } }
+      },
+      "block_order": ["d1", "w1", "m1", "y1"],
+      "settings": {}
+    },
+    "ingredients": {
+      "type": "zeta-ingredients",
+      "blocks": {
+        "i1": { "type": "tile", "settings": { "tag": "The Molecule", "name": "Creatine Monohydrate", "source": "5g per serving · pure · extensively studied", "body": "<p>The most studied performance supplement in history. Creatine stores phosphate groups as phosphocreatine, regenerating ATP — the primary fuel for muscle contraction and brain function. 5g. One ingredient. Nothing else.*</p>" } },
+        "i2": { "type": "tile", "settings": { "tag": "The Standard", "name": "NSF Certified for Sport®", "source": "Third-party tested · every lot · 270+ banned substances", "body": "<p>Every single production lot independently tested for banned substances — the certification pro athletes and Olympic teams require before they'll take a supplement. Few competitor creatines bother. We do.*</p>" } }
+      },
+      "block_order": ["i1", "i2"],
+      "settings": {}
+    },
+    "facts": {
+      "type": "zeta-supplement-facts",
+      "blocks": {
+        "f1": { "type": "fact", "settings": { "name": "Creatine Monohydrate", "amount": "5 g   **", "is_main": true, "indent": false } },
+        "dir1": { "type": "direction", "settings": { "text": "<strong>1 scoop (5g) daily</strong> — dissolve in 8 oz of water or any beverage" } },
+        "dir2": { "type": "direction", "settings": { "text": "<strong>When</strong> — any time of day. Consistency beats timing" } },
+        "dir3": { "type": "direction", "settings": { "text": "<strong>No loading phase needed</strong> — steady daily dosing reaches saturation in ~3–4 weeks" } },
+        "dir4": { "type": "direction", "settings": { "text": "One canister lasts <strong>30 days</strong>" } },
+        "x1": { "type": "exclusion", "settings": { "text": "No Gluten" } },
+        "x2": { "type": "exclusion", "settings": { "text": "No Dairy" } },
+        "x3": { "type": "exclusion", "settings": { "text": "No Soy" } },
+        "x4": { "type": "exclusion", "settings": { "text": "No Artificial Colors" } },
+        "x5": { "type": "exclusion", "settings": { "text": "No Artificial Flavors" } },
+        "x6": { "type": "exclusion", "settings": { "text": "No Artificial Sweeteners" } },
+        "x7": { "type": "exclusion", "settings": { "text": "No Proprietary Blends" } },
+        "x8": { "type": "exclusion", "settings": { "text": "No Fillers" } },
+        "x9": { "type": "exclusion", "settings": { "text": "No GMOs" } },
+        "x10": { "type": "exclusion", "settings": { "text": "No Banned Substances" } }
+      },
+      "block_order": ["f1", "dir1", "dir2", "dir3", "dir4", "x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8", "x9", "x10"],
+      "settings": {}
+    },
+    "reviews": {
+      "type": "zeta-reviews",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "stars": "★★★★★", "body": "\"My deadlift jumped 20 lbs in 6 weeks. I'm 52.\"", "attribution": "Marcus T. · Verified Buyer" } },
+        "r2": { "type": "review", "settings": { "stars": "★★★★★", "body": "\"I take it for the brain story, honestly. Sharper afternoons. Less mental fatigue.\"", "attribution": "Lauren M. · Verified Buyer" } },
+        "r3": { "type": "review", "settings": { "stars": "★★★★★", "body": "\"Started with my husband. Both of us notice strength holding up between sessions.\"", "attribution": "Joanna B. · Verified Buyer" } }
+      },
+      "block_order": ["r1", "r2", "r3"],
+      "settings": {}
+    },
+    "digdeeper": {
+      "type": "zeta-accordion",
+      "blocks": {
+        "a1": { "type": "item", "settings": { "label": "Description", "open_by_default": true, "content": "<p>Creatine is the most studied performance supplement in history — and one of the few where the science actually backs the marketing. Over 700 clinical trials. Decades of consistent results.</p><p>ZETA Creatine uses pure creatine monohydrate — the gold-standard form — at the research-validated 5g daily dose. NSF Certified for Sport. Nothing hidden. Nothing extra.*</p>" } },
+        "a2": { "type": "item", "settings": { "label": "Ingredients", "open_by_default": false, "content": "<p><strong>Creatine Monohydrate — 5g per serving.</strong></p><p>Pure creatine monohydrate. No fillers, no flavors, no excipients. Every lot is independently tested for 270+ banned substances.</p>" } },
+        "a3": { "type": "item", "settings": { "label": "Directions & Precautions", "open_by_default": false, "content": "<p>Dissolve 1 scoop (about 5g) in 8 oz of water or any beverage. Consume once daily — any time of day. No loading phase required. Full saturation in approximately 3–4 weeks.</p><p>Consult your healthcare professional prior to use. Keep out of reach of children.</p>" } },
+        "a4": { "type": "item", "settings": { "label": "Research", "open_by_default": false, "content": "<p>Kreider RB et al. (2017) — ISSN position stand on creatine safety and efficacy. Prokopidis K et al. (2023) — creatine and memory meta-analysis. Xu C et al. (2024) — creatine and cognitive performance across ages 20–76.</p>" } }
+      },
+      "block_order": ["a1", "a2", "a3", "a4"],
+      "settings": {}
+    },
+    "bundle": {
+      "type": "zeta-bundle",
+      "blocks": {
+        "bp1": { "type": "product", "settings": { "name": "Zeta Creatine", "sub": "5g · ATP recharge · Brain support" } },
+        "bp2": { "type": "product", "settings": { "name": "Zeta Minos", "sub": "EAAs + L-Arginine · Strength + recovery" } }
+      },
+      "block_order": ["bp1", "bp2"],
+      "settings": {}
+    },
+    "ctaclose": {
+      "type": "zeta-cta-close",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "quote",
+    "timeline",
+    "ingredients",
+    "facts",
+    "reviews",
+    "digdeeper",
+    "bundle",
+    "ctaclose"
+  ]
+}

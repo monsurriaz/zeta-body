@@ -1,0 +1,66 @@
+{%- comment -%}
+  ZETA — Timeline (.timeline "What changes"): eyebrow + heading + 4 phase panels.
+  Panels are blocks. Styles: custom.css (.zeta-timeline).
+{%- endcomment -%}
+
+<section class="zeta zeta-timeline" {{ section.shopify_attributes }}>
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="zeta-section-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="zeta-section-h2">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="zeta-timeline__grid" style="--zeta-timeline-cols: {{ section.blocks.size }};">
+      {%- for block in section.blocks -%}
+        <div class="zeta-timeline__panel" {{ block.shopify_attributes }}>
+          {%- if block.settings.label != blank -%}
+            <div class="zeta-timeline__label">{{ block.settings.label | escape }}</div>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <div class="zeta-timeline__title">{{ block.settings.title | escape }}</div>
+          {%- endif -%}
+          {%- if block.settings.body != blank -%}
+            <div class="zeta-timeline__body">{{ block.settings.body }}</div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Timeline",
+  "tag": "section",
+  "class": "shopify-section--zeta-timeline",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What changes" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "The gym story was just the <em>beginning.</em>" }
+  ],
+  "blocks": [
+    {
+      "type": "phase",
+      "name": "Phase",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Day 1" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Stored." },
+        { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Creatine starts saturating into muscle and brain tissue. Your cells are filling their tanks.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Timeline",
+      "blocks": [
+        { "type": "phase", "settings": { "label": "Day 1", "title": "Stored.", "body": "<p>Creatine starts saturating into muscle and brain tissue. Your cells are filling their tanks. Nothing dramatic yet — but the work is already happening.*</p>" } },
+        { "type": "phase", "settings": { "label": "Week 1", "title": "Stronger.", "body": "<p>Slightly more reps in the tank. Faster recovery between sets. Your muscles have more ATP to draw from.*</p>" } },
+        { "type": "phase", "settings": { "label": "Months", "title": "Sharper.", "body": "<p>Newer studies show improved executive function — especially under sleep debt or stress. Creatine feeds both.*</p>" } },
+        { "type": "phase", "settings": { "label": "Years", "title": "Protected.", "body": "<p>Anti-sarcopenia. Neuroprotection. The muscle + brain longevity bet that decades of research keeps confirming.*</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

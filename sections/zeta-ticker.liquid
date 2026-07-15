@@ -1,0 +1,62 @@
+{%- comment -%}
+  ZETA — Ticker (.ticker): dark, infinite scrolling marquee of phrases.
+  Phrases are blocks; "highlight" renders them in bronze. Styles: custom.css (.zeta-ticker).
+{%- endcomment -%}
+
+{%- if section.blocks.size > 0 -%}
+  <section class="zeta zeta-ticker" {{ section.shopify_attributes }}>
+    <div class="zeta-ticker__inner">
+      {%- comment -%} Rendered twice for a seamless -50% loop {%- endcomment -%}
+      {%- for i in (1..2) -%}
+        {%- for block in section.blocks -%}
+          <span class="zeta-ticker__item {% if block.settings.highlight %}zeta-ticker__item--hi{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</span>
+          <span class="zeta-ticker__item zeta-ticker__dot" aria-hidden="true">·</span>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Zeta Ticker",
+  "tag": "section",
+  "class": "shopify-section--zeta-ticker",
+  "max_blocks": 20,
+  "blocks": [
+    {
+      "type": "phrase",
+      "name": "Phrase",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Health. Wealth. Youth."
+        },
+        {
+          "type": "checkbox",
+          "id": "highlight",
+          "label": "Highlight (bronze)",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Ticker",
+      "blocks": [
+        { "type": "phrase", "settings": { "text": "Stop The Drain", "highlight": true } },
+        { "type": "phrase", "settings": { "text": "Clear The Fog" } },
+        { "type": "phrase", "settings": { "text": "Health. Wealth. Youth.", "highlight": true } },
+        { "type": "phrase", "settings": { "text": "Science-Backed" } },
+        { "type": "phrase", "settings": { "text": "Look. Feel. Perform.", "highlight": true } },
+        { "type": "phrase", "settings": { "text": "Built in Miami" } },
+        { "type": "phrase", "settings": { "text": "No Compromises", "highlight": true } },
+        { "type": "phrase", "settings": { "text": "Protect Your Power" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

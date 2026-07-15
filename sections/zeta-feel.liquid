@@ -1,0 +1,86 @@
+{%- comment -%}
+  ZETA — Feel (#feel): centered header + two divided columns (feel vs measure).
+  Columns are blocks. Product tags = comma-separated; a tag matching "Active tag" is highlighted.
+  Styles: custom.css (.zeta-feel).
+{%- endcomment -%}
+
+<section class="zeta zeta-feel" {{ section.shopify_attributes }}>
+  <div class="zeta-feel__header">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="zeta-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="zeta-feel__h2">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.intro != blank -%}
+      <div class="zeta-feel__intro">{{ section.settings.intro }}</div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="zeta-feel__cols" style="--zeta-feel-cols: {{ section.blocks.size }};">
+      {%- for block in section.blocks -%}
+        <div class="zeta-feel__col" {{ block.shopify_attributes }}>
+          {%- if block.settings.tag != blank -%}
+            <span class="zeta-feel__col-tag">{{ block.settings.tag | escape }}</span>
+          {%- endif -%}
+          {%- if block.settings.heading != blank -%}
+            <h3 class="zeta-feel__col-h3">{{ block.settings.heading | escape }}</h3>
+          {%- endif -%}
+          {%- if block.settings.body != blank -%}
+            <div class="zeta-feel__col-body">{{ block.settings.body }}</div>
+          {%- endif -%}
+          {%- if block.settings.tags != blank -%}
+            {%- assign active = block.settings.active_tag | strip | downcase -%}
+            <div class="zeta-feel__tags">
+              {%- assign tag_items = block.settings.tags | split: ',' -%}
+              {%- for t in tag_items -%}
+                {%- assign t_clean = t | strip -%}
+                {%- assign t_lower = t_clean | downcase -%}
+                {%- if t_clean != blank -%}
+                  <span class="zeta-feel__tag {% if t_lower == active %}zeta-feel__tag--active{% endif %}">{{ t_clean | escape }}</span>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Feel Columns",
+  "tag": "section",
+  "class": "shopify-section--zeta-feel",
+  "max_blocks": 3,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How ZETA Works" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "There's what you <em>feel.</em> And what's quietly working underneath." },
+    { "type": "richtext", "id": "intro", "label": "Intro", "default": "<p>Not all progress announces itself. Here's how ZETA works — and which products belong where in your stack.</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        { "type": "text", "id": "tag", "label": "Tag", "default": "You'll Feel It" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "The Flagship. Brain First." },
+        { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Z-83 is what ZETA is built around. You'll notice it working. Clean, sustained, no crash.</p>" },
+        { "type": "text", "id": "tags", "label": "Product tags", "info": "Comma-separated.", "default": "Z-83™ — Flagship" },
+        { "type": "text", "id": "active_tag", "label": "Highlighted tag", "info": "Tag text to show as active (teal).", "default": "Z-83™ — Flagship" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Feel Columns",
+      "blocks": [
+        { "type": "column", "settings": { "tag": "You'll Feel It", "heading": "The Flagship. Brain First.", "body": "<p>Z-83 is what ZETA is built around. It was designed to stop the daily drain on your brain — the fog, the flat energy, the mood that drags. You'll notice it working. Clean, sustained, no crash.</p>", "tags": "Z-83™ — Flagship", "active_tag": "Z-83™ — Flagship" } },
+        { "type": "column", "settings": { "tag": "You'll Measure It", "heading": "Biomarkers. Longevity. The Long Game.", "body": "<p>The rest of the lineup works at a deeper level — supporting what your bloodwork, your energy reserves, and your future self will show over time. These are the formulas you take because the compound interest is worth it.</p>", "tags": "Longevity, Multi, D+K, Creatine, DHEA, Minos", "active_tag": "" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
