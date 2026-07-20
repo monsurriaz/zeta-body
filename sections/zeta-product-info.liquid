@@ -107,6 +107,9 @@
       {%- for block in section.blocks -%}
         {%- capture block_html -%}
         {%- case block.type -%}
+          {%- when '@app' -%}
+            {%- render block -%}
+            
           {%- when 'banner' -%}
             <div class="zeta-pdp__banner" {{ block.shopify_attributes }}>
               <span class="zeta-pdp__banner-name">{{ block.settings.name | default: product.title | escape }}</span>
@@ -384,6 +387,9 @@
     { "type": "checkbox", "id": "show_thumbnails_mobile", "label": "Show thumbnails (mobile)", "default": true }
   ],
   "blocks": [
+    {
+      "type": "@app"
+    },
     {
       "type": "banner",
       "name": "Product banner",

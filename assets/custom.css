@@ -1731,6 +1731,10 @@
   min-height: 88vh;
   background: var(--zeta-surface);
 }
+/* Let both grid tracks shrink below their content so nowrap text can't force
+   the column wider than the viewport (mobile horizontal-overflow fix). */
+.zeta-pdp__media,
+.zeta-pdp__info { min-width: 0; }
 .zeta-pdp__media {
   position: relative;
   background: #121f2e;
@@ -1930,6 +1934,8 @@
   .zeta-pdp__grid { grid-template-columns: 1fr; min-height: 0; }
   .zeta-pdp__media { min-height: 320px; }
   .zeta-pdp__info { padding: 40px 24px; }
+  /* Allow the (desktop-nowrap) option subline to wrap so it can't spill past the screen */
+  .zeta-pdp__option-sub { white-space: normal; }
 }
 
 /* ── Product media slider (custom <zeta-gallery>): main + arrows, thumbnails + arrows ── */

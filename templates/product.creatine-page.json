@@ -88,7 +88,7 @@
         "column_alignment": "sticky",
         "media_badge": "NSF Certified for Sport",
         "main_media_ratio": "portrait",
-        "main_media_fit": "contain",
+        "main_media_fit": "cover",
         "thumbnails_per_row": 5,
         "show_thumbnails": false,
         "show_thumbnails_mobile": true
