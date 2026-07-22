@@ -30,7 +30,7 @@
           <span></span><span>{{ section.settings.amount_header | default: 'Amount Per Serving   % DV' | escape }}</span>
         </div>
         {%- for block in facts -%}
-          <div class="zeta-facts__row {% if block.settings.is_main %}zeta-facts__row--main{% endif %} {% if block.settings.indent %}zeta-facts__row--indent{% endif %}" {{ block.shopify_attributes }}>
+          <div class="zeta-facts__row {% if block.settings.is_main %}zeta-facts__row--main{% endif %} {% if block.settings.bold %}zeta-facts__row--bold{% endif %} {% if block.settings.indent %}zeta-facts__row--indent{% endif %}" {{ block.shopify_attributes }}>
             <span>{{ block.settings.name | escape }}</span>
             <span>{{ block.settings.amount | escape }}</span>
           </div>
@@ -102,6 +102,7 @@
         { "type": "text", "id": "name", "label": "Name", "default": "Creatine Monohydrate" },
         { "type": "text", "id": "amount", "label": "Amount", "default": "5 g   **" },
         { "type": "checkbox", "id": "is_main", "label": "Emphasized row", "default": false },
+        { "type": "checkbox", "id": "bold", "label": "Bold row", "default": false },
         { "type": "checkbox", "id": "indent", "label": "Indented (sub-component)", "default": false }
       ]
     },

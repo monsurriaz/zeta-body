@@ -3,12 +3,15 @@
   Panels are blocks. Styles: custom.css (.zeta-timeline).
 {%- endcomment -%}
 
-<section class="zeta zeta-timeline" {{ section.shopify_attributes }}>
+<section class="zeta zeta-timeline zeta-timeline--border-{{ section.settings.border_style | default: 'separator' }}" {{ section.shopify_attributes }}>
   {%- if section.settings.eyebrow != blank -%}
     <p class="zeta-section-eyebrow">{{ section.settings.eyebrow | escape }}</p>
   {%- endif -%}
   {%- if section.settings.heading != blank -%}
     <h2 class="zeta-section-h2">{{ section.settings.heading | newline_to_br }}</h2>
+  {%- endif -%}
+  {%- if section.settings.subtitle != blank -%}
+    <div class="zeta-timeline__intro">{{ section.settings.subtitle }}</div>
   {%- endif -%}
 
   {%- if section.blocks.size > 0 -%}
@@ -38,7 +41,19 @@
   "max_blocks": 6,
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What changes" },
-    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "The gym story\nwas just the <em>beginning.</em>" }
+    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "The gym story\nwas just the <em>beginning.</em>" },
+    { "type": "richtext", "id": "subtitle", "label": "Subtitle", "info": "Optional intro paragraph shown under the heading." },
+    {
+      "type": "select",
+      "id": "border_style",
+      "label": "Panel divider",
+      "info": "Vertical separator: lines between columns. Top border: a rule across the top of each panel.",
+      "options": [
+        { "value": "separator", "label": "Vertical separator" },
+        { "value": "top", "label": "Top border" }
+      ],
+      "default": "separator"
+    }
   ],
   "blocks": [
     {

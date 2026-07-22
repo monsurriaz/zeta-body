@@ -29,7 +29,7 @@
   {%- endunless -%}
 </style>
 
-<section class="zeta zeta-pdp zeta-pdp--{{ section.settings.column_alignment | default: 'straight' }}" {{ section.shopify_attributes }}>
+<section class="zeta zeta-pdp zeta-pdp--{{ section.settings.column_alignment | default: 'straight' }} zeta-pdp--media-{{ section.settings.media_align | default: 'top' }}" {{ section.shopify_attributes }}>
   <product-rerender id="zeta-pdp-{{ product.id }}-{{ section.id }}" observe-form="{{ product_form_id }}" allow-partial-rerender class="zeta-pdp__grid">
     {%- comment -%} ---------- MEDIA (left) ---------- {%- endcomment -%}
     <div class="zeta-pdp__media">
@@ -240,29 +240,31 @@
                 {%- endif -%}
               {%- endform -%}
 
-              {%- if block.settings.bundle_product != blank and block.settings.secondary_label != blank -%}
-                {%- assign bundle_variant = block.settings.bundle_product.selected_or_first_available_variant -%}
-                <zeta-bundle-add
-                  class="zeta-pdp__bundle"
-                  form="{{ product_form_id }}"
-                  data-bundle-id="{{ bundle_variant.id }}"
-                  data-bundle-qty="{{ block.settings.bundle_quantity | default: 1 }}"
-                >
-                  <button
-                    type="button"
-                    class="zeta-pdp__atc-secondary"
-                    data-bundle-button
-                    {% unless bundle_variant.available %}disabled{% endunless %}
+              {%- if block.settings.secondary_label != blank -%}
+                {%- if block.settings.bundle_product != blank -%}
+                  {%- assign bundle_variant = block.settings.bundle_product.selected_or_first_available_variant -%}
+                  <zeta-bundle-add
+                    class="zeta-pdp__bundle"
+                    form="{{ product_form_id }}"
+                    data-bundle-id="{{ bundle_variant.id }}"
+                    data-bundle-qty="{{ block.settings.bundle_quantity | default: 1 }}"
                   >
-                    {%- if bundle_variant.available -%}
-                      {{ block.settings.secondary_label | escape }}
-                    {%- else -%}
-                      {{ 'product.general.sold_out_button' | t }}
-                    {%- endif -%}
-                  </button>
-                </zeta-bundle-add>
-              {%- elsif block.settings.secondary_label != blank and block.settings.secondary_link != blank -%}
-                <a href="{{ block.settings.secondary_link }}" class="zeta-pdp__atc-secondary">{{ block.settings.secondary_label | escape }}</a>
+                    <button
+                      type="button"
+                      class="zeta-pdp__atc-secondary"
+                      data-bundle-button
+                      {% unless bundle_variant.available %}disabled{% endunless %}
+                    >
+                      {%- if bundle_variant.available -%}
+                        {{ block.settings.secondary_label | escape }}
+                      {%- else -%}
+                        {{ 'product.general.sold_out_button' | t }}
+                      {%- endif -%}
+                    </button>
+                  </zeta-bundle-add>
+                {%- else -%}
+                  <a href="{{ block.settings.secondary_link | default: '#' }}" class="zeta-pdp__atc-secondary">{{ block.settings.secondary_label | escape }}</a>
+                {%- endif -%}
               {%- endif -%}
             </div>
 
@@ -541,6 +543,17 @@
         { "value": "sticky", "label": "Sticky" }
       ],
       "default": "straight"
+    },
+    {
+      "type": "select",
+      "id": "media_align",
+      "label": "Media vertical position",
+      "info": "Top: gallery fills from the top of its column. Middle: gallery floats at natural height, vertically centered, with a gap on its outer (left) edge.",
+      "options": [
+        { "value": "top", "label": "Top" },
+        { "value": "middle", "label": "Middle" }
+      ],
+      "default": "top"
     },
     { "type": "header", "content": "Media gallery" },
     { "type": "text", "id": "media_badge", "label": "Media badge", "info": "Shown top-right over the gallery. Leave blank to hide.", "default": "NSF Certified for Sport" },

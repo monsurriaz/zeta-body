@@ -62,7 +62,7 @@
 
   /* ── Layout ── */
   --zeta-gutter: max(24px, calc((100vw - 1280px) / 2 + 80px));
-  --zeta-accordion-icon-size: 25px; /* accordion trigger padding-left (plus icon) */
+  --zeta-accordion-icon-size: 24px; /* accordion +/- icon box (d-k) */
 }
 
 /* ──────────────────────────────────────────────────────────────────────────

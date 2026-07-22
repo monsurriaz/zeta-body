@@ -3,7 +3,7 @@
   Tiles are blocks. Styles: custom.css (.zeta-ingredients).
 {%- endcomment -%}
 
-<section class="zeta zeta-ingredients" {{ section.shopify_attributes }}>
+<section class="zeta zeta-ingredients" style="background-color: {{ section.settings.section_bg }};" {{ section.shopify_attributes }}>
   <div class="zeta-ingredients__header">
     {%- if section.settings.eyebrow != blank -%}
       <p class="zeta-section-eyebrow">{{ section.settings.eyebrow | escape }}</p>
@@ -11,12 +11,18 @@
     {%- if section.settings.heading != blank -%}
       <h2 class="zeta-section-h2 zeta-section-h2--flush">{{ section.settings.heading | newline_to_br }}</h2>
     {%- endif -%}
+    {%- if section.settings.subtitle != blank -%}
+      <div class="zeta-ingredients__intro">{{ section.settings.subtitle }}</div>
+    {%- endif -%}
   </div>
 
   {%- if section.blocks.size > 0 -%}
     <div class="zeta-ingredients__grid">
       {%- for block in section.blocks -%}
         <div class="zeta-ingredients__tile" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != blank -%}
+            <div class="zeta-ingredients__icon">{{ block.settings.icon }}</div>
+          {%- endif -%}
           {%- if block.settings.tag != blank -%}
             <span class="zeta-ingredients__tag">{{ block.settings.tag | escape }}</span>
           {%- endif -%}
@@ -28,6 +34,9 @@
           {%- endif -%}
           {%- if block.settings.body != blank -%}
             <div class="zeta-ingredients__body">{{ block.settings.body }}</div>
+          {%- endif -%}
+          {%- if block.settings.nick != blank -%}
+            <div class="zeta-ingredients__nick">{{ block.settings.nick }}</div>
           {%- endif -%}
         </div>
       {%- endfor -%}
@@ -42,18 +51,22 @@
   "class": "shopify-section--zeta-ingredients",
   "max_blocks": 4,
   "settings": [
+    { "type": "color", "id": "section_bg", "label": "Section background", "default": "#F4F4F5" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What's inside" },
-    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "One ingredient.\n<em>~700 clinical trials</em> behind it." }
+    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "One ingredient.\n<em>~700 clinical trials</em> behind it." },
+    { "type": "richtext", "id": "subtitle", "label": "Subtitle", "info": "Optional intro paragraph shown under the heading." }
   ],
   "blocks": [
     {
       "type": "tile",
       "name": "Ingredient tile",
       "settings": [
+        { "type": "textarea", "id": "icon", "label": "Icon (SVG code)", "info": "Paste inline <svg> markup. Optional." },
         { "type": "text", "id": "tag", "label": "Tag", "info": "Optional bronze label." },
         { "type": "inline_richtext", "id": "name", "label": "Name", "default": "Creatine Monohydrate" },
         { "type": "text", "id": "source", "label": "Source line", "default": "5g per serving · pure · extensively studied" },
-        { "type": "richtext", "id": "body", "label": "Body", "default": "<p>The most studied performance supplement in history. 5g. One ingredient. Nothing else.*</p>" }
+        { "type": "richtext", "id": "body", "label": "Body", "default": "<p>The most studied performance supplement in history. 5g. One ingredient. Nothing else.*</p>" },
+        { "type": "inline_richtext", "id": "nick", "label": "Closing line", "info": "Italic teal tagline under the body. Optional." }
       ]
     }
   ],

@@ -1,22 +1,23 @@
 {%- comment -%}
-  ZETA — Bundle (.bundle "Workout Stack"): centered promo, product tiles + CTA.
+  ZETA — Bundle (.bundle "Workout Stack").
+  Two layouts (section setting):
+    • row  — centered promo (default, matches Creatine): eyebrow, heading, discount, body, product tiles, CTA.
+    • box  — split panel (d-k): product art on the left, copy + CTA on the right.
+  "Buy the stack" adds the MAIN product (with the customer's exact buy-box choice — variant,
+  quantity, one-time / subscribe) TOGETHER with a merchant-picked add-on product (first available
+  variant, plus its first subscription option if it has one) in a single /cart/add.js request.
   Product tiles are blocks (a "+" is inserted between them). Styles: custom.css (.zeta-bundle).
 {%- endcomment -%}
 
-<section class="zeta zeta-bundle" {{ section.shopify_attributes }}>
-  {%- if section.settings.eyebrow != blank -%}
-    <p class="zeta-bundle__eyebrow">{{ section.settings.eyebrow | escape }}</p>
-  {%- endif -%}
-  {%- if section.settings.heading != blank -%}
-    <h2 class="zeta-bundle__h2">{{ section.settings.heading }}</h2>
-  {%- endif -%}
-  {%- if section.settings.discount != blank -%}
-    <span class="zeta-bundle__discount">{{ section.settings.discount | escape }}</span>
-  {%- endif -%}
-  {%- if section.settings.body != blank -%}
-    <div class="zeta-bundle__body">{{ section.settings.body }}</div>
-  {%- endif -%}
+{%- assign addon = section.settings.addon_product -%}
+{%- assign addon_variant = addon.selected_or_first_available_variant -%}
+{%- assign addon_plan = '' -%}
+{%- if addon != blank and addon_variant.selling_plan_allocations.size > 0 -%}
+  {%- assign addon_plan = addon_variant.selling_plan_allocations.first.selling_plan.id -%}
+{%- endif -%}
 
+{%- comment -%} ---------- Product tiles (shared by both layouts) ---------- {%- endcomment -%}
+{%- capture products_html -%}
   {%- if section.blocks.size > 0 -%}
     <div class="zeta-bundle__products">
       {%- for block in section.blocks -%}
@@ -34,11 +35,179 @@
       {%- endfor -%}
     </div>
   {%- endif -%}
+{%- endcapture -%}
 
+{%- comment -%} ---------- CTA (shared by both layouts) ---------- {%- endcomment -%}
+{%- capture button_html -%}
   {%- if section.settings.button_text != blank -%}
-    <a href="{{ section.settings.button_link | default: '#' }}" class="zeta-bundle__btn">{{ section.settings.button_text | escape }}</a>
+    {%- if addon != blank and addon_variant.available -%}
+      <zeta-stack-add
+        class="zeta-bundle__add"
+        data-main-product="{{ product.id }}"
+        data-addon-id="{{ addon_variant.id }}"
+        data-addon-qty="1"
+        {% if addon_plan != blank %}data-addon-plan="{{ addon_plan }}"{% endif %}
+      >
+        <button type="button" class="zeta-bundle__btn" data-stack-button>{{ section.settings.button_text | escape }}</button>
+      </zeta-stack-add>
+    {%- else -%}
+      <a href="{{ section.settings.button_link | default: '#' }}" class="zeta-bundle__btn">{{ section.settings.button_text | escape }}</a>
+    {%- endif -%}
   {%- endif -%}
-</section>
+{%- endcapture -%}
+
+{%- if section.settings.layout == 'box' -%}
+  <section class="zeta zeta-bundle zeta-bundle--box" {{ section.shopify_attributes }}>
+    <div class="zeta-bundle__inner">
+      <div class="zeta-bundle__art">{{ products_html }}</div>
+      <div class="zeta-bundle__content">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="zeta-bundle__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.discount != blank -%}
+          <span class="zeta-bundle__discount">{{ section.settings.discount | escape }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="zeta-bundle__h2">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.body != blank -%}
+          <div class="zeta-bundle__body">{{ section.settings.body }}</div>
+        {%- endif -%}
+        {{ button_html }}
+      </div>
+    </div>
+  </section>
+{%- else -%}
+  <section class="zeta zeta-bundle zeta-bundle--row" {{ section.shopify_attributes }}>
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="zeta-bundle__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="zeta-bundle__h2">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.discount != blank -%}
+      <span class="zeta-bundle__discount">{{ section.settings.discount | escape }}</span>
+    {%- endif -%}
+    {%- if section.settings.body != blank -%}
+      <div class="zeta-bundle__body">{{ section.settings.body }}</div>
+    {%- endif -%}
+    {{ products_html }}
+    {{ button_html }}
+  </section>
+{%- endif -%}
+
+<script>
+  (() => {
+    if (window.customElements.get('zeta-stack-add')) return;
+
+    /* Adds the MAIN product (read straight from the on-page product form — the buy box —
+       so it respects the customer's variant / quantity / one-time-or-subscribe choice)
+       TOGETHER with the merchant-picked add-on product, in one /cart/add.js request.
+       Reuses Impact's own cart events so the cart drawer opens & repaints. */
+    class ZetaStackAdd extends HTMLElement {
+      connectedCallback() {
+        this.button = this.querySelector('[data-stack-button]');
+        if (!this.button || this._bound) return;
+        this._bound = true;
+        this.button.addEventListener('click', (e) => { e.preventDefault(); this.add(); });
+      }
+
+      /* The main product's buy-box form. Prefer the form for THIS product; fall back to
+         the first product form on the page. */
+      get mainForm() {
+        const pid = this.getAttribute('data-main-product');
+        if (pid) {
+          const scoped = document.querySelector('form[is="product-form"][id^="product-form-' + pid + '-"]');
+          if (scoped) return scoped;
+        }
+        return document.querySelector('form[is="product-form"]');
+      }
+
+      mainItem() {
+        const form = this.mainForm;
+        if (!form) return null;
+        const fd = new FormData(form);
+        const id = fd.get('id');
+        if (!id) return null;
+        const item = { id: id, quantity: parseInt(fd.get('quantity'), 10) || 1 };
+        const plan = fd.get('selling_plan');
+        if (plan) item.selling_plan = plan;
+        const props = {};
+        let hasProps = false;
+        for (const [key, value] of fd.entries()) {
+          const m = key.match(/^properties\[(.+)\]$/);
+          if (m) { props[m[1]] = value; hasProps = true; }
+        }
+        if (hasProps) item.properties = props;
+        return item;
+      }
+
+      async add() {
+        const addonId = this.getAttribute('data-addon-id');
+        if (!addonId) return;
+
+        const items = [];
+        const main = this.mainItem();
+        if (main) items.push(main);
+
+        const addon = { id: addonId, quantity: parseInt(this.getAttribute('data-addon-qty'), 10) || 1 };
+        const addonPlan = this.getAttribute('data-addon-plan');
+        if (addonPlan) addon.selling_plan = addonPlan;
+        items.push(addon);
+
+        const root = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
+
+        const sections = ['variant-added'];
+        document.documentElement.dispatchEvent(
+          new CustomEvent('cart:prepare-bundled-sections', { bubbles: true, detail: { sections } })
+        );
+
+        this.button.setAttribute('aria-busy', 'true');
+        this.button.disabled = true;
+
+        try {
+          const response = await fetch(`${root}cart/add.js`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+            body: JSON.stringify({ items: items, sections: sections.join(','), sections_url: window.location.pathname })
+          });
+          const responseJson = await response.json();
+
+          if (response.ok) {
+            const vars = window.themeVariables && window.themeVariables.settings;
+            if (vars && (vars.cartType === 'page' || vars.pageType === 'cart')) {
+              window.location.href = `${root}cart`;
+              return;
+            }
+            const cartContent = await (await fetch(`${root}cart.js`)).json();
+            cartContent['sections'] = responseJson['sections'];
+            const form = this.mainForm;
+            (form || document.documentElement).dispatchEvent(
+              new CustomEvent('variant:add', {
+                bubbles: true,
+                detail: { items: responseJson.hasOwnProperty('items') ? responseJson['items'] : [responseJson], cart: cartContent }
+              })
+            );
+            document.documentElement.dispatchEvent(
+              new CustomEvent('cart:change', { bubbles: true, detail: { baseEvent: 'variant:add', cart: cartContent } })
+            );
+          } else {
+            (this.mainForm || document.documentElement).dispatchEvent(
+              new CustomEvent('cart:error', { bubbles: true, detail: { error: responseJson['description'] } })
+            );
+            document.dispatchEvent(new CustomEvent('cart:refresh'));
+          }
+        } catch (err) {
+          document.dispatchEvent(new CustomEvent('cart:refresh'));
+        } finally {
+          this.button.removeAttribute('aria-busy');
+          this.button.disabled = false;
+        }
+      }
+    }
+    window.customElements.define('zeta-stack-add', ZetaStackAdd);
+  })();
+</script>
 
 {% schema %}
 {
@@ -47,13 +216,25 @@
   "class": "shopify-section--zeta-bundle",
   "max_blocks": 4,
   "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Section layout",
+      "info": "Centered row: stacked, centered promo. Split box: product art on the left, copy + CTA on the right.",
+      "options": [
+        { "value": "row", "label": "Centered row" },
+        { "value": "box", "label": "Split box" }
+      ],
+      "default": "row"
+    },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Stack It" },
     { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "The <em>Workout</em> Stack." },
     { "type": "text", "id": "discount", "label": "Discount badge", "default": "Save 10% when bundled" },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>CREATINE + MINOS = the ATP recharge and the amino acid engine, working together. The two supplements that do the actual work inside the gym — and beyond.*</p>" },
-    { "type": "header", "content": "Button" },
+    { "type": "header", "content": "Add to cart" },
+    { "type": "product", "id": "addon_product", "label": "Add-on product", "info": "The second product added alongside the main product when the button is clicked. The main product uses the customer's variant / subscription choice from the buy box; the add-on uses its first available variant (plus its first subscription option, if it has one). To show the savings, create an automatic discount in Shopify Admin for this combination. Leave blank to make the button a normal link." },
     { "type": "text", "id": "button_text", "label": "Button label", "default": "BUY THE WORKOUT STACK" },
-    { "type": "url", "id": "button_link", "label": "Button link" }
+    { "type": "url", "id": "button_link", "label": "Button link", "info": "Used only when no add-on product is selected." }
   ],
   "blocks": [
     {

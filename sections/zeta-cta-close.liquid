@@ -8,7 +8,10 @@
     <p class="zeta-cta-close__tagline">{{ section.settings.tagline | escape }}</p>
   {%- endif -%}
   {%- if section.settings.heading != blank -%}
-    <p class="zeta-cta-close__h2">{{ section.settings.heading }}</p>
+    <p class="zeta-cta-close__h2">{{ section.settings.heading | newline_to_br }}</p>
+  {%- endif -%}
+  {%- if section.settings.promise != blank -%}
+    <p class="zeta-cta-close__promise">{{ section.settings.promise }}</p>
   {%- endif -%}
   {%- if section.settings.button_1_text != blank or section.settings.button_2_text != blank -%}
     <div class="zeta-cta-close__actions">
@@ -29,7 +32,8 @@
   "class": "shopify-section--zeta-cta-close",
   "settings": [
     { "type": "text", "id": "tagline", "label": "Tagline", "default": "Take what we take." },
-    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Strength. Brain. Everyday." },
+    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "Strength. Brain. Everyday." },
+    { "type": "inline_richtext", "id": "promise", "label": "Promise line", "info": "Optional italic line shown under the heading." },
     { "type": "header", "content": "Buttons" },
     { "type": "text", "id": "button_1_text", "label": "Button 1 label", "default": "BUY ZETA CREATINE" },
     { "type": "url", "id": "button_1_link", "label": "Button 1 link" },
