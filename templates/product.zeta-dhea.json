@@ -1,0 +1,435 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "zeta-product-info",
+      "blocks": {
+        "banner": {
+          "type": "banner",
+          "settings": {
+            "name": "Zeta DHEA",
+            "sub": "Hormone Precursor"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "The youth hormone,\n<em>replenished.</em>"
+          }
+        },
+        "lede": {
+          "type": "lede",
+          "settings": {
+            "text": "<p>DHEA peaks in your 20s and drops about 2% every year after. ZETA DHEA brings the reservoir back — bioactive micronized form, the dose your body actually absorbs.</p>"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "stars": "★★★★★",
+            "label": "4.9 · early reviews"
+          }
+        },
+        "subscription": {
+          "type": "subscription",
+          "settings": {
+            "onetime_label": "One bottle, this time",
+            "onetime_sub": "60 micronized capsules · 30-day supply",
+            "subscribe_label": "Subscribe & Save",
+            "subscribe_sub": "Free shipping · Pause or cancel any time",
+            "frequency_label": "Delivery every"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "button_label": "BUY ZETA DHEA",
+            "show_payment_button": false,
+            "secondary_label": "PAIR WITH ZETA D+K · SAVE 10%",
+            "bundle_product": "",
+            "bundle_quantity": 1,
+            "secondary_link": ""
+          }
+        },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {
+            "badges": "Micronized · absorbable\n25 mg micronized\ncGMP\nAdults 18+"
+          }
+        }
+      },
+      "block_order": [
+        "banner",
+        "heading",
+        "lede",
+        "rating",
+        "subscription",
+        "variant_picker",
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg",
+        "buy_buttons",
+        "trust_badges"
+      ],
+      "settings": {
+        "column_alignment": "normal",
+        "media_align": "middle",
+        "media_badge": "Hormone · Daily",
+        "main_media_ratio": "portrait",
+        "main_media_fit": "cover",
+        "thumbnails_per_row": 5,
+        "thumbnail_position": "inside",
+        "show_thumbnails": false,
+        "show_thumbnails_mobile": false
+      }
+    },
+    "quote": {
+      "type": "zeta-pull-quote",
+      "settings": {
+        "quote": "\"By 70, your body's making 10–20% of the DHEA it made at 25. <em>Replenishing it is one of the highest-leverage longevity moves we have.</em>\"",
+        "attribution": "Dr. David Karli · ZETA science partner"
+      }
+    },
+    "timeline": {
+      "type": "zeta-timeline",
+      "blocks": {
+        "w1": {
+          "type": "phase",
+          "settings": {
+            "label": "Week 1–2",
+            "title": "Reservoir refills.",
+            "body": "<p>Serum DHEA and DHEA-S start rising — research shows restoration to early-adult levels within 2 weeks at standard doses.</p>"
+          }
+        },
+        "m1": {
+          "type": "phase",
+          "settings": {
+            "label": "1 month",
+            "title": "Mood, energy.",
+            "body": "<p>A quiet lift. Less 3pm fatigue. Better recovery from exercise. Steadier emotional baseline.</p>"
+          }
+        },
+        "m3": {
+          "type": "phase",
+          "settings": {
+            "label": "3 months",
+            "title": "The hormones do the work.",
+            "body": "<p>IGF-1 climbing. Lean mass and strength shifting (especially in men). Skin and hair noticing.</p>"
+          }
+        },
+        "y1": {
+          "type": "phase",
+          "settings": {
+            "label": "A year+",
+            "title": "Younger biomarkers.",
+            "body": "<p>The long-game payoff: hormonal balance, body composition, the resilience of an ecosystem that's no longer running on empty.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "m1",
+        "m3",
+        "y1"
+      ],
+      "settings": {
+        "eyebrow": "What you'll feel",
+        "heading": "Two weeks to <em>baseline</em>.\nThe rest is the long game.",
+        "subtitle": "<p>DHEA is one of the rare supplements where the science shows a measurable biomarker shift in the first two weeks — and a quiet felt improvement in the weeks that follow.</p>",
+        "border_style": "top"
+      }
+    },
+    "ingredients": {
+      "type": "zeta-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "tile",
+          "settings": {
+            "icon": "<svg class=\"ingredient-icon\" viewBox=\"0 0 60 60\"><circle cx=\"30\" cy=\"30\" r=\"18\" fill=\"none\" stroke=\"#006E73\" stroke-width=\"1.5\"/><circle cx=\"30\" cy=\"30\" r=\"9\" fill=\"#006E73\" opacity=\"0.3\"/><text x=\"30\" y=\"35\" text-anchor=\"middle\" font-family=\"Cormorant Garamond\" font-size=\"14\" fill=\"#006E73\" font-weight=\"500\">DHEA</text></svg>",
+            "label": "Made by your adrenals",
+            "label_color": "teal",
+            "name": "DHEA",
+            "source": "Dehydroepiandrosterone · 25 mg",
+            "body": "<p>The most abundant circulating steroid hormone in the human body — and the one that declines fastest with age. Peaks between 20 and 30. Drops ~2% every year after. By 70, you're at 10–20% of your peak. Your body converts DHEA into testosterone, estrogen, and other hormones <em>as needed</em> — the raw material, not the finished signal.</p>",
+            "nick": "The reservoir."
+          }
+        },
+        "i2": {
+          "type": "tile",
+          "settings": {
+            "icon": "<svg class=\"ingredient-icon\" viewBox=\"0 0 60 60\"><path d=\"M14 30 Q22 22 30 30 Q38 38 46 30\" fill=\"none\" stroke=\"#B89968\" stroke-width=\"1.5\"/><circle cx=\"20\" cy=\"30\" r=\"2.5\" fill=\"#B89968\"/><circle cx=\"30\" cy=\"30\" r=\"2.5\" fill=\"#B89968\"/><circle cx=\"40\" cy=\"30\" r=\"2.5\" fill=\"#B89968\"/></svg>",
+            "corner_tag": "The Differentiator",
+            "label": "Why we chose micronized",
+            "label_color": "bronze",
+            "name": "Micronized",
+            "source": "Smaller particles · better absorbed",
+            "body": "<p>Standard DHEA is poorly absorbed — most of what you swallow never makes it into circulation. Micronization reduces particle size dramatically, increasing surface area and bioavailability. So the 25 mg on the label is actually doing the work the 25 mg promises. Accuracy, not optimization theater.</p>",
+            "nick": "The dose your body actually uses."
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2"
+      ],
+      "settings": {
+        "section_bg": "#EFE9DC",
+        "eyebrow": "The hormone story",
+        "heading": "One hormone. <em>Most others depend on it.</em>",
+        "subtitle": "<p>DHEA isn't a hormone you take to feel a buzz. It's the <em>precursor</em> — the raw material your body converts into androgens, estrogens, and the other hormones that govern energy, mood, lean mass, libido, recovery, and how young you stay. ZETA DHEA refills the reservoir so your body has the inputs it had at 25.</p>"
+      }
+    },
+    "facts": {
+      "type": "zeta-supplement-facts",
+      "blocks": {
+        "f1": {
+          "type": "fact",
+          "settings": {
+            "name": "Micronized DHEA (dehydroepiandrosterone)",
+            "amount": "25 mg **",
+            "is_main": false,
+            "bold": true,
+            "indent": false
+          }
+        },
+        "f2": {
+          "type": "fact",
+          "settings": {
+            "name": "Calcium (as dicalcium phosphate dihydrate)",
+            "amount": "40 mg 4%",
+            "is_main": false,
+            "bold": false,
+            "indent": false
+          }
+        },
+        "dir1": {
+          "type": "direction",
+          "settings": {
+            "text": "Take <strong>1 capsule twice daily</strong> — or as directed by your healthcare professional"
+          }
+        },
+        "dir2": {
+          "type": "direction",
+          "settings": {
+            "text": "<strong>Best timing:</strong> morning and early afternoon. Avoid evening doses — DHEA can be mildly stimulating."
+          }
+        },
+        "dir3": {
+          "type": "direction",
+          "settings": {
+            "text": "60 capsules per bottle — <strong>30-day supply</strong>"
+          }
+        },
+        "x1": { "type": "exclusion", "settings": { "text": "Wheat & gluten" } },
+        "x2": { "type": "exclusion", "settings": { "text": "Yeast" } },
+        "x3": { "type": "exclusion", "settings": { "text": "Soy" } },
+        "x4": { "type": "exclusion", "settings": { "text": "Animal & dairy products" } },
+        "x5": { "type": "exclusion", "settings": { "text": "Fish & shellfish" } },
+        "x6": { "type": "exclusion", "settings": { "text": "Peanuts & tree nuts" } },
+        "x7": { "type": "exclusion", "settings": { "text": "Egg" } },
+        "x8": { "type": "exclusion", "settings": { "text": "Sesame" } },
+        "x9": { "type": "exclusion", "settings": { "text": "GMOs" } },
+        "x10": { "type": "exclusion", "settings": { "text": "Artificial colors" } },
+        "x11": { "type": "exclusion", "settings": { "text": "Artificial sweeteners" } }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "dir1",
+        "dir2",
+        "dir3",
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "x5",
+        "x6",
+        "x7",
+        "x8",
+        "x9",
+        "x10",
+        "x11"
+      ],
+      "settings": {
+        "eyebrow": "What's in the capsule",
+        "heading": "Two ingredients. <em>Zero noise.</em>",
+        "facts_title": "Supplement Facts",
+        "serving_line": "Serving Size: 1 Capsule · Servings Per Container: 60",
+        "amount_header": "Amount Per Serving   % Daily Value",
+        "facts_note": "** Daily Value not established.\nOther ingredients: Microcrystalline cellulose, croscarmellose sodium, ascorbyl palmitate, hydroxypropyl cellulose, silica, and coating (hydroxypropyl methylcellulose and medium-chain triglycerides).",
+        "how_to_label": "How to take it",
+        "exclude_heading": "Formulated with a <em>lot of NOs.</em>",
+        "exclude_sub": "What's not in it matters as much as what is.",
+        "warning_heading": "⚠ Important — read before use",
+        "warning_body": "<p><strong>NOT FOR USE BY INDIVIDUALS UNDER 18.</strong> Do not use if pregnant or nursing.</p><p><strong>Consult a physician before use</strong> if you have (or have a family history of) prostate cancer, prostate enlargement, heart disease, or low HDL cholesterol — or if you take other supplements or medications.</p><p>Don't exceed the recommended serving.</p>"
+      }
+    },
+    "reviews": {
+      "type": "zeta-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "My labs moved in a month.",
+            "body": "\"I'm 56. My DHEA-S had been low for years. My doctor recommended supplementation. After 4 weeks on ZETA, my next labs showed levels back where they were in my 30s. Quiet but real.\"",
+            "attribution": "Marcus T. · verified buyer"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "Energy and mood, finally even.",
+            "body": "\"Post-menopause and tired of feeling depleted. Started 10mg. Within 6 weeks, mood lifted. Less 3pm crash. Recovery from workouts better. I take it like brushing my teeth now.\"",
+            "attribution": "Joanna B. · verified buyer"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "The one my regen doc wanted me on.",
+            "body": "\"David prescribed it before I knew it was sold. Now I have both — the longevity work in the clinic and the daily protocol at home. Felt the difference in lean mass and energy in 3 months.\"",
+            "attribution": "D.K. · verified buyer"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "eyebrow": "Real reviews",
+        "heading": "The quiet biomarker <em>that moves first</em>."
+      }
+    },
+    "digdeeper": {
+      "type": "zeta-accordion",
+      "blocks": {
+        "a1": {
+          "type": "item",
+          "settings": {
+            "label": "Description",
+            "content": "<h3>The <em>precursor</em> your body is quietly running out of.</h3><p>ZETA DHEA features <strong>dehydroepiandrosterone (DHEA)</strong> — a naturally occurring steroid hormone precursor synthesized from cholesterol, primarily by the adrenal glands. The body converts DHEA into androgens, estrogens, and other hormones as needed.</p><p>DHEA peaks between the ages of 20 and 30, then declines approximately <strong>2% every year</strong> until about age 70, when it slows to <strong>10–20% of the amount</strong> encountered in a young adult at peak level. Supplementing with DHEA replenishes the reservoir so your body has the raw material it needs for the hormones that govern energy, mood, body composition, recovery, and longevity.</p><h4>Clinical Applications</h4><ul><li>Supports healthy androgen and estrogen levels</li><li>Hormone precursor — supports the body's own production of testosterone, estrogen, and IGF-1</li><li>Supports body composition (lean mass, especially in men)</li><li>Supports mood, energy, and psychological well-being</li></ul><p style=\"font-size:11.5px;color:var(--zeta-mid);font-style:italic;margin-top:28px;\">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "open_by_default": true
+          }
+        },
+        "a2": {
+          "type": "item",
+          "settings": {
+            "label": "Ingredients",
+            "content": "<h3>What's <em>in it.</em> Every milligram.</h3><h4>Supplement Facts (per 1 capsule)</h4><p>One strength: 25 mg per capsule — the standard clinical dose.</p><ul><li><strong>Micronized Dehydroepiandrosterone (DHEA)</strong> — 25 mg</li><li><strong>Calcium</strong> (as dicalcium phosphate dihydrate) — 40 mg</li></ul><h4>Other Ingredients</h4><p>Microcrystalline cellulose, croscarmellose sodium, ascorbyl palmitate, hydroxypropyl cellulose, silica, and coating (hydroxypropyl methylcellulose and medium-chain triglycerides).</p><h4>Why micronized matters</h4><p>Standard DHEA powder has large particle sizes and poor solubility — much of the dose never makes it into circulation. <strong>Micronization</strong> reduces particle size to a fraction of standard, dramatically increasing surface area and absorption. The 25 mg on the label actually delivers ~25 mg of bioactive DHEA.</p><p><strong>25 mg</strong> is the standard adult dose used in the majority of clinical studies and the dose Dr. Karli most often recommends to patients without contraindications.</p>",
+            "open_by_default": false
+          }
+        },
+        "a3": {
+          "type": "item",
+          "settings": {
+            "label": "Directions & Precautions",
+            "content": "<h3>How to <em>take it.</em></h3><p><strong>Take 1 capsule twice daily — or as directed by your healthcare professional.</strong> Most people take one in the morning and one in early afternoon. Avoid late-evening doses; DHEA can be mildly activating.</p><h4>Pairs Well With</h4><ul><li><strong>ZETA MULTI</strong> — the daily foundation (B-vitamins and cofactors support hormone synthesis)</li><li><strong>ZETA MEGAS</strong> — omega-3s support cell membrane health (where hormones do their work)</li><li><strong>ZETA LONGEVITY</strong> — the long-game antioxidant stack</li></ul><div class=\"acc-warn\"><p><strong>⚠ Warning — read carefully.</strong></p><p>NOT FOR USE BY INDIVIDUALS UNDER THE AGE OF 18 YEARS. DO NOT USE IF PREGNANT OR NURSING. Consult a physician or licensed, qualified healthcare professional before using if you have (or have a family history of) prostate cancer, prostate enlargement, heart disease, or low HDL cholesterol — or if you are using any other dietary supplement, prescription drug, or over-the-counter drug.</p><p>Do not exceed the recommended serving. Exceeding recommended serving may cause serious adverse health effects. Possible side effects include acne, hair loss, facial hair growth (in women), aggressiveness, irritability, and increased estrogen levels.</p><p>Discontinue use and call a physician immediately if you experience rapid heartbeat, dizziness, blurred vision, or other similar symptoms. KEEP OUT OF REACH OF CHILDREN.</p></div>",
+            "open_by_default": false
+          }
+        },
+        "a4": {
+          "type": "item",
+          "settings": {
+            "label": "Research",
+            "content": "<h3>The <em>research</em> underneath.</h3><p>DHEA is one of the most-studied longevity-relevant supplements in clinical literature. A few of the foundational studies behind ZETA DHEA:</p><div class=\"acc-highlight\"><div class=\"hl-label\">★ Key study · the restoration paper</div><p><strong>Morales AJ, Nolan JJ, Nelson JC, Yen SSC (1994).</strong> <em>Effects of replacement dose of dehydroepiandrosterone in men and women of advancing age.</em> <strong>Journal of Clinical Endocrinology &amp; Metabolism.</strong></p><p>Randomized, placebo-controlled crossover trial in men and women aged 40–70. Nightly 50 mg DHEA restored serum DHEA-S to levels of individuals in their second decade within 2 weeks, sustained over 3 months. Androgen levels doubled in female subjects. IGF-1 increased ~10%.</p></div><h4>Supporting research</h4><div class=\"ref\"><strong>Morales AJ, Haubrich RH, Hwang JY, et al. (1998).</strong> The effect of six months treatment with a 100 mg daily dose of DHEA on circulating sex steroids, body composition and muscle strength. <em>Clinical Endocrinology (Oxford).</em></div><div class=\"ref\"><strong>Baulieu EE, Thomas G, Legrain S, et al. (2000).</strong> DHEAge: a 1-year, randomized study of DHEA replacement in 280 healthy subjects aged 60–79. <em>Proc Natl Acad Sci USA.</em> Replacement therapy normalized a wide variety of age-related physiological functions.</div><div class=\"ref\"><strong>Corona G, Rastrelli G, Giagulli VA, et al. (2013).</strong> Meta-analysis of 25 randomized, double-blind, placebo-controlled studies of DHEA supplementation in elderly men. <em>J Clin Endocrinol Metab.</em></div><div class=\"ref\"><strong>Sahu P, Gidwani B, Dhongade HJ (2020).</strong> Pharmacological activities of dehydroepiandrosterone: a review. <em>Steroids.</em></div><div class=\"ref\"><strong>Traish AM, Kang HP, Saad F, et al. (2011).</strong> Dehydroepiandrosterone (DHEA) — a precursor steroid or an active hormone in human physiology. <em>Journal of Sexual Medicine.</em></div>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "settings": {
+        "eyebrow": "For the Curious",
+        "heading": "Dig <em>deeper.</em>",
+        "subtitle": "The hormone science, the bioavailability story, the research, and the precautions worth reading before starting."
+      }
+    },
+    "bundle": {
+      "type": "zeta-bundle",
+      "blocks": {
+        "bp1": {
+          "type": "product",
+          "settings": {
+            "name": "Zeta DHEA",
+            "sub": "Hormone precursor · 25 mg"
+          }
+        },
+        "bp2": {
+          "type": "product",
+          "settings": {
+            "name": "Zeta D+K",
+            "sub": "Bone & immune foundation"
+          }
+        }
+      },
+      "block_order": [
+        "bp1",
+        "bp2"
+      ],
+      "settings": {
+        "layout": "box",
+        "eyebrow": "",
+        "heading": "DHEA + <em>D+K.</em>",
+        "discount": "Save 10% · Bundle",
+        "body": "<p>Since most of us are deficient in D3, don't forget to add ZETA D+K so you're not.</p>",
+        "addon_product": "",
+        "button_text": "BUY DHEA + D+K",
+        "button_link": ""
+      }
+    },
+    "ctaclose": {
+      "type": "zeta-cta-close",
+      "settings": {
+        "background": "#0A1320",
+        "tagline": "DRIVEN BY SCIENCE · BUILT TO PERFORM · MADE TO FEEL",
+        "heading": "<em>Take what</em>\nwe take.",
+        "promise": "Look. Feel. Perform. — Younger.",
+        "button_1_text": "BUY ZETA DHEA",
+        "button_1_link": "",
+        "button_2_text": "Take the Mirror Quiz",
+        "button_2_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "quote",
+    "timeline",
+    "ingredients",
+    "facts",
+    "reviews",
+    "digdeeper",
+    "bundle",
+    "ctaclose"
+  ]
+}

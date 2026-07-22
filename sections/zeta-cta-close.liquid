@@ -3,7 +3,7 @@
   Styles: custom.css (.zeta-cta-close).
 {%- endcomment -%}
 
-<section class="zeta zeta-cta-close" {{ section.shopify_attributes }}>
+<section class="zeta zeta-cta-close" style="background-color: {{ section.settings.background }};" {{ section.shopify_attributes }}>
   {%- if section.settings.tagline != blank -%}
     <p class="zeta-cta-close__tagline">{{ section.settings.tagline | escape }}</p>
   {%- endif -%}
@@ -31,6 +31,7 @@
   "tag": "section",
   "class": "shopify-section--zeta-cta-close",
   "settings": [
+    { "type": "color", "id": "background", "label": "Background", "info": "Text is styled light — keep this dark for legibility.", "default": "#0A1320" },
     { "type": "text", "id": "tagline", "label": "Tagline", "default": "Take what we take." },
     { "type": "textarea", "id": "heading", "label": "Heading", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "Strength. Brain. Everyday." },
     { "type": "inline_richtext", "id": "promise", "label": "Promise line", "info": "Optional italic line shown under the heading." },

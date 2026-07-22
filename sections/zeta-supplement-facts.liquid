@@ -37,7 +37,7 @@
         {%- endfor -%}
       </div>
       {%- if section.settings.facts_note != blank -%}
-        <div class="zeta-facts__note">{{ section.settings.facts_note | escape }}</div>
+        <div class="zeta-facts__note">{{ section.settings.facts_note | escape | newline_to_br }}</div>
       {%- endif -%}
     </div>
 
@@ -73,6 +73,17 @@
       {%- endif -%}
     </div>
   </div>
+
+  {%- if section.settings.warning_heading != blank or section.settings.warning_body != blank -%}
+    <div class="zeta-facts__warning">
+      {%- if section.settings.warning_heading != blank -%}
+        <h4 class="zeta-facts__warning-heading">{{ section.settings.warning_heading | escape }}</h4>
+      {%- endif -%}
+      {%- if section.settings.warning_body != blank -%}
+        <div class="zeta-facts__warning-body">{{ section.settings.warning_body }}</div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
 </section>
 
 {% schema %}
@@ -87,12 +98,15 @@
     { "type": "text", "id": "facts_title", "label": "Panel title", "default": "Supplement Facts" },
     { "type": "text", "id": "serving_line", "label": "Serving line", "default": "Serving Size: 1 Scoop (about 5g) · Servings Per Container: 30" },
     { "type": "text", "id": "amount_header", "label": "Amount column header", "default": "Amount Per Serving   % DV" },
-    { "type": "text", "id": "facts_note", "label": "Panel note", "default": "** Daily Value not established.   Other Ingredients: None.   Unflavored." },
+    { "type": "textarea", "id": "facts_note", "label": "Panel note", "info": "Line breaks (Enter) become new lines.", "default": "** Daily Value not established.   Other Ingredients: None.   Unflavored." },
     { "type": "header", "content": "How to take it" },
     { "type": "text", "id": "how_to_label", "label": "Label", "default": "How to take it" },
     { "type": "header", "content": "Exclusions (\"NOs\")" },
     { "type": "inline_richtext", "id": "exclude_heading", "label": "Heading", "default": "Formulated with a lot of NOs." },
-    { "type": "text", "id": "exclude_sub", "label": "Subtext", "default": "Here's everything we left out." }
+    { "type": "text", "id": "exclude_sub", "label": "Subtext", "default": "Here's everything we left out." },
+    { "type": "header", "content": "Warning box" },
+    { "type": "text", "id": "warning_heading", "label": "Warning heading", "info": "Optional. Leave blank to hide the whole box." },
+    { "type": "richtext", "id": "warning_body", "label": "Warning body" }
   ],
   "blocks": [
     {

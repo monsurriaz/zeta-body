@@ -1440,12 +1440,14 @@
   gap: 20px;
 }
 .zeta-ingredients__tile {
+  position: relative;
   background: var(--zeta-surface);
   padding: 36px 32px;
   border: 1px solid var(--zeta-border);
 }
-.zeta-ingredients__icon { margin-bottom: 16px; }
-.zeta-ingredients__icon svg { width: 56px; height: 56px; }
+.zeta-ingredients__icon { margin-bottom: 18px; }
+.zeta-ingredients__icon svg { width: 60px; height: 60px; }
+/* Inline tag: bronze pill at the top of the tile (creatine) */
 .zeta-ingredients__tag {
   display: inline-block;
   background: var(--zeta-bronze);
@@ -1457,6 +1459,31 @@
   padding: 4px 10px;
   margin-bottom: 16px;
 }
+/* Corner tag: bronze pill pinned to the top-right edge (DHEA "Differentiator") */
+.zeta-ingredients__corner-tag {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  transform: translateY(-50%);
+  display: inline-block;
+  background: var(--zeta-bronze);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: var(--zeta-fw-bold);
+  padding: 4px 10px;
+}
+/* Colored eyebrow label above the name */
+.zeta-ingredients__label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: var(--zeta-fw-semibold);
+  margin: 0 0 12px;
+}
+.zeta-ingredients__label--teal { color: var(--zeta-teal); }
+.zeta-ingredients__label--bronze { color: var(--zeta-bronze); }
 .zeta-ingredients__name {
   font-family: var(--zeta-font-heading);
   font-size: 28px;
@@ -1483,7 +1510,7 @@
 .zeta-ingredients__nick {
   font-family: var(--zeta-font-heading);
   font-style: italic;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: var(--zeta-fw-medium);
   color: var(--zeta-teal);
   margin-top: 14px;
@@ -1554,6 +1581,29 @@
   flex-shrink: 0;
   border-radius: 50%;
 }
+
+/* Warning box (DHEA): amber panel with bronze rule, below the facts grid */
+.zeta-facts__warning {
+  background: #FFF8E8;
+  border-left: 3px solid var(--zeta-bronze);
+  padding: 20px 24px;
+  margin-top: 24px;
+}
+.zeta-facts__warning-heading {
+  margin: 0 0 12px;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--zeta-teal);
+  font-weight: var(--zeta-fw-bold);
+}
+.zeta-facts__warning-body, .zeta-facts__warning-body p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--zeta-ink);
+  margin: 0 0 8px;
+}
+.zeta-facts__warning-body p:last-child { margin-bottom: 0; }
 
 /* ── Reviews (.reviews) — d-k card style: stars + serif headline + plain quote ── */
 .zeta-reviews { background: var(--zeta-bg); }
@@ -1670,6 +1720,68 @@
   max-width: 720px;
   margin-bottom: 14px;
 }
+/* Rich content blocks (content field is HTML) */
+.zeta-accordion__body h3 {
+  font-family: var(--zeta-font-heading);
+  font-size: 28px;
+  font-weight: var(--zeta-fw-medium);
+  line-height: 1.2;
+  margin: 0 0 14px;
+  color: var(--zeta-ink);
+}
+.zeta-accordion__body h3 em { font-style: italic; color: var(--zeta-teal); }
+.zeta-accordion__body h4 {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--zeta-bronze);
+  font-weight: var(--zeta-fw-bold);
+  margin: 28px 0 10px;
+}
+.zeta-accordion__body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  max-width: 720px;
+}
+.zeta-accordion__body ul li { padding-left: 16px; position: relative; margin-bottom: 0; }
+.zeta-accordion__body ul li::before { content: '—'; position: absolute; left: 0; color: var(--zeta-teal); }
+.zeta-accordion__body .ref {
+  font-size: 13.5px;
+  color: var(--zeta-mid);
+  line-height: 1.55;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--zeta-border);
+  margin-bottom: 12px;
+  max-width: 720px;
+}
+.zeta-accordion__body .ref:last-child { border: none; }
+.zeta-accordion__body .ref strong { color: var(--zeta-ink); font-weight: var(--zeta-fw-semibold); }
+.zeta-accordion__body .acc-highlight {
+  background: rgba(184, 153, 104, 0.08);
+  border-left: 3px solid var(--zeta-bronze);
+  padding: 22px 24px;
+  margin: 16px 0 24px;
+  max-width: 720px;
+}
+.zeta-accordion__body .acc-highlight .hl-label {
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8A7148;
+  font-weight: var(--zeta-fw-bold);
+  margin-bottom: 8px;
+}
+.zeta-accordion__body .acc-warn {
+  background: #FFF8E8;
+  border-left: 3px solid var(--zeta-bronze);
+  padding: 16px 20px;
+  margin: 12px 0;
+  max-width: 720px;
+}
 
 /* ── Bundle (.bundle) ── */
 .zeta-bundle { background: var(--zeta-bg); text-align: center; }
@@ -1745,6 +1857,7 @@
   align-items: center;
   justify-content: center;
   padding: 24px;
+  border: 1px solid var(--zeta-border);
 }
 .zeta-bundle--box .zeta-bundle__products { margin-bottom: 0; }
 .zeta-bundle--box .zeta-bundle__product { background: transparent; border: none; padding: 0; min-width: 0; }

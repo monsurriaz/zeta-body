@@ -1,0 +1,600 @@
+<!doctype html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Zeta Dhea Page",
+  "schemaVersion": 1,
+  "description": "ZETA DHEA product page. Hook: \"The youth hormone, replenished.\" Pull-quote from Dr. Karli on 70-year-old DHEA being 10-20% of peak. Felt timeline (DHEA IS felt — \"What you'll feel\" header) Week 1-2 \"Reservoir refills\" through \"Younger biomarkers\" at a year+. Two-tile ingredient story: DHEA (the reservoir) + Micronized (bronze \"THE FORM\" tag, absorption story). Strength toggle in buy box: 25mg standard vs 10mg gentle. Real XYMOGEN doses (DHEA 25mg or 10mg, calcium 40mg). Strong warning panel for under-18, pregnancy, prostate/heart concerns. Locked V3 accordion with Description (clinical applications), Ingredients (both strengths, why micronized), Directions & Precautions (with prominent warning box about adverse effects), Research (★ Morales 1994 featured + Morales 1998, Baulieu 2000, Corona 2013, Sahu 2020, Traish 2011). Bundle = DHEA + MULTI = \"Hormone Foundation.\""
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZETA DHEA · The Youth Hormone, Replenished · ZETA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { color-scheme: light; --bg:#F4F4F5; --surface:#FFFFFF; --ink:#0A1320; --teal:#006E73; --bronze:#B89968; --sand:#EFE9DC; --mid:#6B7280; --border:#E2E0DC; --serif:'Cormorant Garamond',Georgia,serif; --sans:'Inter',-apple-system,sans-serif; }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  body{font-size:16px;line-height:1.6} img,svg{max-width:100%;display:block} a{color:inherit}
+  .annc{background:var(--ink);color:#fff;text-align:center;font-size:12px;letter-spacing:0.16em;padding:9px 14px;text-transform:uppercase;font-weight:500}
+  .annc strong{color:var(--bronze);margin-right:6px;font-weight:700}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+  .logo{font-family:var(--serif);font-size:24px;letter-spacing:0.1em;color:var(--ink);font-weight:500}
+  .nav-links{display:flex;gap:28px;font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:500}
+  .nav-links a{text-decoration:none;color:var(--ink)} .nav-links a:hover{color:var(--teal)}
+  .nav-tools{display:flex;gap:18px;font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:500} .nav-tools a{text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  .wrap-narrow{max-width:860px;margin:0 auto;padding:0 32px}
+  .photo-note{display:inline-block;background:rgba(184,153,104,0.12);border:1px dashed var(--bronze);color:#8A7148;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;padding:5px 10px;margin:6px 0;font-family:var(--sans);font-weight:600}
+
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;padding:56px 0 88px;align-items:center}
+  .hero-art{position:relative;aspect-ratio:4/5;background:linear-gradient(155deg,#f1e9d8 0%,#c8a878 100%);border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .hero-art .photo-note-corner{position:absolute;top:16px;left:16px}
+  .hero-art .bottle-svg{width:50%;max-width:280px}
+  .hero-art .tag{position:absolute;bottom:24px;left:24px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);font-weight:600}
+  .hero-art .tag::before{content:"";display:inline-block;width:8px;height:8px;background:var(--bronze);border-radius:50%;margin-right:8px;transform:translateY(-1px)}
+  .hero-copy .eyebrow{color:var(--bronze);font-size:12.5px;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;margin-bottom:18px}
+  /* ─── PRODUCT BANNER — V3 template parity with Creatine/Minos/Longevity/FV ─── */
+  .product-banner{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+  .product-banner-name{font-size:22px;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;color:var(--teal);line-height:1;font-family:var(--sans)}
+  .product-banner-sub{font-size:13px;letter-spacing:0.15em;text-transform:uppercase;font-weight:500;color:var(--mid);line-height:1;font-family:var(--sans)}
+  .hero-copy h1{font-family:var(--serif);font-weight:500;font-size:clamp(48px,6.4vw,80px);line-height:1.0;letter-spacing:-0.018em;margin:0 0 22px;color:var(--ink)}
+  .hero-copy h1 em{font-style:italic;color:var(--teal)}
+  .hero-copy .lede{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.45;color:var(--mid);max-width:460px;margin-bottom:28px}
+  .stars{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+  .stars .s{color:var(--bronze);letter-spacing:2px;font-size:16px} .stars .count{font-size:13px;color:var(--mid)} .stars .count b{color:var(--ink);font-weight:700}
+  .buy{border:1px solid var(--border);background:var(--surface);border-radius:6px;padding:18px 18px 20px;max-width:480px}
+  .buy .strength-toggle{display:flex;gap:8px;margin-bottom:14px;padding:4px;background:#FAFAFA;border-radius:4px}
+  .buy .strength-toggle button{flex:1;background:transparent;border:none;padding:10px 14px;font-family:var(--sans);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--mid);cursor:pointer;border-radius:3px;transition:all .15s ease}
+  .buy .strength-toggle button.active{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,0.06)}
+  .buy .row{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);border-radius:4px;cursor:pointer;transition:all .15s ease;background:var(--surface)}
+  .buy .row+.row{margin-top:10px}
+  .buy .row.selected{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal) inset;background:rgba(0,110,115,0.03)}
+  .buy .radio{width:18px;height:18px;border:1.5px solid #b9b0a0;border-radius:50%;flex-shrink:0;display:grid;place-items:center}
+  .buy .row.selected .radio{border-color:var(--teal)} .buy .row.selected .radio::after{content:"";width:8px;height:8px;background:var(--teal);border-radius:50%}
+  .buy .info{flex:1;min-width:0} .buy .info .t{font-weight:600;font-size:14.5px;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap} .buy .info .d{font-size:12.5px;color:var(--mid);margin-top:2px;white-space:nowrap}
+  .buy .price{font-weight:700;font-size:16px;color:var(--ink);white-space:nowrap;flex-shrink:0;text-align:right} .buy .price s{color:var(--mid);font-weight:500;margin-right:6px}
+  .buy .badge{display:inline-block;background:var(--bronze);color:var(--ink);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px;margin-left:6px;vertical-align:2px;font-weight:700}
+  .cta{display:block;width:100%;text-align:center;background:var(--ink);color:#fff;border:none;padding:18px 22px;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;font-family:var(--sans);border-radius:4px;margin-top:18px;cursor:pointer;transition:background .15s ease}
+  .cta:hover{background:var(--teal)}
+  .cta-secondary{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-top:10px} .cta-secondary:hover{background:var(--ink);color:#fff}
+  .trust-strip{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);font-weight:500}
+  .trust-strip span{display:flex;align-items:center;gap:6px} .trust-strip svg{width:13px;height:13px;flex-shrink:0}
+
+  .quote-bar{background:var(--ink);color:#fff;padding:56px 32px;text-align:center}
+  .quote-bar .q{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3vw,36px);line-height:1.3;max-width:900px;margin:0 auto;font-weight:400}
+  .quote-bar .q em{font-style:normal;color:var(--bronze)}
+  .quote-bar .a{font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;margin-top:16px;color:rgba(255,255,255,0.55)}
+
+  section.s{padding:96px 0} section.s.sand{background:var(--sand)}
+  section.s h2{font-family:var(--serif);font-weight:500;font-size:clamp(36px,5vw,60px);line-height:1.05;letter-spacing:-0.015em;margin:0 0 28px}
+  section.s h2 em{font-style:italic;color:var(--teal)}
+  section.s .kicker{color:var(--bronze);font-size:12px;letter-spacing:0.26em;text-transform:uppercase;font-weight:700;margin-bottom:18px}
+  section.s p{font-size:17px;line-height:1.65;margin:0 0 16px} section.s p.big{font-size:19px;line-height:1.55}
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:56px}
+  .tl{padding:28px 0 0;border-top:2px solid var(--ink)}
+  .tl .when{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--bronze);margin-bottom:6px}
+  .tl .what{font-family:var(--serif);font-size:28px;line-height:1.1;margin-bottom:14px;letter-spacing:-0.015em;font-weight:500}
+  .tl .body{font-size:15px;line-height:1.6;color:var(--mid)}
+
+  /* ─── INGREDIENT TILES — V3 Standard ─── */
+  .ingredients-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px}
+  .ingredient-tile{background:var(--surface);padding:36px 32px;position:relative;border:1px solid var(--border)}
+  .ingredient-tag{position:absolute;top:0;right:-1px;transform:translateY(-50%);display:inline-block;background:var(--bronze);color:#fff;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;padding:4px 10px}
+  .ingredient-icon{width:60px;height:60px;margin-bottom:18px}
+  .ingredient-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+  .ingredient-label.teal{color:var(--teal)}
+  .ingredient-label.bronze{color:var(--bronze)}
+  .ingredient-name{font-family:var(--serif);font-size:26px;font-weight:500;color:var(--ink);margin-bottom:6px;line-height:1.2}
+  .ingredient-source{font-size:11px;color:var(--mid);letter-spacing:0.06em;margin-bottom:14px;font-style:italic}
+  .ingredient-body{font-size:14px;color:var(--ink);opacity:0.75;line-height:1.65}
+  .ingredient-nick{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--teal);margin-top:14px;font-weight:500}
+
+  /* ─── SUPPLEMENT FACTS — V3 Standard ─── */
+  .facts-panel{border:2px solid var(--ink);padding:0;font-family:var(--sans)}
+  .facts-header{padding:12px 16px 8px;border-bottom:8px solid var(--ink)}
+  .facts-title{font-size:26px;font-weight:700;line-height:1;color:var(--ink)}
+  .facts-serving{font-size:12px;color:var(--ink);margin-top:4px}
+  .facts-body{padding:8px 16px}
+  .facts-row{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #ddd;padding:6px 0;font-size:13px}
+  .facts-row:last-child{border-bottom:none}
+  .facts-row.thick{border-bottom:4px solid var(--ink)}
+  .facts-row.bold{font-weight:700}
+  .facts-note{font-size:10px;color:var(--mid);padding:8px 16px 12px;border-top:1px solid #ddd;line-height:1.5}
+
+  /* Warning panel */
+  .warning-box{background:#FFF8E8;border-left:3px solid var(--bronze);padding:20px 24px;margin-top:24px}
+  .warning-box h4{margin:0 0 12px;font-size:15px;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);font-weight:700}
+  .warning-box p{font-size:14px;line-height:1.55;color:var(--ink);margin:0 0 8px}
+
+  /* Below-facts layout */
+  .below-facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+  .how-to{background:var(--bg);padding:28px;border:1px solid var(--border)}
+  .how-to-label{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:16px}
+  .how-to ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .how-to li{font-size:14px;color:var(--ink);line-height:1.5;display:flex;gap:10px}
+  .how-to li::before{content:'→';color:var(--teal);flex-shrink:0;font-size:13px;margin-top:1px}
+  .how-to li strong{font-weight:600}
+  .exclude-panel{background:var(--bg);padding:28px;border:1px solid var(--border)}
+  .exclude-heading{font-family:var(--serif);font-size:26px;font-weight:500;color:var(--ink);margin:0 0 6px;line-height:1.2}
+  .exclude-sub{font-size:12px;color:var(--mid);margin-bottom:20px;font-style:italic}
+  .no-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
+  .no-item{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;color:var(--ink)}
+  .no-item::before{content:'✕';color:var(--ink);font-size:10px;font-weight:700;background:#E8E6E0;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .rev{background:var(--surface);border:1px solid var(--border);padding:28px}
+  .rev .s{color:var(--bronze);letter-spacing:2px;font-size:14px;margin-bottom:12px}
+  .rev h4{font-family:var(--serif);font-size:22px;margin:0 0 14px;font-weight:500;line-height:1.2}
+  .rev p{font-size:14.5px;line-height:1.6;margin:0 0 16px;color:var(--mid)}
+  .rev .who{font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);font-weight:500}
+
+  /* ─── DIG DEEPER / ACCORDION — V3 Standard ─── */
+  .accordion-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .accordion-header-block{text-align:center;padding:80px max(80px, calc((100vw - 1100px) / 2 + 80px)) 40px}
+  .accordion-eyebrow{color:var(--bronze);font-size:12px;letter-spacing:0.26em;text-transform:uppercase;font-weight:700;margin-bottom:14px}
+  .accordion-heading{font-family:var(--serif);font-size:clamp(36px,4.6vw,52px);margin:0;font-weight:500;line-height:1.05;letter-spacing:-0.015em;color:var(--ink)}
+  .accordion-heading em{font-style:italic;color:var(--teal)}
+  .accordion-subtitle{font-size:16.5px;color:var(--mid);line-height:1.6;margin-top:14px;max-width:540px;margin-left:auto;margin-right:auto}
+  .accordion-items{border-top:1px solid var(--border)}
+  .accordion-item{border-bottom:1px solid var(--border)}
+  .accordion-trigger{width:100%;background:none;border:none;cursor:pointer;padding:24px max(80px, calc((100vw - 1100px) / 2 + 80px));display:flex;justify-content:space-between;align-items:center;text-align:left;font-family:var(--sans);transition:background 0.15s}
+  .accordion-trigger:hover{background:var(--bg)}
+  .accordion-trigger-label{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;color:var(--teal)}
+  .accordion-icon{font-size:22px;color:var(--teal);font-weight:300;line-height:1;transition:transform 0.2s;flex-shrink:0}
+  .accordion-trigger[aria-expanded="true"] .accordion-icon{transform:rotate(45deg)}
+  .accordion-body{display:none;padding:0 max(80px, calc((100vw - 1100px) / 2 + 80px)) 36px}
+  .accordion-body.open{display:block}
+  .accordion-body p,.accordion-body li{font-size:15px;color:var(--ink);opacity:0.8;line-height:1.7}
+  .accordion-body ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin:12px 0}
+  .accordion-body ul li{padding-left:16px;position:relative}
+  .accordion-body ul li::before{content:'—';position:absolute;left:0;color:var(--teal)}
+  .accordion-body h3{font-family:var(--serif);font-size:28px;font-weight:500;line-height:1.2;margin:0 0 14px;color:var(--ink)}
+  .accordion-body h3 em{font-style:italic;color:var(--teal)}
+  .accordion-body h4{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--bronze);font-weight:700;margin:28px 0 10px}
+  .accordion-body .ref{font-size:13.5px;color:var(--mid);line-height:1.55;padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px}
+  .accordion-body .ref:last-child{border:none} .accordion-body .ref strong{color:var(--ink);font-weight:600}
+  .acc-highlight{background:rgba(184,153,104,0.08);border-left:3px solid var(--bronze);padding:22px 24px;margin:16px 0 24px}
+  .acc-highlight .hl-label{font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:#8A7148;font-weight:700;margin-bottom:8px}
+  .acc-warn{background:#FFF8E8;border-left:3px solid var(--bronze);padding:16px 20px;margin:12px 0}
+
+  .bundle{background:var(--sand);padding:56px;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;margin-top:24px}
+  .bundle .b-art{background:var(--surface);aspect-ratio:1.3/1;position:relative;display:flex;align-items:center;justify-content:center;gap:28px;padding:24px;border:1px solid var(--border)}
+  .bundle h3{font-family:var(--serif);font-size:clamp(32px,3vw,44px);margin:0 0 14px;font-weight:500;line-height:1.05;color:var(--ink)}
+  .bundle h3 em{font-style:italic;color:var(--teal)}
+  .bundle p{font-size:16.5px;line-height:1.6;margin:0 0 22px;color:var(--mid)}
+  .bundle .savings{display:inline-block;background:var(--bronze);color:var(--ink);font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;padding:5px 12px;margin-bottom:14px}
+  .bundle .cta{max-width:360px}
+
+  .close{padding:96px 0;text-align:center;background:var(--surface)}
+  .close .tagline{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--mid);letter-spacing:0.04em;margin-bottom:16px}
+  .close h2{font-family:var(--serif);font-size:clamp(40px,6vw,72px);font-weight:500;line-height:1.05;margin:0}
+  .close .promise{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--mid);margin-top:14px}
+  .close .ctas{display:inline-flex;gap:12px;margin-top:36px;flex-wrap:wrap;justify-content:center}
+  .close .btn{display:inline-block;padding:18px 36px;font-family:var(--sans);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:4px;transition:all .15s ease}
+  .close .btn-primary{background:var(--ink);color:#fff} .close .btn-primary:hover{background:var(--teal)}
+  .close .btn-secondary{background:transparent;color:var(--ink);border:1.5px solid var(--ink)} .close .btn-secondary:hover{background:var(--ink);color:#fff}
+
+  .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);padding:12px 16px;gap:12px;z-index:100;box-shadow:0 -4px 18px rgba(0,0,0,0.06);align-items:center}
+  .sticky-cta .p{font-weight:700;font-size:16px;flex-shrink:0;color:var(--ink)}
+  .sticky-cta button{flex:1;background:var(--ink);color:#fff;border:none;padding:14px;border-radius:4px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;font-size:12.5px;font-family:var(--sans)}
+
+  footer{background:var(--ink);color:var(--bg);padding:72px 0 32px}
+  footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px}
+  footer h5{font-size:11.5px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin:0 0 18px;font-weight:700}
+  footer ul{list-style:none;padding:0;margin:0} footer li{margin-bottom:10px;font-size:14px}
+  footer a{text-decoration:none;color:var(--bg)} footer a:hover{color:var(--bronze)}
+  footer .brand-foot{font-family:var(--serif);font-size:32px;color:#fff;margin-bottom:14px;letter-spacing:0.06em;font-weight:500}
+  footer .tag{font-size:14px;opacity:0.7;max-width:280px;line-height:1.55;font-family:var(--serif);font-style:italic}
+  footer .trinity{color:var(--bronze);font-size:12.5px;letter-spacing:0.22em;text-transform:uppercase;font-weight:700;margin:14px 0 10px}
+  footer .copy-bar{border-top:1px solid rgba(255,255,255,0.1);margin-top:56px;padding-top:24px;font-size:12px;opacity:0.5;text-align:center}
+
+  @media (max-width:900px){
+    .wrap,.wrap-narrow{padding:0 22px} nav{padding:14px 20px} .nav-links{display:none}
+    .hero{grid-template-columns:1fr;gap:36px;padding:32px 0 56px}
+    .timeline{grid-template-columns:1fr 1fr} .ingredients-grid{grid-template-columns:1fr;gap:16px}
+    .below-facts-grid{grid-template-columns:1fr} .reviews-grid{grid-template-columns:1fr}
+    .bundle{grid-template-columns:1fr;padding:28px;gap:28px}
+    section.s{padding:64px 0} .sticky-cta{display:flex} body{padding-bottom:80px}
+    footer .wrap{grid-template-columns:1fr 1fr;gap:32px}
+    .accordion-trigger{padding:20px 24px}
+    .accordion-body{padding:0 24px 28px}
+    .accordion-header-block{padding:60px 24px 32px}
+  }
+</style>
+</head>
+<body>
+
+<div class="annc"><strong>FREE SHIPPING OVER $50</strong> · Subscribe &amp; Save 5%</div>
+
+<nav>
+  <div class="logo">Z E T A</div>
+  <div class="nav-links">
+    <a href="#" style="color:var(--teal);font-weight:600;">Shop</a>
+    <a href="#">Take The Quiz</a>
+    <a href="#">Learn</a>
+    <a href="#">The Story</a>
+  </div>
+  <div class="nav-tools">
+    <a href="#">Search</a>
+    <a href="#">Account</a>
+    <a href="#">Bag (0)</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-art">
+      <span class="photo-note photo-note-corner">PHOTO · ZETA DHEA BOTTLE (FRONT)</span>
+      <svg class="bottle-svg" viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg" aria-label="ZETA DHEA bottle placeholder">
+        <rect x="80" y="10" width="80" height="42" rx="6" fill="#0A1320"/>
+        <rect x="36" y="52" width="168" height="260" rx="14" fill="#0A1320"/>
+        <rect x="54" y="124" width="132" height="120" rx="4" fill="#F4F4F5"/>
+        <text x="120" y="158" text-anchor="middle" font-family="Cormorant Garamond" font-size="18" fill="#006E73" font-weight="500" letter-spacing="2">ZETA</text>
+        <text x="120" y="198" text-anchor="middle" font-family="Cormorant Garamond" font-size="36" fill="#0A1320" font-weight="500">DHEA</text>
+        <text x="120" y="218" text-anchor="middle" font-family="Inter" font-size="8" fill="#B89968" letter-spacing="2.5">HORMONE PRECURSOR</text>
+        <line x1="74" y1="230" x2="166" y2="230" stroke="#006E73" stroke-width="0.8"/>
+        <text x="120" y="242" text-anchor="middle" font-family="Inter" font-size="7" fill="#6B7280" letter-spacing="1.5">25 mg · 60 TABLETS</text>
+      </svg>
+      <span class="tag">Hormone · Daily</span>
+    </div>
+
+    <div class="hero-copy">
+          <div class="product-banner">
+      <span class="product-banner-name">Zeta DHEA</span>
+      <span class="product-banner-sub">Hormone Precursor</span>
+    </div>
+      <h1>The youth hormone,<br><em>replenished.</em></h1>
+      <p class="lede">DHEA peaks in your 20s and drops about 2% every year after. ZETA DHEA brings the reservoir back — bioactive micronized form, the dose your body actually absorbs.</p>
+
+      <div class="stars">
+        <span class="s">★★★★★</span>
+        <span class="count"><b>4.9</b> · early reviews</span>
+      </div>
+
+      <div class="buy">
+        <div class="row selected" data-buy="once">
+          <div class="radio"></div>
+          <div class="info">
+            <div class="t">One bottle, this time</div>
+            <div class="d">60 micronized capsules · 30-day supply</div>
+          </div>
+          <div class="price">$34.99</div>
+        </div>
+        <div class="row" data-buy="sub">
+          <div class="radio"></div>
+          <div class="info">
+            <div class="t">Subscribe &amp; Save <span class="badge">5% OFF</span></div>
+            <div class="d">Free shipping · Pause or cancel any time</div>
+          </div>
+          <div class="price"><s>$34.99</s>$33.24</div>
+        </div>
+        <button class="cta">BUY ZETA DHEA</button>
+        <button class="cta cta-secondary">PAIR WITH ZETA D+K · SAVE 10%</button>
+      </div>
+
+      <div class="trust-strip">
+        <span><svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-9" stroke="#006E73" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Micronized · absorbable</span>
+        <span><svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-9" stroke="#006E73" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>25 mg micronized</span>
+        <span><svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-9" stroke="#006E73" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>cGMP</span>
+        <span><svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-9" stroke="#006E73" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Adults 18+</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PULL QUOTE -->
+<div class="quote-bar">
+  <div class="q">"By 70, your body's making 10–20% of the DHEA it made at 25. <em>Replenishing it is one of the highest-leverage longevity moves we have.</em>"</div>
+  <div class="a">Dr. David Karli · ZETA science partner</div>
+</div>
+
+<!-- WHAT YOU'LL FEEL -->
+<section class="s">
+  <div class="wrap">
+    <div class="kicker">What you'll feel</div>
+    <h2>Two weeks to <em>baseline</em>.<br>The rest is the long game.</h2>
+    <p class="big" style="max-width:680px;">DHEA is one of the rare supplements where the science shows a measurable biomarker shift in the first two weeks — and a quiet felt improvement in the weeks that follow.</p>
+    <div class="timeline">
+      <div class="tl"><div class="when">Week 1–2</div><div class="what">Reservoir refills.</div><div class="body">Serum DHEA and DHEA-S start rising — research shows restoration to early-adult levels within 2 weeks at standard doses.</div></div>
+      <div class="tl"><div class="when">1 month</div><div class="what">Mood, energy.</div><div class="body">A quiet lift. Less 3pm fatigue. Better recovery from exercise. Steadier emotional baseline.</div></div>
+      <div class="tl"><div class="when">3 months</div><div class="what">The hormones do the work.</div><div class="body">IGF-1 climbing. Lean mass and strength shifting (especially in men). Skin and hair noticing.</div></div>
+      <div class="tl"><div class="when">A year+</div><div class="what">Younger biomarkers.</div><div class="body">The long-game payoff: hormonal balance, body composition, the resilience of an ecosystem that's no longer running on empty.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENT STORY -->
+<section class="s sand">
+  <div class="wrap">
+    <div class="kicker">The hormone story</div>
+    <h2>One hormone. <em>Most others depend on it.</em></h2>
+    <p class="big" style="max-width:720px;">DHEA isn't a hormone you take to feel a buzz. It's the <em>precursor</em> — the raw material your body converts into androgens, estrogens, and the other hormones that govern energy, mood, lean mass, libido, recovery, and how young you stay. ZETA DHEA refills the reservoir so your body has the inputs it had at 25.</p>
+
+    <div class="ingredients-grid">
+
+      <div class="ingredient-tile">
+        <svg class="ingredient-icon" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="18" fill="none" stroke="#006E73" stroke-width="1.5"/>
+          <circle cx="30" cy="30" r="9" fill="#006E73" opacity="0.3"/>
+          <text x="30" y="35" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#006E73" font-weight="500">DHEA</text>
+        </svg>
+        <p class="ingredient-label teal">Made by your adrenals</p>
+        <p class="ingredient-name">DHEA</p>
+        <p class="ingredient-source">Dehydroepiandrosterone · 25 mg</p>
+        <p class="ingredient-body">The most abundant circulating steroid hormone in the human body — and the one that declines fastest with age. Peaks between 20 and 30. Drops ~2% every year after. By 70, you're at 10–20% of your peak. Your body converts DHEA into testosterone, estrogen, and other hormones <em>as needed</em> — the raw material, not the finished signal.</p>
+        <p class="ingredient-nick">The reservoir.</p>
+      </div>
+
+      <div class="ingredient-tile">
+        <span class="ingredient-tag">The Differentiator</span>
+        <svg class="ingredient-icon" viewBox="0 0 60 60">
+          <path d="M14 30 Q22 22 30 30 Q38 38 46 30" fill="none" stroke="#B89968" stroke-width="1.5"/>
+          <circle cx="20" cy="30" r="2.5" fill="#B89968"/>
+          <circle cx="30" cy="30" r="2.5" fill="#B89968"/>
+          <circle cx="40" cy="30" r="2.5" fill="#B89968"/>
+        </svg>
+        <p class="ingredient-label bronze">Why we chose micronized</p>
+        <p class="ingredient-name">Micronized</p>
+        <p class="ingredient-source">Smaller particles · better absorbed</p>
+        <p class="ingredient-body">Standard DHEA is poorly absorbed — most of what you swallow never makes it into circulation. Micronization reduces particle size dramatically, increasing surface area and bioavailability. So the 25 mg on the label is actually doing the work the 25 mg promises. Accuracy, not optimization theater.</p>
+        <p class="ingredient-nick">The dose your body actually uses.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUPPLEMENT FACTS + DIRECTIONS -->
+<section class="s">
+  <div class="wrap">
+    <div class="kicker">What's in the capsule</div>
+    <h2>Two ingredients. <em>Zero noise.</em></h2>
+
+    <!-- Supplement Facts — full width -->
+    <div class="facts-panel" style="margin-top:48px;">
+      <div class="facts-header">
+        <div class="facts-title">Supplement Facts</div>
+        <div class="facts-serving">Serving Size: 1 Capsule · Servings Per Container: 60</div>
+      </div>
+      <div class="facts-body">
+        <div class="facts-row thick" style="font-size:11px;color:#666;">
+          <span>Amount Per Serving</span><span>% Daily Value</span>
+        </div>
+        <div class="facts-row bold">
+          <span>Micronized DHEA (dehydroepiandrosterone)</span><span>25 mg **</span>
+        </div>
+        <div class="facts-row">
+          <span>Calcium (as dicalcium phosphate dihydrate)</span><span>40 mg 4%</span>
+        </div>
+      </div>
+      <div class="facts-note">** Daily Value not established.<br>Other ingredients: Microcrystalline cellulose, croscarmellose sodium, ascorbyl palmitate, hydroxypropyl cellulose, silica, and coating (hydroxypropyl methylcellulose and medium-chain triglycerides).</div>
+    </div>
+
+    <!-- How to take it + NOs — side by side -->
+    <div class="below-facts-grid">
+      <div class="how-to">
+        <p class="how-to-label">How to take it</p>
+        <ul>
+          <li>Take <strong>1 capsule twice daily</strong> — or as directed by your healthcare professional</li>
+          <li><strong>Best timing:</strong> morning and early afternoon. Avoid evening doses — DHEA can be mildly stimulating.</li>
+          <li>60 capsules per bottle — <strong>30-day supply</strong></li>
+        </ul>
+      </div>
+
+      <div class="exclude-panel">
+        <h3 class="exclude-heading">Formulated with a <em style="font-style:italic;">lot of NOs.</em></h3>
+        <p class="exclude-sub">What's not in it matters as much as what is.</p>
+        <div class="no-list">
+          <div class="no-item">Wheat &amp; gluten</div>
+          <div class="no-item">Yeast</div>
+          <div class="no-item">Soy</div>
+          <div class="no-item">Animal &amp; dairy products</div>
+          <div class="no-item">Fish &amp; shellfish</div>
+          <div class="no-item">Peanuts &amp; tree nuts</div>
+          <div class="no-item">Egg</div>
+          <div class="no-item">Sesame</div>
+          <div class="no-item">GMOs</div>
+          <div class="no-item">Artificial colors</div>
+          <div class="no-item">Artificial sweeteners</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warning box — full width -->
+    <div class="warning-box">
+      <h4>⚠ Important — read before use</h4>
+      <p><strong>NOT FOR USE BY INDIVIDUALS UNDER 18.</strong> Do not use if pregnant or nursing.</p>
+      <p><strong style="color:var(--teal);">Consult a physician before use</strong> if you have (or have a family history of) prostate cancer, prostate enlargement, heart disease, or low HDL cholesterol — or if you take other supplements or medications.</p>
+      <p>Don't exceed the recommended serving.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="s">
+  <div class="wrap">
+    <div class="kicker">Real reviews</div>
+    <h2>The quiet biomarker <em>that moves first</em>.</h2>
+    <div class="reviews-grid">
+      <div class="rev"><div class="s">★★★★★</div><h4>My labs moved in a month.</h4><p>"I'm 56. My DHEA-S had been low for years. My doctor recommended supplementation. After 4 weeks on ZETA, my next labs showed levels back where they were in my 30s. Quiet but real."</p><div class="who">Marcus T. · verified buyer</div></div>
+      <div class="rev"><div class="s">★★★★★</div><h4>Energy and mood, finally even.</h4><p>"Post-menopause and tired of feeling depleted. Started 10mg. Within 6 weeks, mood lifted. Less 3pm crash. Recovery from workouts better. I take it like brushing my teeth now."</p><div class="who">Joanna B. · verified buyer</div></div>
+      <div class="rev"><div class="s">★★★★★</div><h4>The one my regen doc wanted me on.</h4><p>"David prescribed it before I knew it was sold. Now I have both — the longevity work in the clinic and the daily protocol at home. Felt the difference in lean mass and energy in 3 months."</p><div class="who">D.K. · verified buyer</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIG DEEPER — V3 Standard -->
+<section class="accordion-section">
+  <div class="accordion-header-block">
+    <p class="accordion-eyebrow">For the Curious</p>
+    <h2 class="accordion-heading">Dig <em>deeper.</em></h2>
+    <p class="accordion-subtitle">The hormone science, the bioavailability story, the research, and the precautions worth reading before starting.</p>
+  </div>
+
+  <div class="accordion-items">
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <span class="accordion-trigger-label">Description</span>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <h3>The <em>precursor</em> your body is quietly running out of.</h3>
+        <p>ZETA DHEA features <strong>dehydroepiandrosterone (DHEA)</strong> — a naturally occurring steroid hormone precursor synthesized from cholesterol, primarily by the adrenal glands. The body converts DHEA into androgens, estrogens, and other hormones as needed.</p>
+        <p>DHEA peaks between the ages of 20 and 30, then declines approximately <strong>2% every year</strong> until about age 70, when it slows to <strong>10–20% of the amount</strong> encountered in a young adult at peak level. Supplementing with DHEA replenishes the reservoir so your body has the raw material it needs for the hormones that govern energy, mood, body composition, recovery, and longevity.</p>
+        <h4>Clinical Applications</h4>
+        <ul>
+          <li>Supports healthy androgen and estrogen levels</li>
+          <li>Hormone precursor — supports the body's own production of testosterone, estrogen, and IGF-1</li>
+          <li>Supports body composition (lean mass, especially in men)</li>
+          <li>Supports mood, energy, and psychological well-being</li>
+        </ul>
+        <p style="font-size:11.5px;color:var(--mid);font-style:italic;margin-top:28px;">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <span class="accordion-trigger-label">Ingredients</span>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <h3>What's <em>in it.</em> Every milligram.</h3>
+        <h4>Supplement Facts (per 1 capsule)</h4>
+        <p>One strength: 25 mg per capsule — the standard clinical dose.</p>
+        <ul>
+          <li><strong>Micronized Dehydroepiandrosterone (DHEA)</strong> — 25 mg</li>
+          <li><strong>Calcium</strong> (as dicalcium phosphate dihydrate) — 40 mg</li>
+        </ul>
+        <h4>Other Ingredients</h4>
+        <p>Microcrystalline cellulose, croscarmellose sodium, ascorbyl palmitate, hydroxypropyl cellulose, silica, and coating (hydroxypropyl methylcellulose and medium-chain triglycerides).</p>
+        <h4>Why micronized matters</h4>
+        <p>Standard DHEA powder has large particle sizes and poor solubility — much of the dose never makes it into circulation. <strong>Micronization</strong> reduces particle size to a fraction of standard, dramatically increasing surface area and absorption. The 25 mg on the label actually delivers ~25 mg of bioactive DHEA.</p>
+        <p><strong>25 mg</strong> is the standard adult dose used in the majority of clinical studies and the dose Dr. Karli most often recommends to patients without contraindications.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <span class="accordion-trigger-label">Directions &amp; Precautions</span>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <h3>How to <em>take it.</em></h3>
+        <p><strong>Take 1 capsule twice daily — or as directed by your healthcare professional.</strong> Most people take one in the morning and one in early afternoon. Avoid late-evening doses; DHEA can be mildly activating.</p>
+        <h4>Pairs Well With</h4>
+        <ul>
+          <li><strong>ZETA MULTI</strong> — the daily foundation (B-vitamins and cofactors support hormone synthesis)</li>
+          <li><strong>ZETA MEGAS</strong> — omega-3s support cell membrane health (where hormones do their work)</li>
+          <li><strong>ZETA LONGEVITY</strong> — the long-game antioxidant stack</li>
+        </ul>
+        <div class="acc-warn">
+          <p><strong>⚠ Warning — read carefully.</strong></p>
+          <p>NOT FOR USE BY INDIVIDUALS UNDER THE AGE OF 18 YEARS. DO NOT USE IF PREGNANT OR NURSING. Consult a physician or licensed, qualified healthcare professional before using if you have (or have a family history of) prostate cancer, prostate enlargement, heart disease, or low HDL cholesterol — or if you are using any other dietary supplement, prescription drug, or over-the-counter drug.</p>
+          <p>Do not exceed the recommended serving. Exceeding recommended serving may cause serious adverse health effects. Possible side effects include acne, hair loss, facial hair growth (in women), aggressiveness, irritability, and increased estrogen levels.</p>
+          <p>Discontinue use and call a physician immediately if you experience rapid heartbeat, dizziness, blurred vision, or other similar symptoms. KEEP OUT OF REACH OF CHILDREN.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <span class="accordion-trigger-label">Research</span>
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <h3>The <em>research</em> underneath.</h3>
+        <p>DHEA is one of the most-studied longevity-relevant supplements in clinical literature. A few of the foundational studies behind ZETA DHEA:</p>
+
+        <div class="acc-highlight">
+          <div class="hl-label">★ Key study · the restoration paper</div>
+          <p><strong>Morales AJ, Nolan JJ, Nelson JC, Yen SSC (1994).</strong> <em>Effects of replacement dose of dehydroepiandrosterone in men and women of advancing age.</em> <strong>Journal of Clinical Endocrinology &amp; Metabolism.</strong></p>
+          <p>Randomized, placebo-controlled crossover trial in men and women aged 40–70. Nightly 50 mg DHEA restored serum DHEA-S to levels of individuals in their second decade within 2 weeks, sustained over 3 months. Androgen levels doubled in female subjects. IGF-1 increased ~10%.</p>
+        </div>
+
+        <h4>Supporting research</h4>
+        <div class="ref"><strong>Morales AJ, Haubrich RH, Hwang JY, et al. (1998).</strong> The effect of six months treatment with a 100 mg daily dose of DHEA on circulating sex steroids, body composition and muscle strength. <em>Clinical Endocrinology (Oxford).</em></div>
+        <div class="ref"><strong>Baulieu EE, Thomas G, Legrain S, et al. (2000).</strong> DHEAge: a 1-year, randomized study of DHEA replacement in 280 healthy subjects aged 60–79. <em>Proc Natl Acad Sci USA.</em> Replacement therapy normalized a wide variety of age-related physiological functions.</div>
+        <div class="ref"><strong>Corona G, Rastrelli G, Giagulli VA, et al. (2013).</strong> Meta-analysis of 25 randomized, double-blind, placebo-controlled studies of DHEA supplementation in elderly men. <em>J Clin Endocrinol Metab.</em></div>
+        <div class="ref"><strong>Sahu P, Gidwani B, Dhongade HJ (2020).</strong> Pharmacological activities of dehydroepiandrosterone: a review. <em>Steroids.</em></div>
+        <div class="ref"><strong>Traish AM, Kang HP, Saad F, et al. (2011).</strong> Dehydroepiandrosterone (DHEA) — a precursor steroid or an active hormone in human physiology. <em>Journal of Sexual Medicine.</em></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BUNDLE -->
+<section class="s">
+  <div class="wrap">
+    <div class="bundle">
+      <div class="b-art">
+        <span class="photo-note" style="position:absolute;top:14px;left:14px;">PHOTO · DHEA + D+K</span>
+        <svg viewBox="0 0 120 180" width="100" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="6" width="40" height="22" rx="3" fill="#0A1320"/><rect x="14" y="28" width="92" height="148" rx="8" fill="#0A1320"/><rect x="22" y="84" width="76" height="56" rx="3" fill="#F4F4F5"/><text x="60" y="104" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#006E73" font-weight="500">ZETA</text><text x="60" y="124" text-anchor="middle" font-family="Cormorant Garamond" font-size="20" fill="#0A1320" font-weight="500">DHEA</text></svg>
+        <span style="font-family:var(--serif);font-size:38px;color:var(--teal);font-weight:500;">+</span>
+        <svg viewBox="0 0 120 180" width="100" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="6" width="40" height="24" rx="3" fill="#006E73"/><rect x="14" y="30" width="92" height="146" rx="8" fill="#006E73"/><rect x="22" y="84" width="76" height="56" rx="3" fill="#F4F4F5"/><text x="60" y="106" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#006E73" font-weight="500">ZETA</text><text x="60" y="122" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#0A1320" font-weight="500">D+K</text></svg>
+      </div>
+      <div>
+        <span class="savings">Save 10% · Bundle</span>
+        <h3>DHEA + <em>D+K.</em></h3>
+        <p>Since most of us are deficient in D3, don't forget to add ZETA D+K so you're not.</p>
+        <button class="cta">BUY DHEA + D+K</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <div class="wrap-narrow">
+    <div class="tagline">DRIVEN BY SCIENCE · BUILT TO PERFORM · MADE TO FEEL</div>
+    <h2><em style="color:var(--teal);">Take what</em><br>we take.</h2>
+    <div class="promise">Look. Feel. Perform. — Younger.</div>
+    <div class="ctas">
+      <a href="#" class="btn btn-primary">BUY ZETA DHEA</a>
+      <a href="#" class="btn btn-secondary">Take the Mirror Quiz</a>
+    </div>
+  </div>
+</section>
+
+<div class="sticky-cta"><div class="p">$34.99</div><button>BUY ZETA DHEA</button></div>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand-foot">Z E T A</div>
+      <div class="tag">Manage your ecosystem. Everyday.</div>
+      <div class="trinity">Health · Wealth · Youth</div>
+    </div>
+    <div><h5>Shop</h5><ul><li><a href="#">Z-83 · Focus</a></li><li><a href="#" style="color:var(--bronze);">ZETA DHEA</a></li><li><a href="#">ZETA MULTI</a></li><li><a href="#">ZETA LONGEVITY</a></li><li><a href="#">All products</a></li></ul></div>
+    <div><h5>Learn</h5><ul><li><a href="#">Take the quiz</a></li><li><a href="#">The ZETA Journal</a></li><li><a href="#">Free guides</a></li><li><a href="#">Our story</a></li></ul></div>
+    <div><h5>Join the inner circle</h5><p style="font-size:14px;opacity:0.7;line-height:1.5;margin:0 0 12px;">First-bottle stories, founder notes. 1–2 emails a month.</p><p style="font-size:12px;opacity:0.5;">Sign up &amp; get 10% off your first bottle.</p></div>
+  </div>
+  <div class="copy-bar">© 2026 ZETA · 3683 S. Miami Ave, Miami, FL · YourHealth@zetabody.com</div>
+</footer>
+
+<script>
+function toggleAccordion(trigger) {
+  const expanded = trigger.getAttribute('aria-expanded') === 'true';
+  trigger.setAttribute('aria-expanded', !expanded);
+  trigger.nextElementSibling.classList.toggle('open', !expanded);
+}
+
+document.querySelectorAll('.buy .row').forEach(row => {
+  row.addEventListener('click', () => {
+    document.querySelectorAll('.buy .row').forEach(r => r.classList.remove('selected'));
+    row.classList.add('selected');
+    const isSub = row.dataset.buy === 'sub';
+    const sp = document.querySelector('.sticky-cta .p');
+    if (sp) sp.textContent = isSub ? '$33.24/mo' : '$34.99';
+  });
+});
+</script>
+
+</body>
+</html>
