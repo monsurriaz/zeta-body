@@ -8,9 +8,11 @@
    ══════════════════════════════════════════════════════════════════════════ */
 
 .zeta {
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   color: var(--zeta-ink);
-  -webkit-font-smoothing: antialiased;
+  /* No -webkit-font-smoothing override: use the browser default (subpixel on
+     macOS) so text weight/color matches the client product page and the
+     (non-.zeta) header/footer. `antialiased` here rendered text thinner/lighter. */
   text-rendering: optimizeLegibility;
 }
 
@@ -18,12 +20,12 @@
 .zeta *, .zeta *::before, .zeta *::after { box-sizing: border-box; }
 
 /* ── Helpers ── */
-.zeta .zeta-serif  { font-family: var(--zeta-font-serif); }
+.zeta .zeta-serif  { font-family: var(--zeta-font-heading); }
 .zeta .zeta-teal   { color: var(--zeta-teal); }
 .zeta .zeta-bronze { color: var(--zeta-bronze); }
 
 .zeta .zeta-eyebrow {
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   font-size: 11px;
   font-weight: var(--zeta-fw-bold);
   letter-spacing: var(--zeta-tracking-eyebrow);
@@ -34,7 +36,7 @@
 .zeta .zeta-eyebrow--bronze { color: var(--zeta-bronze); }
 
 .zeta .zeta-h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(36px, 4vw, 56px);
   font-weight: var(--zeta-fw-medium);
   line-height: 1.05;
@@ -44,7 +46,7 @@
 .zeta .zeta-h2 em { font-style: italic; color: var(--zeta-teal); }
 
 .zeta .zeta-lede {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-style: italic;
   font-size: clamp(18px, 2vw, 21px);
   line-height: 1.5;
@@ -57,7 +59,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   font-size: 11px;
   font-weight: var(--zeta-fw-bold);
   letter-spacing: var(--zeta-tracking-label);
@@ -105,7 +107,7 @@
 
 .shopify-section--announcement-bar .announcement-bar p,
 .shopify-section--announcement-bar .announcement-bar a {
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   font-size: 11px;
   font-weight: var(--zeta-fw-medium);   /* 500 */
   letter-spacing: 0.12em;
@@ -139,7 +141,7 @@
 
 /* Logo (text) */
 .shopify-section--header .header__logo-text {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 22px;
   font-weight: var(--zeta-fw-semibold);   /* 600 */
   letter-spacing: 0.18em;
@@ -154,7 +156,7 @@
 .shopify-section--header .header__link-list a,
 .shopify-section--header .header__link-list summary,
 .shopify-section--header .header__link-list button {
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   font-size: 11px;
   font-weight: var(--zeta-fw-medium);      /* 500 */
   letter-spacing: 0.1em;
@@ -175,7 +177,7 @@
 
 /* Action link text labels (search, account) */
 .shopify-section--header .header__action-label {
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   font-size: 11px;
   font-weight: var(--zeta-fw-medium);      /* 500 */
   letter-spacing: 0.08em;
@@ -278,7 +280,7 @@
 }
 .shopify-section--footer .footer__brand-logo-text {
   display: block;
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 28px;
   font-weight: var(--zeta-fw-semibold);   /* 600 */
   letter-spacing: 0.3em;
@@ -288,7 +290,7 @@
 }
 .shopify-section--footer .footer__brand-logo-image { margin-bottom: 12px; height: auto; }
 .shopify-section--footer .footer__brand-tagline {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-style: italic;
   font-size: 17px;
   line-height: 1.4;
@@ -326,7 +328,7 @@
   gap: 10px;
 }
 .shopify-section--footer .footer__block--menu li a {
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   font-size: 13px;
   color: rgba(255, 255, 255, 0.55);
   text-decoration: none;
@@ -337,7 +339,7 @@
 
 /* Inner Circle intro description (spacing to links handled by --footer-block-gap) */
 .shopify-section--footer .footer__block-description {
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   font-size: 13px;
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.6;
@@ -351,7 +353,7 @@
   padding-top: 24px;
 }
 .shopify-section--footer .footer__bottom-text {
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   font-size: 11px;
   color: rgba(255, 255, 255, 0.35);
   line-height: 1.7;
@@ -401,7 +403,7 @@
   margin-bottom: 2rem;
 }
 .zeta-home-hero__h1 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(3rem, 5.5vw, 5.5rem);
   font-weight: var(--zeta-fw-medium);
   line-height: 1;
@@ -430,7 +432,7 @@
   padding-left: 20px;
   border-left: 3px solid var(--zeta-bronze);
   max-width: 400px;
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 19px;
   font-style: italic;
   line-height: 1.45;
@@ -489,7 +491,7 @@
   margin-bottom: 6px;
 }
 .zeta-home-hero__badge-name {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 24px;
   font-weight: var(--zeta-fw-medium);
   line-height: 1;
@@ -576,7 +578,7 @@
   margin-bottom: 5px;
 }
 .zeta-trust-strip__value {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 16px;
   font-weight: var(--zeta-fw-medium);
   color: var(--zeta-ink);
@@ -605,7 +607,7 @@
   text-align: center;
 }
 .zeta-feel__h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(2.2rem, 4vw, 3.8rem);
   font-weight: var(--zeta-fw-medium);
   line-height: 1.1;
@@ -633,7 +635,7 @@
 .zeta-feel__col + .zeta-feel__col { border-left: 1px solid var(--zeta-border); }
 .zeta-feel__col-tag {
   display: block;
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: var(--zeta-fw-semibold);
   font-style: italic;
@@ -644,7 +646,7 @@
   white-space: nowrap;
 }
 .zeta-feel__col-h3 {
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   font-size: 11px;
   font-weight: var(--zeta-fw-bold);
   letter-spacing: 0.22em;
@@ -715,7 +717,7 @@
   margin-bottom: 10px;
 }
 .zeta-lineup__h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(2.8rem, 5vw, 4.2rem);
   font-weight: var(--zeta-fw-medium);
   color: #fff;
@@ -787,7 +789,7 @@
   margin-bottom: 6px;
 }
 .zeta-lineup__headline {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 1.25rem;
   font-weight: var(--zeta-fw-medium);
   color: #fff;
@@ -859,7 +861,7 @@
   justify-content: center;
 }
 .zeta-media-copy__h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(2.2rem, 3.5vw, 3.2rem);
   font-weight: var(--zeta-fw-medium);
   line-height: 1.08;
@@ -868,7 +870,7 @@
 }
 .zeta-media-copy__h2 em { font-style: italic; color: var(--zeta-teal); }
 .zeta-media-copy__tagline {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 1.35rem;
   font-style: italic;
   color: var(--zeta-bronze);
@@ -920,7 +922,7 @@
   margin-bottom: 18px;
 }
 .zeta-hwy__h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(4.5rem, 10vw, 9rem);
   font-weight: var(--zeta-fw-medium);
   line-height: 0.92;
@@ -930,7 +932,7 @@
 .zeta-hwy__h2 em { font-style: italic; color: var(--zeta-bronze); }
 .zeta-hwy__lede {
   margin-top: 2.5rem;
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-style: italic;
   font-size: clamp(1.8rem, 3.5vw, 3rem);
   font-weight: var(--zeta-fw-medium);
@@ -954,7 +956,7 @@
 }
 .zeta-hwy__pillar:hover { border-top-color: var(--zeta-bronze); }
 .zeta-hwy__word {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 2rem;
   font-weight: var(--zeta-fw-medium);
   color: #fff;
@@ -1003,7 +1005,7 @@
   padding-bottom: 2rem;
 }
 .zeta-beliefs__h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(2rem, 3.5vw, 3.2rem);
   font-weight: var(--zeta-fw-medium);
   color: var(--zeta-ink);
@@ -1027,7 +1029,7 @@
   background: rgba(0, 110, 115, 0.02);
 }
 .zeta-beliefs__num {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 2.2rem;
   font-weight: var(--zeta-fw-medium);
   font-style: italic;
@@ -1076,7 +1078,7 @@
 }
 .zeta-cta__h2 {
   position: relative;
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(3rem, 7vw, 6.5rem);
   font-weight: var(--zeta-fw-medium);
   color: #fff;
@@ -1137,7 +1139,7 @@
   justify-content: center;
 }
 .zeta-founder__h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: var(--zeta-fw-medium);
   line-height: 1.08;
@@ -1167,7 +1169,7 @@
   margin-bottom: 10px;
 }
 .zeta-founder__sig-name {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 2rem;
   font-weight: var(--zeta-fw-medium);
   font-style: italic;
@@ -1218,7 +1220,7 @@
   margin-bottom: 2.5rem;
 }
 .zeta-blog__h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: var(--zeta-fw-medium);
   color: var(--zeta-ink);
@@ -1278,7 +1280,7 @@
   margin-bottom: 10px;
 }
 .zeta-blog__title {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 1.2rem;
   font-weight: var(--zeta-fw-medium);
   color: var(--zeta-ink);
@@ -1313,8 +1315,8 @@
 
 /* Shared section header helpers (client .section-eyebrow / .section-h2) */
 .zeta-section-eyebrow {
-  font-family: var(--zeta-font-sans);
-  font-size: 13px;
+  font-family: var(--zeta-font-body);
+  font-size: 15px;
   font-weight: var(--zeta-fw-semibold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1323,7 +1325,7 @@
 }
 .zeta-section-eyebrow--bronze { color: var(--zeta-bronze); }
 .zeta-section-h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(36px, 3.5vw, 52px);
   font-weight: var(--zeta-fw-medium);
   line-height: 1.1;
@@ -1352,7 +1354,7 @@
   text-align: center;
 }
 .zeta-quote-band__quote {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(22px, 2.8vw, 32px);
   font-style: italic;
   font-weight: var(--zeta-fw-regular);
@@ -1382,7 +1384,7 @@
 }
 .zeta-timeline__panel:last-child { border-right: none; }
 .zeta-timeline__label {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-weight: var(--zeta-fw-bold);
@@ -1390,7 +1392,7 @@
   margin-bottom: 12px;
 }
 .zeta-timeline__title {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 24px;
   font-style: italic;
   font-weight: var(--zeta-fw-medium);
@@ -1431,7 +1433,7 @@
   margin-bottom: 16px;
 }
 .zeta-ingredients__name {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 28px;
   font-weight: var(--zeta-fw-medium);
   color: var(--zeta-ink);
@@ -1457,7 +1459,7 @@
 .zeta-facts { background: var(--zeta-surface); }
 .zeta-facts__grid { display: flex; flex-direction: column; gap: 28px; }
 .zeta-facts__bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.zeta-facts__panel { border: 2px solid var(--zeta-ink); font-family: var(--zeta-font-sans); }
+.zeta-facts__panel { border: 2px solid var(--zeta-ink); font-family: var(--zeta-font-body); }
 .zeta-facts__panel-header { padding: 12px 16px 8px; border-bottom: 8px solid var(--zeta-ink); }
 .zeta-facts__panel-title { font-size: 26px; font-weight: var(--zeta-fw-bold); line-height: 1; color: var(--zeta-ink); }
 .zeta-facts__panel-serving { font-size: 11px; color: var(--zeta-ink); margin-top: 4px; }
@@ -1493,7 +1495,7 @@
 
 .zeta-facts__exclude { background: var(--zeta-bg); border: 1px solid var(--zeta-border); padding: 32px; }
 .zeta-facts__exclude-heading {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 26px;
   font-weight: var(--zeta-fw-medium);
   color: var(--zeta-ink);
@@ -1524,7 +1526,7 @@
 .zeta-reviews__card { background: var(--zeta-surface); padding: 32px 28px; border: 1px solid var(--zeta-border); }
 .zeta-reviews__stars { color: var(--zeta-bronze); font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
 .zeta-reviews__body, .zeta-reviews__body {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 18px;
   font-style: italic;
   font-weight: var(--zeta-fw-regular);
@@ -1545,7 +1547,7 @@
   text-align: center;
 }
 .zeta-accordion__heading {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(44px, 4.5vw, 64px);
   font-weight: var(--zeta-fw-medium);
   color: var(--zeta-ink);
@@ -1558,30 +1560,53 @@
 .zeta-accordion__trigger {
   list-style: none;
   cursor: pointer;
-  padding: 24px max(80px, calc((100vw - 1280px) / 2 + 80px));
+  padding: 25px max(80px, calc((100vw - 1280px) / 2 + 80px));
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: background 0.15s;
 }
 .zeta-accordion__trigger::-webkit-details-marker { display: none; }
-.zeta-accordion__trigger:hover { background: var(--zeta-bg); }
+/* .zeta-accordion__trigger:hover { background: var(--zeta-bg); } */
 .zeta-accordion__trigger-label {
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: var(--zeta-fw-semibold);
   color: var(--zeta-teal);
+  transition: transform 0.2s;
+}
+.zeta-accordion__trigger-label:hover {
+  transform: translateX(5px);
 }
 .zeta-accordion__icon {
-  font-size: 22px;
+  font-size: 0px;
   color: var(--zeta-teal);
   font-weight: 300;
   line-height: 1;
   transition: transform 0.2s;
   flex-shrink: 0;
+  position: relative;
 }
-.zeta-accordion__item[open] .zeta-accordion__icon { transform: rotate(45deg); }
+.zeta-accordion__icon:before {
+  position: absolute;
+  content: "";
+  right: 0;
+  height: 1px;
+  width: var(--zeta-accordion-icon-size, 12px);
+  background: var(--zeta-teal);
+}
+.zeta-accordion__icon:after {
+  position: absolute;
+  content: "";
+  right: calc(var(--zeta-accordion-icon-size, 12px) / 2);
+  top: calc(var(--zeta-accordion-icon-size, 12px) / 2 * -1);
+  height: var(--zeta-accordion-icon-size, 12px);
+  width: 1px;
+  background-color: var(--zeta-teal);
+  transition: opacity 0.2s;
+}
+.zeta-accordion__item[open] .zeta-accordion__icon:after { opacity: 0; }
 .zeta-accordion__body {
   padding: 0 max(80px, calc((100vw - 1280px) / 2 + 80px)) 36px;
 }
@@ -1605,7 +1630,7 @@
   margin-bottom: 12px;
 }
 .zeta-bundle__h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(32px, 3.5vw, 48px);
   font-weight: var(--zeta-fw-medium);
   color: var(--zeta-ink);
@@ -1634,9 +1659,9 @@
 }
 .zeta-bundle__products { display: flex; justify-content: center; align-items: center; gap: 32px; margin-bottom: 32px; }
 .zeta-bundle__product { background: var(--zeta-surface); padding: 24px 32px; border: 1px solid var(--zeta-border); min-width: 180px; text-align: center; }
-.zeta-bundle__product-name { font-family: var(--zeta-font-serif); font-size: 20px; font-weight: var(--zeta-fw-medium); color: var(--zeta-ink); }
+.zeta-bundle__product-name { font-family: var(--zeta-font-heading); font-size: 20px; font-weight: var(--zeta-fw-medium); color: var(--zeta-ink); }
 .zeta-bundle__product-sub { font-size: 11px; color: var(--zeta-mid); margin-top: 4px; }
-.zeta-bundle__plus { font-family: var(--zeta-font-serif); font-size: 36px; color: var(--zeta-mid); font-style: italic; }
+.zeta-bundle__plus { font-family: var(--zeta-font-heading); font-size: 36px; color: var(--zeta-mid); font-style: italic; }
 .zeta-bundle__btn {
   display: inline-block;
   background: var(--zeta-ink);
@@ -1654,7 +1679,7 @@
 /* ── Close CTA (.cta-close) ── */
 .zeta-cta-close { background: var(--zeta-ink); text-align: center; }
 .zeta-cta-close__tagline {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(18px, 2.2vw, 26px);
   font-style: italic;
   color: rgba(255, 255, 255, 0.55);
@@ -1662,7 +1687,7 @@
   line-height: 1.3;
 }
 .zeta-cta-close__h2 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(40px, 5vw, 68px);
   font-weight: var(--zeta-fw-medium);
   color: #fff;
@@ -1706,7 +1731,8 @@
   .zeta-bundle,
   .zeta-cta-close { padding: 60px 24px; }
   .zeta-accordion__header { padding: 60px 24px 32px; }
-  .zeta-accordion__trigger { padding: 20px 24px; }
+  .zeta-accordion__trigger { padding: 25px 24px; }
+  .zeta-accordion__icon { font-size: 0px; font-weight: 100;}
   .zeta-accordion__body { padding: 0 24px 28px; }
   .zeta-timeline__grid { grid-template-columns: 1fr 1fr; }
   .zeta-timeline__panel { border-right: none; border-bottom: 1px solid var(--zeta-border); }
@@ -1749,7 +1775,8 @@
   right: 32px;
   z-index: 3;
   background: rgba(184, 153, 104, 0.15);
-  color: var(--zeta-bronze);
+  background: var(--zeta-bronze);
+  color: #ffffff;
   border: 1px solid rgba(184, 153, 104, 0.35);
   padding: 8px 14px;
   font-size: 10px;
@@ -1792,7 +1819,7 @@
 
 /* Headline */
 .zeta-pdp__h1 {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: clamp(52px, 5.5vw, 76px);
   font-weight: var(--zeta-fw-medium);
   line-height: 1.02;
@@ -1802,7 +1829,7 @@
 
 /* Lede */
 .zeta-pdp__lede, .zeta-pdp__lede p {
-  font-family: var(--zeta-font-serif);
+  font-family: var(--zeta-font-heading);
   font-size: 20px;
   font-style: italic;
   font-weight: var(--zeta-fw-regular);
@@ -1825,18 +1852,21 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 420px;
+  max-width: 460px;
 }
 
 /* Subscription / purchase options */
 .zeta-pdp__options { display: flex; flex-direction: column; gap: 10px; }
 .zeta-pdp__radio-input { position: absolute; opacity: 0; width: 0; height: 0; }
+/* Flex layout — the client's four "non-negotiable" buy-option rules:
+   text flex:1 min-width:0 · label flex-wrap:wrap (badge inline) · sub nowrap ·
+   price nowrap flex-shrink:0. Badge stays inline with the title, price pinned right. */
 .zeta-pdp__option {
   display: flex;
   align-items: center;
   gap: 14px;
   border: 1.5px solid var(--zeta-border);
-  border-radius: 8px;
+  border-radius: 0px;
   padding: 14px 16px;
   cursor: pointer;
   background: var(--zeta-surface);
@@ -1882,6 +1912,44 @@
 .zeta-pdp__option-price { font-size: 15px; font-weight: var(--zeta-fw-bold); color: var(--zeta-ink); white-space: nowrap; text-align: right; flex-shrink: 0; }
 .zeta-pdp__option-price s { font-weight: var(--zeta-fw-regular); color: var(--zeta-mid); font-size: 13px; margin-right: 4px; }
 
+/* Subscription frequency dropdown (revealed when Subscribe is selected) */
+.zeta-pdp__freq { display: flex; flex-direction: column; gap: 8px; }
+.zeta-pdp__freq[hidden] { display: none; }
+.zeta-pdp__freq-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: var(--zeta-fw-semibold);
+  color: var(--zeta-mid);
+}
+.zeta-pdp__select { position: relative; }
+.zeta-pdp__select select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: var(--zeta-font-body);
+  font-size: 14px;
+  color: var(--zeta-ink);
+  background: var(--zeta-surface);
+  border: 1.5px solid var(--zeta-border);
+  border-radius: 0px;
+  padding: 13px 42px 13px 16px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.zeta-pdp__select select:hover { border-color: var(--zeta-mid); }
+.zeta-pdp__select select:focus-visible { outline: none; border-color: var(--zeta-teal); box-shadow: 0 0 0 1px var(--zeta-teal) inset; }
+.zeta-pdp__select svg {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  color: var(--zeta-mid);
+  pointer-events: none;
+}
+
 /* Add-to-cart */
 .zeta-pdp__buy { display: flex; flex-direction: column; gap: 10px; }
 .zeta-pdp__buy .zeta-pdp__buy-buttons,
@@ -1899,7 +1967,7 @@
   font-weight: var(--zeta-fw-semibold);
   border: none;
   cursor: pointer;
-  font-family: var(--zeta-font-sans);
+  font-family: var(--zeta-font-body);
   transition: background 0.2s;
 }
 .zeta-pdp__atc:hover { background: var(--zeta-teal); }
@@ -1920,6 +1988,11 @@
   transition: border-color 0.2s;
 }
 .zeta-pdp__atc-secondary:hover { border-color: var(--zeta-ink); }
+/* Secondary can render as a <button> (bundle add-on) — normalise to match the link */
+.zeta-pdp__bundle { display: block; }
+button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-height: 1.2; }
+.zeta-pdp__atc-secondary[aria-busy="true"] { opacity: 0.6; cursor: progress; }
+.zeta-pdp__atc-secondary[disabled] { opacity: 0.5; cursor: not-allowed; border-color: var(--zeta-border); }
 
 /* Quantity */
 .zeta-pdp__quantity { display: flex; align-items: center; gap: 12px; }
@@ -1944,6 +2017,7 @@
 .zeta-pdp__media:has(.zeta-gallery--portrait),
 .zeta-pdp__media:has(.zeta-gallery--square) { align-items: flex-start; justify-content: stretch; }
 .zeta-gallery {
+  position: relative;
   min-width: 0;
   width: 100%;
   display: flex;
@@ -2002,6 +2076,16 @@
   padding: 16px;
   flex-shrink: 0;
 }
+/* Inside: overlay the thumbnail strip on the bottom of the main image */
+.zeta-gallery--thumbs-inside .zeta-gallery__thumbs-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  padding: 32px 16px 16px;
+  background: linear-gradient(to top, rgba(10, 19, 32, 0.6) 0%, transparent 100%);
+}
 .zeta-gallery__thumb-arrow {
   flex-shrink: 0;
   width: 28px;
@@ -2049,15 +2133,19 @@
 }
 
 /* ── Product info: column height + main image fit (toggled by section settings via classes) ── */
-/* Sticky: shorter column pins while the taller one scrolls (bounded by the section) */
+/* Normal & Sticky: each column takes its natural height (no equal-height stretch).
+   Straight (default) keeps the grid's default stretch = equal columns. */
+.zeta-pdp--normal .zeta-pdp__grid,
 .zeta-pdp--sticky .zeta-pdp__grid { align-items: start; }
+/* Fill media needs a bounded height in these modes so the flex stage doesn't collapse */
+.zeta-pdp--normal .zeta-gallery--fill .zeta-gallery__stage,
+.zeta-pdp--sticky .zeta-gallery--fill .zeta-gallery__stage { flex: none; aspect-ratio: 4 / 5; }
+/* Sticky only: the shorter column pins while the taller one scrolls (bounded by the section) */
 .zeta-pdp--sticky .zeta-pdp__media,
 .zeta-pdp--sticky .zeta-pdp__info {
   position: sticky;
-  top: calc(var(--header-height, 0px) + 0px);
+  top: calc(var(--header-height, 0px) + 24px);
 }
-/* Fill media needs a bounded height when sticky so the flex stage doesn't collapse */
-.zeta-pdp--sticky .zeta-gallery--fill .zeta-gallery__stage { flex: none; aspect-ratio: 4 / 5; }
 @media screen and (max-width: 900px) {
   .zeta-pdp--sticky .zeta-pdp__media,
   .zeta-pdp--sticky .zeta-pdp__info { position: static; }

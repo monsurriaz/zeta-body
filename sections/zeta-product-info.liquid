@@ -29,7 +29,7 @@
   {%- endunless -%}
 </style>
 
-<section class="zeta zeta-pdp {% if section.settings.column_alignment == 'sticky' %}zeta-pdp--sticky{% endif %}" {{ section.shopify_attributes }}>
+<section class="zeta zeta-pdp zeta-pdp--{{ section.settings.column_alignment | default: 'straight' }}" {{ section.shopify_attributes }}>
   <product-rerender id="zeta-pdp-{{ product.id }}-{{ section.id }}" observe-form="{{ product_form_id }}" allow-partial-rerender class="zeta-pdp__grid">
     {%- comment -%} ---------- MEDIA (left) ---------- {%- endcomment -%}
     <div class="zeta-pdp__media">
@@ -44,7 +44,7 @@
         {%- if product.media.size > thumbs_per_row -%}{%- assign show_thumb_arrows = true -%}{%- endif -%}
         {%- assign render_thumbs = false -%}
         {%- if show_thumbs or show_thumbs_mobile -%}{%- assign render_thumbs = true -%}{%- endif -%}
-        <zeta-gallery class="zeta-gallery zeta-gallery--{{ section.settings.main_media_ratio | default: 'fill' }} zeta-gallery--fit-{{ section.settings.main_media_fit | default: 'cover' }}">
+        <zeta-gallery class="zeta-gallery zeta-gallery--{{ section.settings.main_media_ratio | default: 'fill' }} zeta-gallery--fit-{{ section.settings.main_media_fit | default: 'cover' }} zeta-gallery--thumbs-{{ section.settings.thumbnail_position | default: 'outside' }}">
           {%- comment -%} Main viewport {%- endcomment -%}
           <div class="zeta-gallery__stage">
             <div class="zeta-gallery__track">
@@ -153,10 +153,15 @@
             {%- endif -%}
 
           {%- when 'subscription' -%}
-            {%- if product.selling_plan_groups.size > 0 -%}
-              <div class="zeta-pdp__options" {{ block.shopify_attributes }}>
+            {%- assign allocations = variant.selling_plan_allocations -%}
+            {%- if product.selling_plan_groups.size > 0 and allocations.size > 0 -%}
+              {%- assign first_alloc = allocations | first -%}
+              {%- assign first_save = 0 -%}
+              {%- if first_alloc.price < variant.price -%}{%- assign first_save = variant.price | minus: first_alloc.price | times: 100.0 | divided_by: variant.price | round -%}{%- endif -%}
+              <zeta-subscription class="zeta-pdp__options" {{ block.shopify_attributes }}>
+                {%- comment -%} One-time (mode radios are UI-only — not submitted) {%- endcomment -%}
                 <label class="zeta-pdp__option">
-                  <input type="radio" name="selling_plan" form="{{ product_form_id }}" value="" checked class="zeta-pdp__radio-input">
+                  <input type="radio" name="zeta_purchase_mode" value="onetime" checked class="zeta-pdp__radio-input" data-zeta-mode="onetime">
                   <span class="zeta-pdp__radio" aria-hidden="true"></span>
                   <span class="zeta-pdp__option-text">
                     <span class="zeta-pdp__option-label">{{ block.settings.onetime_label | escape }}</span>
@@ -165,30 +170,44 @@
                   <span class="zeta-pdp__option-price">{{ variant.price | money }}</span>
                 </label>
 
-                {%- comment -%} One row per selling plan (frequency), driven by the variant's allocations {%- endcomment -%}
-                {%- for allocation in variant.selling_plan_allocations -%}
-                  {%- assign plan = allocation.selling_plan -%}
-                  {%- assign save_pct = 0 -%}
-                  {%- if allocation.price < variant.price -%}
-                    {%- assign save_pct = variant.price | minus: allocation.price | times: 100.0 | divided_by: variant.price | round -%}
-                  {%- endif -%}
-                  <label class="zeta-pdp__option">
-                    <input type="radio" name="selling_plan" form="{{ product_form_id }}" value="{{ plan.id }}" class="zeta-pdp__radio-input">
-                    <span class="zeta-pdp__radio" aria-hidden="true"></span>
-                    <span class="zeta-pdp__option-text">
-                      <span class="zeta-pdp__option-label">
-                        {{ plan.name | escape }}
-                        {%- if save_pct > 0 -%}<span class="zeta-pdp__option-badge">{{ save_pct }}% OFF</span>{%- endif -%}
-                      </span>
-                      {%- if block.settings.subscribe_sub != blank -%}<span class="zeta-pdp__option-sub">{{ block.settings.subscribe_sub | escape }}</span>{%- endif -%}
+                {%- comment -%} Subscribe & Save {%- endcomment -%}
+                <label class="zeta-pdp__option">
+                  <input type="radio" name="zeta_purchase_mode" value="subscribe" class="zeta-pdp__radio-input" data-zeta-mode="subscribe">
+                  <span class="zeta-pdp__radio" aria-hidden="true"></span>
+                  <span class="zeta-pdp__option-text">
+                    <span class="zeta-pdp__option-label">
+                      {{ block.settings.subscribe_label | escape }}
+                      <span class="zeta-pdp__option-badge" data-zeta-badge {% if first_save == 0 %}hidden{% endif %}>{{ first_save }}% OFF</span>
                     </span>
-                    <span class="zeta-pdp__option-price">
-                      {%- if allocation.price < variant.price -%}<s>{{ variant.price | money }}</s> {% endif -%}
-                      {{ allocation.price | money }}
-                    </span>
-                  </label>
-                {%- endfor -%}
-              </div>
+                    {%- if block.settings.subscribe_sub != blank -%}<span class="zeta-pdp__option-sub">{{ block.settings.subscribe_sub | escape }}</span>{%- endif -%}
+                  </span>
+                  <span class="zeta-pdp__option-price" data-zeta-sub-price data-onetime-display="{{ variant.price | money | escape }}">
+                    {%- if first_alloc.price < variant.price -%}<s>{{ variant.price | money }}</s> {% endif -%}
+                    {{ first_alloc.price | money }}
+                  </span>
+                </label>
+
+                {%- comment -%} Frequency: dropdown when >1 plan, hidden input when exactly 1 {%- endcomment -%}
+                {%- if allocations.size > 1 -%}
+                  <div class="zeta-pdp__freq" data-zeta-freq hidden>
+                    {%- if block.settings.frequency_label != blank -%}
+                      <label class="zeta-pdp__freq-label" for="{{ product_form_id }}-selling-plan">{{ block.settings.frequency_label | escape }}</label>
+                    {%- endif -%}
+                    <div class="zeta-pdp__select">
+                      <select id="{{ product_form_id }}-selling-plan" name="selling_plan" form="{{ product_form_id }}" data-zeta-plan disabled>
+                        {%- for allocation in allocations -%}
+                          {%- assign a_save = 0 -%}
+                          {%- if allocation.price < variant.price -%}{%- assign a_save = variant.price | minus: allocation.price | times: 100.0 | divided_by: variant.price | round -%}{%- endif -%}
+                          <option value="{{ allocation.selling_plan.id }}" data-price-display="{{ allocation.price | money | escape }}" data-save="{{ a_save }}">{{ allocation.selling_plan.name | escape }} — {{ allocation.price | money }}</option>
+                        {%- endfor -%}
+                      </select>
+                      {%- render 'icon' with 'chevron-bottom' -%}
+                    </div>
+                  </div>
+                {%- else -%}
+                  <input type="hidden" name="selling_plan" form="{{ product_form_id }}" value="{{ first_alloc.selling_plan.id }}" data-zeta-plan disabled>
+                {%- endif -%}
+              </zeta-subscription>
             {%- endif -%}
 
           {%- when 'buy_buttons' -%}
@@ -221,8 +240,29 @@
                 {%- endif -%}
               {%- endform -%}
 
-              {%- if block.settings.secondary_label != blank -%}
-                <a href="{{ block.settings.secondary_link | default: '#' }}" class="zeta-pdp__atc-secondary">{{ block.settings.secondary_label | escape }}</a>
+              {%- if block.settings.bundle_product != blank and block.settings.secondary_label != blank -%}
+                {%- assign bundle_variant = block.settings.bundle_product.selected_or_first_available_variant -%}
+                <zeta-bundle-add
+                  class="zeta-pdp__bundle"
+                  form="{{ product_form_id }}"
+                  data-bundle-id="{{ bundle_variant.id }}"
+                  data-bundle-qty="{{ block.settings.bundle_quantity | default: 1 }}"
+                >
+                  <button
+                    type="button"
+                    class="zeta-pdp__atc-secondary"
+                    data-bundle-button
+                    {% unless bundle_variant.available %}disabled{% endunless %}
+                  >
+                    {%- if bundle_variant.available -%}
+                      {{ block.settings.secondary_label | escape }}
+                    {%- else -%}
+                      {{ 'product.general.sold_out_button' | t }}
+                    {%- endif -%}
+                  </button>
+                </zeta-bundle-add>
+              {%- elsif block.settings.secondary_label != blank and block.settings.secondary_link != blank -%}
+                <a href="{{ block.settings.secondary_link }}" class="zeta-pdp__atc-secondary">{{ block.settings.secondary_label | escape }}</a>
               {%- endif -%}
             </div>
 
@@ -332,6 +372,157 @@
   })();
 </script>
 
+<script>
+  (() => {
+    if (window.customElements.get('zeta-subscription')) return;
+    class ZetaSubscription extends HTMLElement {
+      connectedCallback() {
+        this.modeInputs = Array.from(this.querySelectorAll('[data-zeta-mode]'));
+        this.plan = this.querySelector('[data-zeta-plan]');          // <select> or hidden <input>
+        this.freq = this.querySelector('[data-zeta-freq]');          // dropdown wrapper (may be null)
+        this.subPrice = this.querySelector('[data-zeta-sub-price]');
+        this.badge = this.querySelector('[data-zeta-badge]');
+        this.onetimeDisplay = this.subPrice ? this.subPrice.getAttribute('data-onetime-display') || '' : '';
+        this.select = this.plan && this.plan.tagName === 'SELECT' ? this.plan : null;
+
+        this.modeInputs.forEach((r) => r.addEventListener('change', () => this.sync()));
+        if (this.select) this.select.addEventListener('change', () => this.updatePrice());
+        this.sync();
+      }
+      get subscribing() {
+        const c = this.querySelector('[data-zeta-mode]:checked');
+        return c ? c.getAttribute('data-zeta-mode') === 'subscribe' : false;
+      }
+      sync() {
+        const on = this.subscribing;
+        if (this.plan) this.plan.disabled = !on;   // disabled → selling_plan not submitted → one-time
+        if (this.freq) this.freq.hidden = !on;
+        if (on) this.updatePrice();
+      }
+      updatePrice() {
+        if (!this.select || !this.subPrice) return;
+        const opt = this.select.options[this.select.selectedIndex];
+        if (!opt) return;
+        const price = opt.getAttribute('data-price-display') || '';
+        const save = parseInt(opt.getAttribute('data-save') || '0', 10);
+        this.subPrice.innerHTML = (save > 0 && this.onetimeDisplay ? '<s>' + this.onetimeDisplay + '</s> ' : '') + price;
+        if (this.badge) {
+          if (save > 0) { this.badge.textContent = save + '% OFF'; this.badge.hidden = false; }
+          else { this.badge.hidden = true; }
+        }
+      }
+    }
+    window.customElements.define('zeta-subscription', ZetaSubscription);
+  })();
+</script>
+
+<script>
+  (() => {
+    if (window.customElements.get('zeta-bundle-add')) return;
+
+    /* Adds the main product (with the customer's exact variant / quantity /
+       one-time-or-subscribe choice, read straight from the product form) TOGETHER
+       with a merchant-picked add-on product, in a single /cart/add.js request.
+       Reuses Impact's own cart events so the cart drawer opens & repaints. */
+    class ZetaBundleAdd extends HTMLElement {
+      connectedCallback() {
+        this.button = this.querySelector('[data-bundle-button]');
+        if (!this.button || this._bound) return;
+        this._bound = true;
+        this.button.addEventListener('click', (e) => { e.preventDefault(); this.add(); });
+      }
+
+      get form() {
+        return document.getElementById(this.getAttribute('form'));
+      }
+
+      /* Build the main line item from exactly what the product form would submit
+         (respects variant-picker id, quantity, selling_plan when subscribing,
+         and any line-item properties). */
+      mainItem() {
+        const form = this.form;
+        if (!form) return null;
+        const fd = new FormData(form);
+        const id = fd.get('id');
+        if (!id) return null;
+        const item = { id: id, quantity: parseInt(fd.get('quantity'), 10) || 1 };
+        const plan = fd.get('selling_plan');
+        if (plan) item.selling_plan = plan;
+        const props = {};
+        let hasProps = false;
+        for (const [key, value] of fd.entries()) {
+          const m = key.match(/^properties\[(.+)\]$/);
+          if (m) { props[m[1]] = value; hasProps = true; }
+        }
+        if (hasProps) item.properties = props;
+        return item;
+      }
+
+      async add() {
+        const bundleId = this.getAttribute('data-bundle-id');
+        const main = this.mainItem();
+        if (!bundleId || !main) return;
+
+        const items = [
+          main,
+          { id: bundleId, quantity: parseInt(this.getAttribute('data-bundle-qty'), 10) || 1 }
+        ];
+
+        const root = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
+
+        // Ask the cart drawer (and any bundled sections) which sections to render back.
+        const sections = ['variant-added'];
+        document.documentElement.dispatchEvent(
+          new CustomEvent('cart:prepare-bundled-sections', { bubbles: true, detail: { sections } })
+        );
+
+        this.button.setAttribute('aria-busy', 'true');
+        this.button.disabled = true;
+
+        try {
+          const response = await fetch(`${root}cart/add.js`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+            body: JSON.stringify({ items: items, sections: sections.join(','), sections_url: window.location.pathname })
+          });
+          const responseJson = await response.json();
+
+          if (response.ok) {
+            const vars = window.themeVariables && window.themeVariables.settings;
+            if (vars && (vars.cartType === 'page' || vars.pageType === 'cart')) {
+              window.location.href = `${root}cart`;
+              return;
+            }
+            const cartContent = await (await fetch(`${root}cart.js`)).json();
+            cartContent['sections'] = responseJson['sections'];
+            const form = this.form;
+            (form || document.documentElement).dispatchEvent(
+              new CustomEvent('variant:add', {
+                bubbles: true,
+                detail: { items: responseJson.hasOwnProperty('items') ? responseJson['items'] : [responseJson], cart: cartContent }
+              })
+            );
+            document.documentElement.dispatchEvent(
+              new CustomEvent('cart:change', { bubbles: true, detail: { baseEvent: 'variant:add', cart: cartContent } })
+            );
+          } else {
+            (this.form || document.documentElement).dispatchEvent(
+              new CustomEvent('cart:error', { bubbles: true, detail: { error: responseJson['description'] } })
+            );
+            document.dispatchEvent(new CustomEvent('cart:refresh'));
+          }
+        } catch (err) {
+          document.dispatchEvent(new CustomEvent('cart:refresh'));
+        } finally {
+          this.button.removeAttribute('aria-busy');
+          this.button.disabled = false;
+        }
+      }
+    }
+    window.customElements.define('zeta-bundle-add', ZetaBundleAdd);
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Zeta Product Info",
@@ -343,9 +534,10 @@
       "type": "select",
       "id": "column_alignment",
       "label": "Column height",
-      "info": "Sticky: the shorter column stays pinned while the taller column scrolls.",
+      "info": "Straight: equal height. Normal: each column its own natural height. Sticky: shorter column pins while the taller scrolls.",
       "options": [
         { "value": "straight", "label": "Straight (equal height)" },
+        { "value": "normal", "label": "Normal (natural height)" },
         { "value": "sticky", "label": "Sticky" }
       ],
       "default": "straight"
@@ -382,6 +574,16 @@
       "max": 8,
       "step": 1,
       "default": 5
+    },
+    {
+      "type": "select",
+      "id": "thumbnail_position",
+      "label": "Thumbnail position",
+      "options": [
+        { "value": "outside", "label": "Outside (below the image)" },
+        { "value": "inside", "label": "Inside (over the image)" }
+      ],
+      "default": "outside"
     },
     { "type": "checkbox", "id": "show_thumbnails", "label": "Show thumbnails (desktop)", "default": true },
     { "type": "checkbox", "id": "show_thumbnails_mobile", "label": "Show thumbnails (mobile)", "default": true }
@@ -462,7 +664,8 @@
         { "type": "text", "id": "onetime_label", "label": "One-time label", "default": "One bottle, this time" },
         { "type": "text", "id": "onetime_sub", "label": "One-time subtext", "default": "300g powder · 60 servings · 30-day supply" },
         { "type": "text", "id": "subscribe_label", "label": "Subscribe label", "default": "Subscribe & Save" },
-        { "type": "text", "id": "subscribe_sub", "label": "Subscribe subtext", "default": "Free shipping · Pause or cancel any time" }
+        { "type": "text", "id": "subscribe_sub", "label": "Subscribe subtext", "default": "Free shipping · Pause or cancel any time" },
+        { "type": "text", "id": "frequency_label", "label": "Frequency dropdown label", "info": "Shown above the delivery-frequency dropdown (multiple plans only).", "default": "Delivery every" }
       ]
     },
     {
@@ -472,8 +675,11 @@
       "settings": [
         { "type": "text", "id": "button_label", "label": "Add-to-cart label", "default": "BUY ZETA CREATINE" },
         { "type": "checkbox", "id": "show_payment_button", "label": "Show dynamic checkout button", "default": false },
+        { "type": "header", "content": "Secondary / bundle button" },
         { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "PAIR WITH MINOS · SAVE 10%" },
-        { "type": "url", "id": "secondary_link", "label": "Secondary button link" }
+        { "type": "product", "id": "bundle_product", "label": "Bundle add-on product", "info": "When set, the secondary button becomes a bundle button: clicking it adds THIS product together with the main product (respecting the customer's one-time / subscribe choice, variant and quantity). To show the savings, create an automatic discount in Shopify Admin for this product combination." },
+        { "type": "range", "id": "bundle_quantity", "label": "Add-on quantity", "min": 1, "max": 10, "step": 1, "default": 1 },
+        { "type": "url", "id": "secondary_link", "label": "Fallback link", "info": "Used only when no bundle add-on product is selected — the button becomes a normal link." }
       ]
     },
     {

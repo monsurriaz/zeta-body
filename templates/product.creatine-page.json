@@ -16,13 +16,13 @@
           "type": "banner",
           "settings": {
             "name": "Zeta Creatine",
-            "sub": "The World's Most Studied Supplement"
+            "sub": "The World's Most Sports Supplement"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Strength.</em>\nBrain. Everyday."
+            "heading": "<em>Strength.</em>\nBrain. \nEveryday."
           }
         },
         "lede": {
@@ -44,7 +44,8 @@
             "onetime_label": "One bottle, this time",
             "onetime_sub": "300g powder · 60 servings · 30-day supply",
             "subscribe_label": "Subscribe & Save",
-            "subscribe_sub": "Free shipping · Pause or cancel any time"
+            "subscribe_sub": "Free shipping · Pause or cancel any time",
+            "frequency_label": "Delivery every"
           }
         },
         "variant_picker": {
@@ -58,12 +59,18 @@
             "size_chart_page": ""
           }
         },
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "button_label": "BUY ZETA CREATINE",
             "show_payment_button": false,
             "secondary_label": "PAIR WITH MINOS · SAVE 10%",
+            "bundle_product": "",
+            "bundle_quantity": 1,
             "secondary_link": ""
           }
         },
@@ -81,17 +88,19 @@
         "rating",
         "subscription",
         "variant_picker",
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg",
         "buy_buttons",
         "trust_badges"
       ],
       "settings": {
-        "column_alignment": "sticky",
+        "column_alignment": "normal",
         "media_badge": "NSF Certified for Sport",
         "main_media_ratio": "portrait",
         "main_media_fit": "cover",
         "thumbnails_per_row": 5,
+        "thumbnail_position": "inside",
         "show_thumbnails": false,
-        "show_thumbnails_mobile": true
+        "show_thumbnails_mobile": false
       }
     },
     "quote": {

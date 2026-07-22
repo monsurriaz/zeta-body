@@ -8,7 +8,24 @@
    All names are `--zeta-*` prefixed so they never collide with Impact tokens.
    ══════════════════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* ──────────────────────────────────────────────────────────────────────────
+   SELF-HOSTED FONTS (@font-face) — served from Shopify Files (CDN)
+   ---------------------------------------------------------------------------
+   Heading — Cormorant Garamond: 400 (Regular), 500 (Medium), 600 (SemiBold),
+             italic (MediumItalic).  Body — Inter: 400, 500, 600, 700.
+   Note: only Medium Italic was supplied for Cormorant, so the 400-italic face
+   reuses it (renders slightly heavier). Add a Regular-Italic woff2 and update
+   that one src if a true 400 italic is needed.
+   ────────────────────────────────────────────────────────────────────────── */
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/CormorantGaramond-Regular.woff2?v=1784548550') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/CormorantGaramond-Medium.woff2?v=1784548549') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/CormorantGaramond-SemiBold.woff2?v=1784548549') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/CormorantGaramond-MediumItalic.woff2?v=1784548550') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 500; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/CormorantGaramond-MediumItalic.woff2?v=1784548550') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/Inter_18pt-Regular.woff2?v=1784548549') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/Inter_18pt-Medium.woff2?v=1784548549') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/Inter_18pt-SemiBold.woff2?v=1784548549') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/Inter_18pt-Bold.woff2?v=1784548549') format('woff2'); }
 
 :root {
   /* ── Color (canonical — never approximate) ── */
@@ -24,9 +41,9 @@
   --zeta-dark-surface:  #111B2A;
   --zeta-footer-bg:     #060E18; /* footer-specific deep navy (client footer) */
 
-  /* ── Font families ── */
-  --zeta-font-serif: 'Cormorant Garamond', Georgia, serif;
-  --zeta-font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  /* ── Font families (role-based) ── */
+  --zeta-font-heading: 'Cormorant Garamond', Georgia, serif;
+  --zeta-font-body:    'Inter', system-ui, -apple-system, sans-serif;
 
   /* ── Font weights ── */
   --zeta-fw-light:     300;
@@ -45,6 +62,7 @@
 
   /* ── Layout ── */
   --zeta-gutter: max(24px, calc((100vw - 1280px) / 2 + 80px));
+  --zeta-accordion-icon-size: 25px; /* accordion trigger padding-left (plus icon) */
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
@@ -55,6 +73,6 @@
    body, buttons) to the client's Cormorant Garamond + Inter system.
    ────────────────────────────────────────────────────────────────────────── */
 :root {
-  --heading-font-family: var(--zeta-font-serif);
-  --text-font-family: var(--zeta-font-sans);
+  --heading-font-family: var(--zeta-font-heading);
+  --text-font-family: var(--zeta-font-body);
 }

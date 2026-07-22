@@ -53,7 +53,7 @@
         "menu_open_trigger": "click",
         "opening_from": "bottom",
         "layout": "logo_left_navigation_center",
-        "action_link_style": "text",
+        "action_link_style": "icon",
         "search_label": "Search",
         "account_label": "Account",
         "cart_label": "Cart",
