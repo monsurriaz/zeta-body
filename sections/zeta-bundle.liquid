@@ -4,17 +4,30 @@
     • row  — centered promo (default, matches Creatine): eyebrow, heading, discount, body, product tiles, CTA.
     • box  — split panel (d-k): product art on the left, copy + CTA on the right.
   "Buy the stack" adds the MAIN product (with the customer's exact buy-box choice — variant,
-  quantity, one-time / subscribe) TOGETHER with a merchant-picked add-on product (first available
-  variant, plus its first subscription option if it has one) in a single /cart/add.js request.
+  quantity, one-time / subscribe) TOGETHER with every OTHER product linked on the tiles below
+  (each: first available variant, plus its first subscription option if it has one) in a single
+  /cart/add.js request. Works with any number of tiles (2, 3, …).
   Product tiles are blocks (a "+" is inserted between them). Styles: custom.css (.zeta-bundle).
 {%- endcomment -%}
 
-{%- assign addon = section.settings.addon_product -%}
-{%- assign addon_variant = addon.selected_or_first_available_variant -%}
-{%- assign addon_plan = '' -%}
-{%- if addon != blank and addon_variant.selling_plan_allocations.size > 0 -%}
-  {%- assign addon_plan = addon_variant.selling_plan_allocations.first.selling_plan.id -%}
-{%- endif -%}
+{%- comment -%} Build the add-on list from the tiles: any linked product that isn't the
+   main (page) product becomes an add-on. {%- endcomment -%}
+{%- assign has_addons = false -%}
+{%- assign addon_idx = 0 -%}
+{%- capture addons_json -%}[
+{%- for block in section.blocks -%}
+  {%- assign p = block.settings.product -%}
+  {%- if p != blank and p.id != product.id -%}
+    {%- assign v = p.selected_or_first_available_variant -%}
+    {%- if v != blank and v.available -%}
+      {%- if addon_idx > 0 %},{% endif -%}
+      {"id":{{ v.id }},"quantity":1{%- if v.selling_plan_allocations.size > 0 -%},"selling_plan":{{ v.selling_plan_allocations.first.selling_plan.id }}{%- endif -%}}
+      {%- assign addon_idx = addon_idx | plus: 1 -%}
+      {%- assign has_addons = true -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+]{%- endcapture -%}
 
 {%- comment -%} ---------- Product tiles (shared by both layouts) ---------- {%- endcomment -%}
 {%- capture products_html -%}
@@ -40,13 +53,11 @@
 {%- comment -%} ---------- CTA (shared by both layouts) ---------- {%- endcomment -%}
 {%- capture button_html -%}
   {%- if section.settings.button_text != blank -%}
-    {%- if addon != blank and addon_variant.available -%}
+    {%- if has_addons -%}
       <zeta-stack-add
         class="zeta-bundle__add"
         data-main-product="{{ product.id }}"
-        data-addon-id="{{ addon_variant.id }}"
-        data-addon-qty="1"
-        {% if addon_plan != blank %}data-addon-plan="{{ addon_plan }}"{% endif %}
+        data-addons='{{ addons_json | strip }}'
       >
         <button type="button" class="zeta-bundle__btn" data-stack-button>{{ section.settings.button_text | escape }}</button>
       </zeta-stack-add>
@@ -142,18 +153,23 @@
         return item;
       }
 
+      /* The add-on products (everything on the tiles that isn't the main product),
+         resolved server-side to first-available variant + first subscription option. */
+      get addons() {
+        try { return JSON.parse(this.getAttribute('data-addons') || '[]'); }
+        catch (e) { return []; }
+      }
+
       async add() {
-        const addonId = this.getAttribute('data-addon-id');
-        if (!addonId) return;
+        const addons = this.addons;
+        if (!addons.length) return;
 
         const items = [];
         const main = this.mainItem();
         if (main) items.push(main);
 
-        const addon = { id: addonId, quantity: parseInt(this.getAttribute('data-addon-qty'), 10) || 1 };
-        const addonPlan = this.getAttribute('data-addon-plan');
-        if (addonPlan) addon.selling_plan = addonPlan;
-        items.push(addon);
+        addons.forEach((a) => { if (a && a.id) items.push(a); });
+        if (!items.length) return;
 
         const root = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
 
@@ -232,15 +248,15 @@
     { "type": "text", "id": "discount", "label": "Discount badge", "default": "Save 10% when bundled" },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>CREATINE + MINOS = the ATP recharge and the amino acid engine, working together. The two supplements that do the actual work inside the gym — and beyond.*</p>" },
     { "type": "header", "content": "Add to cart" },
-    { "type": "product", "id": "addon_product", "label": "Add-on product", "info": "The second product added alongside the main product when the button is clicked. The main product uses the customer's variant / subscription choice from the buy box; the add-on uses its first available variant (plus its first subscription option, if it has one). To show the savings, create an automatic discount in Shopify Admin for this combination. Leave blank to make the button a normal link." },
-    { "type": "text", "id": "button_text", "label": "Button label", "default": "BUY THE WORKOUT STACK" },
-    { "type": "url", "id": "button_link", "label": "Button link", "info": "Used only when no add-on product is selected." }
+    { "type": "text", "id": "button_text", "label": "Button label", "default": "BUY THE WORKOUT STACK", "info": "Clicking adds the main product (with the customer's buy-box variant / subscription choice) plus every OTHER product linked on the tiles below, in one request. Link a product on each tile (below) to enable this; leave every tile unlinked to make the button a normal link. To show the savings, create an automatic discount in Shopify Admin for the combination." },
+    { "type": "url", "id": "button_link", "label": "Button link", "info": "Used only when no tile products are linked." }
   ],
   "blocks": [
     {
       "type": "product",
       "name": "Product",
       "settings": [
+        { "type": "product", "id": "product", "label": "Linked product", "info": "Link this tile to a real product so the button adds it to cart. Link the tile that IS this page's product too — it's added once, using the customer's buy-box choice. Leave blank for a display-only tile." },
         { "type": "text", "id": "name", "label": "Name", "default": "Zeta Creatine" },
         { "type": "text", "id": "sub", "label": "Subtext", "default": "5g · ATP recharge · Brain support" }
       ]

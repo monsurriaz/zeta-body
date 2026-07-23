@@ -29,7 +29,7 @@
   {%- endunless -%}
 </style>
 
-<section class="zeta zeta-pdp zeta-pdp--{{ section.settings.column_alignment | default: 'straight' }} zeta-pdp--media-{{ section.settings.media_align | default: 'top' }}" {{ section.shopify_attributes }}>
+<section class="zeta zeta-pdp zeta-pdp--{{ section.settings.column_alignment | default: 'straight' }} zeta-pdp--media-{{ section.settings.media_align | default: 'top' }} zeta-pdp--media-gap-{{ section.settings.media_gap | default: 'gutter' }}" {{ section.shopify_attributes }}>
   <product-rerender id="zeta-pdp-{{ product.id }}-{{ section.id }}" observe-form="{{ product_form_id }}" allow-partial-rerender class="zeta-pdp__grid">
     {%- comment -%} ---------- MEDIA (left) ---------- {%- endcomment -%}
     <div class="zeta-pdp__media">
@@ -554,6 +554,17 @@
         { "value": "middle", "label": "Middle" }
       ],
       "default": "top"
+    },
+    {
+      "type": "select",
+      "id": "media_gap",
+      "label": "Media outer gap",
+      "info": "Gutter: leaves a gap on the media column's outer (left) edge. None: media sits flush to the page edge.",
+      "options": [
+        { "value": "gutter", "label": "Gutter" },
+        { "value": "none", "label": "None (flush)" }
+      ],
+      "default": "gutter"
     },
     { "type": "header", "content": "Media gallery" },
     { "type": "text", "id": "media_badge", "label": "Media badge", "info": "Shown top-right over the gallery. Leave blank to hide.", "default": "NSF Certified for Sport" },

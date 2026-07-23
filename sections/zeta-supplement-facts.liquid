@@ -27,17 +27,17 @@
       </div>
       <div class="zeta-facts__panel-body">
         <div class="zeta-facts__row zeta-facts__row--head">
-          <span></span><span>{{ section.settings.amount_header | default: 'Amount Per Serving   % DV' | escape }}</span>
+          <span>{{ section.settings.amount_header | escape }}</span><span>{{ section.settings.dv_header | escape }}</span>
         </div>
         {%- for block in facts -%}
           <div class="zeta-facts__row {% if block.settings.is_main %}zeta-facts__row--main{% endif %} {% if block.settings.bold %}zeta-facts__row--bold{% endif %} {% if block.settings.indent %}zeta-facts__row--indent{% endif %}" {{ block.shopify_attributes }}>
-            <span>{{ block.settings.name | escape }}</span>
+            <span>{{ block.settings.name | escape }}{%- if block.settings.desc != blank -%} <span class="zeta-facts__row-desc">{{ block.settings.desc | escape }}</span>{%- endif -%}</span>
             <span>{{ block.settings.amount | escape }}</span>
           </div>
         {%- endfor -%}
       </div>
       {%- if section.settings.facts_note != blank -%}
-        <div class="zeta-facts__note">{{ section.settings.facts_note | escape | newline_to_br }}</div>
+        <div class="zeta-facts__note">{{ section.settings.facts_note | newline_to_br }}</div>
       {%- endif -%}
     </div>
 
@@ -97,8 +97,9 @@
     { "type": "header", "content": "Facts panel" },
     { "type": "text", "id": "facts_title", "label": "Panel title", "default": "Supplement Facts" },
     { "type": "text", "id": "serving_line", "label": "Serving line", "default": "Serving Size: 1 Scoop (about 5g) · Servings Per Container: 30" },
-    { "type": "text", "id": "amount_header", "label": "Amount column header", "default": "Amount Per Serving   % DV" },
-    { "type": "textarea", "id": "facts_note", "label": "Panel note", "info": "Line breaks (Enter) become new lines.", "default": "** Daily Value not established.   Other Ingredients: None.   Unflavored." },
+    { "type": "text", "id": "amount_header", "label": "Header — left", "default": "Amount Per Serving" },
+    { "type": "text", "id": "dv_header", "label": "Header — right", "default": "% DV" },
+    { "type": "textarea", "id": "facts_note", "label": "Panel note", "info": "Line breaks (Enter) become new lines. Inline HTML is allowed (e.g. <sup>, <br>).", "default": "** Daily Value not established.   Other Ingredients: None.   Unflavored." },
     { "type": "header", "content": "How to take it" },
     { "type": "text", "id": "how_to_label", "label": "Label", "default": "How to take it" },
     { "type": "header", "content": "Exclusions (\"NOs\")" },
@@ -114,6 +115,7 @@
       "name": "Fact row",
       "settings": [
         { "type": "text", "id": "name", "label": "Name", "default": "Creatine Monohydrate" },
+        { "type": "text", "id": "desc", "label": "Descriptor", "info": "Optional grey sub-text shown after the name (e.g. the source / ingredient list in parentheses)." },
         { "type": "text", "id": "amount", "label": "Amount", "default": "5 g   **" },
         { "type": "checkbox", "id": "is_main", "label": "Emphasized row", "default": false },
         { "type": "checkbox", "id": "bold", "label": "Bold row", "default": false },

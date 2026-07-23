@@ -1484,6 +1484,7 @@
 }
 .zeta-ingredients__label--teal { color: var(--zeta-teal); }
 .zeta-ingredients__label--bronze { color: var(--zeta-bronze); }
+.zeta-ingredients__label--mid { color: var(--zeta-mid); }
 .zeta-ingredients__name {
   font-family: var(--zeta-font-heading);
   font-size: 28px;
@@ -1539,6 +1540,7 @@
 .zeta-facts__row--main { font-weight: var(--zeta-fw-bold); font-size: 15px; border-bottom: 4px solid var(--zeta-ink); padding: 12px 0; }
 .zeta-facts__row--bold { font-weight: var(--zeta-fw-bold); }
 .zeta-facts__row--indent { padding-left: 16px; font-size: 12px; }
+.zeta-facts__row-desc { font-weight: var(--zeta-fw-regular); font-size: 12px; color: var(--zeta-mid); }
 .zeta-facts__note { font-size: 10px; color: var(--zeta-mid); padding: 8px 16px 12px; border-top: 1px solid #ddd; line-height: 1.5; }
 
 .zeta-facts__howto { background: var(--zeta-bg); padding: 28px; border: 1px solid var(--zeta-border); }
@@ -1673,10 +1675,16 @@
   text-transform: uppercase;
   font-weight: var(--zeta-fw-semibold);
   color: var(--zeta-teal);
-  transition: transform 0.2s;
+  transition: transform 0.15s ease, color 0.15s ease;
 }
-.zeta-accordion__trigger-label:hover {
-  transform: translateX(5px);
+/* Hovering anywhere on the row slides the label in and deepens the teal (matches mockup) */
+.zeta-accordion__trigger:hover .zeta-accordion__trigger-label {
+  transform: translateX(8px);
+  color: var(--zeta-teal-dark);
+}
+.zeta-accordion__item[open] .zeta-accordion__trigger-label {
+  color: var(--zeta-teal-dark);
+  font-weight: var(--zeta-fw-bold);
 }
 /* Icon (d-k): centered 1.5px bars; plus → minus by collapsing the vertical bar (scaleY) */
 .zeta-accordion__icon {
@@ -2356,6 +2364,8 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
    taller column, with a gap on its outer (left) edge so it isn't flush to the screen. */
 .zeta-pdp--media-middle .zeta-pdp__grid { align-items: center; }
 .zeta-pdp--media-middle .zeta-pdp__media { margin-inline-start: var(--zeta-gutter); }
+/* Flush option: media sits against the page edge, no outer gap (overrides the middle gutter above) */
+.zeta-pdp--media-gap-none .zeta-pdp__media { margin-inline-start: 0; }
 @media screen and (max-width: 900px) {
   .zeta-pdp--media-middle .zeta-pdp__media { margin-inline-start: 0; }
 }
