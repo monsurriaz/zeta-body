@@ -1544,6 +1544,8 @@
 .zeta-facts__row-desc { font-weight: var(--zeta-fw-regular); font-size: 12px; color: var(--zeta-mid); }
 .zeta-facts__row-desc--block { display: block; }
 .zeta-facts__row--divider { border-bottom: 4px solid var(--zeta-ink); }
+.zeta-facts__row--accent { color: var(--zeta-bronze); }
+.zeta-facts__row--section-header { display: block; font-weight: var(--zeta-fw-bold); background: var(--zeta-sand); margin: 0 -16px; padding: 6px 16px; border-bottom: 1px solid var(--zeta-border); }
 .zeta-facts__note { font-size: 10px; color: var(--zeta-mid); padding: 8px 16px 12px; border-top: 1px solid #ddd; line-height: 1.5; }
 
 .zeta-facts__howto { background: var(--zeta-bg); padding: 28px; border: 1px solid var(--zeta-border); }

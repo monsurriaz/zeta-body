@@ -30,10 +30,14 @@
           <span>{{ section.settings.amount_header | escape }}</span><span>{{ section.settings.dv_header | escape }}</span>
         </div>
         {%- for block in facts -%}
-          <div class="zeta-facts__row {% if block.settings.is_main %}zeta-facts__row--main{% endif %} {% if block.settings.bold %}zeta-facts__row--bold{% endif %} {% if block.settings.indent %}zeta-facts__row--indent{% endif %} {% if block.settings.divider %}zeta-facts__row--divider{% endif %}" {{ block.shopify_attributes }}>
-            <span>{{ block.settings.name | escape }}{% if block.settings.desc != blank %} <span class="zeta-facts__row-desc{% if block.settings.desc_block %} zeta-facts__row-desc--block{% endif %}">{{ block.settings.desc | escape }}</span>{% endif %}</span>
-            <span>{{ block.settings.amount | escape }}</span>
-          </div>
+          {%- if block.settings.section_header -%}
+            <div class="zeta-facts__row zeta-facts__row--section-header" {{ block.shopify_attributes }}>{{ block.settings.name | escape }}</div>
+          {%- else -%}
+            <div class="zeta-facts__row {% if block.settings.is_main %}zeta-facts__row--main{% endif %} {% if block.settings.bold %}zeta-facts__row--bold{% endif %} {% if block.settings.indent %}zeta-facts__row--indent{% endif %} {% if block.settings.divider %}zeta-facts__row--divider{% endif %} {% if block.settings.accent %}zeta-facts__row--accent{% endif %}" {{ block.shopify_attributes }}>
+              <span>{{ block.settings.name | escape }}{% if block.settings.desc != blank %} <span class="zeta-facts__row-desc{% if block.settings.desc_block %} zeta-facts__row-desc--block{% endif %}">{{ block.settings.desc | escape }}</span>{% endif %}</span>
+              <span>{{ block.settings.amount | escape }}</span>
+            </div>
+          {%- endif -%}
         {%- endfor -%}
       </div>
       {%- if section.settings.facts_note != blank -%}
@@ -121,7 +125,9 @@
         { "type": "checkbox", "id": "is_main", "label": "Emphasized row", "default": false },
         { "type": "checkbox", "id": "bold", "label": "Bold row", "default": false },
         { "type": "checkbox", "id": "indent", "label": "Indented (sub-component)", "default": false },
-        { "type": "checkbox", "id": "divider", "label": "Thick divider below", "info": "Adds a heavy rule under the row (section break).", "default": false }
+        { "type": "checkbox", "id": "divider", "label": "Thick divider below", "info": "Adds a heavy rule under the row (section break).", "default": false },
+        { "type": "checkbox", "id": "accent", "label": "Bronze accent", "info": "Colors the row bronze to highlight it.", "default": false },
+        { "type": "checkbox", "id": "section_header", "label": "Section sub-header", "info": "Renders as a full-width sand sub-header (name only, no amount) — e.g. a grouping like \"Chelated Minerals\".", "default": false }
       ]
     },
     {

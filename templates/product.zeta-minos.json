@@ -1,0 +1,473 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "zeta-product-info",
+      "blocks": {
+        "banner": {
+          "type": "banner",
+          "settings": {
+            "name": "Zeta MINOS",
+            "sub": "Patented EAAs + L-Arginine"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Strength. <em>Recovery.</em>\nLongevity."
+          }
+        },
+        "lede": {
+          "type": "lede",
+          "settings": {
+            "text": "<p>All 9 essential amino acids + L-Arginine, in one 7g scoop. The workout drink that tastes good. Drink it morning, around workouts, or any time between meals.</p>"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "stars": "★★★★★",
+            "label": "4.9 · early reviews"
+          }
+        },
+        "subscription": {
+          "type": "subscription",
+          "settings": {
+            "onetime_label": "One canister, this time",
+            "onetime_sub": "30 servings · 7.41 oz (210 g)",
+            "subscribe_label": "Subscribe & Save",
+            "subscribe_sub": "Free shipping · Pause or cancel any time",
+            "frequency_label": "Delivery every"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "button_label": "BUY ZETA MINOS",
+            "show_payment_button": false,
+            "secondary_label": "PAIR WITH Z-83 · SAVE 10%",
+            "bundle_product": "",
+            "bundle_quantity": 1,
+            "secondary_link": ""
+          }
+        },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {
+            "badges": "Natural fruit punch\nPatented blend\nNo artificial sweeteners\ncGMP"
+          }
+        }
+      },
+      "block_order": [
+        "banner",
+        "heading",
+        "lede",
+        "rating",
+        "subscription",
+        "variant_picker",
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg",
+        "buy_buttons",
+        "trust_badges"
+      ],
+      "settings": {
+        "column_alignment": "normal",
+        "media_align": "middle",
+        "media_badge": "Strength · Recovery",
+        "main_media_ratio": "portrait",
+        "main_media_fit": "contain",
+        "thumbnails_per_row": 5,
+        "thumbnail_position": "inside",
+        "show_thumbnails": false,
+        "show_thumbnails_mobile": false
+      }
+    },
+    "quote": {
+      "type": "zeta-pull-quote",
+      "settings": {
+        "quote": "\"The workout drink that <em>tastes good.</em>\"",
+        "attribution": "Zo · founder, ZETA"
+      }
+    },
+    "timeline": {
+      "type": "zeta-timeline",
+      "blocks": {
+        "w1": {
+          "type": "phase",
+          "settings": {
+            "label": "Day 1",
+            "title": "Versatile.",
+            "body": "<p>AM with breakfast. Pre, during, or post-workout. Between meals. It's a precursor to protein — body knows what to do.</p>"
+          }
+        },
+        "m1": {
+          "type": "phase",
+          "settings": {
+            "label": "Week 1",
+            "title": "Less wrecked.",
+            "body": "<p>Soreness softens. Recovery tightens. Better blood flow means better muscle perfusion (thank you L-Arginine).</p>"
+          }
+        },
+        "m3": {
+          "type": "phase",
+          "settings": {
+            "label": "Months",
+            "title": "A pattern.",
+            "body": "<p>Strength gains land. Body comp moves. The body remembers what you fed it — and asks for more.</p>"
+          }
+        },
+        "y1": {
+          "type": "phase",
+          "settings": {
+            "label": "Years",
+            "title": "Anti-sarcopenia.",
+            "body": "<p>The real win: keeping the muscle you've built into your 60s, 70s, 80s. Lifelong strength is a daily choice.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "m1",
+        "m3",
+        "y1"
+      ],
+      "settings": {
+        "eyebrow": "What you'll feel",
+        "heading": "The drink that <em>lifts</em> after you do.",
+        "subtitle": "<p>Amino acids are precursors to protein — a vital nutrient your body needs to build and repair. Drink MINOS any time of day: morning with breakfast, before, during, or after a workout, or in between meals.</p>",
+        "border_style": "top"
+      }
+    },
+    "ingredients": {
+      "type": "zeta-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "tile",
+          "settings": {
+            "featured": false,
+            "icon": "<svg class=\"ingredient-icon\" viewBox=\"0 0 60 60\"><path d=\"M30 6 L46 18 L46 42 L30 54 L14 42 L14 18 Z\" fill=\"none\" stroke=\"#006E73\" stroke-width=\"1.5\"/><text x=\"30\" y=\"36\" text-anchor=\"middle\" font-family=\"Cormorant Garamond\" font-size=\"20\" fill=\"#006E73\" font-weight=\"500\">L</text></svg>",
+            "tag": "",
+            "corner_tag": "",
+            "label": "The Master Trigger",
+            "label_color": "teal",
+            "name": "L-Leucine",
+            "source": "1,500 mg · mTOR signal",
+            "body": "<p>The amino acid that flips the switch on muscle protein synthesis. As we age, the threshold for that signal rises. MINOS dosed leucine high enough to clear that bar — robustly. Without enough leucine, the rest don't get to do their job.</p>",
+            "nick": "The one that says \"go.\""
+          }
+        },
+        "i2": {
+          "type": "tile",
+          "settings": {
+            "featured": false,
+            "icon": "<svg class=\"ingredient-icon\" viewBox=\"0 0 60 60\"><circle cx=\"30\" cy=\"30\" r=\"20\" fill=\"none\" stroke=\"#B89968\" stroke-width=\"1.5\"/><circle cx=\"30\" cy=\"30\" r=\"8\" fill=\"#B89968\" opacity=\"0.4\"/><path d=\"M22 30 Q26 24 30 30 Q34 36 38 30\" fill=\"none\" stroke=\"#B89968\" stroke-width=\"1.5\"/></svg>",
+            "tag": "",
+            "corner_tag": "The Differentiator",
+            "label": "The Smart Advantage",
+            "label_color": "bronze",
+            "name": "L-Arginine",
+            "source": "405 mg · nitric oxide precursor",
+            "body": "<p>Most EAA formulas stop at the basics. We added L-Arginine on purpose. It's a precursor to nitric oxide — meaning better blood flow, more oxygen and nutrients to working muscles. A 16-week RCT showed <strong>+1.14 kg lean body mass</strong> and <strong>+22% lower-body strength</strong> — gains beyond EAAs alone.</p>",
+            "nick": "The one that turns on the lights."
+          }
+        },
+        "i3": {
+          "type": "tile",
+          "settings": {
+            "featured": false,
+            "icon": "<svg class=\"ingredient-icon\" viewBox=\"0 0 60 60\"><path d=\"M12 30 Q30 14 48 30 Q30 46 12 30 Z\" fill=\"#6B7280\" opacity=\"0.25\"/><path d=\"M12 30 Q30 14 48 30 Q30 46 12 30 Z\" fill=\"none\" stroke=\"#6B7280\" stroke-width=\"1.5\"/><line x1=\"22\" y1=\"30\" x2=\"38\" y2=\"30\" stroke=\"#6B7280\" stroke-width=\"1.2\"/><line x1=\"30\" y1=\"22\" x2=\"30\" y2=\"38\" stroke=\"#6B7280\" stroke-width=\"1.2\"/></svg>",
+            "tag": "",
+            "corner_tag": "",
+            "label": "The Complete Profile",
+            "label_color": "mid",
+            "name": "All 9 EAAs",
+            "source": "Lysine · Valine · Isoleucine · Threonine · Phenylalanine · Methionine · Histidine · Tryptophan + Leucine",
+            "body": "<p>Your body can't make these on its own. You have to eat them — or supplement them. MINOS delivers the full essential profile in researched ratios. Most \"BCAA\" powders stop at three. We don't.</p>",
+            "nick": "The full set."
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "settings": {
+        "section_bg": "#EFE9DC",
+        "eyebrow": "The patented blend",
+        "heading": "Building blocks, <em>balanced and optimized</em>.",
+        "subtitle": "<p>MINOS delivers all <strong>9 essential amino acids</strong> in research-backed ratios — built around a powerful <strong>1.5 g of L-Leucine</strong> — plus a deliberate addition of <strong>L-Arginine</strong> for better blood flow and muscle perfusion. Designed to trigger muscle protein synthesis, fight sarcopenia, and support lifelong strength.</p>"
+      }
+    },
+    "facts": {
+      "type": "zeta-supplement-facts",
+      "blocks": {
+        "f_blend": {
+          "type": "fact",
+          "settings": {
+            "name": "Patented High-Leucine EAA + L-Arginine Blend",
+            "desc": "", "desc_block": false,
+            "amount": "~7 g **",
+            "is_main": false, "bold": true, "indent": false, "divider": false, "accent": false, "section_header": false
+          }
+        },
+        "f_leu": {
+          "type": "fact",
+          "settings": {
+            "name": "L-Leucine", "desc": "", "desc_block": false, "amount": "1,500 mg **",
+            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+          }
+        },
+        "f_lys": {
+          "type": "fact",
+          "settings": {
+            "name": "L-Lysine HCl", "desc": "", "desc_block": false, "amount": "672 mg **",
+            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+          }
+        },
+        "f_val": {
+          "type": "fact",
+          "settings": {
+            "name": "L-Valine", "desc": "", "desc_block": false, "amount": "427 mg **",
+            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+          }
+        },
+        "f_iso": {
+          "type": "fact",
+          "settings": {
+            "name": "L-Isoleucine", "desc": "", "desc_block": false, "amount": "414 mg **",
+            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+          }
+        },
+        "f_arg": {
+          "type": "fact",
+          "settings": {
+            "name": "L-Arginine", "desc": "", "desc_block": false, "amount": "405 mg **",
+            "is_main": false, "bold": true, "indent": true, "divider": false, "accent": true, "section_header": false
+          }
+        },
+        "f_thr": {
+          "type": "fact",
+          "settings": {
+            "name": "L-Threonine", "desc": "", "desc_block": false, "amount": "363 mg **",
+            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+          }
+        },
+        "f_phe": {
+          "type": "fact",
+          "settings": {
+            "name": "L-Phenylalanine", "desc": "", "desc_block": false, "amount": "260 mg **",
+            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+          }
+        },
+        "f_met": {
+          "type": "fact",
+          "settings": {
+            "name": "L-Methionine", "desc": "", "desc_block": false, "amount": "128 mg **",
+            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+          }
+        },
+        "f_his": {
+          "type": "fact",
+          "settings": {
+            "name": "L-Histidine", "desc": "", "desc_block": false, "amount": "64 mg **",
+            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+          }
+        },
+        "f_trp": {
+          "type": "fact",
+          "settings": {
+            "name": "L-Tryptophan", "desc": "", "desc_block": false, "amount": "2.5 mg **",
+            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+          }
+        },
+        "dir1": { "type": "direction", "settings": { "text": "<strong>1 scoop (~7g)</strong> — mix with 8–12 oz cold water" } },
+        "dir2": { "type": "direction", "settings": { "text": "<strong>When</strong> — morning, pre/intra/post workout, or between meals" } },
+        "dir3": { "type": "direction", "settings": { "text": "<strong>Daily max</strong> — 2 scoops / day" } },
+        "dir4": { "type": "direction", "settings": { "text": "It's a precursor to protein — <strong>your body knows what to do with it</strong>" } },
+        "dir5": { "type": "direction", "settings": { "text": "One canister lasts <strong>~30 days</strong>" } },
+        "x1": { "type": "exclusion", "settings": { "text": "No Artificial Sweeteners" } },
+        "x2": { "type": "exclusion", "settings": { "text": "No Artificial Colors" } },
+        "x3": { "type": "exclusion", "settings": { "text": "No Gluten" } },
+        "x4": { "type": "exclusion", "settings": { "text": "No Soy" } },
+        "x5": { "type": "exclusion", "settings": { "text": "No Dairy" } },
+        "x6": { "type": "exclusion", "settings": { "text": "No GMOs" } },
+        "x7": { "type": "exclusion", "settings": { "text": "No Synthetic Flavors" } },
+        "x8": { "type": "exclusion", "settings": { "text": "No Fillers" } }
+      },
+      "block_order": [
+        "f_blend", "f_leu", "f_lys", "f_val", "f_iso", "f_arg", "f_thr", "f_phe", "f_met", "f_his", "f_trp",
+        "dir1", "dir2", "dir3", "dir4", "dir5",
+        "x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8"
+      ],
+      "settings": {
+        "eyebrow": "What's in the scoop",
+        "heading": "One scoop. <em>Nine essential aminos.</em> Plus L-Arginine.",
+        "facts_title": "Supplement Facts",
+        "serving_line": "Serving Size: 1 Scoop (~7 g) · Servings Per Container: 30",
+        "amount_header": "Amount Per Serving",
+        "dv_header": "% DV",
+        "facts_note": "** Daily Value not established.\nOther ingredients: Natural fruit punch flavor. Sweetened with monk fruit/stevia. No artificial sweeteners, colors, or GMOs.",
+        "how_to_label": "How to take it",
+        "exclude_heading": "Formulated with a lot of NOs.",
+        "exclude_sub": "Here's everything we left out.",
+        "warning_heading": "",
+        "warning_body": ""
+      }
+    },
+    "reviews": {
+      "type": "zeta-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "Recovery has changed.",
+            "body": "\"I'm 44, lift heavy 4×/week. Soreness used to wreck me. After 3 weeks on MINOS, I'm bouncing back in a day, not three. Worth every penny.\"",
+            "attribution": "Marcus T. · verified buyer"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "Doesn't taste like dirt.",
+            "body": "\"Tried 6 amino brands before this. Most taste like medicine. This actually tastes like fruit punch you'd give a kid. Mixes clean too — no clumps.\"",
+            "attribution": "Lauren M. · verified buyer"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "Strength holding up.",
+            "body": "\"In my 50s. Started this with my husband. We both noticed our numbers staying up between sessions and skin looking better. Stays in the routine.\"",
+            "attribution": "Joanna B. · verified buyer"
+          }
+        }
+      },
+      "block_order": [ "r1", "r2", "r3" ],
+      "settings": {
+        "eyebrow": "Real reviews",
+        "heading": "The drink that <em>actually mixes</em>.",
+        "subtitle": ""
+      }
+    },
+    "digdeeper": {
+      "type": "zeta-accordion",
+      "blocks": {
+        "a1": {
+          "type": "item",
+          "settings": {
+            "label": "Description",
+            "content": "<h3>Patented High-Leucine EAAs + L-Arginine for <em>muscle &amp; longevity</em>.</h3><p>ZETA MINOS delivers a unique, patented essential amino acid blend in a single 7g scoop — featuring all <strong>9 EAAs</strong> with a powerful <strong>1.5g of L-Leucine</strong> plus a deliberate addition of <strong>L-Arginine (405 mg)</strong>. This complete profile is specifically designed to trigger muscle protein synthesis (MPS), fight sarcopenia, and support lifelong strength and vitality.</p><h4>Why we added L-Arginine — the smart advantage</h4><p>Most EAA formulas stop at the basics. ZETA MINOS goes further by including L-Arginine, a strategic choice backed by science:</p><ul>\n<li>Acts as a <strong>precursor to nitric oxide</strong> — improving blood flow, oxygen, and nutrient delivery to working muscles</li>\n<li>Supports better muscle perfusion and recovery — especially important as we age</li>\n<li>Studies on EAA + Arginine supplementation in older adults showed meaningful gains in lean body mass, strength, and physical function — benefits beyond EAAs alone</li>\n</ul><p style=\"font-size:11.5px;color:var(--zeta-mid);font-style:italic;margin-top:28px;\">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "open_by_default": true
+          }
+        },
+        "a2": {
+          "type": "item",
+          "settings": {
+            "label": "Ingredients",
+            "content": "<h3>What's <em>in it.</em></h3><h4>Supplement Facts</h4><p><strong>Serving size:</strong> 1 scoop (~7 g) · <strong>Servings per canister:</strong> 30 · <strong>Net wt:</strong> 7.41 oz (210 g)</p><p><strong>Patented High-Leucine EAA + L-Arginine Blend</strong> (research-backed ratios):</p><ul>\n<li>\n<strong>L-Leucine — 1,500 mg</strong> (the mTOR trigger; dosed to clear the age-elevated threshold)</li>\n<li>L-Lysine HCl — 672 mg</li>\n<li>L-Valine — 427 mg</li>\n<li>L-Isoleucine — 414 mg</li>\n<li>\n<strong>L-Arginine — 405 mg</strong> (the smart advantage; nitric oxide precursor)</li>\n<li>L-Threonine — 363 mg</li>\n<li>L-Phenylalanine — 260 mg</li>\n<li>L-Methionine — 128 mg</li>\n<li>L-Histidine — 64 mg</li>\n<li>L-Tryptophan — 2.5 mg</li>\n</ul><h4>Other Ingredients</h4><p>Natural fruit punch flavor. Sweetened with monk fruit/stevia. No artificial sweeteners, sugar alcohols, or synthetic flavors.</p><h4>Why this ratio</h4><p>Most \"BCAA\" powders use a 2:1:1 ratio and stop there. MINOS delivers all 9 EAAs with leucine at the high end (1.5g — enough to fire mTOR in aging bodies) plus L-Arginine for the nitric oxide pathway. Full anabolic stack, in one scoop.</p>",
+            "open_by_default": false
+          }
+        },
+        "a3": {
+          "type": "item",
+          "settings": {
+            "label": "Directions & Precautions",
+            "content": "<h3>How to <em>take it.</em></h3><p><strong>Mix 1 scoop into 8–12 oz of cold water.</strong> Drink any time of day — amino acids are precursors to protein, so your body uses them whenever you take them. Don't exceed 2 scoops in a day.</p><h4>Best Times</h4><ul>\n<li>\n<strong>Morning</strong> — with breakfast, for an early MPS pulse</li>\n<li>\n<strong>Pre-workout</strong> — primes the muscle to use amino acids during training</li>\n<li>\n<strong>Intra-workout</strong> — sip during long sessions for sustained delivery</li>\n<li>\n<strong>Post-workout</strong> — the classic recovery window</li>\n<li>\n<strong>Between meals</strong> — bridges the gap on lower-protein eating days</li>\n</ul><h4>Pairs Well With</h4><ul>\n<li>\n<strong>Z-83</strong> — focus + clean energy before the workout</li>\n<li>\n<strong>ZETA CREATINE</strong> — strength + power output</li>\n<li>\n<strong>ZETA MULTI</strong> — daily vitamin foundation</li>\n</ul><h4>Precautions</h4><p>If pregnant, nursing, or under 18, consult your healthcare provider. If you have kidney conditions or are on a protein-restricted diet, check with your physician. Not a meal replacement.</p>",
+            "open_by_default": false
+          }
+        },
+        "a4": {
+          "type": "item",
+          "settings": {
+            "label": "Research",
+            "content": "<h3>The <em>research</em> underneath.</h3><p>Two pieces of the MINOS science deserve highlighting: <strong>(1)</strong> why we added L-Arginine (Børsheim 2008) and <strong>(2)</strong> why we dose leucine high in older adults (Katsanos 2006). Plus the broader literature behind EAA supplementation for muscle and longevity.</p><div class=\"acc-highlight\"><div class=\"hl-label\">★ Key study · the EAA + Arginine paper</div><p><strong>Børsheim E, Bui Q-UT, Tissier S, Kobayashi H, Ferrando AA, Wolfe RR (2008).</strong> <em>Effect of amino acid supplementation on muscle mass, strength and physical function in elderly.</em> <strong>Clinical Nutrition.</strong></p><p>16-week double-blind RCT in glucose-intolerant elderly. EAA + Arginine supplementation between meals significantly increased lean body mass (+1.14 kg at 12 weeks), lower-extremity strength (+22%), and physical function including gait speed and mobility.</p></div><h4>Supporting research</h4><div class=\"ref\"><strong>Noh KW, et al. (2025).</strong> <em>Effects of amino acid supplementation on muscle protein metabolism and adaptation: a narrative review.</em> <strong>Physical Activity and Nutrition.</strong></div><div class=\"ref\"><strong>Church DD, Ferrando AA, Wolfe RR (2024).</strong> <em>Stimulation of muscle protein synthesis with low-dose amino acid composition in older individuals.</em> <strong>Frontiers in Nutrition.</strong></div><div class=\"ref\"><strong>Katsanos CS, et al. (2006).</strong> <em>A high proportion of leucine is required for optimal stimulation of the rate of muscle protein synthesis by essential amino acids in the elderly.</em> <strong>American Journal of Physiology.</strong> <em>→ The science behind our 1.5 g L-Leucine dose.</em></div>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [ "a1", "a2", "a3", "a4" ],
+      "settings": {
+        "eyebrow": "For the Curious",
+        "heading": "Dig <em>deeper.</em>",
+        "subtitle": "The amino acid science, full ingredients, dosing notes, and the research behind the blend."
+      }
+    },
+    "bundle": {
+      "type": "zeta-bundle",
+      "blocks": {
+        "bp1": {
+          "type": "product",
+          "settings": { "product": "", "name": "Z-83", "sub": "Focus · clean energy" }
+        },
+        "bp2": {
+          "type": "product",
+          "settings": { "product": "", "name": "Zeta MINOS", "sub": "EAAs + L-Arginine · recovery" }
+        },
+        "bp3": {
+          "type": "product",
+          "settings": { "product": "", "name": "Zeta Creatine", "sub": "5g · strength + brain" }
+        }
+      },
+      "block_order": [ "bp1", "bp2", "bp3" ],
+      "settings": {
+        "layout": "box",
+        "eyebrow": "",
+        "heading": "The <em>Workout Stack.</em>",
+        "discount": "Save 15% · Bundle",
+        "body": "<p>Z-83 before the workout — clean focus, no jitters. MINOS around the workout — building blocks, fast recovery. CREATINE every day — strength, power, and brain. Three products. One performance loop.</p>",
+        "button_text": "BUY THE WORKOUT STACK",
+        "button_link": ""
+      }
+    },
+    "ctaclose": {
+      "type": "zeta-cta-close",
+      "settings": {
+        "background": "#0a1320",
+        "tagline": "DRIVEN BY SCIENCE · BUILT TO PERFORM · MADE TO FEEL",
+        "heading": "<em>Take what</em>\nwe take.",
+        "promise": "Look. Feel. Perform. — Younger.",
+        "button_1_text": "BUY ZETA MINOS",
+        "button_1_link": "",
+        "button_2_text": "Take the Mirror Quiz",
+        "button_2_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "quote",
+    "timeline",
+    "ingredients",
+    "facts",
+    "reviews",
+    "digdeeper",
+    "bundle",
+    "ctaclose"
+  ]
+}
