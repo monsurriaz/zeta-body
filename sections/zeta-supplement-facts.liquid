@@ -26,9 +26,11 @@
         {%- endif -%}
       </div>
       <div class="zeta-facts__panel-body">
-        <div class="zeta-facts__row zeta-facts__row--head">
-          <span>{{ section.settings.amount_header | escape }}</span><span>{{ section.settings.dv_header | escape }}</span>
-        </div>
+        {%- if section.settings.amount_header != blank or section.settings.dv_header != blank -%}
+          <div class="zeta-facts__row zeta-facts__row--head">
+            <span>{{ section.settings.amount_header | escape }}</span><span>{{ section.settings.dv_header | escape }}</span>
+          </div>
+        {%- endif -%}
         {%- for block in facts -%}
           {%- if block.settings.section_header -%}
             <div class="zeta-facts__row zeta-facts__row--section-header" {{ block.shopify_attributes }}>{{ block.settings.name | escape }}</div>

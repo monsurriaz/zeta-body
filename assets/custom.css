@@ -1436,7 +1436,7 @@
 .zeta-ingredients__intro { margin-top: 20px; }
 .zeta-ingredients__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 .zeta-ingredients__tile {
@@ -1485,6 +1485,7 @@
 .zeta-ingredients__label--teal { color: var(--zeta-teal); }
 .zeta-ingredients__label--bronze { color: var(--zeta-bronze); }
 .zeta-ingredients__label--mid { color: var(--zeta-mid); }
+.zeta-ingredients__label--sand { color: var(--zeta-sand-dark); }
 .zeta-ingredients__tile--featured { border-color: var(--zeta-bronze); }
 .zeta-ingredients__name {
   font-family: var(--zeta-font-heading);
@@ -1794,6 +1795,107 @@
   padding: 16px 20px;
   margin: 12px 0;
   max-width: 720px;
+}
+/* Featured reference — teal-bordered key-study callout (Z-83 research) */
+.zeta-accordion__body .ref-featured {
+  background: rgba(0, 110, 115, 0.05);
+  border: 1.5px solid var(--zeta-teal);
+  padding: 20px 22px;
+  margin: 0 0 28px;
+  max-width: 720px;
+}
+.zeta-accordion__body .ref-featured .ref-tag {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: var(--zeta-fw-bold);
+  color: var(--zeta-teal);
+  margin-bottom: 10px;
+}
+.zeta-accordion__body .ref-featured .ref-title {
+  font-family: var(--zeta-font-heading);
+  font-size: 17px;
+  font-weight: var(--zeta-fw-medium);
+  color: var(--zeta-ink);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.zeta-accordion__body .ref-featured .ref-meta { font-size: 12.5px; color: var(--zeta-mid); }
+
+/* ── Video / ritual (.zeta-video) ── */
+.zeta-video { padding: clamp(56px, 8vw, 96px) var(--zeta-gutter); }
+.zeta-video__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.zeta-video--media-left .zeta-video__frame { order: -1; }
+.zeta-video__body, .zeta-video__body p { font-size: 19px; line-height: 1.55; color: var(--zeta-ink); opacity: 0.85; margin: 0 0 16px; }
+.zeta-video__body p:last-child { margin-bottom: 0; }
+.zeta-video__note {
+  display: inline-block;
+  background: rgba(184, 153, 104, 0.12);
+  border: 1px dashed var(--zeta-bronze);
+  color: var(--zeta-sand-dark);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: var(--zeta-fw-semibold);
+  padding: 5px 10px;
+  margin-top: 16px;
+}
+.zeta-video__frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--zeta-teal) 0%, var(--zeta-teal-dark) 100%);
+}
+.zeta-video__frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(184, 153, 104, 0.3) 0%, transparent 60%);
+}
+.zeta-video__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.zeta-video__play {
+  position: relative;
+  z-index: 2;
+  width: 74px;
+  height: 74px;
+  border: none;
+  border-radius: 50%;
+  background: var(--zeta-bronze);
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zeta-video__play:hover { transform: scale(1.05); }
+.zeta-video__play[disabled] { cursor: default; }
+.zeta-video__play::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 18px solid var(--zeta-ink);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 6px;
+}
+.zeta-video__label {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.zeta-video__iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 900px) {
+  .zeta-video__inner { grid-template-columns: 1fr; gap: 32px; }
+  .zeta-video--media-left .zeta-video__frame { order: 0; }
 }
 
 /* ── Bundle (.bundle) ── */
