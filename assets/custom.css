@@ -1485,6 +1485,7 @@
 .zeta-ingredients__label--teal { color: var(--zeta-teal); }
 .zeta-ingredients__label--bronze { color: var(--zeta-bronze); }
 .zeta-ingredients__label--mid { color: var(--zeta-mid); }
+.zeta-ingredients__tile--featured { border-color: var(--zeta-bronze); }
 .zeta-ingredients__name {
   font-family: var(--zeta-font-heading);
   font-size: 28px;
@@ -1541,6 +1542,8 @@
 .zeta-facts__row--bold { font-weight: var(--zeta-fw-bold); }
 .zeta-facts__row--indent { padding-left: 16px; font-size: 12px; }
 .zeta-facts__row-desc { font-weight: var(--zeta-fw-regular); font-size: 12px; color: var(--zeta-mid); }
+.zeta-facts__row-desc--block { display: block; }
+.zeta-facts__row--divider { border-bottom: 4px solid var(--zeta-ink); }
 .zeta-facts__note { font-size: 10px; color: var(--zeta-mid); padding: 8px 16px 12px; border-top: 1px solid #ddd; line-height: 1.5; }
 
 .zeta-facts__howto { background: var(--zeta-bg); padding: 28px; border: 1px solid var(--zeta-border); }

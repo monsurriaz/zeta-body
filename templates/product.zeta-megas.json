@@ -1,0 +1,526 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "zeta-product-info",
+      "blocks": {
+        "banner": {
+          "type": "banner",
+          "settings": {
+            "name": "Zeta MEGAS",
+            "sub": "Omega-3 in MaxSimil® Form"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fish oil,\n<em>actually absorbed.</em>"
+          }
+        },
+        "lede": {
+          "type": "lede",
+          "settings": {
+            "text": "<p>ZETA MEGAS uses MaxSimil® monoglyceride form — delivering 3× the EPA + DHA absorption of standard fish oil. Brain, heart, joints, skin. The form matters.</p>"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "stars": "★★★★★",
+            "label": "4.9 · early reviews"
+          }
+        },
+        "subscription": {
+          "type": "subscription",
+          "settings": {
+            "onetime_label": "One bottle, this time",
+            "onetime_sub": "60 softgels · 30-day supply",
+            "subscribe_label": "Subscribe & Save",
+            "subscribe_sub": "Free shipping · Pause or cancel any time",
+            "frequency_label": "Delivery every"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "button_label": "BUY ZETA MEGAS",
+            "show_payment_button": false,
+            "secondary_label": "PAIR WITH ZETA D+K · SAVE 10%",
+            "bundle_product": "",
+            "bundle_quantity": 1,
+            "secondary_link": ""
+          }
+        },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {
+            "badges": "3× Absorption\n1,300 mg EPA+DHA\nNo Fishy Burps\ncGMP Manufactured"
+          }
+        }
+      },
+      "block_order": [
+        "banner",
+        "heading",
+        "lede",
+        "rating",
+        "subscription",
+        "variant_picker",
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg",
+        "buy_buttons",
+        "trust_badges"
+      ],
+      "settings": {
+        "column_alignment": "normal",
+        "media_align": "middle",
+        "media_gap": "none",
+        "media_badge": "MaxSimil® · 3× Absorption",
+        "main_media_ratio": "portrait",
+        "main_media_fit": "contain",
+        "thumbnails_per_row": 5,
+        "thumbnail_position": "inside",
+        "show_thumbnails": false,
+        "show_thumbnails_mobile": false
+      }
+    },
+    "quote": {
+      "type": "zeta-pull-quote",
+      "settings": {
+        "quote": "\"Most fish oil isn't absorbed efficiently. <em>MaxSimil bypasses the problem.</em> That's why we chose it.\"",
+        "attribution": "Dr. David Karli · ZETA Science Partner"
+      }
+    },
+    "timeline": {
+      "type": "zeta-timeline",
+      "blocks": {
+        "w1": {
+          "type": "phase",
+          "settings": {
+            "label": "Week 1",
+            "title": "The beginning.",
+            "body": "<p>Your body is now getting the omega-3s it's been missing. EPA and DHA start incorporating into cell membranes. Quiet, but real.*</p>"
+          }
+        },
+        "m1": {
+          "type": "phase",
+          "settings": {
+            "label": "1 Month",
+            "title": "The habit.",
+            "body": "<p>It becomes the first thing in the AM. Inflammation softens. Joints ease. Recovery picks up. The daily routine is working.*</p>"
+          }
+        },
+        "m3": {
+          "type": "phase",
+          "settings": {
+            "label": "3 Months",
+            "title": "Mood, skin, joints.",
+            "body": "<p>The whole-body wins start landing. Skin softer. Mood steadier. Brain a little sharper. The compound effect of daily EPA + DHA.*</p>"
+          }
+        },
+        "y1": {
+          "type": "phase",
+          "settings": {
+            "label": "A Year+",
+            "title": "The long bet.",
+            "body": "<p>Cardiovascular markers, cognitive resilience, joint health. Decades of research back this kind of daily commitment to omega-3s.*</p>"
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "m1",
+        "m3",
+        "y1"
+      ],
+      "settings": {
+        "eyebrow": "What you'll feel",
+        "heading": "The omega-3 that\n<em>actually shows up.</em>",
+        "border_style": "separator"
+      }
+    },
+    "ingredients": {
+      "type": "zeta-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "tile",
+          "settings": {
+            "featured": false,
+            "icon": "",
+            "tag": "",
+            "corner_tag": "",
+            "label": "For Inflammation + Heart",
+            "label_color": "teal",
+            "name": "EPA",
+            "source": "Eicosapentaenoic acid",
+            "body": "<p>The omega-3 your body uses to keep inflammation in check. Supports cardiovascular health, mood regulation, and recovery from exercise.</p>",
+            "nick": "The peacekeeper."
+          }
+        },
+        "i2": {
+          "type": "tile",
+          "settings": {
+            "featured": false,
+            "icon": "",
+            "tag": "",
+            "corner_tag": "",
+            "label": "For Brain + Eyes",
+            "label_color": "teal",
+            "name": "DHA",
+            "source": "Docosahexaenoic acid",
+            "body": "<p>The structural omega-3 in your brain and retina. Supports cognitive function, memory, focus, visual health, and skin elasticity.</p>",
+            "nick": "The brain-builder."
+          }
+        },
+        "i3": {
+          "type": "tile",
+          "settings": {
+            "featured": true,
+            "icon": "",
+            "tag": "",
+            "corner_tag": "The Differentiator",
+            "label": "",
+            "label_color": "teal",
+            "name": "MaxSimil®",
+            "source": "Monoglyceride · PLATform · Patented",
+            "body": "<p>Most fish oils are triglycerides or ethyl esters — your gut has to break them down before any is absorbed. MaxSimil delivers omega-3s in <em>monoglyceride</em> form — pre-processed — bypassing the bottleneck. Result: up to 3× the EPA + DHA absorption, even on an empty stomach.</p>",
+            "nick": "The difference between drinking it and using it."
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "settings": {
+        "section_bg": "#F4F4F5",
+        "eyebrow": "The MaxSimil® difference",
+        "heading": "EPA + DHA. <em>Three times absorbed.</em>",
+        "subtitle": ""
+      }
+    },
+    "facts": {
+      "type": "zeta-supplement-facts",
+      "blocks": {
+        "f_cal": {
+          "type": "fact",
+          "settings": {
+            "name": "Calories",
+            "desc": "",
+            "desc_block": false,
+            "amount": "10",
+            "is_main": false,
+            "bold": true,
+            "indent": false,
+            "divider": false
+          }
+        },
+        "f_fat": {
+          "type": "fact",
+          "settings": {
+            "name": "Total Fat",
+            "desc": "",
+            "desc_block": false,
+            "amount": "1 g",
+            "is_main": false,
+            "bold": true,
+            "indent": false,
+            "divider": true
+          }
+        },
+        "f_oil": {
+          "type": "fact",
+          "settings": {
+            "name": "MaxSimil® Monoglyceride Fish Oil",
+            "desc": "",
+            "desc_block": false,
+            "amount": "1,300 mg   **",
+            "is_main": true,
+            "bold": false,
+            "indent": false,
+            "divider": false
+          }
+        },
+        "f_epa": {
+          "type": "fact",
+          "settings": {
+            "name": "EPA (Eicosapentaenoic acid)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "~715 mg   **",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false
+          }
+        },
+        "f_dha": {
+          "type": "fact",
+          "settings": {
+            "name": "DHA (Docosahexaenoic acid)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "~410 mg   **",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false
+          }
+        },
+        "f_other": {
+          "type": "fact",
+          "settings": {
+            "name": "Other omega-3 fatty acids",
+            "desc": "",
+            "desc_block": false,
+            "amount": "—   **",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false
+          }
+        },
+        "dir1": {
+          "type": "direction",
+          "settings": {
+            "text": "<strong>2 softgels daily</strong> — with or without food"
+          }
+        },
+        "dir2": {
+          "type": "direction",
+          "settings": {
+            "text": "<strong>Best time</strong> — morning or with your largest meal"
+          }
+        },
+        "dir3": {
+          "type": "direction",
+          "settings": {
+            "text": "<strong>Empty stomach OK</strong> — MaxSimil absorbs well without food, unlike standard fish oils"
+          }
+        },
+        "dir4": {
+          "type": "direction",
+          "settings": {
+            "text": "One bottle lasts <strong>30 days</strong>"
+          }
+        },
+        "x1": { "type": "exclusion", "settings": { "text": "No Fishy Burps" } },
+        "x2": { "type": "exclusion", "settings": { "text": "No Mercury" } },
+        "x3": { "type": "exclusion", "settings": { "text": "No PCBs" } },
+        "x4": { "type": "exclusion", "settings": { "text": "No Gluten" } },
+        "x5": { "type": "exclusion", "settings": { "text": "No Soy" } },
+        "x6": { "type": "exclusion", "settings": { "text": "No Dairy" } },
+        "x7": { "type": "exclusion", "settings": { "text": "No GMOs" } },
+        "x8": { "type": "exclusion", "settings": { "text": "No Artificial Flavors" } },
+        "x9": { "type": "exclusion", "settings": { "text": "No Artificial Colors" } },
+        "x10": { "type": "exclusion", "settings": { "text": "No Artificial Preservatives" } }
+      },
+      "block_order": [
+        "f_cal",
+        "f_fat",
+        "f_oil",
+        "f_epa",
+        "f_dha",
+        "f_other",
+        "dir1",
+        "dir2",
+        "dir3",
+        "dir4",
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "x5",
+        "x6",
+        "x7",
+        "x8",
+        "x9",
+        "x10"
+      ],
+      "settings": {
+        "eyebrow": "What's in the softgel",
+        "heading": "1,300 mg of omega-3s. <em>Actually delivered.</em>",
+        "facts_title": "Supplement Facts",
+        "serving_line": "Serving Size: 2 Softgels · Servings Per Container: 30",
+        "amount_header": "Amount Per Serving",
+        "dv_header": "% DV",
+        "facts_note": "** Daily Value not established.   Other Ingredients: Bovine gelatin (softgel), glycerin, water, natural lemon flavor, mixed tocopherols.",
+        "how_to_label": "How to take it",
+        "exclude_heading": "Formulated with a lot of NOs.",
+        "exclude_sub": "Here's everything we left out.",
+        "warning_heading": "",
+        "warning_body": ""
+      }
+    },
+    "reviews": {
+      "type": "zeta-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "",
+            "body": "\"I've tried 5 omega-3 brands. All gave me the burp-up-fish problem. MEGAS doesn't. I take it in the morning and forget about it.\"",
+            "attribution": "Marcus T. · Verified Buyer"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "",
+            "body": "\"45, lift heavy, my knees started talking to me last year. After 3 weeks on MEGAS the morning stiffness eased. Stayed on it.\"",
+            "attribution": "Sarah K. · Verified Buyer"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "",
+            "body": "\"Dual benefit — my skin looks calmer and I'm sharper in afternoon meetings. Two-for-one.\"",
+            "attribution": "Joanna B. · Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "eyebrow": "Real reviews",
+        "heading": "The fish oil that <em>doesn't repeat on you.</em>",
+        "subtitle": ""
+      }
+    },
+    "digdeeper": {
+      "type": "zeta-accordion",
+      "blocks": {
+        "a1": {
+          "type": "item",
+          "settings": {
+            "label": "Description",
+            "content": "<p>The ZETA MEGAS formula features <strong>MaxSimil® monoglyceride fish oil</strong>, which delivers a <strong>three times greater EPA + DHA absorption rate</strong> than equivalent doses of standard fish oils. Through MaxSimil's patented PLATform (Pre-digested Lipid Absorption Technology), omega-3s are delivered in their pre-processed monoglyceride form — bypassing the digestion step that limits absorption of triglyceride and ethyl ester fish oils.</p><p>Each daily serving delivers 1,300 mg of high-purity omega-3s with the EPA + DHA ratio your body uses for inflammation management, brain health, cardiovascular support, and skin.*</p><ul>\n<li>Supports cardiovascular health — triglycerides, blood pressure, vessel function</li>\n<li>Supports brain function — cognition, mood, memory</li>\n<li>Supports healthy inflammatory response</li>\n<li>Supports joint comfort and mobility</li>\n<li>Supports skin elasticity and barrier function</li>\n<li>Supports eye health (DHA is concentrated in the retina)</li>\n</ul><p style=\"font-size:11px;color:var(--zeta-mid);font-style:italic;margin-top:20px;\">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "open_by_default": true
+          }
+        },
+        "a2": {
+          "type": "item",
+          "settings": {
+            "label": "Ingredients",
+            "content": "<p><strong>MaxSimil® Monoglyceride Fish Oil — 1,300 mg per serving (2 softgels).</strong></p><ul>\n<li>EPA (Eicosapentaenoic acid) — ~715 mg</li>\n<li>DHA (Docosahexaenoic acid) — ~410 mg</li>\n<li>Other omega-3 fatty acids — remainder</li>\n</ul><p><strong>Other Ingredients:</strong> Bovine gelatin (softgel), glycerin, water, natural lemon flavor, mixed tocopherols (antioxidant).</p><p><strong>Sourcing + Purity:</strong> Sustainably sourced from small wild-caught cold-water fish (anchovy, sardine, mackerel). Third-party tested for heavy metals, PCBs, and oxidation. Below all international standards for omega-3 purity.</p><p><strong>Why this form:</strong> Triglyceride and ethyl ester fish oils need lipase enzymes to break them down before absorption. MaxSimil delivers omega-3s in monoglyceride form — the form your gut would produce mid-digestion anyway — skipping the bottleneck. Up to 3× more EPA and DHA make it into your bloodstream.</p>",
+            "open_by_default": false
+          }
+        },
+        "a3": {
+          "type": "item",
+          "settings": {
+            "label": "Directions & Precautions",
+            "content": "<p><strong>Take 2 softgels daily.</strong> Most people take both in the morning. Unlike standard fish oils, MaxSimil absorbs well with or without food — you can take it on an empty stomach if that fits your routine.</p><p><strong>Pairs well with:</strong> ZETA D+K (both fat-soluble; they support each other's absorption), ZETA MULTI (the daily foundation), ZETA LONGEVITY (for the long-game antioxidant stack).</p><p><strong>Precautions:</strong> If you're on blood thinners (warfarin, aspirin, Plavix), check with your physician — omega-3s at high doses can affect clotting. If pregnant, nursing, or have a fish/shellfish allergy, consult your healthcare provider. Don't exceed 2 softgels per day.</p><p style=\"font-size:11px;color:var(--zeta-mid);font-style:italic;\">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "open_by_default": false
+          }
+        },
+        "a4": {
+          "type": "item",
+          "settings": {
+            "label": "Research",
+            "content": "<div class=\"acc-highlight\"><div class=\"hl-label\">★ Key publication · MaxSimil absorption</div><p><strong>Cuenoud B et al. (2020)</strong> — Monoglyceride form of omega-3 fatty acids increases EPA+DHA absorption: a randomized crossover study. <em>Clinical Nutrition.</em> The study demonstrating MaxSimil's 3× EPA+DHA absorption advantage over standard fish oil forms.</p></div><div class=\"ref\"><strong>Calder PC. (2017)</strong> — Omega-3 fatty acids and inflammatory processes: from molecules to man. <em>Biochemical Society Transactions.</em> Comprehensive review of EPA and DHA's role in resolving inflammation at the cellular level.</div><div class=\"ref\"><strong>Mozaffarian D, Wu JHY. (2011)</strong> — Omega-3 fatty acids and cardiovascular disease: effects on risk factors, molecular pathways, and clinical events. <em>Journal of the American College of Cardiology.</em></div><div class=\"ref\"><strong>Dyall SC. (2015)</strong> — Long-chain omega-3 fatty acids and the brain: a review of the independent and shared effects of EPA, DPA and DHA. <em>Frontiers in Aging Neuroscience.</em></div>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "settings": {
+        "eyebrow": "For the curious",
+        "heading": "Dig <em>deeper.</em>",
+        "subtitle": "The MaxSimil absorption science, full ingredients, dosing notes, and the research behind EPA + DHA."
+      }
+    },
+    "bundle": {
+      "type": "zeta-bundle",
+      "blocks": {
+        "bp1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "Zeta MEGAS",
+            "sub": "1,300 mg EPA+DHA · MaxSimil® form"
+          }
+        },
+        "bp2": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "Zeta D+K",
+            "sub": "Vitamin D3 + K2 · fat-soluble pair"
+          }
+        }
+      },
+      "block_order": [
+        "bp1",
+        "bp2"
+      ],
+      "settings": {
+        "layout": "row",
+        "eyebrow": "Stack It",
+        "heading": "The <em>Fat-Soluble Duo.</em>",
+        "discount": "Save 10% when bundled",
+        "body": "<p>MEGAS brings the omega-3s. D+K brings vitamin D3 and K2. All four nutrients absorb better taken together with some fat. The longevity move most people don't realize they're missing.*</p>",
+        "button_text": "BUY THE FAT-SOLUBLE DUO",
+        "button_link": ""
+      }
+    },
+    "ctaclose": {
+      "type": "zeta-cta-close",
+      "settings": {
+        "background": "#0a1320",
+        "tagline": "Take what we take.",
+        "heading": "Fish oil, <em>actually absorbed.</em>",
+        "promise": "",
+        "button_1_text": "BUY ZETA MEGAS",
+        "button_1_link": "",
+        "button_2_text": "TAKE THE MIRROR QUIZ",
+        "button_2_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "quote",
+    "timeline",
+    "ingredients",
+    "facts",
+    "reviews",
+    "digdeeper",
+    "bundle",
+    "ctaclose"
+  ]
+}

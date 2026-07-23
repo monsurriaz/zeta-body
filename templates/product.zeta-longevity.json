@@ -1,0 +1,482 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "zeta-product-info",
+      "blocks": {
+        "banner": {
+          "type": "banner",
+          "settings": {
+            "name": "Zeta Longevity",
+            "sub": "The Three Antioxidants"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Younger.</em>\nLonger. Every day."
+          }
+        },
+        "lede": {
+          "type": "lede",
+          "settings": {
+            "text": "<p>Some of the most-studied longevity antioxidants — Resveratrol, Quercetin, and Pterostilbene — dosed and stacked the way the research suggests they actually work. One capsule. Every day. The biology you're building right now.</p>"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "stars": "★★★★★",
+            "label": "4.9 · 84 reviews"
+          }
+        },
+        "subscription": {
+          "type": "subscription",
+          "settings": {
+            "onetime_label": "One bottle, this time",
+            "onetime_sub": "60 capsules · 30-day supply",
+            "subscribe_label": "Subscribe & Save",
+            "subscribe_sub": "Free shipping · Pause or cancel any time",
+            "frequency_label": "Delivery every"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "button_label": "BUY LONGEVITY",
+            "show_payment_button": false,
+            "secondary_label": "TAKE THE MIRROR QUIZ",
+            "bundle_product": "",
+            "bundle_quantity": 1,
+            "secondary_link": ""
+          }
+        },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {
+            "badges": "Resveratrol\nQuercetin\nPterostilbene\ncGMP"
+          }
+        }
+      },
+      "block_order": [
+        "banner",
+        "heading",
+        "lede",
+        "rating",
+        "subscription",
+        "variant_picker",
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg",
+        "buy_buttons",
+        "trust_badges"
+      ],
+      "settings": {
+        "column_alignment": "normal",
+        "media_align": "middle",
+        "media_gap": "none",
+        "media_badge": "Optimize · Every day",
+        "main_media_ratio": "portrait",
+        "main_media_fit": "contain",
+        "thumbnails_per_row": 5,
+        "thumbnail_position": "inside",
+        "show_thumbnails": false,
+        "show_thumbnails_mobile": false
+      }
+    },
+    "quote": {
+      "type": "zeta-pull-quote",
+      "settings": {
+        "quote": "\"Resveratrol produces changes associated with longer lifespan — including sirtuin activation, increased insulin sensitivity, and improved mitochondrial function.\"",
+        "attribution": "— Baur JA & Sinclair DA · Nature Reviews Drug Discovery, 2006"
+      }
+    },
+    "timeline": {
+      "type": "zeta-timeline",
+      "blocks": {
+        "w1": {
+          "type": "phase",
+          "settings": {
+            "label": "Week 1",
+            "title": "Quiet start.",
+            "body": "<p>Cell-level antioxidant work begins. Nothing you feel yet — but that's the point. Real longevity work runs quiet.</p>"
+          }
+        },
+        "m1": {
+          "type": "phase",
+          "settings": {
+            "label": "1 Month",
+            "title": "Inflammation markers.",
+            "body": "<p>Multiple randomized controlled trials have demonstrated that quercetin supplementation significantly reduces circulating CRP — a primary biomarker of systemic inflammation. If you track labs, this is what to watch.</p>"
+          }
+        },
+        "m3": {
+          "type": "phase",
+          "settings": {
+            "label": "3–6 Months",
+            "title": "Skin. Glucose. Cardiovascular.",
+            "body": "<p>Resveratrol has been studied for improved insulin sensitivity. Antioxidant protection of skin cells accumulates. Cardiovascular markers — the ones your doctor watches — are the territory you're working in now.</p>"
+          }
+        },
+        "y1": {
+          "type": "phase",
+          "settings": {
+            "label": "Years",
+            "title": "Healthspan, compounding.",
+            "body": "<p>Lifespan isn't built <em>then</em> — when things start to slow, when the labs shift, when you finally feel it. It's built and managed <em>now</em>. Sirtuin activation. Slower biological aging. The quiet, compounding work of staying ahead of it.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "m1",
+        "m3",
+        "y1"
+      ],
+      "settings": {
+        "eyebrow": "Optimize",
+        "heading": "What <em>changes</em>",
+        "border_style": "separator"
+      }
+    },
+    "ingredients": {
+      "type": "zeta-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "tile",
+          "settings": {
+            "icon": "<svg viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"30,3 55,17 55,43 30,57 5,43 5,17\" stroke=\"#006E73\" stroke-width=\"1.5\" fill=\"none\"/><text x=\"30\" y=\"38\" text-anchor=\"middle\" font-family=\"Georgia,serif\" font-size=\"20\" fill=\"#006E73\" font-style=\"italic\">R</text></svg>",
+            "tag": "",
+            "corner_tag": "",
+            "label": "The Sirtuin Switch",
+            "label_color": "teal",
+            "name": "Resveratrol",
+            "source": "from Polygonum cuspidatum · 75 mg per capsule",
+            "body": "<p>The famous one. The \"Mediterranean diet\" molecule that scientists have been studying since the '90s. Activates sirtuins — the proteins your cells use to defend and repair themselves. The science isn't hype; it's just slow, the way real longevity science tends to be.</p>",
+            "nick": ""
+          }
+        },
+        "i2": {
+          "type": "tile",
+          "settings": {
+            "icon": "<svg viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"30,3 57,30 30,57 3,30\" stroke=\"#B89968\" stroke-width=\"1.5\" fill=\"none\"/><polygon points=\"30,15 45,30 30,45 15,30\" stroke=\"#B89968\" stroke-width=\"1\" fill=\"none\"/><circle cx=\"30\" cy=\"30\" r=\"3\" fill=\"#B89968\"/></svg>",
+            "tag": "",
+            "corner_tag": "",
+            "label": "The Senolytic",
+            "label_color": "bronze",
+            "name": "Quercetin",
+            "source": "from Sophora japonica bud · 250 mg per capsule",
+            "body": "<p>The senolytic. One of the ways cells age badly is by accumulating <strong>senescent cells</strong> — cells that have stopped functioning but refuse to die, lingering in tissue and generating chronic low-grade inflammation. Scientists sometimes call them zombie cells: not quite alive, not quite gone, and actively dragging down the healthy cells around them. Quercetin is one of the best-studied compounds for clearing them out. It also synergizes with the other two, which is why stacking matters.</p>",
+            "nick": ""
+          }
+        },
+        "i3": {
+          "type": "tile",
+          "settings": {
+            "icon": "<svg viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M6,30 Q30,8 54,30 Q30,52 6,30 Z\" stroke=\"#6B7280\" stroke-width=\"1.5\" fill=\"none\"/><circle cx=\"30\" cy=\"30\" r=\"8\" stroke=\"#6B7280\" stroke-width=\"1.5\" fill=\"none\"/><circle cx=\"30\" cy=\"30\" r=\"2.5\" fill=\"#6B7280\"/></svg>",
+            "tag": "",
+            "corner_tag": "The Differentiator",
+            "label": "The Methylated Upgrade",
+            "label_color": "mid",
+            "name": "Pterostilbene",
+            "source": "PteroPure® (ChromaDex) · 62.5 mg per capsule",
+            "body": "<p>Methylated resveratrol. The methyl groups cap resveratrol's free hydroxyl sites — the result is dramatically higher hepatic stability, better intestinal absorption, and a longer half-life in circulation. Your body gets more of it, and it stays longer. We use PteroPure® — the branded, pharmaceutical-grade form from ChromaDex, the same company behind NR research.</p>",
+            "nick": ""
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "settings": {
+        "section_bg": "#F4F4F5",
+        "eyebrow": "The formula",
+        "heading": "Three molecules.\n<em>One stack.</em>",
+        "subtitle": ""
+      }
+    },
+    "facts": {
+      "type": "zeta-supplement-facts",
+      "blocks": {
+        "f_quer": {
+          "type": "fact",
+          "settings": {
+            "name": "Quercetin (as quercetin dihydrate)",
+            "desc": "from Sophora japonica (bud)",
+            "desc_block": true,
+            "amount": "250 mg **",
+            "is_main": false,
+            "bold": true,
+            "indent": false
+          }
+        },
+        "f_resv": {
+          "type": "fact",
+          "settings": {
+            "name": "trans-Resveratrol",
+            "desc": "as Polygonum cuspidatum root extract",
+            "desc_block": true,
+            "amount": "75 mg **",
+            "is_main": false,
+            "bold": true,
+            "indent": false
+          }
+        },
+        "f_ptero": {
+          "type": "fact",
+          "settings": {
+            "name": "trans-Pterostilbene (PteroPure®) ˢ¹",
+            "desc": "",
+            "desc_block": false,
+            "amount": "62.5 mg **",
+            "is_main": false,
+            "bold": true,
+            "indent": false
+          }
+        },
+        "dir1": {
+          "type": "direction",
+          "settings": {
+            "text": "Take <strong>1 capsule twice daily</strong>"
+          }
+        },
+        "dir2": {
+          "type": "direction",
+          "settings": {
+            "text": "<strong>The formula includes medium-chain triglyceride (MCT) oil</strong> — so fat-soluble absorption is built in. Take with or without food."
+          }
+        },
+        "dir3": {
+          "type": "direction",
+          "settings": {
+            "text": "Morning and evening is the simplest pattern. Any consistent schedule works."
+          }
+        },
+        "dir4": {
+          "type": "direction",
+          "settings": {
+            "text": "60 capsules per bottle — <strong>30-day supply</strong>"
+          }
+        },
+        "x1": { "type": "exclusion", "settings": { "text": "Wheat & gluten" } },
+        "x2": { "type": "exclusion", "settings": { "text": "Yeast" } },
+        "x3": { "type": "exclusion", "settings": { "text": "Soy" } },
+        "x4": { "type": "exclusion", "settings": { "text": "Animal & dairy products" } },
+        "x5": { "type": "exclusion", "settings": { "text": "Fish & shellfish" } },
+        "x6": { "type": "exclusion", "settings": { "text": "Peanuts & tree nuts" } },
+        "x7": { "type": "exclusion", "settings": { "text": "Eggs" } },
+        "x8": { "type": "exclusion", "settings": { "text": "GMO ingredients" } },
+        "x9": { "type": "exclusion", "settings": { "text": "Artificial colors" } },
+        "x10": { "type": "exclusion", "settings": { "text": "Artificial sweeteners" } },
+        "x11": { "type": "exclusion", "settings": { "text": "Artificial preservatives" } },
+        "x12": { "type": "exclusion", "settings": { "text": "Synthetic fillers" } }
+      },
+      "block_order": [
+        "f_quer",
+        "f_resv",
+        "f_ptero",
+        "dir1",
+        "dir2",
+        "dir3",
+        "dir4",
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "x5",
+        "x6",
+        "x7",
+        "x8",
+        "x9",
+        "x10",
+        "x11",
+        "x12"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "facts_title": "Supplement Facts",
+        "serving_line": "Serving Size: 1 Capsule · Servings Per Container: 60",
+        "amount_header": "Amount Per Serving",
+        "dv_header": "% Daily Value",
+        "facts_note": "** Daily Value not established.\nOther ingredients: Capsule (hypromellose and water), microcrystalline cellulose, stearic acid, magnesium stearate, silica, medium-chain triglyceride oil.\n<sup>S1</sup> PteroPure® is a registered trademark of ChromaDex, Inc.",
+        "how_to_label": "How to take it",
+        "exclude_heading": "Formulated with a <em>lot of NOs.</em>",
+        "exclude_sub": "What's not in it matters as much as what is.",
+        "warning_heading": "",
+        "warning_body": ""
+      }
+    },
+    "reviews": {
+      "type": "zeta-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "",
+            "body": "\"I took my labs at the 6-month mark. Inflammatory markers were down. My doctor asked what I'd changed.\"",
+            "attribution": "— David K., verified buyer"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "",
+            "body": "\"Skin texture improved over the winter. My husband noticed before I believed it myself.\"",
+            "attribution": "— Joanna B., verified buyer"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "",
+            "body": "\"I'm playing a long game. Nothing you feel immediately — and that's exactly the point. You don't take this for today.\"",
+            "attribution": "— Marcus T., verified buyer"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "eyebrow": "Real results",
+        "heading": "What people <em>notice</em>",
+        "subtitle": ""
+      }
+    },
+    "digdeeper": {
+      "type": "zeta-accordion",
+      "blocks": {
+        "a1": {
+          "type": "item",
+          "settings": {
+            "label": "Description",
+            "content": "<h3>Three molecules. <em>One stack.</em></h3><p>ZETA LONGEVITY is a complete bioflavonoid complex with resveratrol, quercetin, and pterostilbene — three compounds that work synergistically on distinct longevity mechanisms: sirtuin activation, senescent cell clearance, and antioxidant/anti-inflammatory protection.</p><h4>Why These Three Together</h4><p>Pterostilbene is the methylated form of resveratrol — bio-optimized with greater hepatic stability, better absorption, and a longer half-life. Quercetin synergizes with both, clearing the accumulated cellular debris that slows recovery and drives inflammation. This isn't a collection of trending ingredients. It's a stack with a coherent mechanism.</p><p style=\"font-size:11.5px;color:var(--zeta-mid);font-style:italic;margin-top:28px;\">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "open_by_default": true
+          }
+        },
+        "a2": {
+          "type": "item",
+          "settings": {
+            "label": "Ingredients",
+            "content": "<h3>What's <em>in it.</em></h3><h4>Active Ingredients</h4><ul>\n<li>\n<strong>Quercetin Dihydrate</strong> (from Sophora japonica bud) — 250 mg. Senolytic bioflavonoid. Supports clearance of senescent cells and has a demonstrated anti-inflammatory profile, including RCT-level CRP reduction data.</li>\n<li>\n<strong>trans-Resveratrol</strong> (from Polygonum cuspidatum root extract) — 75 mg. Sirtuin activator. The most-studied polyphenol in longevity research.</li>\n<li>\n<strong>trans-Pterostilbene</strong> (PteroPure® — ChromaDex) — 62.5 mg. Methylated resveratrol analog. ~7× more bioavailable, longer plasma half-life, and superior cellular uptake versus resveratrol alone.</li>\n</ul><h4>Other Ingredients</h4><p>Capsule (hypromellose and water), microcrystalline cellulose, stearic acid, magnesium stearate, silica, medium-chain triglyceride oil. MCT oil aids fat-soluble absorption — no need to take with a fatty meal.</p>",
+            "open_by_default": false
+          }
+        },
+        "a3": {
+          "type": "item",
+          "settings": {
+            "label": "Directions & Precautions",
+            "content": "<h3>How to <em>take it.</em></h3><p>Take 1 capsule twice daily. The formula includes MCT oil — fat-soluble absorption is built in. Take with or without food. Morning and evening is the simplest pattern. Any consistent schedule works.</p><h4>Precautions</h4><p>Pregnant or nursing? Check with your provider. Quercetin can interact with certain antibiotics (especially fluoroquinolones) — worth a conversation with your physician if relevant. If you're on blood thinners, resveratrol at higher doses may have mild antiplatelet effects; discuss with your doctor.</p>",
+            "open_by_default": false
+          }
+        },
+        "a4": {
+          "type": "item",
+          "settings": {
+            "label": "Research",
+            "content": "<h3>The <em>evidence.</em></h3><div class=\"ref\"><strong>Baur JA, Sinclair DA.</strong> Therapeutic potential of resveratrol: the in vivo evidence. <em>Nature Reviews Drug Discovery</em> (2006). The paper that put resveratrol on the map — sirtuin activation, caloric restriction mimicry, and the longevity pathway case made rigorously.</div><div class=\"ref\"><strong>Hsu YH et al.</strong> Effect of pterostilbene on glucose and lipid-related markers in a randomized controlled trial. <em>Nutrition Journal</em> (2012). Human RCT showing pterostilbene's metabolic effects — one of the cleaner clinical demonstrations in this space.</div><div class=\"ref\"><strong>Riche DM et al.</strong> Analysis of safety from a human clinical trial with pterostilbene. <em>Journal of Toxicology</em> (2013). Establishes the safety profile at doses relevant to supplementation. Pterostilbene was well-tolerated.</div><div class=\"ref\"><strong>Hickson LJ et al.</strong> Senolytics decrease senescent cells in humans: preliminary report from a clinical trial of dasatinib plus quercetin in individuals with diabetic kidney disease. <em>EBioMedicine</em> (2019). First-in-human senolytic trial — the quercetin study that legitimized the senescence clearance angle.</div><div class=\"ref\"><strong>Serban MC et al.</strong> Effects of quercetin on glycaemic control in patients with type 2 diabetes. <em>Nutrition</em> (2016). Pooled RCT analysis demonstrating quercetin's significant reduction in circulating CRP.</div>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "settings": {
+        "eyebrow": "For the Curious",
+        "heading": "Dig <em>deeper.</em>",
+        "subtitle": "The longevity science, full ingredients, dosing notes, and the research behind the complex."
+      }
+    },
+    "bundle": {
+      "type": "zeta-bundle",
+      "blocks": {
+        "bp1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "LONGEVITY",
+            "sub": "Resveratrol · Quercetin · Pterostilbene"
+          }
+        },
+        "bp2": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "D+K",
+            "sub": "Bone · Heart · Skin Foundation"
+          }
+        }
+      },
+      "block_order": [
+        "bp1",
+        "bp2"
+      ],
+      "settings": {
+        "layout": "row",
+        "eyebrow": "Pair it right",
+        "heading": "<em>The Long Game</em> Stack",
+        "discount": "10% off when you bundle",
+        "body": "<p>LONGEVITY covers the antioxidant and sirtuin pathway. D+K covers the structural foundation — bones, heart, and skin. Together they're addressing aging from two different angles, every day.</p>",
+        "button_text": "BUY THE LONG GAME STACK",
+        "button_link": ""
+      }
+    },
+    "ctaclose": {
+      "type": "zeta-cta-close",
+      "settings": {
+        "background": "#0a1320",
+        "tagline": "",
+        "heading": "Take what we take.",
+        "promise": "",
+        "button_1_text": "BUY LONGEVITY",
+        "button_1_link": "",
+        "button_2_text": "Take the Mirror Quiz",
+        "button_2_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "quote",
+    "timeline",
+    "ingredients",
+    "facts",
+    "reviews",
+    "digdeeper",
+    "bundle",
+    "ctaclose"
+  ]
+}

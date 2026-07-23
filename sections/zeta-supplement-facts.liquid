@@ -30,8 +30,8 @@
           <span>{{ section.settings.amount_header | escape }}</span><span>{{ section.settings.dv_header | escape }}</span>
         </div>
         {%- for block in facts -%}
-          <div class="zeta-facts__row {% if block.settings.is_main %}zeta-facts__row--main{% endif %} {% if block.settings.bold %}zeta-facts__row--bold{% endif %} {% if block.settings.indent %}zeta-facts__row--indent{% endif %}" {{ block.shopify_attributes }}>
-            <span>{{ block.settings.name | escape }}{%- if block.settings.desc != blank -%} <span class="zeta-facts__row-desc">{{ block.settings.desc | escape }}</span>{%- endif -%}</span>
+          <div class="zeta-facts__row {% if block.settings.is_main %}zeta-facts__row--main{% endif %} {% if block.settings.bold %}zeta-facts__row--bold{% endif %} {% if block.settings.indent %}zeta-facts__row--indent{% endif %} {% if block.settings.divider %}zeta-facts__row--divider{% endif %}" {{ block.shopify_attributes }}>
+            <span>{{ block.settings.name | escape }}{% if block.settings.desc != blank %} <span class="zeta-facts__row-desc{% if block.settings.desc_block %} zeta-facts__row-desc--block{% endif %}">{{ block.settings.desc | escape }}</span>{% endif %}</span>
             <span>{{ block.settings.amount | escape }}</span>
           </div>
         {%- endfor -%}
@@ -116,10 +116,12 @@
       "settings": [
         { "type": "text", "id": "name", "label": "Name", "default": "Creatine Monohydrate" },
         { "type": "text", "id": "desc", "label": "Descriptor", "info": "Optional grey sub-text shown after the name (e.g. the source / ingredient list in parentheses)." },
+        { "type": "checkbox", "id": "desc_block", "label": "Descriptor on its own line", "info": "On: the descriptor drops to a new line below the name. Off: it sits inline after the name.", "default": false },
         { "type": "text", "id": "amount", "label": "Amount", "default": "5 g   **" },
         { "type": "checkbox", "id": "is_main", "label": "Emphasized row", "default": false },
         { "type": "checkbox", "id": "bold", "label": "Bold row", "default": false },
-        { "type": "checkbox", "id": "indent", "label": "Indented (sub-component)", "default": false }
+        { "type": "checkbox", "id": "indent", "label": "Indented (sub-component)", "default": false },
+        { "type": "checkbox", "id": "divider", "label": "Thick divider below", "info": "Adds a heavy rule under the row (section break).", "default": false }
       ]
     },
     {

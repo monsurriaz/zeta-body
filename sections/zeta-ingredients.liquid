@@ -19,7 +19,7 @@
   {%- if section.blocks.size > 0 -%}
     <div class="zeta-ingredients__grid">
       {%- for block in section.blocks -%}
-        <div class="zeta-ingredients__tile" {{ block.shopify_attributes }}>
+        <div class="zeta-ingredients__tile{% if block.settings.featured %} zeta-ingredients__tile--featured{% endif %}" {{ block.shopify_attributes }}>
           {%- if block.settings.corner_tag != blank -%}
             <span class="zeta-ingredients__corner-tag">{{ block.settings.corner_tag | escape }}</span>
           {%- endif -%}
@@ -67,6 +67,7 @@
       "type": "tile",
       "name": "Ingredient tile",
       "settings": [
+        { "type": "checkbox", "id": "featured", "label": "Featured tile", "info": "Adds a bronze border to highlight the standout ingredient.", "default": false },
         { "type": "textarea", "id": "icon", "label": "Icon (SVG code)", "info": "Paste inline <svg> markup. Optional." },
         { "type": "text", "id": "tag", "label": "Tag", "info": "Optional bronze pill shown inline at the top of the tile." },
         { "type": "text", "id": "corner_tag", "label": "Corner tag", "info": "Optional bronze pill pinned to the top-right corner." },
