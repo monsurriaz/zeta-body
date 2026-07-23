@@ -1856,6 +1856,8 @@
   background: radial-gradient(circle at 30% 70%, rgba(184, 153, 104, 0.3) 0%, transparent 60%);
 }
 .zeta-video__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.zeta-video__native { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: var(--zeta-ink); }
+.zeta-video__native.is-playing { object-fit: contain; z-index: 3; }
 .zeta-video__play {
   position: relative;
   z-index: 2;

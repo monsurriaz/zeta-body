@@ -31,11 +31,20 @@
       {%- endif -%}
     </div>
 
+    {%- assign hosted = section.settings.video -%}
+    {%- assign has_video = false -%}
+    {%- if hosted != blank or embed != blank -%}{%- assign has_video = true -%}{%- endif -%}
     <zeta-video-play class="zeta-video__frame"{% if embed != blank %} data-embed="{{ embed }}"{% endif %}>
-      {%- if section.settings.poster != blank -%}
+      {%- if hosted != blank -%}
+        <video class="zeta-video__native" playsinline preload="none"{% if section.settings.poster != blank %} poster="{{ section.settings.poster | image_url: width: 1200 }}"{% endif %} data-native>
+          {%- for source in hosted.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+      {%- elsif section.settings.poster != blank -%}
         <img class="zeta-video__poster" src="{{ section.settings.poster | image_url: width: 1200 }}" alt="{{ section.settings.overlay_label | escape }}" loading="lazy" width="{{ section.settings.poster.width }}" height="{{ section.settings.poster.height }}">
       {%- endif -%}
-      <button type="button" class="zeta-video__play" aria-label="{{ section.settings.overlay_label | default: 'Play video' | escape }}"{% if embed == blank %} disabled{% endif %} data-play></button>
+      <button type="button" class="zeta-video__play" aria-label="{{ section.settings.overlay_label | default: 'Play video' | escape }}"{% unless has_video %} disabled{% endunless %} data-play></button>
       {%- if section.settings.overlay_label != blank -%}
         <span class="zeta-video__label">{{ section.settings.overlay_label | escape }}</span>
       {%- endif -%}
@@ -49,10 +58,24 @@
     class ZetaVideoPlay extends HTMLElement {
       connectedCallback() {
         const btn = this.querySelector('[data-play]');
+        if (!btn || this._bound) return;
+        const native = this.querySelector('[data-native]');
         const embed = this.getAttribute('data-embed');
-        if (!btn || !embed || this._bound) return;
+        if (!native && !embed) return; /* nothing to play — decorative placeholder */
         this._bound = true;
         btn.addEventListener('click', () => {
+          if (native) {
+            /* Self-hosted video: reveal native controls and play in place */
+            btn.remove();
+            const label = this.querySelector('.zeta-video__label');
+            if (label) label.remove();
+            native.setAttribute('controls', '');
+            native.classList.add('is-playing');
+            const p = native.play();
+            if (p && p.catch) p.catch(() => {});
+            return;
+          }
+          /* External embed: inject the provider iframe */
           const iframe = document.createElement('iframe');
           iframe.setAttribute('src', embed);
           iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
@@ -90,7 +113,8 @@
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>A short clip on how to take your first capsule — and what most people miss in their first week.</p>" },
     { "type": "text", "id": "note", "label": "Note", "info": "Optional small note under the copy (e.g. video file / runtime)." },
     { "type": "header", "content": "Video" },
-    { "type": "video_url", "id": "video_url", "label": "Video link", "accept": ["youtube", "vimeo"], "info": "YouTube or Vimeo. Leave blank to show a styled placeholder." },
+    { "type": "video", "id": "video", "label": "Self-hosted video", "info": "Upload a Shopify-hosted video. Takes priority over the external link below." },
+    { "type": "video_url", "id": "video_url", "label": "External video link", "accept": ["youtube", "vimeo"], "info": "YouTube or Vimeo — used only if no self-hosted video is set. Leave both blank to show a styled placeholder." },
     { "type": "image_picker", "id": "poster", "label": "Poster image", "info": "Optional thumbnail shown before play." },
     { "type": "text", "id": "overlay_label", "label": "Overlay label", "default": "Watch the video" }
   ],
