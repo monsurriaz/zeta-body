@@ -79,7 +79,7 @@
           <span class="zeta-bundle__discount">{{ section.settings.discount | escape }}</span>
         {%- endif -%}
         {%- if section.settings.heading != blank -%}
-          <h2 class="zeta-bundle__h2">{{ section.settings.heading }}</h2>
+          <h2 class="zeta-bundle__h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading }}</h2>
         {%- endif -%}
         {%- if section.settings.body != blank -%}
           <div class="zeta-bundle__body">{{ section.settings.body }}</div>
@@ -94,7 +94,7 @@
       <p class="zeta-bundle__eyebrow">{{ section.settings.eyebrow | escape }}</p>
     {%- endif -%}
     {%- if section.settings.heading != blank -%}
-      <h2 class="zeta-bundle__h2">{{ section.settings.heading }}</h2>
+      <h2 class="zeta-bundle__h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading }}</h2>
     {%- endif -%}
     {%- if section.settings.discount != blank -%}
       <span class="zeta-bundle__discount">{{ section.settings.discount | escape }}</span>
@@ -245,6 +245,7 @@
     },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Stack It" },
     { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "The <em>Workout</em> Stack." },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
     { "type": "text", "id": "discount", "label": "Discount badge", "default": "Save 10% when bundled" },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>CREATINE + MINOS = the ATP recharge and the amino acid engine, working together. The two supplements that do the actual work inside the gym — and beyond.*</p>" },
     { "type": "header", "content": "Add to cart" },

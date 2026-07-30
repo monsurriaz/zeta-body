@@ -10,10 +10,10 @@
   <div class="zeta-blog__head">
     <div>
       {%- if section.settings.eyebrow != blank -%}
-        <p class="zeta-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <p class="zeta-eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="zeta-blog__h2">{{ section.settings.heading | newline_to_br }}</h2>
+        <h2 class="zeta-blog__h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'small' }}">{{ section.settings.heading | newline_to_br }}</h2>
       {%- endif -%}
     </div>
     {%- if section.settings.link_text != blank -%}
@@ -84,7 +84,9 @@
   "class": "shopify-section--zeta-blog",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Knowledge" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
     { "type": "textarea", "id": "heading", "label": "Heading", "default": "What we're <em>learning</em>" },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
     { "type": "blog", "id": "blog", "label": "Blog" },
     { "type": "range", "id": "posts_count", "label": "Posts to show", "min": 1, "max": 4, "step": 1, "default": 3 },
     { "type": "text", "id": "link_text", "label": "Link label", "default": "All Posts →" },

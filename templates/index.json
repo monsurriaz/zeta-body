@@ -13,7 +13,7 @@
       "type": "zeta-home-hero",
       "settings": {
         "eyebrow": "Miami · Science-Backed · No Compromises",
-        "heading": "You only get\none <em>brain.</em>\nOne <em>body.</em>\nBuild them both.",
+        "heading": "You only get\nOne <em>Brain.</em>\nOne <em>Body.</em>\nBuild them both.",
         "subheading": "<p>The world doesn't stop because you need it to. Every day is a choice — to invest in your brain and body, keep them strong, and perform at the level your life demands.</p>",
         "quote": "<p>We're not perfect. But we can make choices every day that let us perform, move, and stay healthy. That's what ZETA is for.</p>",
         "button_1_text": "Shop Z-83 — Flagship",
@@ -155,7 +155,7 @@
             "tag": "You'll Feel It",
             "heading": "The Flagship. Brain First.",
             "body": "<p>Z-83 is what ZETA is built around. It was designed to stop the daily drain on your <strong>brain</strong> — the fog, the flat energy, the mood that drags. We only have one brain and one body. Z-83 starts them both.</p><p>You'll notice it working. Clean, sustained, no crash.</p>",
-            "tags": "Z-83 - Flagship",
+            "tags": "Z-83 - Flagship, Creatine, DHEA",
             "active_tag": "Z-83 - Flagship"
           }
         },
@@ -186,49 +186,53 @@
         "l1": {
           "type": "card",
           "settings": {
+            "product": "z-83",
             "flag": "Flagship",
+            "image": "shopify://shop_images/asd.jpg",
             "image_hint": "Product photo",
             "name": "Z-83",
             "headline": "Stop the drain. <em>Start the day right.</em>",
             "description": "Novel nootropic for energy, focus, mood, and clean performance — without the crash.",
-            "price": "From $79 · 30 servings",
-            "link": ""
+            "price": ""
           }
         },
         "l2": {
           "type": "card",
           "settings": {
+            "product": "d-k-5000",
             "flag": "",
+            "image": "shopify://shop_images/ZETACREATINE_Creatine90sv_10001185.png",
             "image_hint": "Product photo",
             "name": "D+K",
             "headline": "Bone. Immune. <em>The essentials.</em>",
             "description": "D3 + K2 — the most underdiagnosed deficiency combo. 5,000 IU where it counts.",
-            "price": "From $— · 30 capsules",
-            "link": ""
+            "price": ""
           }
         },
         "l3": {
           "type": "card",
           "settings": {
+            "product": "zeta-creatine",
             "flag": "",
+            "image": "shopify://shop_images/ZETA_DHEA_DHEA_Micronized_25_mg_60_T_10001185_c214c5eb-e214-483c-ab34-418fa88f48a2.png",
             "image_hint": "Product photo",
             "name": "Creatine",
             "headline": "Strength that <em>compounds.</em>",
             "description": "Targeted support for power, recovery, and performance that builds over time.",
-            "price": "From $— · 30 servings",
-            "link": ""
+            "price": ""
           }
         },
         "l4": {
           "type": "card",
           "settings": {
+            "product": "zeta-mega",
             "flag": "",
+            "image": "shopify://shop_images/PRO-BMAX_PROB100_10001185.png",
             "image_hint": "Product photo",
             "name": "Megas",
             "headline": "Highest EPA. <em>Deepest support.</em>",
             "description": "MaxSimil omega-3 with the highest EPA ratio in its class. The fat your brain actually runs on.",
-            "price": "From $— · 30 softgels",
-            "link": ""
+            "price": ""
           }
         }
       },
@@ -242,7 +246,8 @@
         "eyebrow": "The Lineup",
         "heading": "One body.\n<em>Every edge.</em>",
         "link_text": "View All Products →",
-        "link_url": ""
+        "link_url": "",
+        "image_type": "contain"
       }
     },
     "what": {
@@ -292,7 +297,7 @@
       ],
       "settings": {
         "eyebrow": "The ZETA Philosophy",
-        "heading": "Health.\n<em>Wealth.</em>\nYouth.",
+        "heading": "Health. <em>Wealth.</em> Youth.",
         "lede": "<p>Three things worth protecting. One body to do it with.</p>",
         "body": "<p>I was already living these three pillars hard — building successful businesses, dialed in — when the seizures hit in 2013. That experience drove the lesson home even deeper: <strong>the world doesn't stop because you need or want it to. It doesn't stop so you can recover.</strong> The sun rises and sets no matter what you're going through. You either adjust, fight back, and keep moving — or you get left behind.</p><p>That's why I built ZETA. To touch millions. To make it simpler for anyone to <strong>deeply invest in their health.</strong> Because when your brain and body are strong, everything else expands.</p><p>Every single day is a choice. Let ZETA be part of the ones that move you forward.</p>",
         "button_1_text": "Shop the Lineup",

@@ -7,11 +7,11 @@
 <section class="zeta zeta-home-hero" {{ section.shopify_attributes }}>
   <div class="zeta-home-hero__left">
     {%- if section.settings.eyebrow != blank -%}
-      <p class="zeta-home-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <p class="zeta-home-hero__eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
     {%- endif -%}
 
     {%- if section.settings.heading != blank -%}
-      <h1 class="zeta-home-hero__h1">{{ section.settings.heading | newline_to_br }}</h1>
+      <h1 class="zeta-home-hero__h1 zeta-title zeta-title--{{ section.settings.heading_size | default: 'large' }}">{{ section.settings.heading | newline_to_br }}</h1>
     {%- endif -%}
 
     {%- if section.settings.subheading != blank -%}
@@ -77,6 +77,7 @@
       "label": "Eyebrow",
       "default": "Miami · Science-Backed · No Compromises"
     },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
     {
       "type": "textarea",
       "id": "heading",
@@ -84,6 +85,7 @@
       "info": "Use italics for the teal emphasis words.",
       "default": "You only get\none <em>brain.</em>\nOne <em>body.</em>\nBuild them both."
     },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "large" },
     {
       "type": "richtext",
       "id": "subheading",

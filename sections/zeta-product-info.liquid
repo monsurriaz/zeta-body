@@ -112,14 +112,14 @@
             
           {%- when 'banner' -%}
             <div class="zeta-pdp__banner" {{ block.shopify_attributes }}>
-              <span class="zeta-pdp__banner-name">{{ block.settings.name | default: product.title | escape }}</span>
+              <span class="zeta-pdp__banner-name zeta-eyebrow-size--{{ block.settings.eyebrow_size | default: 'small' }}">{{ block.settings.name | default: product.title | escape }}</span>
               {%- if block.settings.sub != blank -%}
                 <span class="zeta-pdp__banner-sub">{{ block.settings.sub | escape }}</span>
               {%- endif -%}
             </div>
 
           {%- when 'heading' -%}
-            <h1 class="zeta-pdp__h1" {{ block.shopify_attributes }}>{{ block.settings.heading | newline_to_br }}</h1>
+            <h1 class="zeta-pdp__h1 zeta-title zeta-title--{{ block.settings.heading_size | default: 'large' }}" {{ block.shopify_attributes }}>{{ block.settings.heading | newline_to_br }}</h1>
 
           {%- when 'lede' -%}
             <div class="zeta-pdp__lede" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
@@ -622,7 +622,8 @@
       "limit": 1,
       "settings": [
         { "type": "text", "id": "name", "label": "Name", "info": "Leave blank to use the product title.", "default": "Zeta Creatine" },
-        { "type": "text", "id": "sub", "label": "Subtext", "default": "The World's Most Studied Supplement" }
+        { "type": "text", "id": "sub", "label": "Subtext", "default": "The World's Most Studied Supplement" },
+        { "type": "select", "id": "eyebrow_size", "label": "Name size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" }
       ]
     },
     {
@@ -630,7 +631,8 @@
       "name": "Headline",
       "limit": 1,
       "settings": [
-        { "type": "textarea", "id": "heading", "label": "Headline", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "<em>Strength.</em>\nBrain. Everyday." }
+        { "type": "textarea", "id": "heading", "label": "Headline", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "<em>Strength.</em>\nBrain. Everyday." },
+        { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "large" }
       ]
     },
     {

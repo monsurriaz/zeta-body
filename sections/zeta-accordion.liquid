@@ -7,7 +7,7 @@
 <section class="zeta zeta-accordion" {{ section.shopify_attributes }}>
   <div class="zeta-accordion__header">
     {%- if section.settings.eyebrow != blank -%}
-      <p class="zeta-section-eyebrow zeta-section-eyebrow--bronze">{{ section.settings.eyebrow | escape }}</p>
+      <p class="zeta-section-eyebrow zeta-section-eyebrow--bronze zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
     {%- endif -%}
     {%- if section.settings.heading != blank -%}
       <div class="zeta-accordion__heading">{{ section.settings.heading }}</div>
@@ -40,6 +40,7 @@
   "max_blocks": 8,
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "For the curious" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
     { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Dig <em>deeper.</em>" },
     { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "The creatine science, full ingredients, dosing notes, and the research behind the formula." }
   ],

@@ -7,10 +7,10 @@
 <section class="zeta zeta-feel" {{ section.shopify_attributes }}>
   <div class="zeta-feel__header">
     {%- if section.settings.eyebrow != blank -%}
-      <p class="zeta-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <p class="zeta-eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
     {%- endif -%}
     {%- if section.settings.heading != blank -%}
-      <h2 class="zeta-feel__h2">{{ section.settings.heading | newline_to_br }}</h2>
+      <h2 class="zeta-feel__h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading | newline_to_br }}</h2>
     {%- endif -%}
     {%- if section.settings.intro != blank -%}
       <div class="zeta-feel__intro">{{ section.settings.intro }}</div>
@@ -57,7 +57,9 @@
   "max_blocks": 3,
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How ZETA Works" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
     { "type": "textarea", "id": "heading", "label": "Heading", "default": "There's what you <em>feel.</em>\nAnd what's quietly\nworking underneath." },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
     { "type": "richtext", "id": "intro", "label": "Intro", "default": "<p>Not all progress announces itself. Here's how ZETA works — and which products belong where in your stack.</p>" }
   ],
   "blocks": [

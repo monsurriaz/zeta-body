@@ -65,6 +65,18 @@
   /* ── Layout ── */
   --zeta-gutter: max(24px, calc((100vw - 1280px) / 2 + 80px));
   --zeta-accordion-icon-size: 24px; /* accordion +/- icon box (d-k) */
+
+  /* ── Central title sizes (fallbacks; overridden by theme settings in theme.liquid) ── */
+  --zeta-title-lg: 68px;
+  --zeta-title-md: 50px;
+  --zeta-title-sm: 40px;
+  --zeta-title-lg-m: 44px; /* mobile */
+  --zeta-title-md-m: 34px;
+  --zeta-title-sm-m: 28px;
+
+  /* ── Central eyebrow sizes (fallbacks; overridden by theme settings) ── */
+  --zeta-eyebrow-md: 18px;
+  --zeta-eyebrow-sm: 15px; /* = the fixed .zeta-section-eyebrow size */
 }
 
 /* ──────────────────────────────────────────────────────────────────────────

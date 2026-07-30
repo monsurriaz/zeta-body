@@ -26,7 +26,7 @@
 
 .zeta .zeta-eyebrow {
   font-family: var(--zeta-font-body);
-  font-size: 11px;
+  font-size: var(--zeta-eyebrow-sm);
   font-weight: var(--zeta-fw-bold);
   letter-spacing: var(--zeta-tracking-eyebrow);
   text-transform: uppercase;
@@ -395,7 +395,7 @@
   border-right: 1px solid var(--zeta-border);
 }
 .zeta-home-hero__eyebrow {
-  font-size: 11px;
+  font-size: var(--zeta-eyebrow-sm);
   font-weight: var(--zeta-fw-bold);
   letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -709,7 +709,7 @@
   margin-bottom: 3rem;
 }
 .zeta-lineup__eyebrow {
-  font-size: 11px;
+  font-size: var(--zeta-eyebrow-sm);
   font-weight: var(--zeta-fw-bold);
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -748,6 +748,7 @@
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  position: relative;
 }
 .zeta-lineup__card:hover { background: #1c2d42; }
 .zeta-lineup__flag {
@@ -761,18 +762,25 @@
   color: #fff;
   padding: 3px 9px;
   margin-bottom: 10px;
+  position: absolute;
+  z-index: 1;
 }
 .zeta-lineup__img {
   aspect-ratio: 1;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
+  border: 1px solid #ffffff80;
   overflow: hidden;
 }
-.zeta-lineup__img img { width: 100%; height: 100%; object-fit: cover; }
+.zeta-lineup__img--placeholder {
+  background: rgba(255, 255, 255, 0.04);
+}
+.zeta-lineup__img img { width: 100%; height: 100%; transition: transform 0.2s; }
+.zeta-lineup__img--cover { object-fit: cover; }
+.zeta-lineup__img--contain { object-fit: contain; }
+.zeta-lineup__img img:hover { transform: scale(1.02); }
 .zeta-lineup__img-hint {
   font-size: 10px;
   letter-spacing: 0.14em;
@@ -833,7 +841,7 @@
   justify-content: center;
   min-height: 500px;
   position: relative;
-  border-right: 1px solid var(--zeta-border);
+  border-right: 1px solid var(--zeta-sand);
   overflow: hidden;
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -914,7 +922,7 @@
 .zeta-hwy__inner { max-width: 1100px; margin: 0 auto; width: 100%; }
 .zeta-hwy__top { margin-bottom: 5rem; }
 .zeta-hwy__eyebrow {
-  font-size: 12px;
+  font-size: var(--zeta-eyebrow-sm);
   font-weight: var(--zeta-fw-bold);
   letter-spacing: 0.32em;
   text-transform: uppercase;
@@ -923,7 +931,7 @@
 }
 .zeta-hwy__h2 {
   font-family: var(--zeta-font-heading);
-  font-size: clamp(4.5rem, 10vw, 9rem);
+  font-size: clamp(2.2rem,3.5vw,3.2rem);
   font-weight: var(--zeta-fw-medium);
   line-height: 0.92;
   letter-spacing: -0.02em;
@@ -931,10 +939,10 @@
 }
 .zeta-hwy__h2 em { font-style: italic; color: var(--zeta-bronze); }
 .zeta-hwy__lede {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   font-family: var(--zeta-font-heading);
   font-style: italic;
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-size: clamp(1.8rem, 3.5vw, 2rem);
   font-weight: var(--zeta-fw-medium);
   line-height: 1.3;
   color: rgba(255, 255, 255, 0.9);
@@ -1069,7 +1077,7 @@
 }
 .zeta-cta__eyebrow {
   position: relative;
-  font-size: 13px;
+  font-size: var(--zeta-eyebrow-sm);
   font-weight: var(--zeta-fw-bold);
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -1117,7 +1125,7 @@
   text-decoration: none;
   transition: background 0.2s;
 }
-.zeta-cta__tile:hover { background: rgba(0, 110, 115, 0.8); }
+.zeta-cta__tile:hover { color: var(--zeta-teal); background: var(--zeta-surface); }
 @media screen and (max-width: 960px) {
   .zeta-cta { padding: 4rem 2rem; }
   .zeta-cta__tile { min-width: 0; width: 100%; }
@@ -1177,6 +1185,7 @@
   letter-spacing: 0.03em;
 }
 .zeta-founder__btn { margin-top: 2rem; width: fit-content; }
+.zeta .zeta-founder__btn:hover { background: var(--zeta-teal); color: #fff; border-color: var(--zeta-teal); }
 .zeta-founder__media {
   background: var(--zeta-ink);
   min-height: 500px;
@@ -1316,7 +1325,7 @@
 /* Shared section header helpers (client .section-eyebrow / .section-h2) */
 .zeta-section-eyebrow {
   font-family: var(--zeta-font-body);
-  font-size: 15px;
+  font-size: var(--zeta-eyebrow-sm);
   font-weight: var(--zeta-fw-semibold);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -2118,7 +2127,7 @@
 /* Banner */
 .zeta-pdp__banner { display: flex; flex-direction: column; gap: 12px; }
 .zeta-pdp__banner-name {
-  font-size: 22px;
+  font-size: var(--zeta-eyebrow-sm);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: var(--zeta-fw-bold);
@@ -2183,13 +2192,17 @@
   align-items: center;
   gap: 14px;
   border: 1.5px solid var(--zeta-border);
-  border-radius: 0px;
+  border-radius: 8px;
   padding: 14px 16px;
   cursor: pointer;
   background: var(--zeta-surface);
   transition: border-color 0.2s;
 }
-.zeta-pdp__option:has(.zeta-pdp__radio-input:checked) { border-color: var(--zeta-teal); }
+.zeta-pdp__option:has(.zeta-pdp__radio-input:checked) {
+  border-color: var(--zeta-teal);
+  box-shadow: 0 0 0 1px var(--zeta-teal) inset;
+  background: rgba(0, 110, 115, 0.03);
+}
 .zeta-pdp__radio {
   width: 20px;
   height: 20px;
@@ -2249,7 +2262,7 @@
   color: var(--zeta-ink);
   background: var(--zeta-surface);
   border: 1.5px solid var(--zeta-border);
-  border-radius: 0px;
+  border-radius: 8px;
   padding: 13px 42px 13px 16px;
   cursor: pointer;
   transition: border-color 0.2s;
@@ -2304,7 +2317,7 @@
   text-decoration: none;
   transition: border-color 0.2s;
 }
-.zeta-pdp__atc-secondary:hover { border-color: var(--zeta-ink); }
+.zeta-pdp__atc-secondary:hover { border-color: var(--zeta-teal); }
 /* Secondary can render as a <button> (bundle add-on) — normalise to match the link */
 .zeta-pdp__bundle { display: block; }
 button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-height: 1.2; }
@@ -2481,3 +2494,22 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
 
 /* Main image fit — Contain shows the whole image (Cover is the default) */
 .zeta-gallery--fit-contain .zeta-gallery__slide img { object-fit: contain; }
+
+/* ─── Central title sizing ─────────────────────────────────────────────
+   Size selectors map to theme-level settings (ZETA Typography → Title sizes).
+   Two-class selector (.zeta-title.zeta-title--*) so it overrides each
+   section title's own clamp() font-size, which stays as a safe fallback. */
+.zeta-title.zeta-title--large { font-size: var(--zeta-title-lg); }
+.zeta-title.zeta-title--medium { font-size: var(--zeta-title-md); }
+.zeta-title.zeta-title--small { font-size: var(--zeta-title-sm); }
+@media (max-width: 749px) {
+  .zeta-title.zeta-title--large { font-size: var(--zeta-title-lg-m); }
+  .zeta-title.zeta-title--medium { font-size: var(--zeta-title-md-m); }
+  .zeta-title.zeta-title--small { font-size: var(--zeta-title-sm-m); }
+}
+
+/* ─── Central eyebrow sizing ────────────────────────────────────────────
+   Size selectors map to theme settings (ZETA Typography → Eyebrow sizes).
+   Scoped under .zeta so specificity beats both base eyebrow rules. */
+.zeta .zeta-eyebrow-size--medium { font-size: var(--zeta-eyebrow-md); }
+.zeta .zeta-eyebrow-size--small { font-size: var(--zeta-eyebrow-sm); }

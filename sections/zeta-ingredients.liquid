@@ -6,10 +6,10 @@
 <section class="zeta zeta-ingredients" style="background-color: {{ section.settings.section_bg }};" {{ section.shopify_attributes }}>
   <div class="zeta-ingredients__header">
     {%- if section.settings.eyebrow != blank -%}
-      <p class="zeta-section-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <p class="zeta-section-eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
     {%- endif -%}
     {%- if section.settings.heading != blank -%}
-      <h2 class="zeta-section-h2 zeta-section-h2--flush">{{ section.settings.heading | newline_to_br }}</h2>
+      <h2 class="zeta-section-h2 zeta-section-h2--flush zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading | newline_to_br }}</h2>
     {%- endif -%}
     {%- if section.settings.subtitle != blank -%}
       <div class="zeta-ingredients__intro">{{ section.settings.subtitle }}</div>
@@ -59,7 +59,9 @@
   "settings": [
     { "type": "color", "id": "section_bg", "label": "Section background", "default": "#F4F4F5" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What's inside" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
     { "type": "textarea", "id": "heading", "label": "Heading", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "One ingredient.\n<em>~700 clinical trials</em> behind it." },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
     { "type": "richtext", "id": "subtitle", "label": "Subtitle", "info": "Optional intro paragraph shown under the heading." }
   ],
   "blocks": [

@@ -18,10 +18,10 @@
   <div class="zeta-video__inner">
     <div class="zeta-video__text">
       {%- if section.settings.eyebrow != blank -%}
-        <p class="zeta-section-eyebrow zeta-section-eyebrow--bronze">{{ section.settings.eyebrow | escape }}</p>
+        <p class="zeta-section-eyebrow zeta-section-eyebrow--bronze zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <h2 class="zeta-section-h2">{{ section.settings.heading }}</h2>
+        <h2 class="zeta-section-h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading }}</h2>
       {%- endif -%}
       {%- if section.settings.body != blank -%}
         <div class="zeta-video__body">{{ section.settings.body }}</div>
@@ -109,7 +109,9 @@
       "default": "right"
     },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Your first capsule" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
     { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Here's the <em>ritual</em>." },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>A short clip on how to take your first capsule — and what most people miss in their first week.</p>" },
     { "type": "text", "id": "note", "label": "Note", "info": "Optional small note under the copy (e.g. video file / runtime)." },
     { "type": "header", "content": "Video" },

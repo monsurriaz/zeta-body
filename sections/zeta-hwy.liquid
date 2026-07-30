@@ -7,10 +7,10 @@
   <div class="zeta-hwy__inner">
     <div class="zeta-hwy__top">
       {%- if section.settings.eyebrow != blank -%}
-        <p class="zeta-hwy__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <p class="zeta-hwy__eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
-        <div class="zeta-hwy__h2">{{ section.settings.heading | newline_to_br }}</div>
+        <div class="zeta-hwy__h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading | newline_to_br }}</div>
       {%- endif -%}
       {%- if section.settings.lede != blank -%}
         <div class="zeta-hwy__lede">{{ section.settings.lede }}</div>
@@ -57,7 +57,9 @@
   "max_blocks": 3,
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The ZETA Philosophy" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
     { "type": "textarea", "id": "heading", "label": "Heading", "info": "Italics render in bronze.", "default": "Health.\n<em>Wealth.</em>\nYouth." },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
     { "type": "richtext", "id": "lede", "label": "Lede", "default": "<p>Three things worth protecting. One body to do it with.</p>" },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>I was already living these three pillars hard when the seizures hit in 2013. <strong>The world doesn't stop because you need or want it to.</strong> You either adjust, fight back, and keep moving — or you get left behind.</p><p>That's why I built ZETA. Because when your brain and body are strong, everything else expands.</p>" },
     { "type": "header", "content": "Buttons" },

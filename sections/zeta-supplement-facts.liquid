@@ -10,10 +10,10 @@
 
 <section class="zeta zeta-facts" {{ section.shopify_attributes }}>
   {%- if section.settings.eyebrow != blank -%}
-    <p class="zeta-section-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    <p class="zeta-section-eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
   {%- endif -%}
   {%- if section.settings.heading != blank -%}
-    <h2 class="zeta-section-h2">{{ section.settings.heading }}</h2>
+    <h2 class="zeta-section-h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading }}</h2>
   {%- endif -%}
 
   <div class="zeta-facts__grid">
@@ -99,7 +99,9 @@
   "class": "shopify-section--zeta-facts",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What's in the canister" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
     { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Simple label. <em>No filler.</em>" },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
     { "type": "header", "content": "Facts panel" },
     { "type": "text", "id": "facts_title", "label": "Panel title", "default": "Supplement Facts" },
     { "type": "text", "id": "serving_line", "label": "Serving line", "default": "Serving Size: 1 Scoop (about 5g) · Servings Per Container: 30" },
