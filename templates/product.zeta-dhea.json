@@ -45,7 +45,7 @@
             "onetime_sub": "60 micronized capsules · 30-day supply",
             "subscribe_label": "Subscribe & Save",
             "subscribe_sub": "Free shipping · Pause or cancel any time",
-            "frequency_label": "Delivery every"
+            "frequency_label": "Delivery Schedule"
           }
         },
         "variant_picker": {
@@ -95,7 +95,8 @@
       "settings": {
         "column_alignment": "normal",
         "media_align": "middle",
-        "media_badge": "Hormone · Daily",
+        "media_gap": "gutter",
+        "media_background_type": "border",
         "main_media_ratio": "portrait",
         "main_media_fit": "contain",
         "thumbnails_per_row": 5,

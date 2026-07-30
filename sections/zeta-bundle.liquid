@@ -10,8 +10,13 @@
   Product tiles are blocks (a "+" is inserted between them). Styles: custom.css (.zeta-bundle).
 {%- endcomment -%}
 
-{%- comment -%} Build the add-on list from the tiles: any linked product that isn't the
-   main (page) product becomes an add-on. {%- endcomment -%}
+{%- comment -%} Two add-to-cart modes (section setting "cart_mode"):
+   • with_main   — the page product (customer's buy-box choice) + every tile linked to a DIFFERENT product.
+   • linked_only — ONLY the products linked on the tiles (first available variant); the page product is NOT added.
+   addons_json = tiles linked to a product other than the page product.
+   all_json    = every tile with a linked product (used by linked_only). {%- endcomment -%}
+{%- assign cart_mode = section.settings.cart_mode | default: 'with_main' -%}
+
 {%- assign has_addons = false -%}
 {%- assign addon_idx = 0 -%}
 {%- capture addons_json -%}[
@@ -28,6 +33,33 @@
   {%- endif -%}
 {%- endfor -%}
 ]{%- endcapture -%}
+
+{%- assign has_any = false -%}
+{%- assign all_idx = 0 -%}
+{%- capture all_json -%}[
+{%- for block in section.blocks -%}
+  {%- assign p = block.settings.product -%}
+  {%- if p != blank -%}
+    {%- assign v = p.selected_or_first_available_variant -%}
+    {%- if v != blank and v.available -%}
+      {%- if all_idx > 0 %},{% endif -%}
+      {"id":{{ v.id }},"quantity":1{%- if v.selling_plan_allocations.size > 0 -%},"selling_plan":{{ v.selling_plan_allocations.first.selling_plan.id }}{%- endif -%}}
+      {%- assign all_idx = all_idx | plus: 1 -%}
+      {%- assign has_any = true -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+]{%- endcapture -%}
+
+{%- if cart_mode == 'linked_only' -%}
+  {%- assign cart_json = all_json -%}
+  {%- assign include_main = 'false' -%}
+  {%- assign cart_enabled = has_any -%}
+{%- else -%}
+  {%- assign cart_json = addons_json -%}
+  {%- assign include_main = 'true' -%}
+  {%- assign cart_enabled = has_addons -%}
+{%- endif -%}
 
 {%- comment -%} ---------- Product tiles (shared by both layouts) ---------- {%- endcomment -%}
 {%- capture products_html -%}
@@ -53,11 +85,12 @@
 {%- comment -%} ---------- CTA (shared by both layouts) ---------- {%- endcomment -%}
 {%- capture button_html -%}
   {%- if section.settings.button_text != blank -%}
-    {%- if has_addons -%}
+    {%- if cart_enabled -%}
       <zeta-stack-add
         class="zeta-bundle__add"
         data-main-product="{{ product.id }}"
-        data-addons='{{ addons_json | strip }}'
+        data-include-main="{{ include_main }}"
+        data-addons='{{ cart_json | strip }}'
       >
         <button type="button" class="zeta-bundle__btn" data-stack-button>{{ section.settings.button_text | escape }}</button>
       </zeta-stack-add>
@@ -165,8 +198,12 @@
         if (!addons.length) return;
 
         const items = [];
-        const main = this.mainItem();
-        if (main) items.push(main);
+        /* Only pull in the page's main product (from the buy box) when the merchant
+           opted into it — otherwise the cart gets exactly the linked tile products. */
+        if (this.getAttribute('data-include-main') === 'true') {
+          const main = this.mainItem();
+          if (main) items.push(main);
+        }
 
         addons.forEach((a) => { if (a && a.id) items.push(a); });
         if (!items.length) return;
@@ -249,7 +286,18 @@
     { "type": "text", "id": "discount", "label": "Discount badge", "default": "Save 10% when bundled" },
     { "type": "richtext", "id": "body", "label": "Body", "default": "<p>CREATINE + MINOS = the ATP recharge and the amino acid engine, working together. The two supplements that do the actual work inside the gym — and beyond.*</p>" },
     { "type": "header", "content": "Add to cart" },
-    { "type": "text", "id": "button_text", "label": "Button label", "default": "BUY THE WORKOUT STACK", "info": "Clicking adds the main product (with the customer's buy-box variant / subscription choice) plus every OTHER product linked on the tiles below, in one request. Link a product on each tile (below) to enable this; leave every tile unlinked to make the button a normal link. To show the savings, create an automatic discount in Shopify Admin for the combination." },
+    {
+      "type": "select",
+      "id": "cart_mode",
+      "label": "What the button adds",
+      "info": "This page's product + linked tiles: adds the current product (customer's buy-box choice) PLUS every tile linked to a different product. Only the linked products: adds exactly the products linked on the tiles — the page's product is NOT added.",
+      "options": [
+        { "value": "with_main", "label": "This page's product + linked tiles" },
+        { "value": "linked_only", "label": "Only the linked products" }
+      ],
+      "default": "with_main"
+    },
+    { "type": "text", "id": "button_text", "label": "Button label", "default": "BUY THE WORKOUT STACK", "info": "Link a product on each tile below to enable add-to-cart; leave every tile unlinked to make the button a normal link. To show the savings, create an automatic discount in Shopify Admin for the combination." },
     { "type": "url", "id": "button_link", "label": "Button link", "info": "Used only when no tile products are linked." }
   ],
   "blocks": [

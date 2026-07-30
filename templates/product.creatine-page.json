@@ -16,13 +16,15 @@
           "type": "banner",
           "settings": {
             "name": "Zeta Creatine",
-            "sub": "The World's Most Sports Supplement"
+            "sub": "The World's Most Sports Supplement",
+            "eyebrow_size": "small"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Strength.</em>\nBrain. \nEveryday."
+            "heading": "<em>Strength.</em>\nBrain. \nEveryday.",
+            "heading_size": "large"
           }
         },
         "lede": {
@@ -45,7 +47,7 @@
             "onetime_sub": "300g powder · 60 servings · 30-day supply",
             "subscribe_label": "Subscribe & Save",
             "subscribe_sub": "Free shipping · Pause or cancel any time",
-            "frequency_label": "Delivery every"
+            "frequency_label": "Delivery Schedule"
           }
         },
         "variant_picker": {
@@ -94,9 +96,12 @@
       ],
       "settings": {
         "column_alignment": "normal",
+        "media_align": "middle",
+        "media_gap": "gutter",
+        "media_background_type": "border",
         "media_badge": "NSF Certified for Sport",
         "main_media_ratio": "portrait",
-        "main_media_fit": "cover",
+        "main_media_fit": "contain",
         "thumbnails_per_row": 5,
         "thumbnail_position": "inside",
         "show_thumbnails": false,
@@ -154,7 +159,11 @@
       ],
       "settings": {
         "eyebrow": "What changes",
-        "heading": "The gym story <br>was just the <em>beginning.</em>"
+        "eyebrow_size": "small",
+        "heading": "The gym story <br>was just the <em>beginning.</em>",
+        "heading_size": "medium",
+        "subtitle": "",
+        "border_style": "separator"
       }
     },
     "ingredients": {
@@ -163,19 +172,31 @@
         "i1": {
           "type": "tile",
           "settings": {
+            "featured": false,
+            "icon": "",
             "tag": "The Molecule",
+            "corner_tag": "",
+            "label": "",
+            "label_color": "teal",
             "name": "Creatine Monohydrate",
             "source": "5g per serving · pure · extensively studied",
-            "body": "<p>The most studied performance supplement in history. Creatine stores phosphate groups as phosphocreatine, regenerating ATP — the primary fuel for muscle contraction and brain function. 5g. One ingredient. Nothing else.*</p>"
+            "body": "<p>The most studied performance supplement in history. Creatine stores phosphate groups as phosphocreatine, regenerating ATP — the primary fuel for muscle contraction and brain function. 5g. One ingredient. Nothing else.*</p>",
+            "nick": ""
           }
         },
         "i2": {
           "type": "tile",
           "settings": {
+            "featured": false,
+            "icon": "",
             "tag": "The Standard",
+            "corner_tag": "",
+            "label": "",
+            "label_color": "teal",
             "name": "NSF Certified for Sport®",
             "source": "Third-party tested · every lot · 270+ banned substances",
-            "body": "<p>Every single production lot independently tested for banned substances — the certification pro athletes and Olympic teams require before they'll take a supplement. Few competitor creatines bother. We do.*</p>"
+            "body": "<p>Every single production lot independently tested for banned substances — the certification pro athletes and Olympic teams require before they'll take a supplement. Few competitor creatines bother. We do.*</p>",
+            "nick": ""
           }
         }
       },
@@ -184,8 +205,12 @@
         "i2"
       ],
       "settings": {
+        "section_bg": "#f4f4f5",
         "eyebrow": "What's inside",
-        "heading": "One ingredient. \n<em>~700 clinical trials</em> behind it."
+        "eyebrow_size": "small",
+        "heading": "One ingredient. \n<em>~700 clinical trials</em> behind it.",
+        "heading_size": "medium",
+        "subtitle": ""
       }
     },
     "facts": {
@@ -195,9 +220,15 @@
           "type": "fact",
           "settings": {
             "name": "Creatine Monohydrate",
+            "desc": "",
+            "desc_block": false,
             "amount": "5 g   **",
             "is_main": true,
-            "indent": false
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "dir1": {
@@ -304,7 +335,9 @@
       ],
       "settings": {
         "eyebrow": "What's in the canister",
+        "eyebrow_size": "small",
         "heading": "Simple label. <em>No filler.</em>",
+        "heading_size": "medium",
         "facts_title": "Supplement Facts",
         "serving_line": "Serving Size: 1 Scoop (about 5g) · Servings Per Container: 30",
         "amount_header": "Amount Per Serving",
@@ -312,7 +345,9 @@
         "facts_note": "** Daily Value not established.   Other Ingredients: None.   Unflavored.",
         "how_to_label": "How to take it",
         "exclude_heading": "Formulated with a lot of NOs.",
-        "exclude_sub": "Here's everything we left out."
+        "exclude_sub": "Here's everything we left out.",
+        "warning_heading": "",
+        "warning_body": ""
       }
     },
     "reviews": {
@@ -322,6 +357,7 @@
           "type": "review",
           "settings": {
             "stars": "★★★★★",
+            "title": "My D3 levels finally moved.",
             "body": "\"My deadlift jumped 20 lbs in 6 weeks. I'm 52.\"",
             "attribution": "Marcus T. · Verified Buyer"
           }
@@ -330,6 +366,7 @@
           "type": "review",
           "settings": {
             "stars": "★★★★★",
+            "title": "My D3 levels finally moved.",
             "body": "\"I take it for the brain story, honestly. Sharper afternoons. Less mental fatigue.\"",
             "attribution": "Lauren M. · Verified Buyer"
           }
@@ -338,6 +375,7 @@
           "type": "review",
           "settings": {
             "stars": "★★★★★",
+            "title": "My D3 levels finally moved.",
             "body": "\"Started with my husband. Both of us notice strength holding up between sessions.\"",
             "attribution": "Joanna B. · Verified Buyer"
           }
@@ -350,7 +388,10 @@
       ],
       "settings": {
         "eyebrow": "Real reviews",
-        "heading": "Strength. Brain. <em>Both.</em>"
+        "eyebrow_size": "small",
+        "heading": "Strength. Brain. <em>Both.</em>",
+        "heading_size": "medium",
+        "subtitle": ""
       }
     },
     "digdeeper": {
@@ -397,6 +438,7 @@
       ],
       "settings": {
         "eyebrow": "For the curious",
+        "eyebrow_size": "small",
         "heading": "Dig <em>deeper.</em>",
         "subtitle": "The creatine science, full ingredients, dosing notes, and the research behind the formula."
       }
@@ -407,6 +449,7 @@
         "bp1": {
           "type": "product",
           "settings": {
+            "product": "",
             "name": "Zeta Creatine",
             "sub": "5g · ATP recharge · Brain support"
           }
@@ -414,6 +457,7 @@
         "bp2": {
           "type": "product",
           "settings": {
+            "product": "",
             "name": "Zeta Minos",
             "sub": "EAAs + L-Arginine · Strength + recovery"
           }
@@ -424,8 +468,10 @@
         "bp2"
       ],
       "settings": {
+        "layout": "row",
         "eyebrow": "Stack It",
         "heading": "The <em>Workout</em> Stack.",
+        "heading_size": "medium",
         "discount": "Save 10% when bundled",
         "body": "<p>CREATINE + MINOS = the ATP recharge and the amino acid engine, working together. The two supplements that do the actual work inside the gym — and beyond.*</p>",
         "button_text": "BUY THE WORKOUT STACK",
@@ -435,8 +481,11 @@
     "ctaclose": {
       "type": "zeta-cta-close",
       "settings": {
+        "background": "#0a1320",
         "tagline": "Take what we take.",
         "heading": "Strength. Brain. Everyday.",
+        "heading_size": "large",
+        "promise": "",
         "button_1_text": "BUY ZETA CREATINE",
         "button_1_link": "",
         "button_2_text": "TAKE THE MIRROR QUIZ",

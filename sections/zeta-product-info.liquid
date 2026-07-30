@@ -32,7 +32,7 @@
 <section class="zeta zeta-pdp zeta-pdp--{{ section.settings.column_alignment | default: 'straight' }} zeta-pdp--media-{{ section.settings.media_align | default: 'top' }} zeta-pdp--media-gap-{{ section.settings.media_gap | default: 'gutter' }}" {{ section.shopify_attributes }}>
   <product-rerender id="zeta-pdp-{{ product.id }}-{{ section.id }}" observe-form="{{ product_form_id }}" allow-partial-rerender class="zeta-pdp__grid">
     {%- comment -%} ---------- MEDIA (left) ---------- {%- endcomment -%}
-    <div class="zeta-pdp__media">
+    <div class="zeta-pdp__media zeta-pdp__media-type--{{ section.settings.media_background_type | default: 'transparent' }}">
       {%- if section.settings.media_badge != blank -%}
         <div class="zeta-pdp__media-badge">{{ section.settings.media_badge | escape }}</div>
       {%- endif -%}
@@ -567,6 +567,26 @@
       "default": "gutter"
     },
     { "type": "header", "content": "Media gallery" },
+    {
+      "type": "select",
+      "id": "media_background_type",
+      "label": "Media background Type",
+      "options": [
+        {
+          "value": "transparent",
+          "label": "Transparent"
+        },
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "border",
+          "label": "Border"
+        }
+      ],
+      "default": "transparent"
+    },
     { "type": "text", "id": "media_badge", "label": "Media badge", "info": "Shown top-right over the gallery. Leave blank to hide.", "default": "NSF Certified for Sport" },
     {
       "type": "select",
@@ -691,7 +711,7 @@
         { "type": "text", "id": "onetime_sub", "label": "One-time subtext", "default": "300g powder · 60 servings · 30-day supply" },
         { "type": "text", "id": "subscribe_label", "label": "Subscribe label", "default": "Subscribe & Save" },
         { "type": "text", "id": "subscribe_sub", "label": "Subscribe subtext", "default": "Free shipping · Pause or cancel any time" },
-        { "type": "text", "id": "frequency_label", "label": "Frequency dropdown label", "info": "Shown above the delivery-frequency dropdown (multiple plans only).", "default": "Delivery every" }
+        { "type": "text", "id": "frequency_label", "label": "Frequency dropdown label", "info": "Shown above the delivery-frequency dropdown (multiple plans only).", "default": "Delivery Schedule" }
       ]
     },
     {

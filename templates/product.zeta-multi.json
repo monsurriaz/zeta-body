@@ -16,13 +16,15 @@
           "type": "banner",
           "settings": {
             "name": "Zeta MULTI",
-            "sub": "The Daily Foundation Capsule"
+            "sub": "The Daily Foundation Capsule",
+            "eyebrow_size": "small"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Every BODY needs <em>a great Multi.</em>"
+            "heading": "Every BODY needs <em>a great Multi.</em>",
+            "heading_size": "large"
           }
         },
         "lede": {
@@ -45,7 +47,7 @@
             "onetime_sub": "120 capsules · 60-day supply",
             "subscribe_label": "Subscribe & Save",
             "subscribe_sub": "Free shipping · Pause or cancel any time",
-            "frequency_label": "Delivery every"
+            "frequency_label": "Delivery Schedule"
           }
         },
         "variant_picker": {
@@ -95,6 +97,8 @@
       "settings": {
         "column_alignment": "normal",
         "media_align": "middle",
+        "media_gap": "gutter",
+        "media_background_type": "border",
         "media_badge": "Foundation · Daily",
         "main_media_ratio": "portrait",
         "main_media_fit": "contain",
@@ -155,7 +159,9 @@
       ],
       "settings": {
         "eyebrow": "What changes",
+        "eyebrow_size": "small",
         "heading": "The one you forget you're taking —\nuntil you <em>stop</em>.",
+        "heading_size": "medium",
         "subtitle": "<p>MULTI is your foundation. You won't feel it like Z-83. You'll feel its <em>absence</em> if you stop.</p>",
         "border_style": "top"
       }
@@ -163,9 +169,11 @@
     "ingredients": {
       "type": "zeta-ingredients",
       "settings": {
-        "section_bg": "#EFE9DC",
+        "section_bg": "#efe9dc",
         "eyebrow": "Done right",
+        "eyebrow_size": "small",
         "heading": "Vitamins, minerals — in the <em>forms that work</em>.",
+        "heading_size": "medium",
         "subtitle": "<p>So many multivitamins use the cheapest form of each nutrient. We don't. ZETA MULTI uses <strong>methylated B-vitamins</strong> (the ones your body uses directly, no conversion needed), <strong>chelated minerals</strong> (bound to amino acids for absorption), and <strong>active folate</strong> as Quatrefolic® — the form pregnant women and adults with the MTHFR variant actually need.</p><p>Plus vitamins C and E, selenium, beta-carotene, zinc — antioxidant support that backs up everything else you're doing.</p>"
       }
     },
@@ -700,7 +708,9 @@
       ],
       "settings": {
         "eyebrow": "What's in the bottle",
+        "eyebrow_size": "small",
         "heading": "A focused multi. <em>No filler.</em>",
+        "heading_size": "medium",
         "facts_title": "Supplement Facts",
         "serving_line": "Serving Size: 2 Vegetarian Capsules · Servings Per Container: 60 · 120 capsules per bottle",
         "amount_header": "Amount Per Serving",
@@ -751,7 +761,9 @@
       ],
       "settings": {
         "eyebrow": "Real reviews",
+        "eyebrow_size": "small",
         "heading": "The one people <em>don't realize they need</em> until they do.",
+        "heading_size": "medium",
         "subtitle": ""
       }
     },
@@ -778,7 +790,7 @@
           "type": "item",
           "settings": {
             "label": "Directions & Precautions",
-            "content": "<h3>How to <em>take it.</em></h3><p><strong>Take 2 capsules once daily with a meal.</strong> Fat-soluble vitamins (A, D, E, K) absorb better with some dietary fat.</p><h4>Best Time</h4><p>With your largest meal of the day. Morning or midday works well — B-vitamins can be mildly energizing.</p><h4>The Foundation Stack</h4><ul>\n<li>\n<strong>ZETA D+K</strong> — extra D3 + K2 for biomarker shifts; the longevity pair</li>\n<li>\n<strong>ZETA MEGAS</strong> — omega-3s; fat-soluble, absorb well taken together</li>\n<li>\n<strong>ZETA B COMPLETE</strong> — targeted B support on top of the multi base</li>\n<li>\n<strong>Z-83</strong> — the everyday supplement for energy and clearing brain fog</li>\n</ul><h4>Precautions</h4><p>If pregnant, nursing, or under 18, consult your healthcare provider. Iron-deficient? Talk to your doctor — ZETA MULTI does not contain iron by design. Don't exceed 2 capsules per day.</p>",
+            "content": "<h3>How to <em>take it.</em>\n</h3><p><strong>Take 2 capsules once daily with a meal.</strong> Fat-soluble vitamins (A, D, E, K) absorb better with some dietary fat.</p><h4>Best Time</h4><p>With your largest meal of the day. Morning or midday works well — B-vitamins can be mildly energizing.</p><h4>The Foundation Stack</h4><ul>\n<li>\n<strong>ZETA D+K</strong> — extra D3 + K2 for biomarker shifts; the longevity pair</li>\n<li>\n<strong>ZETA MEGAS</strong> — omega-3s; fat-soluble, absorb well taken together</li>\n<li>\n<strong>ZETA B COMPLETE</strong> — targeted B support on top of the multi base</li>\n<li>\n<strong>Z-83</strong> — the everyday supplement for energy and clearing brain fog</li>\n</ul><h4>Precautions</h4><p>If pregnant, nursing, or under 18, consult your healthcare provider. Iron-deficient? Talk to your doctor — ZETA MULTI does not contain iron by design. Don't exceed 2 capsules per day.</p>",
             "open_by_default": false
           }
         },
@@ -786,7 +798,7 @@
           "type": "item",
           "settings": {
             "label": "Research",
-            "content": "<h3>The <em>research</em> underneath.</h3><p>A handful of the studies behind the methylation + absorption story:</p><div class=\"ref\"><strong>Liew SC.</strong> Folic acid and diseases — supplement it or not? <em>Revista da Associação Médica Brasileira</em>, 2016.</div><div class=\"ref\"><strong>Pietrzik K et al.</strong> Folic acid and L-5-methyltetrahydrofolate: comparison of clinical pharmacokinetics and pharmacodynamics. <em>Clinical Pharmacokinetics</em>, 2010.</div><div class=\"ref\"><strong>Wallace TC et al.</strong> Multivitamin/mineral supplement use is associated with reduced risk of breast cancer mortality in postmenopausal women. <em>Breast Cancer Research and Treatment</em>, 2015.</div><div class=\"ref\"><strong>Ames BN.</strong> Low micronutrient intake may accelerate the degenerative diseases of aging. <em>PNAS</em>, 2006.</div>",
+            "content": "<h3>The <em>research</em> underneath.</h3><p>A handful of the studies behind the methylation + absorption story:</p><div class=\"ref\">\n<strong>Liew SC.</strong> Folic acid and diseases — supplement it or not? <em>Revista da Associação Médica Brasileira</em>, 2016.</div><div class=\"ref\">\n<strong>Pietrzik K et al.</strong> Folic acid and L-5-methyltetrahydrofolate: comparison of clinical pharmacokinetics and pharmacodynamics. <em>Clinical Pharmacokinetics</em>, 2010.</div><div class=\"ref\">\n<strong>Wallace TC et al.</strong> Multivitamin/mineral supplement use is associated with reduced risk of breast cancer mortality in postmenopausal women. <em>Breast Cancer Research and Treatment</em>, 2015.</div><div class=\"ref\">\n<strong>Ames BN.</strong> Low micronutrient intake may accelerate the degenerative diseases of aging. <em>PNAS</em>, 2006.</div>",
             "open_by_default": false
           }
         }
@@ -799,6 +811,7 @@
       ],
       "settings": {
         "eyebrow": "For the curious",
+        "eyebrow_size": "small",
         "heading": "Dig <em>deeper.</em>",
         "subtitle": "The full vitamin/mineral breakdown, why we picked the forms we did, dosing notes, and the research underneath."
       }
@@ -831,6 +844,7 @@
         "layout": "box",
         "eyebrow": "",
         "heading": "The <em>Foundation Stack.</em>",
+        "heading_size": "medium",
         "discount": "Save 10% · Bundle",
         "body": "<p>MULTI · D+K · MEGAS · B COMPLETE · Z-83. The five products that form the complete ZETA foundation. Each one earns its place.</p>",
         "button_text": "BUY THE FOUNDATION STACK",
@@ -843,6 +857,7 @@
         "background": "#0a1320",
         "tagline": "DRIVEN BY SCIENCE · BUILT TO PERFORM · MADE TO FEEL",
         "heading": "<em>Take what</em>\nwe take.",
+        "heading_size": "large",
         "promise": "Look. Feel. Perform. — Younger.",
         "button_1_text": "BUY ZETA MULTI",
         "button_1_link": "",

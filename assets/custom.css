@@ -1874,7 +1874,7 @@
   height: 74px;
   border: none;
   border-radius: 50%;
-  background: var(--zeta-bronze);
+  background: var(--zeta-bg);
   cursor: pointer;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   transition: transform 0.15s ease;
@@ -1969,7 +1969,8 @@
 /* Box layout (d-k): sand panel, product art left + copy/CTA right */
 .zeta-bundle--box { text-align: left; }
 .zeta-bundle--box .zeta-bundle__inner {
-  background: var(--zeta-sand);
+  background: var(--zeta-surface);
+  border: 1px solid var(--zeta-border);
   padding: 56px;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -1977,7 +1978,7 @@
   align-items: center;
 }
 .zeta-bundle--box .zeta-bundle__art {
-  background: var(--zeta-surface);
+  background: var(--zeta-bg);
   aspect-ratio: 1.3 / 1;
   display: flex;
   align-items: center;
@@ -2089,12 +2090,13 @@
 .zeta-pdp__info { min-width: 0; }
 .zeta-pdp__media {
   position: relative;
-  background: #121f2e;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.zeta-pdp__media-type--solid { background: #121f2e;}
+.zeta-pdp__media-type--border { border: 1px solid var(--zeta-border); }
 .zeta-pdp__media-badge {
   position: absolute;
   top: 32px;
@@ -2247,6 +2249,7 @@
 .zeta-pdp__freq[hidden] { display: none; }
 .zeta-pdp__freq-label {
   font-size: 11px;
+  text-align: center;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: var(--zeta-fw-semibold);

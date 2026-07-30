@@ -45,7 +45,7 @@
             "onetime_sub": "60 softgels · 30-day supply",
             "subscribe_label": "Subscribe & Save",
             "subscribe_sub": "Free shipping · Pause or cancel any time",
-            "frequency_label": "Delivery every"
+            "frequency_label": "Delivery Schedule"
           }
         },
         "variant_picker": {
@@ -95,7 +95,7 @@
       "settings": {
         "column_alignment": "normal",
         "media_align": "middle",
-        "media_gap": "none",
+        "media_gap": "gutter",
         "media_badge": "MaxSimil® · 3× Absorption",
         "main_media_ratio": "portrait",
         "main_media_fit": "contain",
