@@ -474,6 +474,7 @@
         "heading_size": "medium",
         "discount": "Save 10% when bundled",
         "body": "<p>CREATINE + MINOS = the ATP recharge and the amino acid engine, working together. The two supplements that do the actual work inside the gym — and beyond.*</p>",
+        "cart_mode": "with_main",
         "button_text": "BUY THE WORKOUT STACK",
         "button_link": ""
       }

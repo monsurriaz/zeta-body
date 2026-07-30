@@ -16,13 +16,15 @@
           "type": "banner",
           "settings": {
             "name": "Zeta Fruits & Veggies",
-            "sub": "Whole Food Superfood Powder"
+            "sub": "Whole Food Superfood Powder",
+            "eyebrow_size": "small"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Every color.</em>\nEvery day."
+            "heading": "<em>Every color.</em>\nEvery day.",
+            "heading_size": "large"
           }
         },
         "lede": {
@@ -96,6 +98,7 @@
         "column_alignment": "normal",
         "media_align": "middle",
         "media_gap": "gutter",
+        "media_background_type": "border",
         "media_badge": "Nourish · Every day",
         "main_media_ratio": "portrait",
         "main_media_fit": "contain",
@@ -156,7 +159,10 @@
       ],
       "settings": {
         "eyebrow": "Nourish",
+        "eyebrow_size": "small",
         "heading": "What <em>changes</em>",
+        "heading_size": "medium",
+        "subtitle": "",
         "border_style": "separator"
       }
     },
@@ -166,7 +172,8 @@
         "i1": {
           "type": "tile",
           "settings": {
-            "icon": "<svg viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"20\" cy=\"22\" r=\"11\" stroke=\"#006E73\" stroke-width=\"1.5\" fill=\"none\"/><circle cx=\"40\" cy=\"22\" r=\"11\" stroke=\"#006E73\" stroke-width=\"1.5\" fill=\"none\"/><circle cx=\"30\" cy=\"38\" r=\"11\" stroke=\"#006E73\" stroke-width=\"1.5\" fill=\"none\"/></svg>",
+            "featured": false,
+            "icon": "<svg viewbox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"20\" cy=\"22\" r=\"11\" stroke=\"#006E73\" stroke-width=\"1.5\" fill=\"none\"></circle><circle cx=\"40\" cy=\"22\" r=\"11\" stroke=\"#006E73\" stroke-width=\"1.5\" fill=\"none\"></circle><circle cx=\"30\" cy=\"38\" r=\"11\" stroke=\"#006E73\" stroke-width=\"1.5\" fill=\"none\"></circle></svg>",
             "tag": "",
             "corner_tag": "",
             "label": "The Whole Food Matrix",
@@ -180,7 +187,8 @@
         "i2": {
           "type": "tile",
           "settings": {
-            "icon": "<svg viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"22\" cy=\"20\" r=\"8\" stroke=\"#B89968\" stroke-width=\"1.5\" fill=\"none\"/><circle cx=\"38\" cy=\"20\" r=\"8\" stroke=\"#B89968\" stroke-width=\"1.5\" fill=\"none\"/><circle cx=\"30\" cy=\"10\" r=\"8\" stroke=\"#B89968\" stroke-width=\"1.5\" fill=\"none\"/><path d=\"M14,28 C14,28 18,40 30,44 C42,40 46,28 46,28\" stroke=\"#B89968\" stroke-width=\"1.5\" fill=\"none\"/></svg>",
+            "featured": false,
+            "icon": "<svg viewbox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"22\" cy=\"20\" r=\"8\" stroke=\"#B89968\" stroke-width=\"1.5\" fill=\"none\"></circle><circle cx=\"38\" cy=\"20\" r=\"8\" stroke=\"#B89968\" stroke-width=\"1.5\" fill=\"none\"></circle><circle cx=\"30\" cy=\"10\" r=\"8\" stroke=\"#B89968\" stroke-width=\"1.5\" fill=\"none\"></circle><path d=\"M14,28 C14,28 18,40 30,44 C42,40 46,28 46,28\" stroke=\"#B89968\" stroke-width=\"1.5\" fill=\"none\"></path></svg>",
             "tag": "",
             "corner_tag": "The Differentiator",
             "label": "The Nrf2 Activator",
@@ -194,7 +202,8 @@
         "i3": {
           "type": "tile",
           "settings": {
-            "icon": "<svg viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10,30 C10,20 18,14 26,18 C34,22 34,38 42,42 C50,46 54,38 54,30\" stroke=\"#6B7280\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M6,38 C6,28 14,22 22,26 C30,30 30,46 38,50 C44,52 50,46 52,40\" stroke=\"#6B7280\" stroke-width=\"1\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.5\"/><circle cx=\"10\" cy=\"30\" r=\"2.5\" fill=\"#6B7280\"/><circle cx=\"54\" cy=\"30\" r=\"2.5\" fill=\"#6B7280\"/></svg>",
+            "featured": false,
+            "icon": "<svg viewbox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10,30 C10,20 18,14 26,18 C34,22 34,38 42,42 C50,46 54,38 54,30\" stroke=\"#6B7280\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\"></path><path d=\"M6,38 C6,28 14,22 22,26 C30,30 30,46 38,50 C44,52 50,46 52,40\" stroke=\"#6B7280\" stroke-width=\"1\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.5\"></path><circle cx=\"10\" cy=\"30\" r=\"2.5\" fill=\"#6B7280\"></circle><circle cx=\"54\" cy=\"30\" r=\"2.5\" fill=\"#6B7280\"></circle></svg>",
             "tag": "",
             "corner_tag": "",
             "label": "The Gut Engine",
@@ -212,9 +221,11 @@
         "i3"
       ],
       "settings": {
-        "section_bg": "#F4F4F5",
+        "section_bg": "#f4f4f5",
         "eyebrow": "The formula",
+        "eyebrow_size": "small",
         "heading": "Six vegetables. Seven fruits.\n<em>One scoop.</em>",
+        "heading_size": "medium",
         "subtitle": ""
       }
     },
@@ -226,10 +237,14 @@
           "settings": {
             "name": "Calories",
             "desc": "",
+            "desc_block": false,
             "amount": "30",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_carb": {
@@ -237,10 +252,14 @@
           "settings": {
             "name": "Total Carbohydrate",
             "desc": "",
+            "desc_block": false,
             "amount": "7 g · 3%†",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_fiber": {
@@ -248,10 +267,14 @@
           "settings": {
             "name": "Dietary Fiber",
             "desc": "",
+            "desc_block": false,
             "amount": "4 g · 14%",
             "is_main": false,
             "bold": false,
-            "indent": true
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_sugar": {
@@ -259,10 +282,14 @@
           "settings": {
             "name": "Total Sugars",
             "desc": "",
+            "desc_block": false,
             "amount": "1 g **",
             "is_main": false,
             "bold": false,
-            "indent": true
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_vitc": {
@@ -270,10 +297,14 @@
           "settings": {
             "name": "Vitamin C",
             "desc": "(as ascorbic acid and ingredients with naturally occurring vitamin C)",
+            "desc_block": false,
             "amount": "300 mg · 333%",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_fiberblend": {
@@ -281,10 +312,14 @@
           "settings": {
             "name": "Organic Fiber Blend",
             "desc": "(organic gum acacia, organic inulin, organic flaxseed)",
+            "desc_block": false,
             "amount": "4.275 g **",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_greens": {
@@ -292,10 +327,14 @@
           "settings": {
             "name": "Organic Greens and Veggies Blend",
             "desc": "(organic carrot, organic green cabbage, organic broccoli, organic beet, organic chlorella, organic spinach)",
+            "desc_block": false,
             "amount": "1.28 g **",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_fruits": {
@@ -303,10 +342,14 @@
           "settings": {
             "name": "Organic Fruits and Berries Blend",
             "desc": "(organic blueberry, organic apple, organic strawberry, organic sea-buckthorn juice powder, organic acai, organic acerola cherry extract, organic plum extract)",
+            "desc_block": false,
             "amount": "875 mg **",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_antiox": {
@@ -314,10 +357,14 @@
           "settings": {
             "name": "Antioxidant Phytonutrients Blend",
             "desc": "(organic green tea extract, organic apple extract, organic astragalus, organic ginger, organic goji berry extract)",
+            "desc_block": false,
             "amount": "710 mg **",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_digest": {
@@ -325,10 +372,14 @@
           "settings": {
             "name": "Digestive Support* Blend",
             "desc": "(probiotics: L. acidophilus, B. longum, L. casei, L. rhamnosus; enzymes: protease, amylase, bromelain, cellulase, lactase, lipase)",
+            "desc_block": false,
             "amount": "20 mg **",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_gluco": {
@@ -336,10 +387,14 @@
           "settings": {
             "name": "Glucoraphanin (from broccoli extract, Brassica oleracea italica, seed) ˢ¹",
             "desc": "",
+            "desc_block": false,
             "amount": "5 mg **",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "dir1": {
@@ -366,18 +421,78 @@
             "text": "About 30 servings per container — a <strong>30-day supply</strong>"
           }
         },
-        "x1": { "type": "exclusion", "settings": { "text": "Wheat & gluten" } },
-        "x2": { "type": "exclusion", "settings": { "text": "Yeast" } },
-        "x3": { "type": "exclusion", "settings": { "text": "Soy" } },
-        "x4": { "type": "exclusion", "settings": { "text": "Animal & dairy products" } },
-        "x5": { "type": "exclusion", "settings": { "text": "Fish & shellfish" } },
-        "x6": { "type": "exclusion", "settings": { "text": "Peanuts & tree nuts" } },
-        "x7": { "type": "exclusion", "settings": { "text": "Eggs" } },
-        "x8": { "type": "exclusion", "settings": { "text": "GMO ingredients" } },
-        "x9": { "type": "exclusion", "settings": { "text": "Artificial colors" } },
-        "x10": { "type": "exclusion", "settings": { "text": "Artificial sweeteners" } },
-        "x11": { "type": "exclusion", "settings": { "text": "Artificial preservatives" } },
-        "x12": { "type": "exclusion", "settings": { "text": "Lactose" } }
+        "x1": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Wheat & gluten"
+          }
+        },
+        "x2": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Yeast"
+          }
+        },
+        "x3": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Soy"
+          }
+        },
+        "x4": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Animal & dairy products"
+          }
+        },
+        "x5": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Fish & shellfish"
+          }
+        },
+        "x6": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Peanuts & tree nuts"
+          }
+        },
+        "x7": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Eggs"
+          }
+        },
+        "x8": {
+          "type": "exclusion",
+          "settings": {
+            "text": "GMO ingredients"
+          }
+        },
+        "x9": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Artificial colors"
+          }
+        },
+        "x10": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Artificial sweeteners"
+          }
+        },
+        "x11": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Artificial preservatives"
+          }
+        },
+        "x12": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Lactose"
+          }
+        }
       },
       "block_order": [
         "f_cal",
@@ -410,7 +525,9 @@
       ],
       "settings": {
         "eyebrow": "",
+        "eyebrow_size": "small",
         "heading": "",
+        "heading_size": "medium",
         "facts_title": "Supplement Facts",
         "serving_line": "Serving Size: 1 Scoop (about 8 g) · Servings Per Container: About 30",
         "amount_header": "Amount Per Serving",
@@ -461,7 +578,9 @@
       ],
       "settings": {
         "eyebrow": "Real results",
+        "eyebrow_size": "small",
         "heading": "What people <em>notice</em>",
+        "heading_size": "medium",
         "subtitle": ""
       }
     },
@@ -472,7 +591,7 @@
           "type": "item",
           "settings": {
             "label": "Description",
-            "content": "<h3>Six vegetables. Seven fruits. <em>One scoop.</em></h3><p>ZETA Fruits & Veggies is a comprehensive superfood powder formulated to fill the real-food gaps most diets leave behind. Six organic vegetables, seven organic fruits and berries, 4g of prebiotic fiber, four probiotic strains, six digestive enzymes, and TrueBroc® standardized broccoli seed extract for antioxidant and detoxification support.</p><p>The formula is built around phytonutrient density — not marketing. Organic flavoring with stevia and Luo Han Guo makes it genuinely good to drink. Lactose-free, vegan, and free of the common allergens. One scoop every day.</p><h4>Why This Formula</h4><p>Most greens powders pad their blends with cheap fillers and rely on underdosed proprietary blends to obscure what you're actually getting. This formula leads with fiber — because gut health is foundational — and layers in real concentrated vegetables, high-antioxidant fruits, and TrueBroc® at a studied dose. Every ingredient earns its place.</p>",
+            "content": "<h3>Six vegetables. Seven fruits. <em>One scoop.</em>\n</h3><p>ZETA Fruits &amp; Veggies is a comprehensive superfood powder formulated to fill the real-food gaps most diets leave behind. Six organic vegetables, seven organic fruits and berries, 4g of prebiotic fiber, four probiotic strains, six digestive enzymes, and TrueBroc® standardized broccoli seed extract for antioxidant and detoxification support.</p><p>The formula is built around phytonutrient density — not marketing. Organic flavoring with stevia and Luo Han Guo makes it genuinely good to drink. Lactose-free, vegan, and free of the common allergens. One scoop every day.</p><h4>Why This Formula</h4><p>Most greens powders pad their blends with cheap fillers and rely on underdosed proprietary blends to obscure what you're actually getting. This formula leads with fiber — because gut health is foundational — and layers in real concentrated vegetables, high-antioxidant fruits, and TrueBroc® at a studied dose. Every ingredient earns its place.</p>",
             "open_by_default": true
           }
         },
@@ -480,7 +599,7 @@
           "type": "item",
           "settings": {
             "label": "Ingredients",
-            "content": "<h3>What's inside — <em>and why.</em></h3><h4>Organic Fiber Blend — 4.275g</h4><p>Organic gum acacia, organic inulin, organic flaxseed. Prebiotic fiber to support gut microbiome health, regularity, and the intestinal environment where beneficial bacteria thrive.</p><h4>Organic Greens and Veggies Blend — 1.28g</h4><p>Organic carrot, green cabbage, broccoli, beet, chlorella, spinach. A concentrated vegetable matrix delivering broad-spectrum micronutrients and phytonutrients from real food sources.</p><h4>Organic Fruits and Berries Blend — 875mg</h4><p>Blueberry, apple, strawberry, sea buckthorn, acai, acerola cherry, plum. High-antioxidant fruit concentrates with naturally occurring vitamin C and polyphenols.</p><h4>Antioxidant Phytonutrients Blend — 710mg</h4><p>Organic green tea extract, apple extract, astragalus, ginger, goji berry. Adaptogens and polyphenols for cellular defense and antioxidant capacity.</p><h4>Digestive Support Blend — 20mg</h4><p>Probiotics (L. acidophilus, B. longum, L. casei, L. rhamnosus) and enzymes (protease, amylase, bromelain, cellulase, lactase, lipase). A multi-strain probiotic matrix with targeted enzymes to support digestion and nutrient absorption.</p><h4>TrueBroc® Glucoraphanin — 5mg</h4><p>Standardized broccoli seed extract from Brassica Protection Products LLC. The Nrf2 activator — the only broccoli extract with published human clinical data on glucoraphanin bioavailability.</p><h4>Other Ingredients</h4><p>Organic flavors, organic stevia extract, organic Luo Han Guo extract.</p>",
+            "content": "<h3>What's inside — <em>and why.</em>\n</h3><h4>Organic Fiber Blend — 4.275g</h4><p>Organic gum acacia, organic inulin, organic flaxseed. Prebiotic fiber to support gut microbiome health, regularity, and the intestinal environment where beneficial bacteria thrive.</p><h4>Organic Greens and Veggies Blend — 1.28g</h4><p>Organic carrot, green cabbage, broccoli, beet, chlorella, spinach. A concentrated vegetable matrix delivering broad-spectrum micronutrients and phytonutrients from real food sources.</p><h4>Organic Fruits and Berries Blend — 875mg</h4><p>Blueberry, apple, strawberry, sea buckthorn, acai, acerola cherry, plum. High-antioxidant fruit concentrates with naturally occurring vitamin C and polyphenols.</p><h4>Antioxidant Phytonutrients Blend — 710mg</h4><p>Organic green tea extract, apple extract, astragalus, ginger, goji berry. Adaptogens and polyphenols for cellular defense and antioxidant capacity.</p><h4>Digestive Support Blend — 20mg</h4><p>Probiotics (L. acidophilus, B. longum, L. casei, L. rhamnosus) and enzymes (protease, amylase, bromelain, cellulase, lactase, lipase). A multi-strain probiotic matrix with targeted enzymes to support digestion and nutrient absorption.</p><h4>TrueBroc® Glucoraphanin — 5mg</h4><p>Standardized broccoli seed extract from Brassica Protection Products LLC. The Nrf2 activator — the only broccoli extract with published human clinical data on glucoraphanin bioavailability.</p><h4>Other Ingredients</h4><p>Organic flavors, organic stevia extract, organic Luo Han Guo extract.</p>",
             "open_by_default": false
           }
         },
@@ -488,7 +607,7 @@
           "type": "item",
           "settings": {
             "label": "Directions & Precautions",
-            "content": "<h3>One scoop. <em>Every day.</em></h3><p>Blend, shake, or briskly stir one level scoop (8g) into 6–8 fl oz of chilled water or as directed by your healthcare professional. Adjust the amount of water for desired sweetness and thickness. Works well mixed into juice or a smoothie.</p><p>Any time of day, consistently. This is a foundational supplement — the benefit compounds with use over time.</p><h4>Precautions</h4><p>Consult your healthcare professional before use. Individuals taking medication should discuss potential interactions with their physician. Do not use if the tamper seal is damaged. Keep out of reach of children.</p>",
+            "content": "<h3>One scoop. <em>Every day.</em>\n</h3><p>Blend, shake, or briskly stir one level scoop (8g) into 6–8 fl oz of chilled water or as directed by your healthcare professional. Adjust the amount of water for desired sweetness and thickness. Works well mixed into juice or a smoothie.</p><p>Any time of day, consistently. This is a foundational supplement — the benefit compounds with use over time.</p><h4>Precautions</h4><p>Consult your healthcare professional before use. Individuals taking medication should discuss potential interactions with their physician. Do not use if the tamper seal is damaged. Keep out of reach of children.</p>",
             "open_by_default": false
           }
         },
@@ -496,7 +615,7 @@
           "type": "item",
           "settings": {
             "label": "Research",
-            "content": "<h3>The evidence <em>behind the formula.</em></h3><div class=\"ref\"><strong>Aune D et al.</strong> Fruit and vegetable intake and the risk of cardiovascular disease, total cancer and all-cause mortality. <em>International Journal of Epidemiology</em> (2017). Large meta-analysis confirming dose-response relationship between fruit and vegetable intake and reduced risk of chronic disease and early mortality.</div><div class=\"ref\"><strong>Fahey JW, Talalay P.</strong> Antioxidant functions of sulforaphane: a potent inducer of phase II detoxication enzymes. <em>Food and Chemical Toxicology</em> (1999). Foundational Johns Hopkins research establishing sulforaphane — derived from glucoraphanin — as one of the most potent known inducers of Nrf2-mediated detoxification enzymes in plant foods.</div><div class=\"ref\"><strong>Martínez I et al.</strong> Gut microbiome composition is linked to whole grain-induced immunological improvements. <em>ISME Journal</em> (2013). Demonstrates the direct relationship between dietary fiber intake, microbiome diversity, and immune function — the biological rationale for the prebiotic fiber blend.</div><div class=\"ref\"><strong>Hao Q et al.</strong> Probiotics for preventing acute upper respiratory tract infections. <em>Cochrane Database of Systematic Reviews</em> (2015). Systematic review supporting the immune and gut health benefits of multi-strain probiotic supplementation.</div>",
+            "content": "<h3>The evidence <em>behind the formula.</em>\n</h3><div class=\"ref\">\n<strong>Aune D et al.</strong> Fruit and vegetable intake and the risk of cardiovascular disease, total cancer and all-cause mortality. <em>International Journal of Epidemiology</em> (2017). Large meta-analysis confirming dose-response relationship between fruit and vegetable intake and reduced risk of chronic disease and early mortality.</div><div class=\"ref\">\n<strong>Fahey JW, Talalay P.</strong> Antioxidant functions of sulforaphane: a potent inducer of phase II detoxication enzymes. <em>Food and Chemical Toxicology</em> (1999). Foundational Johns Hopkins research establishing sulforaphane — derived from glucoraphanin — as one of the most potent known inducers of Nrf2-mediated detoxification enzymes in plant foods.</div><div class=\"ref\">\n<strong>Martínez I et al.</strong> Gut microbiome composition is linked to whole grain-induced immunological improvements. <em>ISME Journal</em> (2013). Demonstrates the direct relationship between dietary fiber intake, microbiome diversity, and immune function — the biological rationale for the prebiotic fiber blend.</div><div class=\"ref\">\n<strong>Hao Q et al.</strong> Probiotics for preventing acute upper respiratory tract infections. <em>Cochrane Database of Systematic Reviews</em> (2015). Systematic review supporting the immune and gut health benefits of multi-strain probiotic supplementation.</div>",
             "open_by_default": false
           }
         }
@@ -509,6 +628,7 @@
       ],
       "settings": {
         "eyebrow": "For the Curious",
+        "eyebrow_size": "small",
         "heading": "Dig <em>deeper.</em>",
         "subtitle": "The phytonutrient science, full ingredients, dosing notes, and the research behind the blend."
       }
@@ -550,8 +670,10 @@
         "layout": "row",
         "eyebrow": "Pair it right",
         "heading": "<em>The Gut Health</em> Stack",
+        "heading_size": "medium",
         "discount": "10% off when you bundle",
         "body": "<p>Fruits & Veggies builds the prebiotic and phytonutrient foundation. Pro-B Max adds targeted probiotic support. MEGAS 1300 delivers omega-3s for the anti-inflammatory environment where gut health actually thrives. Three products, one system.</p>",
+        "cart_mode": "with_main",
         "button_text": "BUY THE GUT HEALTH STACK",
         "button_link": ""
       }
@@ -562,6 +684,7 @@
         "background": "#0a1320",
         "tagline": "",
         "heading": "Every color. Every day.",
+        "heading_size": "large",
         "promise": "",
         "button_1_text": "BUY FRUITS & VEGGIES",
         "button_1_link": "",

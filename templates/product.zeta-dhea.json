@@ -16,13 +16,15 @@
           "type": "banner",
           "settings": {
             "name": "Zeta DHEA",
-            "sub": "Hormone Precursor"
+            "sub": "Hormone Precursor",
+            "eyebrow_size": "small"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "The youth hormone,\n<em>replenished.</em>"
+            "heading": "The youth hormone,\n<em>replenished.</em>",
+            "heading_size": "large"
           }
         },
         "lede": {
@@ -97,6 +99,7 @@
         "media_align": "middle",
         "media_gap": "gutter",
         "media_background_type": "border",
+        "media_badge": "NSF Certified for Sport",
         "main_media_ratio": "portrait",
         "main_media_fit": "contain",
         "thumbnails_per_row": 5,
@@ -156,7 +159,9 @@
       ],
       "settings": {
         "eyebrow": "What you'll feel",
+        "eyebrow_size": "small",
         "heading": "Two weeks to <em>baseline</em>.\nThe rest is the long game.",
+        "heading_size": "medium",
         "subtitle": "<p>DHEA is one of the rare supplements where the science shows a measurable biomarker shift in the first two weeks — and a quiet felt improvement in the weeks that follow.</p>",
         "border_style": "top"
       }
@@ -167,6 +172,7 @@
         "i1": {
           "type": "tile",
           "settings": {
+            "featured": false,
             "icon": "<svg class=\"ingredient-icon\" viewbox=\"0 0 60 60\"><circle cx=\"30\" cy=\"30\" r=\"18\" fill=\"none\" stroke=\"#006E73\" stroke-width=\"1.5\"></circle><circle cx=\"30\" cy=\"30\" r=\"9\" fill=\"#006E73\" opacity=\"0.3\"></circle><text x=\"30\" y=\"35\" text-anchor=\"middle\" font-family=\"Cormorant Garamond\" font-size=\"14\" fill=\"#006E73\" font-weight=\"500\">DHEA</text></svg>",
             "tag": "",
             "corner_tag": "",
@@ -181,6 +187,7 @@
         "i2": {
           "type": "tile",
           "settings": {
+            "featured": false,
             "icon": "<svg class=\"ingredient-icon\" viewbox=\"0 0 60 60\"><path d=\"M14 30 Q22 22 30 30 Q38 38 46 30\" fill=\"none\" stroke=\"#B89968\" stroke-width=\"1.5\"></path><circle cx=\"20\" cy=\"30\" r=\"2.5\" fill=\"#B89968\"></circle><circle cx=\"30\" cy=\"30\" r=\"2.5\" fill=\"#B89968\"></circle><circle cx=\"40\" cy=\"30\" r=\"2.5\" fill=\"#B89968\"></circle></svg>",
             "tag": "",
             "corner_tag": "The Differentiator",
@@ -198,9 +205,11 @@
         "i2"
       ],
       "settings": {
-        "section_bg": "#efe9dc",
+        "section_bg": "#F4F4F5",
         "eyebrow": "The hormone story",
+        "eyebrow_size": "small",
         "heading": "One hormone. <em>Most others depend on it.</em>",
+        "heading_size": "medium",
         "subtitle": "<p>DHEA isn't a hormone you take to feel a buzz. It's the <em>precursor</em> — the raw material your body converts into androgens, estrogens, and the other hormones that govern energy, mood, lean mass, libido, recovery, and how young you stay. ZETA DHEA refills the reservoir so your body has the inputs it had at 25.</p>"
       }
     },
@@ -211,20 +220,30 @@
           "type": "fact",
           "settings": {
             "name": "Micronized DHEA (dehydroepiandrosterone)",
+            "desc": "",
+            "desc_block": false,
             "amount": "25 mg **",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f2": {
           "type": "fact",
           "settings": {
             "name": "Calcium (as dicalcium phosphate dihydrate)",
+            "desc": "",
+            "desc_block": false,
             "amount": "40 mg 4%",
             "is_main": false,
             "bold": false,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "dir1": {
@@ -332,7 +351,9 @@
       ],
       "settings": {
         "eyebrow": "What's in the capsule",
+        "eyebrow_size": "small",
         "heading": "Two ingredients. <em>Zero noise.</em>",
+        "heading_size": "medium",
         "facts_title": "Supplement Facts",
         "serving_line": "Serving Size: 1 Capsule · Servings Per Container: 60",
         "amount_header": "Amount Per Serving",
@@ -383,7 +404,9 @@
       ],
       "settings": {
         "eyebrow": "Real reviews",
+        "eyebrow_size": "small",
         "heading": "The quiet biomarker <em>that moves first</em>.",
+        "heading_size": "medium",
         "subtitle": ""
       }
     },
@@ -431,6 +454,7 @@
       ],
       "settings": {
         "eyebrow": "For the Curious",
+        "eyebrow_size": "small",
         "heading": "Dig <em>deeper.</em>",
         "subtitle": "The hormone science, the bioavailability story, the research, and the precautions worth reading before starting."
       }
@@ -441,6 +465,7 @@
         "bp1": {
           "type": "product",
           "settings": {
+            "product": "",
             "name": "Zeta DHEA",
             "sub": "Hormone precursor · 25 mg"
           }
@@ -448,6 +473,7 @@
         "bp2": {
           "type": "product",
           "settings": {
+            "product": "",
             "name": "Zeta D+K",
             "sub": "Bone & immune foundation"
           }
@@ -461,8 +487,10 @@
         "layout": "box",
         "eyebrow": "",
         "heading": "DHEA + <em>D+K.</em>",
+        "heading_size": "medium",
         "discount": "Save 10% · Bundle",
         "body": "<p>Since most of us are deficient in D3, don't forget to add ZETA D+K so you're not.</p>",
+        "cart_mode": "with_main",
         "button_text": "BUY DHEA + D+K",
         "button_link": ""
       }
@@ -473,6 +501,7 @@
         "background": "#0a1320",
         "tagline": "DRIVEN BY SCIENCE · BUILT TO PERFORM · MADE TO FEEL",
         "heading": "<em>Take what</em>\nwe take.",
+        "heading_size": "large",
         "promise": "Look. Feel. Perform. — Younger.",
         "button_1_text": "BUY ZETA DHEA",
         "button_1_link": "",

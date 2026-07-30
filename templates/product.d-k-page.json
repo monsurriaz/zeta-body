@@ -16,13 +16,15 @@
           "type": "banner",
           "settings": {
             "name": "Zeta D+K",
-            "sub": "The Daily Bone & Immune Foundation"
+            "sub": "The Daily Bone & Immune Foundation",
+            "eyebrow_size": "small"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Your body used to make <em>this for free.</em>"
+            "heading": "Your body used to make <em>this for free.</em>",
+            "heading_size": "large"
           }
         },
         "lede": {
@@ -157,7 +159,9 @@
       ],
       "settings": {
         "eyebrow": "What you'll feel",
+        "eyebrow_size": "small",
         "heading": "This is the <em>quiet</em> one.",
+        "heading_size": "medium",
         "subtitle": "<p>D+K isn't a \"feel it in 30 minutes\" product. It's a \"feel it in 20 years\" product. The body part of you that wakes up easy at 60 — that's where this lives.</p>",
         "border_style": "top"
       }
@@ -168,7 +172,10 @@
         "i1": {
           "type": "tile",
           "settings": {
+            "featured": false,
             "icon": "<svg class=\"leaf-svg\" viewbox=\"0 0 60 60\"><circle cx=\"30\" cy=\"30\" r=\"14\" fill=\"#B89968\" opacity=\"0.3\"></circle><circle cx=\"30\" cy=\"30\" r=\"9\" fill=\"#B89968\"></circle><g stroke=\"#B89968\" stroke-width=\"1.5\" stroke-linecap=\"round\"><line x1=\"30\" y1=\"6\" x2=\"30\" y2=\"12\"></line><line x1=\"30\" y1=\"48\" x2=\"30\" y2=\"54\"></line><line x1=\"6\" y1=\"30\" x2=\"12\" y2=\"30\"></line><line x1=\"48\" y1=\"30\" x2=\"54\" y2=\"30\"></line><line x1=\"13\" y1=\"13\" x2=\"17\" y2=\"17\"></line><line x1=\"43\" y1=\"43\" x2=\"47\" y2=\"47\"></line><line x1=\"13\" y1=\"47\" x2=\"17\" y2=\"43\"></line><line x1=\"43\" y1=\"17\" x2=\"47\" y2=\"13\"></line></g></svg>",
+            "tag": "",
+            "corner_tag": "",
             "label": "The sunshine vitamin",
             "label_color": "bronze",
             "name": "Vitamin D3",
@@ -180,7 +187,10 @@
         "i2": {
           "type": "tile",
           "settings": {
+            "featured": false,
             "icon": "<svg class=\"leaf-svg\" viewbox=\"0 0 60 60\"><path d=\"M15 45 Q30 20 45 45 Q45 50 30 45 Q15 50 15 45 Z\" fill=\"#006E73\" opacity=\"0.35\"></path><path d=\"M15 45 Q30 20 45 45\" fill=\"none\" stroke=\"#006E73\" stroke-width=\"1.5\"></path><line x1=\"22\" y1=\"38\" x2=\"22\" y2=\"48\" stroke=\"#006E73\" stroke-width=\"1.3\"></line><line x1=\"30\" y1=\"32\" x2=\"30\" y2=\"48\" stroke=\"#006E73\" stroke-width=\"1.3\"></line><line x1=\"38\" y1=\"38\" x2=\"38\" y2=\"48\" stroke=\"#006E73\" stroke-width=\"1.3\"></line></svg>",
+            "tag": "",
+            "corner_tag": "",
             "label": "From natto fermentation",
             "label_color": "bronze",
             "name": "Vitamin K2",
@@ -195,9 +205,11 @@
         "i2"
       ],
       "settings": {
-        "section_bg": "#efe9dc",
+        "section_bg": "#F4F4F5",
         "eyebrow": "Two vitamins, one capsule",
+        "eyebrow_size": "small",
         "heading": "Done <em>right</em>. Taken <em>together</em>.",
+        "heading_size": "medium",
         "subtitle": "<p>D3 without K2 is half the story. K2 without D3 is the other half. Most multivitamins skim one of them. We dose both, in the forms your body actually uses.</p>"
       }
     },
@@ -208,20 +220,30 @@
           "type": "fact",
           "settings": {
             "name": "Vitamin D3 (as cholecalciferol)",
+            "desc": "",
+            "desc_block": false,
             "amount": "125 mcg · 5000 IU",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f2": {
           "type": "fact",
           "settings": {
             "name": "Vitamin K2 (as menaquinone-7, MK-7)",
+            "desc": "",
+            "desc_block": false,
             "amount": "90 mcg",
             "is_main": false,
             "bold": true,
-            "indent": false
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "dir1": {
@@ -329,7 +351,9 @@
       ],
       "settings": {
         "eyebrow": "What's in the bottle",
+        "eyebrow_size": "small",
         "heading": "Two ingredients. <em>No filler.</em>",
+        "heading_size": "medium",
         "facts_title": "Supplement Facts",
         "serving_line": "Serving Size: 1 Vegetarian Capsule · Servings Per Container: 60",
         "amount_header": "Amount Per Serving",
@@ -337,7 +361,9 @@
         "facts_note": "** Daily Value not established. Other ingredients: Hypromellose (vegetarian capsule), microcrystalline cellulose, medium-chain triglycerides, silica. Vegan.",
         "how_to_label": "How to take it",
         "exclude_heading": "Formulated with a <em>lot of NOs.</em>",
-        "exclude_sub": "What's not in it matters as much as what is."
+        "exclude_sub": "What's not in it matters as much as what is.",
+        "warning_heading": "",
+        "warning_body": ""
       }
     },
     "reviews": {
@@ -378,7 +404,9 @@
       ],
       "settings": {
         "eyebrow": "Real reviews",
+        "eyebrow_size": "small",
         "heading": "The quiet one people <em>don't stop taking</em>.",
+        "heading_size": "medium",
         "subtitle": "<p>D+K is the product people forget they're taking — until they look at their labs and remember why they started.</p>"
       }
     },
@@ -389,7 +417,7 @@
           "type": "item",
           "settings": {
             "label": "Description",
-            "content": "<p>D+K 5000 is a complex of vitamin K2 and vitamin D3. It delivers vitamin K2 as <strong>menaquinone-7 (MK-7)</strong> — the most bioavailable and bioactive form of K2 — alongside <strong>vitamin D3 (cholecalciferol)</strong>, the identical form your body synthesizes when sunlight hits your skin.</p><p>Historical use and decades of clinical research support the role of vitamin K supplementation in bone and cardiovascular health. Vitamin D3 supports immune function, mood, hormone balance, and bone health. Together, they make the daily-foundation duo most adults are quietly short on.</p><p><strong>Clinical Applications</strong></p><ul><li>Supports bone health by promoting carboxylation of bone proteins</li><li>Supports cardiovascular health by influencing arterial calcium deposits</li><li>Supports healthy blood clotting</li><li>Supports immune function</li><li>Supports calcium absorption and utilization</li></ul><p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
+            "content": "<p>D+K 5000 is a complex of vitamin K2 and vitamin D3. It delivers vitamin K2 as <strong>menaquinone-7 (MK-7)</strong> — the most bioavailable and bioactive form of K2 — alongside <strong>vitamin D3 (cholecalciferol)</strong>, the identical form your body synthesizes when sunlight hits your skin.</p><p>Historical use and decades of clinical research support the role of vitamin K supplementation in bone and cardiovascular health. Vitamin D3 supports immune function, mood, hormone balance, and bone health. Together, they make the daily-foundation duo most adults are quietly short on.</p><p><strong>Clinical Applications</strong></p><ul>\n<li>Supports bone health by promoting carboxylation of bone proteins</li>\n<li>Supports cardiovascular health by influencing arterial calcium deposits</li>\n<li>Supports healthy blood clotting</li>\n<li>Supports immune function</li>\n<li>Supports calcium absorption and utilization</li>\n</ul><p><em>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
             "open_by_default": true
           }
         },
@@ -397,7 +425,7 @@
           "type": "item",
           "settings": {
             "label": "Ingredients",
-            "content": "<p><strong>Supplement Facts</strong></p><p><strong>Serving size:</strong> 1 vegetarian capsule · <strong>Servings per bottle:</strong> 60</p><ul><li><strong>Vitamin D3 (as cholecalciferol)</strong> — 125 mcg · 5000 IU</li><li><strong>Vitamin K2 (as menaquinone-7, MK-7)</strong> — 90 mcg</li></ul><p><strong>Other Ingredients</strong></p><p>Hypromellose (vegetarian capsule), microcrystalline cellulose, medium-chain triglycerides, silica.</p><p><strong>Why these forms</strong></p><p>MK-7 has a half-life of about three days in the body — much longer than other K2 forms (MK-4 lasts about an hour). That means one daily capsule maintains steady levels.</p><p>D3 (cholecalciferol) is the same molecule your skin makes from sunlight — far more bioavailable than D2.</p>",
+            "content": "<p><strong>Supplement Facts</strong></p><p><strong>Serving size:</strong> 1 vegetarian capsule · <strong>Servings per bottle:</strong> 60</p><ul>\n<li>\n<strong>Vitamin D3 (as cholecalciferol)</strong> — 125 mcg · 5000 IU</li>\n<li>\n<strong>Vitamin K2 (as menaquinone-7, MK-7)</strong> — 90 mcg</li>\n</ul><p><strong>Other Ingredients</strong></p><p>Hypromellose (vegetarian capsule), microcrystalline cellulose, medium-chain triglycerides, silica.</p><p><strong>Why these forms</strong></p><p>MK-7 has a half-life of about three days in the body — much longer than other K2 forms (MK-4 lasts about an hour). That means one daily capsule maintains steady levels.</p><p>D3 (cholecalciferol) is the same molecule your skin makes from sunlight — far more bioavailable than D2.</p>",
             "open_by_default": false
           }
         },
@@ -405,7 +433,7 @@
           "type": "item",
           "settings": {
             "label": "Directions & Precautions",
-            "content": "<p><strong>Take 1 capsule daily, with a meal that has some fat</strong> — eggs, avocado, olive oil, yogurt, whatever you eat. D3 and K2 are fat-soluble; they absorb best with food.</p><p><strong>Best Time</strong></p><p>Morning or midday works best for most people. D3 can be mildly energizing — so we don't recommend it right before sleep.</p><p><strong>Pairs Well With</strong></p><ul><li><strong>ZETA MULTI</strong> — the daily Foundation of vitamins and minerals (covers everything D+K doesn't)</li><li><strong>ZETA MEGAS</strong> — omega-3s for the same fat-soluble absorption pathway</li><li><strong>ZETA LONGEVITY</strong> — for the long game</li></ul><p><strong>Precautions</strong></p><p>If you're on blood thinners (warfarin, Coumadin), check with your physician before starting D+K — vitamin K can interact with these medications. If pregnant, nursing, or under 18, consult your healthcare provider. Don't exceed the recommended serving.</p>",
+            "content": "<p><strong>Take 1 capsule daily, with a meal that has some fat</strong> — eggs, avocado, olive oil, yogurt, whatever you eat. D3 and K2 are fat-soluble; they absorb best with food.</p><p><strong>Best Time</strong></p><p>Morning or midday works best for most people. D3 can be mildly energizing — so we don't recommend it right before sleep.</p><p><strong>Pairs Well With</strong></p><ul>\n<li>\n<strong>ZETA MULTI</strong> — the daily Foundation of vitamins and minerals (covers everything D+K doesn't)</li>\n<li>\n<strong>ZETA MEGAS</strong> — omega-3s for the same fat-soluble absorption pathway</li>\n<li>\n<strong>ZETA LONGEVITY</strong> — for the long game</li>\n</ul><p><strong>Precautions</strong></p><p>If you're on blood thinners (warfarin, Coumadin), check with your physician before starting D+K — vitamin K can interact with these medications. If pregnant, nursing, or under 18, consult your healthcare provider. Don't exceed the recommended serving.</p>",
             "open_by_default": false
           }
         },
@@ -426,6 +454,7 @@
       ],
       "settings": {
         "eyebrow": "For the curious",
+        "eyebrow_size": "small",
         "heading": "Dig <em>deeper.</em>",
         "subtitle": "The meaty stuff — clinical applications, full ingredient list, dosing notes, allergen exclusions, and the research underneath. For the readers who like to know."
       }
@@ -436,6 +465,7 @@
         "bp1": {
           "type": "product",
           "settings": {
+            "product": "",
             "name": "Zeta D+K",
             "sub": "Foundation · D3 + K2"
           }
@@ -443,6 +473,7 @@
         "bp2": {
           "type": "product",
           "settings": {
+            "product": "",
             "name": "Zeta Multi",
             "sub": "The daily multivitamin floor"
           }
@@ -456,8 +487,10 @@
         "layout": "box",
         "eyebrow": "",
         "heading": "The <em>Foundation Stack.</em>",
+        "heading_size": "medium",
         "discount": "Save 10% · Bundle",
         "body": "<p>D+K is the two vitamins most adults are missing. MULTI is the rest of the floor. Together they're the daily baseline ZETA is built on. Take both, every day, for the next twenty years. You'll be glad.</p>",
+        "cart_mode": "with_main",
         "button_text": "BUY THE FOUNDATION STACK",
         "button_link": ""
       }
@@ -465,8 +498,10 @@
     "ctaclose": {
       "type": "zeta-cta-close",
       "settings": {
+        "background": "#0a1320",
         "tagline": "DRIVEN BY SCIENCE · BUILT TO PERFORM · MADE TO FEEL",
         "heading": "<em>Take what</em>\nwe take.",
+        "heading_size": "large",
         "promise": "Look. Feel. Perform. — Younger.",
         "button_1_text": "BUY ZETA D+K",
         "button_1_link": "",

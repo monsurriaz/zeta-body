@@ -16,13 +16,15 @@
           "type": "banner",
           "settings": {
             "name": "Zeta MEGAS",
-            "sub": "Omega-3 in MaxSimil® Form"
+            "sub": "Omega-3 in MaxSimil® Form",
+            "eyebrow_size": "small"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Fish oil,\n<em>actually absorbed.</em>"
+            "heading": "Fish oil,\n<em>actually absorbed.</em>",
+            "heading_size": "large"
           }
         },
         "lede": {
@@ -96,6 +98,7 @@
         "column_alignment": "normal",
         "media_align": "middle",
         "media_gap": "gutter",
+        "media_background_type": "border",
         "media_badge": "MaxSimil® · 3× Absorption",
         "main_media_ratio": "portrait",
         "main_media_fit": "contain",
@@ -156,7 +159,10 @@
       ],
       "settings": {
         "eyebrow": "What you'll feel",
-        "heading": "The omega-3 that\n<em>actually shows up.</em>",
+        "eyebrow_size": "small",
+        "heading": "The omega-3 that\n<em>actually help.</em>",
+        "heading_size": "medium",
+        "subtitle": "",
         "border_style": "separator"
       }
     },
@@ -215,9 +221,11 @@
         "i3"
       ],
       "settings": {
-        "section_bg": "#F4F4F5",
+        "section_bg": "#f4f4f5",
         "eyebrow": "The MaxSimil® difference",
+        "eyebrow_size": "small",
         "heading": "EPA + DHA. <em>Three times absorbed.</em>",
+        "heading_size": "medium",
         "subtitle": ""
       }
     },
@@ -234,7 +242,9 @@
             "is_main": false,
             "bold": true,
             "indent": false,
-            "divider": false
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_fat": {
@@ -247,7 +257,9 @@
             "is_main": false,
             "bold": true,
             "indent": false,
-            "divider": true
+            "divider": true,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_oil": {
@@ -260,7 +272,9 @@
             "is_main": true,
             "bold": false,
             "indent": false,
-            "divider": false
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_epa": {
@@ -273,7 +287,9 @@
             "is_main": false,
             "bold": false,
             "indent": true,
-            "divider": false
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_dha": {
@@ -286,7 +302,9 @@
             "is_main": false,
             "bold": false,
             "indent": true,
-            "divider": false
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_other": {
@@ -299,7 +317,9 @@
             "is_main": false,
             "bold": false,
             "indent": true,
-            "divider": false
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "dir1": {
@@ -326,16 +346,66 @@
             "text": "One bottle lasts <strong>30 days</strong>"
           }
         },
-        "x1": { "type": "exclusion", "settings": { "text": "No Fishy Burps" } },
-        "x2": { "type": "exclusion", "settings": { "text": "No Mercury" } },
-        "x3": { "type": "exclusion", "settings": { "text": "No PCBs" } },
-        "x4": { "type": "exclusion", "settings": { "text": "No Gluten" } },
-        "x5": { "type": "exclusion", "settings": { "text": "No Soy" } },
-        "x6": { "type": "exclusion", "settings": { "text": "No Dairy" } },
-        "x7": { "type": "exclusion", "settings": { "text": "No GMOs" } },
-        "x8": { "type": "exclusion", "settings": { "text": "No Artificial Flavors" } },
-        "x9": { "type": "exclusion", "settings": { "text": "No Artificial Colors" } },
-        "x10": { "type": "exclusion", "settings": { "text": "No Artificial Preservatives" } }
+        "x1": {
+          "type": "exclusion",
+          "settings": {
+            "text": "No Fishy Burps"
+          }
+        },
+        "x2": {
+          "type": "exclusion",
+          "settings": {
+            "text": "No Mercury"
+          }
+        },
+        "x3": {
+          "type": "exclusion",
+          "settings": {
+            "text": "No PCBs"
+          }
+        },
+        "x4": {
+          "type": "exclusion",
+          "settings": {
+            "text": "No Gluten"
+          }
+        },
+        "x5": {
+          "type": "exclusion",
+          "settings": {
+            "text": "No Soy"
+          }
+        },
+        "x6": {
+          "type": "exclusion",
+          "settings": {
+            "text": "No Dairy"
+          }
+        },
+        "x7": {
+          "type": "exclusion",
+          "settings": {
+            "text": "No GMOs"
+          }
+        },
+        "x8": {
+          "type": "exclusion",
+          "settings": {
+            "text": "No Artificial Flavors"
+          }
+        },
+        "x9": {
+          "type": "exclusion",
+          "settings": {
+            "text": "No Artificial Colors"
+          }
+        },
+        "x10": {
+          "type": "exclusion",
+          "settings": {
+            "text": "No Artificial Preservatives"
+          }
+        }
       },
       "block_order": [
         "f_cal",
@@ -361,7 +431,9 @@
       ],
       "settings": {
         "eyebrow": "What's in the softgel",
+        "eyebrow_size": "small",
         "heading": "1,300 mg of omega-3s. <em>Actually delivered.</em>",
+        "heading_size": "medium",
         "facts_title": "Supplement Facts",
         "serving_line": "Serving Size: 2 Softgels · Servings Per Container: 30",
         "amount_header": "Amount Per Serving",
@@ -412,7 +484,9 @@
       ],
       "settings": {
         "eyebrow": "Real reviews",
-        "heading": "The fish oil that <em>doesn't repeat on you.</em>",
+        "eyebrow_size": "small",
+        "heading": "The fish oil that <em>has a stronger punch.</em>",
+        "heading_size": "medium",
         "subtitle": ""
       }
     },
@@ -447,7 +521,7 @@
           "type": "item",
           "settings": {
             "label": "Research",
-            "content": "<div class=\"acc-highlight\"><div class=\"hl-label\">★ Key publication · MaxSimil absorption</div><p><strong>Cuenoud B et al. (2020)</strong> — Monoglyceride form of omega-3 fatty acids increases EPA+DHA absorption: a randomized crossover study. <em>Clinical Nutrition.</em> The study demonstrating MaxSimil's 3× EPA+DHA absorption advantage over standard fish oil forms.</p></div><div class=\"ref\"><strong>Calder PC. (2017)</strong> — Omega-3 fatty acids and inflammatory processes: from molecules to man. <em>Biochemical Society Transactions.</em> Comprehensive review of EPA and DHA's role in resolving inflammation at the cellular level.</div><div class=\"ref\"><strong>Mozaffarian D, Wu JHY. (2011)</strong> — Omega-3 fatty acids and cardiovascular disease: effects on risk factors, molecular pathways, and clinical events. <em>Journal of the American College of Cardiology.</em></div><div class=\"ref\"><strong>Dyall SC. (2015)</strong> — Long-chain omega-3 fatty acids and the brain: a review of the independent and shared effects of EPA, DPA and DHA. <em>Frontiers in Aging Neuroscience.</em></div>",
+            "content": "<div class=\"acc-highlight\">\n<div class=\"hl-label\">★ Key publication · MaxSimil absorption</div>\n<p><strong>Cuenoud B et al. (2020)</strong> — Monoglyceride form of omega-3 fatty acids increases EPA+DHA absorption: a randomized crossover study. <em>Clinical Nutrition.</em> The study demonstrating MaxSimil's 3× EPA+DHA absorption advantage over standard fish oil forms.</p>\n</div><div class=\"ref\">\n<strong>Calder PC. (2017)</strong> — Omega-3 fatty acids and inflammatory processes: from molecules to man. <em>Biochemical Society Transactions.</em> Comprehensive review of EPA and DHA's role in resolving inflammation at the cellular level.</div><div class=\"ref\">\n<strong>Mozaffarian D, Wu JHY. (2011)</strong> — Omega-3 fatty acids and cardiovascular disease: effects on risk factors, molecular pathways, and clinical events. <em>Journal of the American College of Cardiology.</em>\n</div><div class=\"ref\">\n<strong>Dyall SC. (2015)</strong> — Long-chain omega-3 fatty acids and the brain: a review of the independent and shared effects of EPA, DPA and DHA. <em>Frontiers in Aging Neuroscience.</em>\n</div>",
             "open_by_default": false
           }
         }
@@ -460,6 +534,7 @@
       ],
       "settings": {
         "eyebrow": "For the curious",
+        "eyebrow_size": "small",
         "heading": "Dig <em>deeper.</em>",
         "subtitle": "The MaxSimil absorption science, full ingredients, dosing notes, and the research behind EPA + DHA."
       }
@@ -492,9 +567,11 @@
         "layout": "row",
         "eyebrow": "Stack It",
         "heading": "The <em>Fat-Soluble Duo.</em>",
-        "discount": "Save 10% when bundled",
+        "heading_size": "medium",
+        "discount": "",
         "body": "<p>MEGAS brings the omega-3s. D+K brings vitamin D3 and K2. All four nutrients absorb better taken together with some fat. The longevity move most people don't realize they're missing.*</p>",
-        "button_text": "BUY THE FAT-SOLUBLE DUO",
+        "cart_mode": "with_main",
+        "button_text": "BUY THE powerful DUO",
         "button_link": ""
       }
     },
@@ -504,6 +581,7 @@
         "background": "#0a1320",
         "tagline": "Take what we take.",
         "heading": "Fish oil, <em>actually absorbed.</em>",
+        "heading_size": "large",
         "promise": "",
         "button_1_text": "BUY ZETA MEGAS",
         "button_1_link": "",

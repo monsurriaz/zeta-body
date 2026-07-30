@@ -16,13 +16,15 @@
           "type": "banner",
           "settings": {
             "name": "Zeta Z-83",
-            "sub": "The Daily Feel-Good Capsule"
+            "sub": "The Daily Feel-Good Capsule",
+            "eyebrow_size": "small"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Sharper. <em>Calmer.</em>\nIn 30 minutes."
+            "heading": "Sharper. <em>Calmer.</em>\nIn 30 minutes.",
+            "heading_size": "large"
           }
         },
         "lede": {
@@ -95,6 +97,8 @@
       "settings": {
         "column_alignment": "normal",
         "media_align": "middle",
+        "media_gap": "gutter",
+        "media_background_type": "border",
         "media_badge": "Flagship · Daily",
         "main_media_ratio": "portrait",
         "main_media_fit": "contain",
@@ -147,10 +151,17 @@
           }
         }
       },
-      "block_order": [ "w1", "m1", "m3", "y1" ],
+      "block_order": [
+        "w1",
+        "m1",
+        "m3",
+        "y1"
+      ],
       "settings": {
         "eyebrow": "What you'll feel",
+        "eyebrow_size": "small",
         "heading": "It works <em>fast</em>.\nAnd it keeps working.",
+        "heading_size": "medium",
         "subtitle": "<p>Z-83 isn't a 30-day promise. It's a 30-minute one — and then it does the long, quiet work underneath.</p>",
         "border_style": "top"
       }
@@ -162,7 +173,7 @@
           "type": "tile",
           "settings": {
             "featured": false,
-            "icon": "<svg class=\"leaf-svg\" viewBox=\"0 0 60 60\"><path d=\"M30 5 C20 20, 14 35, 14 45 C14 52, 22 56, 30 56 C38 56, 46 52, 46 45 C46 35, 40 20, 30 5 Z\" fill=\"none\" stroke=\"#006E73\" stroke-width=\"1.5\"/><path d=\"M30 12 L30 50\" stroke=\"#006E73\" stroke-width=\"1\"/></svg>",
+            "icon": "<svg class=\"leaf-svg\" viewbox=\"0 0 60 60\"><path d=\"M30 5 C20 20, 14 35, 14 45 C14 52, 22 56, 30 56 C38 56, 46 52, 46 45 C46 35, 40 20, 30 5 Z\" fill=\"none\" stroke=\"#006E73\" stroke-width=\"1.5\"></path><path d=\"M30 12 L30 50\" stroke=\"#006E73\" stroke-width=\"1\"></path></svg>",
             "tag": "",
             "corner_tag": "",
             "label": "From South Africa",
@@ -177,7 +188,7 @@
           "type": "tile",
           "settings": {
             "featured": false,
-            "icon": "<svg class=\"leaf-svg\" viewBox=\"0 0 60 60\"><path d=\"M10 30 C20 18, 40 18, 50 30\" fill=\"none\" stroke=\"#B89968\" stroke-width=\"1.5\"/><path d=\"M10 30 C20 42, 40 42, 50 30\" fill=\"none\" stroke=\"#B89968\" stroke-width=\"1.5\"/><circle cx=\"30\" cy=\"30\" r=\"4\" fill=\"#B89968\"/></svg>",
+            "icon": "<svg class=\"leaf-svg\" viewbox=\"0 0 60 60\"><path d=\"M10 30 C20 18, 40 18, 50 30\" fill=\"none\" stroke=\"#B89968\" stroke-width=\"1.5\"></path><path d=\"M10 30 C20 42, 40 42, 50 30\" fill=\"none\" stroke=\"#B89968\" stroke-width=\"1.5\"></path><circle cx=\"30\" cy=\"30\" r=\"4\" fill=\"#B89968\"></circle></svg>",
             "tag": "",
             "corner_tag": "",
             "label": "From the Amazon",
@@ -192,7 +203,7 @@
           "type": "tile",
           "settings": {
             "featured": false,
-            "icon": "<svg class=\"leaf-svg\" viewBox=\"0 0 60 60\"><circle cx=\"30\" cy=\"30\" r=\"14\" fill=\"none\" stroke=\"#8A7148\" stroke-width=\"1.5\"/><path d=\"M30 16 Q24 30 30 44 Q36 30 30 16 Z\" fill=\"none\" stroke=\"#8A7148\" stroke-width=\"1.2\"/><circle cx=\"30\" cy=\"30\" r=\"2\" fill=\"#8A7148\"/></svg>",
+            "icon": "<svg class=\"leaf-svg\" viewbox=\"0 0 60 60\"><circle cx=\"30\" cy=\"30\" r=\"14\" fill=\"none\" stroke=\"#8A7148\" stroke-width=\"1.5\"></circle><path d=\"M30 16 Q24 30 30 44 Q36 30 30 16 Z\" fill=\"none\" stroke=\"#8A7148\" stroke-width=\"1.2\"></path><circle cx=\"30\" cy=\"30\" r=\"2\" fill=\"#8A7148\"></circle></svg>",
             "tag": "",
             "corner_tag": "",
             "label": "From organic green coffee beans",
@@ -204,11 +215,17 @@
           }
         }
       },
-      "block_order": [ "i1", "i2", "i3" ],
+      "block_order": [
+        "i1",
+        "i2",
+        "i3"
+      ],
       "settings": {
-        "section_bg": "#EFE9DC",
+        "section_bg": "#F4F4F5",
         "eyebrow": "Three plants, one capsule",
+        "eyebrow_size": "small",
         "heading": "Plants you've never heard of,\ndoing what they do <em>best</em>.",
+        "heading_size": "medium",
         "subtitle": "<p>A South African succulent. An Amazonian tree. Just enough clean caffeine from green coffee beans. Three plants, one small capsule, all working together.</p>"
       }
     },
@@ -218,55 +235,180 @@
         "f_blend": {
           "type": "fact",
           "settings": {
-            "name": "Focus & Energy Proprietary Blend", "desc": "", "desc_block": false, "amount": "270 mg",
-            "is_main": false, "bold": true, "indent": false, "divider": true, "accent": false, "section_header": false
+            "name": "Focus & Energy Proprietary Blend",
+            "desc": "",
+            "desc_block": false,
+            "amount": "270 mg",
+            "is_main": false,
+            "bold": true,
+            "indent": false,
+            "divider": true,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_amatea": {
           "type": "fact",
           "settings": {
-            "name": "Amatea® Max (organic guayusa leaf extract)", "desc": "", "desc_block": false, "amount": "·",
-            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+            "name": "Amatea® Max (organic guayusa leaf extract)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "·",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_caf": {
           "type": "fact",
           "settings": {
-            "name": "Organic caffeine (green coffee bean)", "desc": "", "desc_block": false, "amount": "·",
-            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+            "name": "Organic caffeine (green coffee bean)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "·",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
         "f_zembrin": {
           "type": "fact",
           "settings": {
-            "name": "Zembrin® (Sceletium tortuosum extract)", "desc": "", "desc_block": false, "amount": "·",
-            "is_main": false, "bold": false, "indent": true, "divider": false, "accent": false, "section_header": false
+            "name": "Zembrin® (Sceletium tortuosum extract)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "·",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
           }
         },
-        "dir1": { "type": "direction", "settings": { "text": "Take <strong>1–2 capsules daily</strong>" } },
-        "dir2": { "type": "direction", "settings": { "text": "<strong>Morning is best</strong> — with or without food. Most people feel the lift within 30 minutes." } },
-        "dir3": { "type": "direction", "settings": { "text": "Avoid taking after 3pm — caffeine can affect sleep for sensitive folks." } },
-        "dir4": { "type": "direction", "settings": { "text": "Do not exceed <strong>3 capsules per day</strong>" } },
-        "dir5": { "type": "direction", "settings": { "text": "30 capsules per bottle — <strong>~15–30 day supply</strong>" } },
-        "x1": { "type": "exclusion", "settings": { "text": "Gluten & wheat" } },
-        "x2": { "type": "exclusion", "settings": { "text": "Soy" } },
-        "x3": { "type": "exclusion", "settings": { "text": "Dairy" } },
-        "x4": { "type": "exclusion", "settings": { "text": "Egg" } },
-        "x5": { "type": "exclusion", "settings": { "text": "Fish & shellfish" } },
-        "x6": { "type": "exclusion", "settings": { "text": "Peanuts & tree nuts" } },
-        "x7": { "type": "exclusion", "settings": { "text": "GMO ingredients" } },
-        "x8": { "type": "exclusion", "settings": { "text": "Artificial colors" } },
-        "x9": { "type": "exclusion", "settings": { "text": "Artificial sweeteners" } },
-        "x10": { "type": "exclusion", "settings": { "text": "Synthetic preservatives" } }
+        "dir1": {
+          "type": "direction",
+          "settings": {
+            "text": "Take <strong>1–2 capsules daily</strong>"
+          }
+        },
+        "dir2": {
+          "type": "direction",
+          "settings": {
+            "text": "<strong>Morning is best</strong> — with or without food. Most people feel the lift within 30 minutes."
+          }
+        },
+        "dir3": {
+          "type": "direction",
+          "settings": {
+            "text": "Avoid taking after 3pm — caffeine can affect sleep for sensitive folks."
+          }
+        },
+        "dir4": {
+          "type": "direction",
+          "settings": {
+            "text": "Do not exceed <strong>3 capsules per day</strong>"
+          }
+        },
+        "dir5": {
+          "type": "direction",
+          "settings": {
+            "text": "30 capsules per bottle — <strong>~15–30 day supply</strong>"
+          }
+        },
+        "x1": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Gluten & wheat"
+          }
+        },
+        "x2": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Soy"
+          }
+        },
+        "x3": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Dairy"
+          }
+        },
+        "x4": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Egg"
+          }
+        },
+        "x5": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Fish & shellfish"
+          }
+        },
+        "x6": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Peanuts & tree nuts"
+          }
+        },
+        "x7": {
+          "type": "exclusion",
+          "settings": {
+            "text": "GMO ingredients"
+          }
+        },
+        "x8": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Artificial colors"
+          }
+        },
+        "x9": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Artificial sweeteners"
+          }
+        },
+        "x10": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Synthetic preservatives"
+          }
+        }
       },
       "block_order": [
-        "f_blend", "f_amatea", "f_caf", "f_zembrin",
-        "dir1", "dir2", "dir3", "dir4", "dir5",
-        "x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8", "x9", "x10"
+        "f_blend",
+        "f_amatea",
+        "f_caf",
+        "f_zembrin",
+        "dir1",
+        "dir2",
+        "dir3",
+        "dir4",
+        "dir5",
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "x5",
+        "x6",
+        "x7",
+        "x8",
+        "x9",
+        "x10"
       ],
       "settings": {
         "eyebrow": "",
+        "eyebrow_size": "small",
         "heading": "",
+        "heading_size": "medium",
         "facts_title": "Supplement Facts",
         "serving_line": "Serving Size: 1 Vegetarian Capsule · Servings Per Container: 30",
         "amount_header": "",
@@ -282,10 +424,12 @@
     "video": {
       "type": "zeta-video",
       "settings": {
-        "section_bg": "#EFE9DC",
+        "section_bg": "#F4F4F5",
         "media_position": "right",
         "eyebrow": "Your first capsule",
+        "eyebrow_size": "small",
         "heading": "Here's the <em>ritual</em>.",
+        "heading_size": "medium",
         "body": "<p>A short clip from David and me on how to take your first Z-83 — and what most people miss in their first week.</p>",
         "note": "VIDEO · KARLI_TYPESOFCAFFEINE.MP4 — Zo + Dr. Karli, caffeine/Z-83 explainer · 1:26",
         "video_url": "",
@@ -323,10 +467,16 @@
           }
         }
       },
-      "block_order": [ "r1", "r2", "r3" ],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
       "settings": {
         "eyebrow": "Real reviews · all 5-star",
-        "heading": "The first 9 people who tried it <em>kept ordering</em>.",
+        "eyebrow_size": "small",
+        "heading": "People who have tried it have <em>kept ordering</em>.",
+        "heading_size": "medium",
         "subtitle": "<p>Pulled straight from verified buyers. No edits.</p>"
       }
     },
@@ -337,7 +487,7 @@
           "type": "item",
           "settings": {
             "label": "Description",
-            "content": "<h3>The daily feel-good <em>capsule.</em></h3><p>Z-83 is the flagship of the ZETA stack. Three plants — <strong>Zembrin</strong> (a South African succulent), <strong>Amatea Max</strong> (an Amazonian holly tree), and a small dose of <strong>clean caffeine</strong> from organic green coffee beans — packed into the proprietary Focus &amp; Energy Blend.</p><p>Most nootropics hide behind 20-ingredient blends so you can't tell what's actually working. We didn't. Three plants. One capsule. Felt fast.</p><h4>Clinical Applications</h4><ul>\n<li>Supports sharper focus and clearer thinking</li>\n<li>Supports steady, jitter-free energy</li>\n<li>Supports calm mood and reduced edge</li>\n<li>Supports daily cognitive performance</li>\n<li>Supports recovery from mental fatigue</li>\n</ul><p style=\"font-size:11.5px;color:var(--zeta-mid);font-style:italic;margin-top:28px;\">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "content": "<h3>The daily feel-good <em>capsule.</em>\n</h3><p>Z-83 is the flagship of the ZETA stack. Three plants — <strong>Zembrin</strong> (a South African succulent), <strong>Amatea Max</strong> (an Amazonian holly tree), and a small dose of <strong>clean caffeine</strong> from organic green coffee beans — packed into the proprietary Focus &amp; Energy Blend.</p><p>Most nootropics hide behind 20-ingredient blends so you can't tell what's actually working. We didn't. Three plants. One capsule. Felt fast.</p><h4>Clinical Applications</h4><ul>\n<li>Supports sharper focus and clearer thinking</li>\n<li>Supports steady, jitter-free energy</li>\n<li>Supports calm mood and reduced edge</li>\n<li>Supports daily cognitive performance</li>\n<li>Supports recovery from mental fatigue</li>\n</ul><p style=\"font-size:11.5px;color:var(--zeta-mid);font-style:italic;margin-top:28px;\">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
             "open_by_default": true
           }
         },
@@ -345,7 +495,7 @@
           "type": "item",
           "settings": {
             "label": "Ingredients",
-            "content": "<h3>What's <em>in it.</em></h3><h4>Supplement Facts</h4><p><strong>Serving size:</strong> 1 vegetarian capsule · <strong>Servings per bottle:</strong> 30</p><p><strong>Focus &amp; Energy Proprietary Blend</strong> — 270 mg</p><ul>\n<li>\n<strong>Amatea<sup>®</sup> Max</strong> — organic guayusa leaf extract (<em>Ilex guayusa</em>)</li>\n<li>\n<strong>Organic caffeine</strong> — from green coffee bean</li>\n<li>\n<strong>Zembrin<sup>®</sup></strong> — <em>Sceletium tortuosum</em> extract</li>\n</ul><h4>Other Ingredients</h4><p>Hypromellose (vegetarian capsule), organic rice extract blend.</p><h4>Why these forms</h4><p><strong>Amatea Max</strong> is a clinically standardized guayusa extract — not just dried tea leaves. It carries L-theanine analogs and antioxidant polyphenols alongside its natural caffeine.</p><p><strong>Zembrin</strong> is the patented Sceletium extract with multiple human clinical trials behind it (mood, focus, anxiety markers). Generic Sceletium powders don't have this.</p><p><strong>Caffeine</strong> from organic green coffee bean keeps the source clean — no synthetic stimulants, no mycotoxins.</p>",
+            "content": "<h3>What's <em>in it.</em>\n</h3><h4>Supplement Facts</h4><p><strong>Serving size:</strong> 1 vegetarian capsule · <strong>Servings per bottle:</strong> 30</p><p><strong>Focus &amp; Energy Proprietary Blend</strong> — 270 mg</p><ul>\n<li>\n<strong>Amatea<sup>®</sup> Max</strong> — organic guayusa leaf extract (<em>Ilex guayusa</em>)</li>\n<li>\n<strong>Organic caffeine</strong> — from green coffee bean</li>\n<li>\n<strong>Zembrin<sup>®</sup></strong> — <em>Sceletium tortuosum</em> extract</li>\n</ul><h4>Other Ingredients</h4><p>Hypromellose (vegetarian capsule), organic rice extract blend.</p><h4>Why these forms</h4><p><strong>Amatea Max</strong> is a clinically standardized guayusa extract — not just dried tea leaves. It carries L-theanine analogs and antioxidant polyphenols alongside its natural caffeine.</p><p><strong>Zembrin</strong> is the patented Sceletium extract with multiple human clinical trials behind it (mood, focus, anxiety markers). Generic Sceletium powders don't have this.</p><p><strong>Caffeine</strong> from organic green coffee bean keeps the source clean — no synthetic stimulants, no mycotoxins.</p>",
             "open_by_default": false
           }
         },
@@ -353,7 +503,7 @@
           "type": "item",
           "settings": {
             "label": "Directions & Precautions",
-            "content": "<h3>How to <em>take it.</em></h3><p><strong>Take 1–2 capsules daily, in the morning, with or without food.</strong> Most people feel the lift within 30 minutes. Don't take more than 3 a day.</p><h4>Best Time</h4><p>Morning. Avoid taking after 3pm — even small doses of caffeine can affect sleep for sensitive folks.</p><h4>Pairs Well With</h4><ul>\n<li>\n<strong>ZETA MULTI</strong> — the daily Foundation of vitamins and minerals</li>\n<li>\n<strong>ZETA D+K</strong> — the longevity foundation</li>\n<li>\n<strong>ZETA MINOS</strong> — strength + recovery on workout days</li>\n</ul><h4>Precautions</h4><p>Contains caffeine. If you're sensitive, start with 1 capsule to assess tolerance. Avoid combining with other caffeine sources for your first dose. If pregnant, nursing, under 18, or on medication, consult your healthcare provider before use. Don't exceed 3 capsules in a day.</p>",
+            "content": "<h3>How to <em>take it.</em>\n</h3><p><strong>Take 1–2 capsules daily, in the morning, with or without food.</strong> Most people feel the lift within 30 minutes. Don't take more than 3 a day.</p><h4>Best Time</h4><p>Morning. Avoid taking after 3pm — even small doses of caffeine can affect sleep for sensitive folks.</p><h4>Pairs Well With</h4><ul>\n<li>\n<strong>ZETA MULTI</strong> — the daily Foundation of vitamins and minerals</li>\n<li>\n<strong>ZETA D+K</strong> — the longevity foundation</li>\n<li>\n<strong>ZETA MINOS</strong> — strength + recovery on workout days</li>\n</ul><h4>Precautions</h4><p>Contains caffeine. If you're sensitive, start with 1 capsule to assess tolerance. Avoid combining with other caffeine sources for your first dose. If pregnant, nursing, under 18, or on medication, consult your healthcare provider before use. Don't exceed 3 capsules in a day.</p>",
             "open_by_default": false
           }
         },
@@ -361,14 +511,20 @@
           "type": "item",
           "settings": {
             "label": "Research",
-            "content": "<h3>The <em>research</em> underneath.</h3><p>A few of the studies behind the two clinically-standardized plants in Z-83. Not a complete bibliography — but the work that shaped the formula.</p><div class=\"ref-featured\"><div class=\"ref-tag\">Key Publication · Amatea Max · 2024</div><div class=\"ref-title\">Acute, dose-response effects of guayusa leaf extract on mood, cognitive and motor-cognitive performance, and blood pressure, heart rate, and ventricular repolarization.</div><div class=\"ref-meta\">Helwig NJ et al. · <em>Journal of the International Society of Sports Nutrition</em>, Vol. 21, 2024 · DOI: 10.1080/15502783.2024.2379424 · Funded by Applied Food Sciences (makers of Amatea Max)</div></div><h4>Supporting Research</h4><div class=\"ref\"><strong>Reay JL et al.</strong> Mood and cognitive performance effects of an Amazonian Ilex guayusa beverage. <em>Journal of Functional Foods</em>, 2018.</div><div class=\"ref\"><strong>Terburg D et al.</strong> Acute effects of Sceletium tortuosum (Zembrin), a dual 5-HT reuptake and PDE4 inhibitor, in the human amygdala. <em>Neuropsychopharmacology</em>, 2013.</div><div class=\"ref\"><strong>Chiu S et al.</strong> A randomized, double-blind, placebo-controlled, crossover study of the cognitive effects of Sceletium tortuosum (Zembrin). <em>Neuropsychiatric Disease and Treatment</em>, 2014.</div><div class=\"ref\"><strong>Dimpfel W et al.</strong> Zembrin, a patented extract of Sceletium tortuosum: a quantitative EEG study. <em>Journal of Ethnopharmacology</em>, 2017.</div><div class=\"ref\"><strong>Wightman EL et al.</strong> Effects of caffeine in low doses on cognitive performance, mood, and thirst. <em>Pharmacology Biochemistry and Behavior</em>, 2014.</div>",
+            "content": "<h3>The <em>research</em> underneath.</h3><p>A few of the studies behind the two clinically-standardized plants in Z-83. Not a complete bibliography — but the work that shaped the formula.</p><div class=\"ref-featured\">\n<div class=\"ref-tag\">Key Publication · Amatea Max · 2024</div>\n<div class=\"ref-title\">Acute, dose-response effects of guayusa leaf extract on mood, cognitive and motor-cognitive performance, and blood pressure, heart rate, and ventricular repolarization.</div>\n<div class=\"ref-meta\">Helwig NJ et al. · <em>Journal of the International Society of Sports Nutrition</em>, Vol. 21, 2024 · DOI: 10.1080/15502783.2024.2379424 · Funded by Applied Food Sciences (makers of Amatea Max)</div>\n</div><h4>Supporting Research</h4><div class=\"ref\">\n<strong>Reay JL et al.</strong> Mood and cognitive performance effects of an Amazonian Ilex guayusa beverage. <em>Journal of Functional Foods</em>, 2018.</div><div class=\"ref\">\n<strong>Terburg D et al.</strong> Acute effects of Sceletium tortuosum (Zembrin), a dual 5-HT reuptake and PDE4 inhibitor, in the human amygdala. <em>Neuropsychopharmacology</em>, 2013.</div><div class=\"ref\">\n<strong>Chiu S et al.</strong> A randomized, double-blind, placebo-controlled, crossover study of the cognitive effects of Sceletium tortuosum (Zembrin). <em>Neuropsychiatric Disease and Treatment</em>, 2014.</div><div class=\"ref\">\n<strong>Dimpfel W et al.</strong> Zembrin, a patented extract of Sceletium tortuosum: a quantitative EEG study. <em>Journal of Ethnopharmacology</em>, 2017.</div><div class=\"ref\">\n<strong>Wightman EL et al.</strong> Effects of caffeine in low doses on cognitive performance, mood, and thirst. <em>Pharmacology Biochemistry and Behavior</em>, 2014.</div>",
             "open_by_default": false
           }
         }
       },
-      "block_order": [ "a1", "a2", "a3", "a4" ],
+      "block_order": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
       "settings": {
         "eyebrow": "For the curious",
+        "eyebrow_size": "small",
         "heading": "Dig <em>deeper.</em>",
         "subtitle": "The meaty stuff — clinical applications, full ingredient breakdown, dosing notes, and the research underneath. For the readers who like to know."
       }
@@ -378,18 +534,30 @@
       "blocks": {
         "bp1": {
           "type": "product",
-          "settings": { "product": "", "name": "Z-83", "sub": "Daily focus · feel it in 30 min" }
+          "settings": {
+            "product": "z-83",
+            "name": "Z-83",
+            "sub": "Daily focus · feel it in 30 min"
+          }
         },
         "bp2": {
           "type": "product",
-          "settings": { "product": "", "name": "Zeta MULTI", "sub": "The daily foundation" }
+          "settings": {
+            "product": "zeta-multi",
+            "name": "Zeta MULTI",
+            "sub": "The daily foundation"
+          }
         }
       },
-      "block_order": [ "bp1", "bp2" ],
+      "block_order": [
+        "bp1",
+        "bp2"
+      ],
       "settings": {
         "layout": "box",
         "eyebrow": "",
         "heading": "The <em>Daily Foundation.</em>",
+        "heading_size": "medium",
         "discount": "Save 10% · Bundle",
         "body": "<p>Z-83 is the lift. ZETA MULTI is the floor. One you feel in 30 minutes. The other you'll feel in 30 years. Together they're the foundation of every other thing you do for your body.</p>",
         "button_text": "BUY THE DAILY FOUNDATION",
@@ -402,6 +570,7 @@
         "background": "#0a1320",
         "tagline": "DRIVEN BY SCIENCE · BUILT TO PERFORM · MADE TO FEEL",
         "heading": "<em>Take what</em>\nwe take.",
+        "heading_size": "large",
         "promise": "Look. Feel. Perform. — Younger.",
         "button_1_text": "BUY Z-83",
         "button_1_link": "",

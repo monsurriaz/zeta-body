@@ -13,7 +13,9 @@
       "type": "zeta-home-hero",
       "settings": {
         "eyebrow": "Miami · Science-Backed · No Compromises",
+        "eyebrow_size": "small",
         "heading": "You only get\nOne <em>Brain.</em>\nOne <em>Body.</em>\nBuild them both.",
+        "heading_size": "large",
         "subheading": "<p>The world doesn't stop because you need it to. Every day is a choice — to invest in your brain and body, keep them strong, and perform at the level your life demands.</p>",
         "quote": "<p>We're not perfect. But we can make choices every day that let us perform, move, and stay healthy. That's what ZETA is for.</p>",
         "button_1_text": "Shop Z-83 — Flagship",
@@ -176,7 +178,9 @@
       ],
       "settings": {
         "eyebrow": "How ZETA Works",
+        "eyebrow_size": "small",
         "heading": "There's what you <em>feel.</em>\nAnd what's quietly\nworking underneath.",
+        "heading_size": "medium",
         "intro": "<p>Not all progress announces itself. Here's how ZETA works — and which products belong where in your stack.</p>"
       }
     },
@@ -244,7 +248,9 @@
       ],
       "settings": {
         "eyebrow": "The Lineup",
+        "eyebrow_size": "small",
         "heading": "One body.\n<em>Every edge.</em>",
+        "heading_size": "medium",
         "link_text": "View All Products →",
         "link_url": "",
         "image_type": "contain"
@@ -256,7 +262,9 @@
         "media_tag": "A focused lineup. One body.",
         "media_placeholder": "Lifestyle / founder photo",
         "eyebrow": "What ZETA Is",
+        "eyebrow_size": "small",
         "heading": "Built to make <em>everything else</em> in your life work better.",
+        "heading_size": "medium",
         "tagline": "Health. Wealth. Youth. — in that order.",
         "body": "<p>Your body was never meant to run on just one thing. That's exactly why I started with Z-83 — built to stop the drain, cut through the fog, lift your mood, and deliver <strong>clean energy you can actually trust.</strong></p><p>Then we thoughtfully built out the rest of the lineup: targeted support for longevity, strength, gut health, and foundational nutrients. <strong>All designed to work together — one body, one system</strong> you can believe in and stick with long-term.</p><p>This is the brand I built for the version of you who's done accepting constant drain as normal.</p>",
         "button_1_text": "Build Your Stack →",
@@ -297,7 +305,9 @@
       ],
       "settings": {
         "eyebrow": "The ZETA Philosophy",
+        "eyebrow_size": "small",
         "heading": "Health. <em>Wealth.</em> Youth.",
+        "heading_size": "medium",
         "lede": "<p>Three things worth protecting. One body to do it with.</p>",
         "body": "<p>I was already living these three pillars hard — building successful businesses, dialed in — when the seizures hit in 2013. That experience drove the lesson home even deeper: <strong>the world doesn't stop because you need or want it to. It doesn't stop so you can recover.</strong> The sun rises and sets no matter what you're going through. You either adjust, fight back, and keep moving — or you get left behind.</p><p>That's why I built ZETA. To touch millions. To make it simpler for anyone to <strong>deeply invest in their health.</strong> Because when your brain and body are strong, everything else expands.</p><p>Every single day is a choice. Let ZETA be part of the ones that move you forward.</p>",
         "button_1_text": "Shop the Lineup",
@@ -357,14 +367,18 @@
       ],
       "settings": {
         "eyebrow": "Who We Are",
-        "heading": "The ZETA <em>Beliefs</em>"
+        "eyebrow_size": "small",
+        "heading": "The ZETA <em>Beliefs</em>",
+        "heading_size": "medium"
       }
     },
     "cta": {
       "type": "zeta-cta",
       "settings": {
         "eyebrow": "Start Here",
+        "eyebrow_size": "small",
         "heading": "Don't accept\nthe drain\n<em>as normal.</em>",
+        "heading_size": "large",
         "subtext": "<p>Fix it. You have the choice every single day. One brain. One body. Protect them both.</p>",
         "button_1_text": "Shop the Full Lineup",
         "button_1_link": "",
@@ -376,7 +390,9 @@
       "type": "zeta-founder",
       "settings": {
         "eyebrow": "The Founder",
+        "eyebrow_size": "small",
         "heading": "Built from <em>winning and losing</em> the fight.",
+        "heading_size": "medium",
         "body": "<p>I've been on both sides. The winning one. The losing one. In 2013, a grand mal seizure out of nowhere changed everything I knew about my own brain and body. What I lost most was my independence — and from there came the decision to rebuild differently.</p><p>ZETA is the daily foundation I built when I refused to accept the drain as normal.</p>",
         "sig_role": "Founder & CEO, ZETA Body",
         "sig_name": "Zoe Karli",
@@ -389,7 +405,9 @@
       "type": "zeta-blog-teaser",
       "settings": {
         "eyebrow": "The Knowledge",
+        "eyebrow_size": "small",
         "heading": "What we're <em>learning</em>",
+        "heading_size": "small",
         "blog": "",
         "posts_count": 3,
         "link_text": "All Posts →",
