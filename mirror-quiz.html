@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirror — Find Your Stack | Zeta Body</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      background: #ffffff;
+      color: #0a0a0a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .mq-wrap {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+      min-height: 100vh;
+    }
+
+    /* ---- Header ---- */
+    .mq-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .mq-brand {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+    .mq-title {
+      font-size: 38px;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .mq-sub {
+      font-size: 15px;
+      color: #888;
+    }
+
+    /* ---- Progress ---- */
+    .mq-progress { margin-bottom: 44px; }
+    .mq-progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+    .mq-track {
+      height: 1px;
+      background: #e8e8e8;
+    }
+    .mq-fill {
+      height: 100%;
+      background: #0a0a0a;
+      transition: width 0.4s ease;
+    }
+
+    /* ---- Question ---- */
+    .mq-q {
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+      margin-bottom: 24px;
+    }
+
+    /* ---- Options ---- */
+    .mq-opt {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px 18px;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 8px;
+      background: #fff;
+      transition: border-color 0.12s, background 0.12s;
+      user-select: none;
+    }
+    .mq-opt:hover {
+      border-color: #c0c0c0;
+      background: #fafafa;
+    }
+    .mq-opt.sel {
+      border: 2px solid #0a0a0a;
+      padding: 14px 17px;
+    }
+    .mq-opt-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 7px;
+      background: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 17px;
+      color: #888;
+      transition: background 0.12s, color 0.12s;
+    }
+    .mq-opt.sel .mq-opt-icon {
+      background: #0a0a0a;
+      color: #fff;
+    }
+    .mq-opt-text {
+      font-size: 15px;
+      line-height: 1.3;
+      color: #0a0a0a;
+    }
+
+    /* ---- Nav ---- */
+    .mq-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+    }
+    .btn-back {
+      font-size: 14px;
+      color: #aaa;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.12s;
+    }
+    .btn-back:hover { color: #0a0a0a; }
+    .btn-next {
+      font-size: 14px;
+      color: #0a0a0a;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      opacity: 0.25;
+      pointer-events: none;
+      transition: opacity 0.15s;
+    }
+    .btn-next.on {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ---- Results ---- */
+    .mq-res-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: #aaa;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .mq-res-title {
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    /* ---- Product Cards ---- */
+    .mq-card {
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 10px;
+    }
+    .mq-card.top {
+      border: 2px solid #0a0a0a;
+    }
+    .mq-card-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .mq-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 9px;
+      background: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 20px;
+      color: #666;
+    }
+    .mq-card.top .mq-card-icon {
+      background: #0a0a0a;
+      color: #fff;
+    }
+    .mq-card-body { flex: 1; min-width: 0; }
+    .mq-card-name-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .mq-card-name {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .mq-badge {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      background: #0a0a0a;
+      color: #fff;
+      border-radius: 4px;
+    }
+    .mq-card-tagline {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 8px;
+    }
+    .mq-card-blurb {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ---- CTA ---- */
+    .mq-cta {
+      margin-top: 28px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-shop {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #0a0a0a;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .btn-shop:hover { background: #333; }
+    .btn-retake {
+      font-size: 14px;
+      color: #aaa;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.12s;
+    }
+    .btn-retake:hover { color: #0a0a0a; }
+
+    /* ---- Mobile ---- */
+    @media (max-width: 480px) {
+      .mq-wrap    { padding: 44px 16px 60px; }
+      .mq-title   { font-size: 30px; }
+      .mq-q       { font-size: 19px; }
+      .mq-res-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="mq-wrap">
+
+  <div class="mq-header">
+    <p class="mq-brand">ZETA BODY</p>
+    <h1 class="mq-title">Mirror</h1>
+    <p class="mq-sub">Find your stack in under 2 minutes.</p>
+  </div>
+
+  <div class="mq-progress">
+    <div class="mq-progress-meta">
+      <span id="ql">Question 1 of 7</span>
+      <span id="qp">14%</span>
+    </div>
+    <div class="mq-track">
+      <div class="mq-fill" id="pb" style="width:14%"></div>
+    </div>
+  </div>
+
+  <div id="qz"></div>
+
+</div>
+
+<script>
+  var goalOpts = [
+    { id:'energy',    l:'More energy & mental clarity',          ic:'ti-bolt'     },
+    { id:'gut',       l:'Better gut health & digestion',         ic:'ti-heart'    },
+    { id:'muscle',    l:'Build muscle & recover faster',         ic:'ti-activity' },
+    { id:'immune',    l:'Strengthen immunity & overall health',  ic:'ti-shield'   },
+    { id:'longevity', l:'Live longer, feel younger',             ic:'ti-infinity' }
+  ];
+
+  var Qs = [
+    { id:'goal',      q:"What's your main goal right now?",       opts: goalOpts },
+    { id:'goal2',     q:"Any secondary goals?",                   opts: [] },
+    { id:'complaint', q:"What's your biggest daily challenge?",   opts:[
+      { id:'tired',    l:'Fatigue or brain fog',                   ic:'ti-moon'          },
+      { id:'bloated',  l:'Bloating or irregular digestion',        ic:'ti-droplet'       },
+      { id:'greens',   l:'Not eating enough greens or vegetables', ic:'ti-leaf'          },
+      { id:'sick',     l:'Getting sick too often',                 ic:'ti-alert-circle'  },
+      { id:'recovery', l:'Poor recovery after workouts',           ic:'ti-run'           }
+    ]},
+    { id:'activity', q:"How active are you?", opts:[
+      { id:'high', l:'Training hard — 4+ days/week',       ic:'ti-activity' },
+      { id:'mid',  l:'Moderately active — 2–3 days/week',  ic:'ti-walk'     },
+      { id:'low',  l:'Mostly sedentary right now',         ic:'ti-home'     }
+    ]},
+    { id:'diet', q:"How would you describe your diet?", opts:[
+      { id:'good', l:'Pretty balanced — I eat well',       ic:'ti-check'          },
+      { id:'ok',   l:'Inconsistent — always on the go',    ic:'ti-clock'          },
+      { id:'poor', l:"I know I'm missing nutrients",       ic:'ti-alert-triangle' }
+    ]},
+    { id:'age', q:"What's your age range?", opts:[
+      { id:'u25', l:'Under 25', ic:'ti-user' },
+      { id:'a25', l:'25–35',    ic:'ti-user' },
+      { id:'a36', l:'36–45',    ic:'ti-user' },
+      { id:'a46', l:'46+',      ic:'ti-user' }
+    ]},
+    { id:'sleep', q:"How's your sleep?", opts:[
+      { id:'great',     l:'I sleep well and wake up rested',         ic:'ti-check'         },
+      { id:'trouble',   l:'Trouble falling or staying asleep',       ic:'ti-clock'         },
+      { id:'exhausted', l:'I wake up exhausted no matter what',      ic:'ti-alert-circle'  }
+    ]}
+  ];
+
+  var P = {
+    'Z-83 Nootropic':   { t:'Energy, focus & mental clarity',       ic:'ti-bolt',     url:'/products/z-83-nootropic'    },
+    'PRO-B MAX':        { t:'Gut health & immune support',           ic:'ti-heart',    url:'/products/pro-b-max'         },
+    'Zeta-Multi':       { t:'Foundational daily wellness',           ic:'ti-shield',   url:'/products/zeta-multi'        },
+    'Fruits & Veggies': { t:'Daily nutrition coverage',              ic:'ti-leaf',     url:'/products/fruits-veggies-powder' },
+    'D+K 5000':         { t:'Bone, immune & hormonal health',        ic:'ti-sun',      url:'/products/d-k-5000'          },
+    'B-Complete':       { t:'Energy & nervous system support',       ic:'ti-bolt',     url:'/products/b-complete'        },
+    'Zeta-Megas 1300':  { t:'Omega-3 & inflammation support',        ic:'ti-droplet',  url:'/products/zeta-megas-1300'   },
+    'Longevity Complex':{ t:'Anti-aging & antioxidant support',      ic:'ti-infinity', url:'/products/longevity-complex' },
+    'Zeta-Minos':       { t:'Muscle synthesis & recovery',           ic:'ti-activity', url:'/products/zeta-minos'        },
+    'Creatine':         { t:'Strength, power & recovery',            ic:'ti-activity', url:'/products/creatine'          }
+  };
+
+  // ---- Blurbs ----
+  function blurb(name, a) {
+    var g=a.goal, c=a.complaint, d=a.diet, ag=a.age, s=a.sleep;
+    if (name==='Z-83 Nootropic')    return g==='energy' ? 'Brain fog and low energy are usually a signal issue, not a sleep issue. Z-83 targets both with Zembrin® to calm anxiety and Amatea® for clean, sustained focus — no crash, no jitters.' : 'You flagged fatigue or brain fog — Z-83 addresses both with Zembrin® and Amatea® for clean, sustained focus without the caffeine crash.';
+    if (name==='B-Complete')        return s==='exhausted' ? 'Waking up exhausted despite a full night often points to depleted B vitamins. B-Complete uses activated forms your body absorbs immediately, covering the full spectrum from B1 through B12.' : 'B vitamins are your body\'s energy currency — and most people are running low without knowing it. B-Complete uses activated forms covering the full spectrum.';
+    if (name==='PRO-B MAX')         return g==='gut' ? 'Your gut houses 70% of your immune system — an imbalanced microbiome shows up as bloating, irregularity, and low energy. PRO-B MAX delivers 100B CFU across four targeted strains.' : 'Bloating usually signals an imbalanced gut. PRO-B MAX restores balance with 100B CFU across four targeted strains — the dose that actually moves the needle.';
+    if (name==='Zeta-Multi') {
+      if (d==='poor'||d==='ok') return 'Your diet has gaps — Zeta-Multi fills them with premium, highly bioavailable forms of the vitamins and minerals most people are quietly deficient in.';
+      if (g==='immune')         return 'A strong immune system starts with the right micronutrient foundation. Zeta-Multi covers the bases so your body has what it needs to respond and recover.';
+      return 'Most people are quietly deficient in 3–5 key micronutrients. Zeta-Multi fills those gaps with premium, highly bioavailable forms.';
+    }
+    if (name==='Fruits & Veggies')  return c==='greens' ? 'You already know the greens gap is there. Fruits & Veggies closes it — organic greens, vegetables, fruits, phytonutrients, and fiber in a single scoop.' : 'Your diet has gaps in greens and phytonutrients. One scoop covers organic greens, fruits, and fiber. One habit that does a lot.';
+    if (name==='D+K 5000')          return (ag==='a46'||ag==='a36') ? 'D3 absorption drops with age — and K2 is what makes it work properly. Without K2, D3 can\'t reach where it needs to go. This is the combination that actually works.' : 'Vitamin D3 is one of the most powerful immune regulators your body has — and K2 is what ensures it absorbs properly.';
+    if (name==='Zeta-Megas 1300') {
+      if (g==='gut')      return 'Omega-3s reduce gut inflammation and support the mucosal lining — an underrated piece of the gut health puzzle. Zeta-Megas delivers 3× better absorption than standard fish oil.';
+      if (g==='longevity'||ag==='a36'||ag==='a46') return 'Omega-3s are the most researched longevity supplement in existence. Zeta-Megas uses MaxSimil® for 3× better absorption — so the dose on the label is the dose you actually get.';
+      return 'High-output training creates inflammation. Zeta-Megas 1300 uses MaxSimil® fish oil — with 3× better absorption — to keep inflammation in check and support recovery.';
+    }
+    if (name==='Longevity Complex')  return ag==='a46' ? 'At this stage, cellular protection is everything. Resveratrol, quercetin, and pterostilbene tell your cells to repair, protect, and perform longer.' : 'Resveratrol, quercetin, and pterostilbene work synergistically — essentially telling your cells to repair, protect, and perform longer. The kind of support that compounds over time.';
+    if (name==='Zeta-Minos')         return c==='recovery' ? 'Poor recovery usually means your muscles aren\'t getting the building blocks they need. Minos delivers the researched amino acid ratio for muscle protein synthesis and tissue repair.' : 'Building muscle is about giving your body the right amino acid building blocks to synthesize protein and repair tissue. Minos delivers that in a researched, patented blend.';
+    if (name==='Creatine')           return 'The most studied performance supplement ever. Creatine directly fuels muscle contractions, increases strength output, and accelerates recovery — paired with Minos, it covers both the fuel and the building blocks your muscles need.';
+    return '';
+  }
+
+  // ---- Routing ----
+  var g2map = {
+    'energy':    ['Z-83 Nootropic','B-Complete'],
+    'gut':       ['PRO-B MAX','Zeta-Megas 1300'],
+    'muscle':    ['Zeta-Minos','Creatine'],
+    'immune':    ['Zeta-Multi','D+K 5000'],
+    'longevity': ['Longevity Complex','Zeta-Megas 1300']
+  };
+
+  function route() {
+    var g=ans.goal, g2=ans.goal2, c=ans.complaint, d=ans.diet, ag=ans.age, s=ans.sleep;
+    var hasG2 = g2 && g2 !== 'none';
+    var pri=[], sec=[];
+    if      (g==='energy')    pri=['Z-83 Nootropic','B-Complete'];
+    else if (g==='gut')       pri=['PRO-B MAX','Zeta-Megas 1300'];
+    else if (g==='muscle')    pri=['Zeta-Minos','Creatine'];
+    else if (g==='immune')    pri=['Zeta-Multi','D+K 5000'];
+    else if (g==='longevity') pri=['Longevity Complex','Zeta-Megas 1300'];
+    if (hasG2) {
+      (g2map[g2]||[]).forEach(function(p){ if(pri.indexOf(p)<0&&sec.indexOf(p)<0) sec.push(p); });
+    }
+    if (c==='tired'    && pri.indexOf('Z-83 Nootropic')<0  && sec.indexOf('Z-83 Nootropic')<0)  sec.push('Z-83 Nootropic');
+    if (c==='bloated'  && pri.indexOf('PRO-B MAX')<0        && sec.indexOf('PRO-B MAX')<0)        sec.push('PRO-B MAX');
+    if (c==='greens'   && pri.indexOf('Fruits & Veggies')<0 && sec.indexOf('Fruits & Veggies')<0) sec.push('Fruits & Veggies');
+    if (c==='sick'     && pri.indexOf('Zeta-Multi')<0       && sec.indexOf('Zeta-Multi')<0)       sec.push('Zeta-Multi');
+    if (c==='recovery' && pri.indexOf('Zeta-Minos')<0) {
+      sec.push('Zeta-Minos');
+      if (sec.indexOf('Creatine')<0 && pri.indexOf('Creatine')<0) sec.push('Creatine');
+    }
+    if ((d==='poor'||d==='ok') && pri.indexOf('Zeta-Multi')<0       && sec.indexOf('Zeta-Multi')<0)       sec.push('Zeta-Multi');
+    if (d==='poor'             && pri.indexOf('Fruits & Veggies')<0 && sec.indexOf('Fruits & Veggies')<0) sec.push('Fruits & Veggies');
+    if ((ag==='a36'||ag==='a46') && pri.indexOf('D+K 5000')<0         && sec.indexOf('D+K 5000')<0)         sec.push('D+K 5000');
+    if (ag==='a46'               && pri.indexOf('Longevity Complex')<0 && sec.indexOf('Longevity Complex')<0) sec.push('Longevity Complex');
+    if ((s==='exhausted'||s==='trouble') && pri.indexOf('B-Complete')<0 && sec.indexOf('B-Complete')<0) sec.push('B-Complete');
+    var all = pri.concat(sec).filter(function(v,i,a){ return a.indexOf(v)===i; });
+    return all.slice(0, hasG2 ? 4 : 3);
+  }
+
+  // ---- State ----
+  var step=0, ans={};
+
+  function setProgress() {
+    var n   = step < Qs.length ? step+1 : Qs.length;
+    var pct = step >= Qs.length ? 100 : Math.round((n/Qs.length)*100);
+    document.getElementById('ql').textContent = step < Qs.length ? ('Question '+n+' of '+Qs.length) : 'Your results';
+    document.getElementById('qp').textContent = pct+'%';
+    document.getElementById('pb').style.width = pct+'%';
+  }
+
+  function render() {
+    setProgress();
+    if (step >= Qs.length) { renderResults(); return; }
+    var q = Qs[step];
+    if (q.id === 'goal2') {
+      q.opts = goalOpts.filter(function(o){ return o.id !== ans.goal; }).concat([{ id:'none', l:'No, just this one', ic:'ti-check' }]);
+    }
+    var optHtml = q.opts.map(function(o) {
+      return '<div class="mq-opt" data-id="'+o.id+'" onclick="pick(\''+o.id+'\')">'+
+        '<div class="mq-opt-icon"><i class="ti '+o.ic+'" aria-hidden="true"></i></div>'+
+        '<span class="mq-opt-text">'+o.l+'</span>'+
+        '</div>';
+    }).join('');
+    var backBtn = step > 0 ? '<button class="btn-back" onclick="goBack()">← Back</button>' : '<span></span>';
+    document.getElementById('qz').innerHTML =
+      '<p class="mq-q">'+q.q+'</p>'+
+      '<div id="opts">'+optHtml+'</div>'+
+      '<div class="mq-nav">'+backBtn+'<button class="btn-next" id="nb" onclick="nextStep()">Continue →</button></div>';
+    if (ans[q.id]) {
+      var el = document.querySelector('[data-id="'+ans[q.id]+'"]');
+      if (el) { el.classList.add('sel'); document.getElementById('nb').classList.add('on'); }
+    }
+  }
+
+  function pick(id) {
+    document.querySelectorAll('.mq-opt').forEach(function(e){ e.classList.remove('sel'); });
+    document.querySelector('[data-id="'+id+'"]').classList.add('sel');
+    ans[Qs[step].id] = id;
+    document.getElementById('nb').classList.add('on');
+  }
+
+  function nextStep() { if (!ans[Qs[step].id]) return; step++; render(); }
+  function goBack()   { step--; render(); }
+
+  function renderResults() {
+    var recs = route();
+    var cards = recs.map(function(name) {
+      var p = P[name];
+      var isTop = name === recs[0] || name === 'Creatine';
+      return '<div class="mq-card'+(isTop?' top':'')+'">'+
+        '<div class="mq-card-inner">'+
+        '<div class="mq-card-icon"><i class="ti '+(p?p.ic:'ti-pill')+'" aria-hidden="true"></i></div>'+
+        '<div class="mq-card-body">'+
+        '<div class="mq-card-name-row">'+
+        '<span class="mq-card-name">'+name+'</span>'+
+        (isTop ? '<span class="mq-badge">Top pick</span>' : '')+
+        '</div>'+
+        '<p class="mq-card-tagline">'+(p?p.t:'')+'</p>'+
+        '<p class="mq-card-blurb">'+blurb(name,ans)+'</p>'+
+        '</div></div></div>';
+    }).join('');
+    document.getElementById('qz').innerHTML =
+      '<p class="mq-res-label">Your stack</p>'+
+      '<h2 class="mq-res-title">Here\'s what your body needs.</h2>'+
+      cards+
+      '<div class="mq-cta">'+
+      '<a class="btn-shop" href="/collections/all">Shop my stack</a>'+
+      '<button class="btn-retake" onclick="retake()">Retake quiz</button>'+
+      '</div>';
+  }
+
+  function retake() { step=0; ans={}; render(); }
+  render();
+</script>
+
+</body>
+</html>

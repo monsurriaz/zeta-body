@@ -314,7 +314,7 @@
    Title → links spacing comes from --footer-block-gap (16px) — no margin here. */
 .shopify-section--footer .footer__block--menu > .bold,
 .shopify-section--footer .footer__block--text > .bold {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: var(--zeta-fw-bold);        /* 700 */
@@ -329,7 +329,7 @@
 }
 .shopify-section--footer .footer__block--menu li a {
   font-family: var(--zeta-font-body);
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.55);
   text-decoration: none;
   transition: color 0.2s;
@@ -340,7 +340,7 @@
 /* Inner Circle intro description (spacing to links handled by --footer-block-gap) */
 .shopify-section--footer .footer__block-description {
   font-family: var(--zeta-font-body);
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.6;
 }
@@ -2299,6 +2299,7 @@
   text-transform: uppercase;
   font-weight: var(--zeta-fw-semibold);
   border: none;
+  border-radius: 6px;
   cursor: pointer;
   font-family: var(--zeta-font-body);
   transition: background 0.2s;
@@ -2317,6 +2318,7 @@
   text-transform: uppercase;
   font-weight: var(--zeta-fw-medium);
   border: 1.5px solid var(--zeta-border);
+  border-radius: 6px;
   text-decoration: none;
   transition: border-color 0.2s;
 }
@@ -2515,7 +2517,7 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
    Size selectors map to theme settings (ZETA Typography → Eyebrow sizes).
    Scoped under .zeta so specificity beats both base eyebrow rules. */
 .zeta .zeta-eyebrow-size--medium { font-size: var(--zeta-eyebrow-md); }
-.zeta .zeta-eyebrow-size--small { font-size: var(--zeta-eyebrow-sm); }
+.zeta .zeta-eyebrow-size--small { font-size: calc(var(--zeta-eyebrow-sm) + 2px); }
 
 /* ─── Add-to-cart loading state ─────────────────────────────────────────
    Impact sets aria-busy="true" on the submit button during the /cart/add
@@ -2542,3 +2544,221 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
   animation: zeta-atc-spin 0.6s linear infinite;
 }
 @keyframes zeta-atc-spin { to { transform: rotate(360deg); } }
+
+/* ─── About Hero (.zeta-about-hero): vertical title + paragraph + video ── */
+.zeta-about-hero { padding: clamp(56px, 8vw, 104px) var(--zeta-gutter); }
+.zeta-about-hero__inner {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.zeta-about-hero--align-center .zeta-about-hero__inner { text-align: center; align-items: center; }
+.zeta-about-hero--align-left .zeta-about-hero__inner { text-align: left; align-items: flex-start; }
+.zeta-about-hero__h1 {
+  font-family: var(--zeta-font-heading);
+  font-weight: var(--zeta-fw-medium);
+  color: var(--zeta-ink);
+  line-height: 1.05;
+  letter-spacing: var(--zeta-tracking-tight);
+  margin: 0;
+}
+.zeta-about-hero__h1 em { font-style: italic; color: var(--zeta-teal); }
+.zeta-about-hero__body,
+.zeta-about-hero__body p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--zeta-ink);
+  opacity: 0.8;
+  margin: 0;
+}
+.zeta-about-hero__body { max-width: 680px; }
+.zeta-about-hero__body p + p { margin-top: 16px; }
+.zeta-about-hero__frame { width: 100%; margin-top: 14px; }
+@media (max-width: 749px) {
+  .zeta-about-hero__body, .zeta-about-hero__body p { font-size: 16px; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MIRROR QUIZ (page.mirror-quiz, .zeta-mq) — interactive product-finder.
+   Ported 1:1 from the mirror-quiz.html prototype: centered 580px column,
+   one question per screen, bordered option/card rows (radius 8px, matches
+   the PDP buy-box option style). Ink for selection/emphasis, bronze for the
+   "Top pick" badge (matches the badge language used elsewhere), teal on the
+   primary CTA's hover (matches the header's ink→teal hover pattern).
+   ══════════════════════════════════════════════════════════════════════════ */
+.zeta-mq { background: var(--zeta-surface); }
+.zeta-mq__app { display: block; }
+.zeta-mq__wrap { max-width: 580px; margin: 0 auto; padding: 96px 24px 120px; }
+
+.zeta-mq__header { text-align: center; margin-bottom: 52px; }
+.zeta-mq__brand {
+  font-size: 11px;
+  font-weight: var(--zeta-fw-semibold);
+  letter-spacing: var(--zeta-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--zeta-mid);
+  margin-bottom: 10px;
+}
+.zeta-mq__title {
+  font-family: var(--zeta-font-heading);
+  font-size: 44px;
+  font-weight: var(--zeta-fw-medium);
+  letter-spacing: var(--zeta-tracking-tight);
+  line-height: 1;
+  color: var(--zeta-ink);
+  margin-bottom: 10px;
+}
+.zeta-mq__sub { font-size: 15px; color: var(--zeta-mid); }
+
+/* Progress */
+.zeta-mq__progress { margin-bottom: 44px; }
+.zeta-mq__progress-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--zeta-mid); margin-bottom: 10px; }
+.zeta-mq__track { height: 1px; background: var(--zeta-border); }
+.zeta-mq__fill { height: 100%; background: var(--zeta-ink); transition: width 0.4s ease; }
+
+/* Question */
+.zeta-mq__q {
+  font-family: var(--zeta-font-heading);
+  font-size: 24px;
+  font-weight: var(--zeta-fw-medium);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--zeta-ink);
+  margin-bottom: 24px;
+}
+
+/* Options */
+.zeta-mq__opts { display: flex; flex-direction: column; gap: 8px; }
+.zeta-mq__opt {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  border: 1.5px solid var(--zeta-border);
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--zeta-surface);
+  transition: border-color 0.12s, background 0.12s;
+  user-select: none;
+}
+/* Exact match to mirror-quiz.html's .mq-opt:hover — no token covers this specific
+   neutral pair, so it's hardcoded like the client-source hover elsewhere in this file. */
+.zeta-mq__opt:hover { border-color: #c0c0c0; background: #fafafa; }
+.zeta-mq__opt.is-selected { border: 2px solid var(--zeta-ink); padding: 14px 17px; }
+.zeta-mq__opt-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 7px;
+  background: var(--zeta-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--zeta-mid);
+  transition: background 0.12s, color 0.12s;
+}
+.zeta-mq__opt-icon svg { width: 17px; height: 17px; }
+.zeta-mq__opt.is-selected .zeta-mq__opt-icon { background: var(--zeta-ink); color: #fff; }
+.zeta-mq__opt-text { font-size: 15px; line-height: 1.3; color: var(--zeta-ink); }
+
+/* Nav */
+.zeta-mq__nav { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; }
+.zeta-mq__btn-back, .zeta-mq__btn-next, .zeta-mq__btn-retake {
+  font-family: var(--zeta-font-body);
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.12s, opacity 0.15s;
+}
+.zeta-mq__btn-back, .zeta-mq__btn-retake { color: var(--zeta-mid); }
+.zeta-mq__btn-back:hover, .zeta-mq__btn-retake:hover { color: var(--zeta-ink); }
+.zeta-mq__btn-next { font-weight: var(--zeta-fw-semibold); color: var(--zeta-ink); opacity: 0.25; pointer-events: none; }
+.zeta-mq__btn-next.is-on { opacity: 1; pointer-events: all; }
+
+/* Results — product cards */
+.zeta-mq__res-label {
+  font-size: 11px;
+  font-weight: var(--zeta-fw-semibold);
+  letter-spacing: var(--zeta-tracking-eyebrow);
+  color: var(--zeta-mid);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.zeta-mq__res-title {
+  font-family: var(--zeta-font-heading);
+  font-size: 30px;
+  font-weight: var(--zeta-fw-medium);
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  color: var(--zeta-ink);
+}
+/* Matches mirror-quiz.html's .mq-card exactly — no hover state there, so none here either.
+   Clickability (every card is now a real product link) is signaled by cursor only. */
+.zeta-mq__card {
+  display: block;
+  cursor: pointer;
+  border: 1px solid var(--zeta-border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+.zeta-mq__card.is-top { border: 2px solid var(--zeta-ink); }
+.zeta-mq__card-inner { display: flex; align-items: flex-start; gap: 14px; }
+.zeta-mq__card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 9px;
+  background: var(--zeta-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--zeta-mid);
+}
+.zeta-mq__card-icon svg { width: 20px; height: 20px; }
+.zeta-mq__card.is-top .zeta-mq__card-icon { background: var(--zeta-ink); color: #fff; }
+.zeta-mq__card-body { flex: 1; min-width: 0; }
+.zeta-mq__card-name-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.zeta-mq__card-name { font-size: 15px; font-weight: var(--zeta-fw-semibold); letter-spacing: -0.01em; color: var(--zeta-ink); }
+.zeta-mq__badge {
+  font-size: 10px;
+  font-weight: var(--zeta-fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  background: var(--zeta-bronze);
+  color: #fff;
+  border-radius: 4px;
+}
+.zeta-mq__card-tagline { font-size: 13px; color: var(--zeta-mid); margin-bottom: 8px; }
+.zeta-mq__card-blurb { font-size: 13px; color: var(--zeta-ink); opacity: 0.75; line-height: 1.65; }
+
+/* CTA */
+.zeta-mq__cta { margin-top: 28px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.zeta-mq__btn-shop {
+  display: inline-block;
+  padding: 14px 30px;
+  background: var(--zeta-ink);
+  color: #fff;
+  font-size: 14px;
+  font-weight: var(--zeta-fw-semibold);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.zeta-mq__btn-shop:hover { background: var(--zeta-teal-dark); }
+
+@media (max-width: 480px) {
+  .zeta-mq__wrap { padding: 56px 16px 72px; }
+  .zeta-mq__title { font-size: 34px; }
+  .zeta-mq__q { font-size: 19px; }
+  .zeta-mq__res-title { font-size: 24px; }
+}

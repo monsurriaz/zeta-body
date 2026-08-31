@@ -1,0 +1,425 @@
+{%- comment -%}
+  ZETA — Mirror Quiz (page.mirror-quiz): interactive product-finder quiz.
+  Ported from the standalone mirror-quiz.html prototype (not Shopify-connected).
+  Question flow + routing rules + personalized copy are UNCHANGED from the prototype —
+  only re-keyed from hardcoded product NAMES to stable ROLE ids. Each role is a direct
+  section setting (product picker + optional tagline override); its fallback name/tagline/
+  icon/url — used until a merchant picks a product — come from the prototype's `P` object.
+  Icons come from snippets/icon.liquid (no external icon-font CDN). Styles: custom.css (.zeta-mq).
+{%- endcomment -%}
+
+{%- comment -%} Fixed recommendation roles — do not rename; the quiz's routing logic keys off these ids. {%- endcomment -%}
+{%- assign zmq_role_order = 'energy,gut,immune,greens,dk,bcomplete,megas,longevity,muscle,creatine' | split: ',' -%}
+
+{%- comment -%} Pre-render icons once via Impact's icon snippet (no CDN dependency). {%- endcomment -%}
+{%- capture zmq_ic_bolt %}{% render 'icon', icon: 'zeta-bolt', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_heart %}{% render 'icon', icon: 'picto-love', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_shield %}{% render 'icon', icon: 'picto-shield', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_leaf %}{% render 'icon', icon: 'picto-leaf', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_sun %}{% render 'icon', icon: 'zeta-sun', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_droplet %}{% render 'icon', icon: 'zeta-droplet', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_infinity %}{% render 'icon', icon: 'zeta-infinity', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_activity %}{% render 'icon', icon: 'zeta-activity', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_moon %}{% render 'icon', icon: 'zeta-moon', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_alert_circle %}{% render 'icon', icon: 'zeta-alert-circle', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_alert_triangle %}{% render 'icon', icon: 'zeta-alert-triangle', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_run %}{% render 'icon', icon: 'zeta-run', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_walk %}{% render 'icon', icon: 'zeta-walk', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_home %}{% render 'icon', icon: 'zeta-home', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_check %}{% render 'icon', icon: 'zeta-check', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_clock %}{% render 'icon', icon: 'picto-timer', width: 20, height: 20 %}{% endcapture %}
+{%- capture zmq_ic_user %}{% render 'icon', icon: 'account', width: 20, height: 20 %}{% endcapture %}
+
+{%- assign zmq_shop_url = section.settings.shop_button_link | default: routes.all_products_collection_url -%}
+
+<section class="zeta zeta-mq" {{ section.shopify_attributes }}>
+  <zeta-mirror-quiz
+    class="zeta-mq__app"
+    data-shop-url="{{ zmq_shop_url | escape }}"
+    data-shop-text="{{ section.settings.shop_button_text | default: 'Shop my stack' | escape }}"
+    data-retake-text="{{ section.settings.retake_button_text | default: 'Retake quiz' | escape }}"
+    data-results-label="{{ section.settings.results_label | default: 'Your stack' | escape }}"
+    data-results-title="{{ section.settings.results_title | default: "Here's what your body needs." | escape }}"
+  >
+    <div class="zeta-mq__wrap">
+
+      <div class="zeta-mq__header">
+        {%- if section.settings.brand_label != blank -%}
+          <p class="zeta-mq__brand">{{ section.settings.brand_label | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h1 class="zeta-mq__title">{{ section.settings.title | escape }}</h1>
+        {%- endif -%}
+        {%- if section.settings.subtitle != blank -%}
+          <p class="zeta-mq__sub">{{ section.settings.subtitle | escape }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="zeta-mq__progress">
+        <div class="zeta-mq__progress-meta">
+          <span data-mq-ql></span>
+          <span data-mq-qp></span>
+        </div>
+        <div class="zeta-mq__track">
+          <div class="zeta-mq__fill" data-mq-pb style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="zeta-mq__stage" data-mq-stage></div>
+
+    </div>
+
+    {%- comment -%}
+      Product data, one entry per role, resolved from the section settings below.
+      Fallback name/tagline/icon/url per role (shown until a merchant picks a real product)
+      come straight from the original mirror-quiz.html prototype's `P` object.
+    {%- endcomment -%}
+    <script type="application/json" data-mq-products>
+      {
+        {%- for role in zmq_role_order -%}
+          {%- case role -%}
+            {%- when 'energy'    -%}{%- assign zmq_meta_name = 'Z-83 Nootropic'    -%}{%- assign zmq_meta_tagline = 'Energy, focus & mental clarity'     -%}{%- assign zmq_meta_icon = 'bolt'     -%}{%- assign zmq_meta_url = '/products/z-83-nootropic'    -%}
+            {%- when 'gut'       -%}{%- assign zmq_meta_name = 'PRO-B MAX'         -%}{%- assign zmq_meta_tagline = 'Gut health & immune support'        -%}{%- assign zmq_meta_icon = 'heart'    -%}{%- assign zmq_meta_url = '/products/pro-b-max'         -%}
+            {%- when 'immune'    -%}{%- assign zmq_meta_name = 'Zeta-Multi'        -%}{%- assign zmq_meta_tagline = 'Foundational daily wellness'         -%}{%- assign zmq_meta_icon = 'shield'   -%}{%- assign zmq_meta_url = '/products/zeta-multi'        -%}
+            {%- when 'greens'    -%}{%- assign zmq_meta_name = 'Fruits & Veggies'  -%}{%- assign zmq_meta_tagline = 'Daily nutrition coverage'            -%}{%- assign zmq_meta_icon = 'leaf'     -%}{%- assign zmq_meta_url = '/products/fruits-veggies-powder' -%}
+            {%- when 'dk'        -%}{%- assign zmq_meta_name = 'D+K 5000'          -%}{%- assign zmq_meta_tagline = 'Bone, immune & hormonal health'      -%}{%- assign zmq_meta_icon = 'sun'      -%}{%- assign zmq_meta_url = '/products/d-k-5000'          -%}
+            {%- when 'bcomplete' -%}{%- assign zmq_meta_name = 'B-Complete'        -%}{%- assign zmq_meta_tagline = 'Energy & nervous system support'     -%}{%- assign zmq_meta_icon = 'bolt'     -%}{%- assign zmq_meta_url = '/products/b-complete'        -%}
+            {%- when 'megas'     -%}{%- assign zmq_meta_name = 'Zeta-Megas 1300'   -%}{%- assign zmq_meta_tagline = 'Omega-3 & inflammation support'      -%}{%- assign zmq_meta_icon = 'droplet'  -%}{%- assign zmq_meta_url = '/products/zeta-megas-1300'   -%}
+            {%- when 'longevity' -%}{%- assign zmq_meta_name = 'Longevity Complex' -%}{%- assign zmq_meta_tagline = 'Anti-aging & antioxidant support'    -%}{%- assign zmq_meta_icon = 'infinity' -%}{%- assign zmq_meta_url = '/products/longevity-complex' -%}
+            {%- when 'muscle'    -%}{%- assign zmq_meta_name = 'Zeta-Minos'        -%}{%- assign zmq_meta_tagline = 'Muscle synthesis & recovery'         -%}{%- assign zmq_meta_icon = 'activity' -%}{%- assign zmq_meta_url = '/products/zeta-minos'        -%}
+            {%- when 'creatine'  -%}{%- assign zmq_meta_name = 'Creatine'          -%}{%- assign zmq_meta_tagline = 'Strength, power & recovery'          -%}{%- assign zmq_meta_icon = 'activity' -%}{%- assign zmq_meta_url = '/products/creatine'          -%}
+          {%- endcase -%}
+          {%- assign zmq_product_key = 'product_' | append: role -%}
+          {%- assign zmq_tagline_key = 'tagline_' | append: role -%}
+          {%- assign zmq_product = section.settings[zmq_product_key] -%}
+          {%- assign zmq_title = zmq_product.title | default: zmq_meta_name -%}
+          {%- assign zmq_url = zmq_product.url | default: zmq_meta_url -%}
+          {%- assign zmq_tagline = section.settings[zmq_tagline_key] | default: zmq_meta_tagline -%}
+          "{{ role }}": {
+            "name": {{ zmq_title | json | replace: '</script', '<\/script' }},
+            "url": {{ zmq_url | json | replace: '</script', '<\/script' }},
+            "tagline": {{ zmq_tagline | json | replace: '</script', '<\/script' }},
+            "icon": {{ zmq_meta_icon | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      }
+    </script>
+
+    {%- comment -%} Pre-rendered icon SVGs, keyed to match the "icon" field above. {%- endcomment -%}
+    <script type="application/json" data-mq-icons>
+      {
+        "bolt": {{ zmq_ic_bolt | json }},
+        "heart": {{ zmq_ic_heart | json }},
+        "shield": {{ zmq_ic_shield | json }},
+        "leaf": {{ zmq_ic_leaf | json }},
+        "sun": {{ zmq_ic_sun | json }},
+        "droplet": {{ zmq_ic_droplet | json }},
+        "infinity": {{ zmq_ic_infinity | json }},
+        "activity": {{ zmq_ic_activity | json }},
+        "moon": {{ zmq_ic_moon | json }},
+        "alertCircle": {{ zmq_ic_alert_circle | json }},
+        "alertTriangle": {{ zmq_ic_alert_triangle | json }},
+        "run": {{ zmq_ic_run | json }},
+        "walk": {{ zmq_ic_walk | json }},
+        "home": {{ zmq_ic_home | json }},
+        "check": {{ zmq_ic_check | json }},
+        "clock": {{ zmq_ic_clock | json }},
+        "user": {{ zmq_ic_user | json }}
+      }
+    </script>
+  </zeta-mirror-quiz>
+</section>
+
+<script>
+  (function () {
+    if (customElements.get('zeta-mirror-quiz')) return;
+
+    // ---- Fixed quiz structure (content only — routing logic below depends on these ids) ----
+    var goalOpts = [
+      { id: 'energy',    l: 'More energy & mental clarity',          ic: 'bolt'     },
+      { id: 'gut',       l: 'Better gut health & digestion',         ic: 'heart'    },
+      { id: 'muscle',    l: 'Build muscle & recover faster',         ic: 'activity' },
+      { id: 'immune',    l: 'Strengthen immunity & overall health',  ic: 'shield'   },
+      { id: 'longevity', l: 'Live longer, feel younger',             ic: 'infinity' }
+    ];
+
+    var Qs = [
+      { id: 'goal',      q: "What's your main goal right now?",     opts: goalOpts },
+      { id: 'goal2',     q: 'Any secondary goals?',                  opts: [] },
+      { id: 'complaint', q: "What's your biggest daily challenge?",  opts: [
+        { id: 'tired',    l: 'Fatigue or brain fog',                   ic: 'moon'          },
+        { id: 'bloated',  l: 'Bloating or irregular digestion',        ic: 'droplet'       },
+        { id: 'greens',   l: 'Not eating enough greens or vegetables', ic: 'leaf'          },
+        { id: 'sick',     l: 'Getting sick too often',                 ic: 'alertCircle'   },
+        { id: 'recovery', l: 'Poor recovery after workouts',           ic: 'run'           }
+      ]},
+      { id: 'activity', q: 'How active are you?', opts: [
+        { id: 'high', l: 'Training hard — 4+ days/week',       ic: 'activity' },
+        { id: 'mid',  l: 'Moderately active — 2–3 days/week',  ic: 'walk'     },
+        { id: 'low',  l: 'Mostly sedentary right now',         ic: 'home'     }
+      ]},
+      { id: 'diet', q: 'How would you describe your diet?', opts: [
+        { id: 'good', l: 'Pretty balanced — I eat well',       ic: 'check'         },
+        { id: 'ok',   l: 'Inconsistent — always on the go',    ic: 'clock'         },
+        { id: 'poor', l: "I know I'm missing nutrients",       ic: 'alertTriangle' }
+      ]},
+      { id: 'age', q: "What's your age range?", opts: [
+        { id: 'u25', l: 'Under 25', ic: 'user' },
+        { id: 'a25', l: '25–35',    ic: 'user' },
+        { id: 'a36', l: '36–45',    ic: 'user' },
+        { id: 'a46', l: '46+',      ic: 'user' }
+      ]},
+      { id: 'sleep', q: "How's your sleep?", opts: [
+        { id: 'great',     l: 'I sleep well and wake up rested',    ic: 'check'      },
+        { id: 'trouble',   l: 'Trouble falling or staying asleep',  ic: 'clock'      },
+        { id: 'exhausted', l: 'I wake up exhausted no matter what', ic: 'alertCircle' }
+      ]}
+    ];
+
+    // ---- Personalized copy per role — unchanged wording, re-keyed from product name to role id ----
+    function blurb(role, a) {
+      var g = a.goal, c = a.complaint, d = a.diet, ag = a.age, s = a.sleep;
+      if (role === 'energy')    return g === 'energy' ? 'Brain fog and low energy are usually a signal issue, not a sleep issue. Z-83 targets both with Zembrin® to calm anxiety and Amatea® for clean, sustained focus — no crash, no jitters.' : 'You flagged fatigue or brain fog — Z-83 addresses both with Zembrin® and Amatea® for clean, sustained focus without the caffeine crash.';
+      if (role === 'bcomplete') return s === 'exhausted' ? 'Waking up exhausted despite a full night often points to depleted B vitamins. B-Complete uses activated forms your body absorbs immediately, covering the full spectrum from B1 through B12.' : "B vitamins are your body's energy currency — and most people are running low without knowing it. B-Complete uses activated forms covering the full spectrum.";
+      if (role === 'gut')       return g === 'gut' ? 'Your gut houses 70% of your immune system — an imbalanced microbiome shows up as bloating, irregularity, and low energy. PRO-B MAX delivers 100B CFU across four targeted strains.' : 'Bloating usually signals an imbalanced gut. PRO-B MAX restores balance with 100B CFU across four targeted strains — the dose that actually moves the needle.';
+      if (role === 'immune') {
+        if (d === 'poor' || d === 'ok') return 'Your diet has gaps — Zeta-Multi fills them with premium, highly bioavailable forms of the vitamins and minerals most people are quietly deficient in.';
+        if (g === 'immune')             return 'A strong immune system starts with the right micronutrient foundation. Zeta-Multi covers the bases so your body has what it needs to respond and recover.';
+        return 'Most people are quietly deficient in 3–5 key micronutrients. Zeta-Multi fills those gaps with premium, highly bioavailable forms.';
+      }
+      if (role === 'greens')    return c === 'greens' ? 'You already know the greens gap is there. Fruits & Veggies closes it — organic greens, vegetables, fruits, phytonutrients, and fiber in a single scoop.' : 'Your diet has gaps in greens and phytonutrients. One scoop covers organic greens, fruits, and fiber. One habit that does a lot.';
+      if (role === 'dk')        return (ag === 'a46' || ag === 'a36') ? "D3 absorption drops with age — and K2 is what makes it work properly. Without K2, D3 can't reach where it needs to go. This is the combination that actually works." : 'Vitamin D3 is one of the most powerful immune regulators your body has — and K2 is what ensures it absorbs properly.';
+      if (role === 'megas') {
+        if (g === 'gut')      return 'Omega-3s reduce gut inflammation and support the mucosal lining — an underrated piece of the gut health puzzle. Zeta-Megas delivers 3× better absorption than standard fish oil.';
+        if (g === 'longevity' || ag === 'a36' || ag === 'a46') return 'Omega-3s are the most researched longevity supplement in existence. Zeta-Megas uses MaxSimil® for 3× better absorption — so the dose on the label is the dose you actually get.';
+        return 'High-output training creates inflammation. Zeta-Megas 1300 uses MaxSimil® fish oil — with 3× better absorption — to keep inflammation in check and support recovery.';
+      }
+      if (role === 'longevity') return ag === 'a46' ? 'At this stage, cellular protection is everything. Resveratrol, quercetin, and pterostilbene tell your cells to repair, protect, and perform longer.' : 'Resveratrol, quercetin, and pterostilbene work synergistically — essentially telling your cells to repair, protect, and perform longer. The kind of support that compounds over time.';
+      if (role === 'muscle')    return c === 'recovery' ? "Poor recovery usually means your muscles aren't getting the building blocks they need. Minos delivers the researched amino acid ratio for muscle protein synthesis and tissue repair." : 'Building muscle is about giving your body the right amino acid building blocks to synthesize protein and repair tissue. Minos delivers that in a researched, patented blend.';
+      if (role === 'creatine')  return 'The most studied performance supplement ever. Creatine directly fuels muscle contractions, increases strength output, and accelerates recovery — paired with Minos, it covers both the fuel and the building blocks your muscles need.';
+      return '';
+    }
+
+    // ---- Routing rules — unchanged, re-keyed from product name arrays to role-id arrays ----
+    var g2map = {
+      energy:    ['energy', 'bcomplete'],
+      gut:       ['gut', 'megas'],
+      muscle:    ['muscle', 'creatine'],
+      immune:    ['immune', 'dk'],
+      longevity: ['longevity', 'megas']
+    };
+
+    function route(ans) {
+      var g = ans.goal, g2 = ans.goal2, c = ans.complaint, d = ans.diet, ag = ans.age, s = ans.sleep;
+      var hasG2 = g2 && g2 !== 'none';
+      var pri = [], sec = [];
+      if      (g === 'energy')    pri = ['energy', 'bcomplete'];
+      else if (g === 'gut')       pri = ['gut', 'megas'];
+      else if (g === 'muscle')    pri = ['muscle', 'creatine'];
+      else if (g === 'immune')    pri = ['immune', 'dk'];
+      else if (g === 'longevity') pri = ['longevity', 'megas'];
+      if (hasG2) {
+        (g2map[g2] || []).forEach(function (p) { if (pri.indexOf(p) < 0 && sec.indexOf(p) < 0) sec.push(p); });
+      }
+      if (c === 'tired'    && pri.indexOf('energy') < 0   && sec.indexOf('energy') < 0)   sec.push('energy');
+      if (c === 'bloated'  && pri.indexOf('gut') < 0      && sec.indexOf('gut') < 0)      sec.push('gut');
+      if (c === 'greens'   && pri.indexOf('greens') < 0   && sec.indexOf('greens') < 0)   sec.push('greens');
+      if (c === 'sick'     && pri.indexOf('immune') < 0   && sec.indexOf('immune') < 0)   sec.push('immune');
+      if (c === 'recovery' && pri.indexOf('muscle') < 0) {
+        sec.push('muscle');
+        if (sec.indexOf('creatine') < 0 && pri.indexOf('creatine') < 0) sec.push('creatine');
+      }
+      if ((d === 'poor' || d === 'ok') && pri.indexOf('immune') < 0 && sec.indexOf('immune') < 0) sec.push('immune');
+      if (d === 'poor'                 && pri.indexOf('greens') < 0 && sec.indexOf('greens') < 0) sec.push('greens');
+      if ((ag === 'a36' || ag === 'a46') && pri.indexOf('dk') < 0         && sec.indexOf('dk') < 0)         sec.push('dk');
+      if (ag === 'a46'                   && pri.indexOf('longevity') < 0 && sec.indexOf('longevity') < 0) sec.push('longevity');
+      if ((s === 'exhausted' || s === 'trouble') && pri.indexOf('bcomplete') < 0 && sec.indexOf('bcomplete') < 0) sec.push('bcomplete');
+      var all = pri.concat(sec).filter(function (v, i, a) { return a.indexOf(v) === i; });
+      return all.slice(0, hasG2 ? 4 : 3);
+    }
+
+    // Re-escapes merchant-entered text (results copy, product name/tagline) before it goes
+    // through innerHTML — dataset reads decode HTML entities, so this guards against markup
+    // typed into a text setting or a real product's title/tagline being rendered as live HTML.
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+
+    var ZetaMirrorQuiz = function () {
+      function init(el) {
+        var products = JSON.parse(el.querySelector('[data-mq-products]').textContent);
+        var icons = JSON.parse(el.querySelector('[data-mq-icons]').textContent);
+        var stage = el.querySelector('[data-mq-stage]');
+        var ql = el.querySelector('[data-mq-ql]');
+        var qp = el.querySelector('[data-mq-qp]');
+        var pb = el.querySelector('[data-mq-pb]');
+        var step = 0, ans = {};
+
+        function icon(key) { return icons[key] || ''; }
+
+        function setProgress() {
+          var n = step < Qs.length ? step + 1 : Qs.length;
+          var pct = step >= Qs.length ? 100 : Math.round((n / Qs.length) * 100);
+          ql.textContent = step < Qs.length ? ('Question ' + n + ' of ' + Qs.length) : 'Your results';
+          qp.textContent = pct + '%';
+          pb.style.width = pct + '%';
+        }
+
+        function render() {
+          setProgress();
+          if (step >= Qs.length) { renderResults(); return; }
+          var q = Qs[step];
+          if (q.id === 'goal2') {
+            q.opts = goalOpts.filter(function (o) { return o.id !== ans.goal; }).concat([{ id: 'none', l: 'No, just this one', ic: 'check' }]);
+          }
+          var optHtml = q.opts.map(function (o) {
+            return '<div class="zeta-mq__opt" data-id="' + o.id + '">' +
+              '<span class="zeta-mq__opt-icon">' + icon(o.ic) + '</span>' +
+              '<span class="zeta-mq__opt-text">' + o.l + '</span>' +
+              '</div>';
+          }).join('');
+          var backBtn = step > 0 ? '<button type="button" class="zeta-mq__btn-back" data-mq-back>← Back</button>' : '<span></span>';
+          stage.innerHTML =
+            '<p class="zeta-mq__q">' + q.q + '</p>' +
+            '<div class="zeta-mq__opts">' + optHtml + '</div>' +
+            '<div class="zeta-mq__nav">' + backBtn + '<button type="button" class="zeta-mq__btn-next" data-mq-next>Continue →</button></div>';
+
+          stage.querySelectorAll('.zeta-mq__opt').forEach(function (opt) {
+            opt.addEventListener('click', function () { pick(opt.getAttribute('data-id')); });
+          });
+          var backEl = stage.querySelector('[data-mq-back]');
+          if (backEl) backEl.addEventListener('click', goBack);
+          stage.querySelector('[data-mq-next]').addEventListener('click', nextStep);
+
+          if (ans[q.id]) {
+            var sel = stage.querySelector('[data-id="' + ans[q.id] + '"]');
+            if (sel) { sel.classList.add('is-selected'); stage.querySelector('[data-mq-next]').classList.add('is-on'); }
+          }
+        }
+
+        function pick(id) {
+          stage.querySelectorAll('.zeta-mq__opt').forEach(function (e) { e.classList.remove('is-selected'); });
+          stage.querySelector('[data-id="' + id + '"]').classList.add('is-selected');
+          ans[Qs[step].id] = id;
+          stage.querySelector('[data-mq-next]').classList.add('is-on');
+        }
+
+        function nextStep() { if (!ans[Qs[step].id]) return; step++; render(); }
+        function goBack()   { step--; render(); }
+
+        function renderResults() {
+          var recs = route(ans);
+          var cards = recs.map(function (role) {
+            var p = products[role] || {};
+            var isTop = role === recs[0] || role === 'creatine';
+            // The whole card links to the product's page: the merchant's bound product
+            // when one is set, else the fallback handle resolved server-side above.
+            return '<a class="zeta-mq__card' + (isTop ? ' is-top' : '') + '" href="' + p.url + '">' +
+              '<div class="zeta-mq__card-inner">' +
+              '<div class="zeta-mq__card-icon">' + icon(p.icon) + '</div>' +
+              '<div class="zeta-mq__card-body">' +
+              '<div class="zeta-mq__card-name-row">' +
+              '<span class="zeta-mq__card-name">' + esc(p.name) + '</span>' +
+              (isTop ? '<span class="zeta-mq__badge">Top pick</span>' : '') +
+              '</div>' +
+              '<p class="zeta-mq__card-tagline">' + esc(p.tagline) + '</p>' +
+              '<p class="zeta-mq__card-blurb">' + blurb(role, ans) + '</p>' +
+              '</div></div></a>';
+          }).join('');
+          stage.innerHTML =
+            '<p class="zeta-mq__res-label">' + esc(el.dataset.resultsLabel) + '</p>' +
+            '<h2 class="zeta-mq__res-title">' + esc(el.dataset.resultsTitle) + '</h2>' +
+            cards +
+            '<div class="zeta-mq__cta">' +
+            '<a class="zeta-mq__btn-shop" href="' + el.dataset.shopUrl + '">' + esc(el.dataset.shopText) + '</a>' +
+            '<button type="button" class="zeta-mq__btn-retake" data-mq-retake>' + esc(el.dataset.retakeText) + '</button>' +
+            '</div>';
+          stage.querySelector('[data-mq-retake]').addEventListener('click', retake);
+        }
+
+        function retake() { step = 0; ans = {}; render(); }
+
+        render();
+      }
+
+      return {
+        define: function () {
+          window.customElements.define('zeta-mirror-quiz', class extends HTMLElement {
+            connectedCallback() { init(this); }
+          });
+        }
+      };
+    }();
+
+    ZetaMirrorQuiz.define();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Zeta Mirror Quiz",
+  "tag": "section",
+  "class": "shopify-section--zeta-mq",
+  "settings": [
+    { "type": "header", "content": "Header" },
+    { "type": "text", "id": "brand_label", "label": "Brand label", "default": "ZETA BODY" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Mirror" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Find your stack in under 2 minutes." },
+    { "type": "header", "content": "Results screen" },
+    { "type": "text", "id": "results_label", "label": "Results eyebrow", "default": "Your stack" },
+    { "type": "text", "id": "results_title", "label": "Results heading", "default": "Here's what your body needs." },
+    { "type": "header", "content": "Call to action" },
+    { "type": "text", "id": "shop_button_text", "label": "Shop button label", "default": "Shop my stack" },
+    { "type": "url", "id": "shop_button_link", "label": "Shop button link", "info": "Leave blank to link to the All Products collection." },
+    { "type": "text", "id": "retake_button_text", "label": "Retake button label", "default": "Retake quiz" },
+
+    { "type": "header", "content": "Recommended products" },
+    { "type": "paragraph", "content": "One product per quiz outcome. Leave a Product picker blank and the card falls back to the matching default name, tagline and product link." },
+
+    { "type": "header", "content": "Z-83 Nootropic — Energy & focus" },
+    { "type": "product", "id": "product_energy", "label": "Product" },
+    { "type": "text", "id": "tagline_energy", "label": "Tagline override" },
+
+    { "type": "header", "content": "PRO-B MAX — Gut health" },
+    { "type": "product", "id": "product_gut", "label": "Product" },
+    { "type": "text", "id": "tagline_gut", "label": "Tagline override" },
+
+    { "type": "header", "content": "Zeta-Multi — Immunity" },
+    { "type": "product", "id": "product_immune", "label": "Product" },
+    { "type": "text", "id": "tagline_immune", "label": "Tagline override" },
+
+    { "type": "header", "content": "Fruits & Veggies — Greens & veggies" },
+    { "type": "product", "id": "product_greens", "label": "Product" },
+    { "type": "text", "id": "tagline_greens", "label": "Tagline override" },
+
+    { "type": "header", "content": "D+K 5000 — Vitamin D + K" },
+    { "type": "product", "id": "product_dk", "label": "Product" },
+    { "type": "text", "id": "tagline_dk", "label": "Tagline override" },
+
+    { "type": "header", "content": "B-Complete — B vitamins" },
+    { "type": "product", "id": "product_bcomplete", "label": "Product" },
+    { "type": "text", "id": "tagline_bcomplete", "label": "Tagline override" },
+
+    { "type": "header", "content": "Zeta-Megas 1300 — Omega-3" },
+    { "type": "product", "id": "product_megas", "label": "Product" },
+    { "type": "text", "id": "tagline_megas", "label": "Tagline override" },
+
+    { "type": "header", "content": "Longevity Complex — Longevity" },
+    { "type": "product", "id": "product_longevity", "label": "Product" },
+    { "type": "text", "id": "tagline_longevity", "label": "Tagline override" },
+
+    { "type": "header", "content": "Zeta-Minos — Build muscle" },
+    { "type": "product", "id": "product_muscle", "label": "Product" },
+    { "type": "text", "id": "tagline_muscle", "label": "Tagline override" },
+
+    { "type": "header", "content": "Creatine — Strength & recovery" },
+    { "type": "product", "id": "product_creatine", "label": "Product" },
+    { "type": "text", "id": "tagline_creatine", "label": "Tagline override" }
+  ],
+  "presets": [
+    { "name": "Zeta Mirror Quiz" }
+  ]
+}
+{% endschema %}

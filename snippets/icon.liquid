@@ -1309,4 +1309,73 @@
     <svg width="{{ width | default: 27 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 27 24" fill="none">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4142 0.585693L26.8284 11.9999L15.4142 23.4141L12.5858 20.5857L19.1716 13.9999H0V9.99991H19.1716L12.5858 3.41412L15.4142 0.585693Z" fill="currentColor"/>
     </svg>
+
+    {%- comment -%} ZETA — MIRROR QUIZ (product-finder icon set) {%- endcomment -%}
+
+  {%- when 'zeta-bolt' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <path d="M13 3 4 14h6l-1 8 9-12h-6l1-8Z" fill="currentColor" fill-opacity="{% if settings.icon_style == 'duo' %}.12{% else %}0{% endif %}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-activity' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <path d="M3 12h4l3 8 4-16 3 8h4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-infinity' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <path d="M8 15a3 3 0 1 1 0-6c1.5 0 2.5 1 4 3s2.5 3 4 3a3 3 0 1 0 0-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-droplet' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <path d="M12 3c4 4 6.5 7 6.5 10a6.5 6.5 0 0 1-13 0c0-3 2.5-6 6.5-10Z" fill="currentColor" fill-opacity="{% if settings.icon_style == 'duo' %}.12{% else %}0{% endif %}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-moon' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <path d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 1 0 20.354 15.354Z" fill="currentColor" fill-opacity="{% if settings.icon_style == 'duo' %}.12{% else %}0{% endif %}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-alert-circle' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <path d="M2 12a10 10 0 1 0 20 0 10 10 0 0 0-20 0Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 8v4.5M12 16h.01" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-alert-triangle' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" fill="currentColor" fill-opacity="{% if settings.icon_style == 'duo' %}.12{% else %}0{% endif %}" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 9v4m0 4h.01" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-run' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <circle cx="14.2" cy="4.3" r="1.8" fill="currentColor" stroke="none"/>
+      <path d="M9 12.2 11 8l4 1-1.6 4 3.1 1.6L18 19M9.3 12.5l1.9-3.9 3.9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 21.5 11 15l2 2 2 4.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-walk' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <circle cx="12" cy="4.8" r="1.8" fill="currentColor" stroke="none"/>
+      <path d="M12 8v5m0 0-3 8m3-8 3 8m-3-5-4-2m4 2 4-1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-home' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <path d="M4 11.5 12 4l8 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6 10v9a1 1 0 0 0 1 1h3v-5h4v5h3a1 1 0 0 0 1-1v-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-check' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  {%- when 'zeta-sun' -%}
+    <svg role="presentation" fill="none" focusable="false" stroke-width="{{ stroke_width | default: settings.icon_stroke_width }}" width="{{ width | default: 24 }}" height="{{ height | default: 24 }}" class="{{ class | strip }}" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" stroke="currentColor"/>
+      <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-linecap="round"/>
+    </svg>
 {%- endcase -%}
