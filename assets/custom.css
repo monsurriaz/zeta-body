@@ -1844,6 +1844,17 @@
   max-width: none;
 }
 .zeta-accordion__body .research-item .journal { font-style: italic; opacity: 0.7; }
+/* Highlighted key-study variant (Creatine research): same box, bronze border-left
+   + uppercase label instead of plain teal — matches zeta-product-page-header-footer.html. */
+.zeta-accordion__body .research-item.key-pub { border-left-color: var(--zeta-bronze); }
+.zeta-accordion__body .research-item .hl-label {
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8A7148;
+  font-weight: var(--zeta-fw-bold);
+  margin-bottom: 8px;
+}
 
 /* ── Video / ritual (.zeta-video) ── */
 .zeta-video { padding: clamp(56px, 8vw, 96px) var(--zeta-gutter); }
@@ -2538,13 +2549,15 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
    request (and our zeta-stack-add does the same on the bundle button).
    Hide the label and show a spinner while it's in flight. */
 .zeta-pdp__atc[aria-busy="true"],
-.zeta-bundle__btn[aria-busy="true"] {
+.zeta-bundle__btn[aria-busy="true"],
+.zeta-mq__btn-shop[aria-busy="true"] {
   color: transparent;
   pointer-events: none;
   position: relative;
 }
 .zeta-pdp__atc[aria-busy="true"]::after,
-.zeta-bundle__btn[aria-busy="true"]::after {
+.zeta-bundle__btn[aria-busy="true"]::after,
+.zeta-mq__btn-shop[aria-busy="true"]::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -2711,17 +2724,12 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
   line-height: 1.2;
   color: var(--zeta-ink);
 }
-/* Matches mirror-quiz.html's .mq-card exactly — no hover state there, so none here either.
-   Clickability (every card is now a real product link) is signaled by cursor only. */
+/* Matches mirror-quiz.html's .mq-card exactly — informational only, not a link. */
 .zeta-mq__card {
-  display: block;
-  cursor: pointer;
   border: 1px solid var(--zeta-border);
   border-radius: 8px;
   padding: 18px 20px;
   margin-bottom: 10px;
-  color: inherit;
-  text-decoration: none;
 }
 .zeta-mq__card.is-top { border: 2px solid var(--zeta-ink); }
 .zeta-mq__card-inner { display: flex; align-items: flex-start; gap: 14px; }
@@ -2761,14 +2769,18 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
   padding: 14px 30px;
   background: var(--zeta-ink);
   color: #fff;
+  font-family: var(--zeta-font-body);
   font-size: 14px;
   font-weight: var(--zeta-fw-semibold);
   letter-spacing: 0.02em;
-  text-decoration: none;
+  border: none;
   border-radius: 8px;
+  cursor: pointer;
   transition: background 0.15s;
 }
 .zeta-mq__btn-shop:hover { background: var(--zeta-teal-dark); }
+.zeta-mq__btn-shop:disabled { cursor: default; }
+.zeta-mq__btn-shop.is-error { background: #b3352c; }
 
 @media (max-width: 480px) {
   .zeta-mq__wrap { padding: 56px 16px 72px; }

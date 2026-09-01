@@ -73,7 +73,7 @@
             "secondary_label": "TAKE THE MIRROR QUIZ",
             "bundle_product": "",
             "bundle_quantity": 1,
-            "secondary_link": ""
+            "secondary_link": "/pages/mirror-quiz"
           }
         },
         "trust_badges": {
@@ -607,7 +607,7 @@
         "button_1_text": "Buy PRO-B",
         "button_1_link": "",
         "button_2_text": "Take the Mirror Quiz",
-        "button_2_link": ""
+        "button_2_link": "/pages/mirror-quiz"
       }
     }
   },

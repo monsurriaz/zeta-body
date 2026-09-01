@@ -5,6 +5,9 @@
   only re-keyed from hardcoded product NAMES to stable ROLE ids. Each role is a direct
   section setting (product picker + optional tagline override); its fallback name/tagline/
   icon/url — used until a merchant picks a product — come from the prototype's `P` object.
+  Result cards are informational only (not links) — "Shop my stack" adds every recommended
+  product straight to the cart in one /cart/add.js request, then sends the shopper to
+  checkout. Roles still on their fallback (no real product bound) are skipped — no variant id.
   Icons come from snippets/icon.liquid (no external icon-font CDN). Styles: custom.css (.zeta-mq).
 {%- endcomment -%}
 
@@ -30,12 +33,9 @@
 {%- capture zmq_ic_clock %}{% render 'icon', icon: 'picto-timer', width: 20, height: 20 %}{% endcapture %}
 {%- capture zmq_ic_user %}{% render 'icon', icon: 'account', width: 20, height: 20 %}{% endcapture %}
 
-{%- assign zmq_shop_url = section.settings.shop_button_link | default: routes.all_products_collection_url -%}
-
 <section class="zeta zeta-mq" {{ section.shopify_attributes }}>
   <zeta-mirror-quiz
     class="zeta-mq__app"
-    data-shop-url="{{ zmq_shop_url | escape }}"
     data-shop-text="{{ section.settings.shop_button_text | default: 'Shop my stack' | escape }}"
     data-retake-text="{{ section.settings.retake_button_text | default: 'Retake quiz' | escape }}"
     data-results-label="{{ section.settings.results_label | default: 'Your stack' | escape }}"
@@ -95,11 +95,13 @@
           {%- assign zmq_title = zmq_product.title | default: zmq_meta_name -%}
           {%- assign zmq_url = zmq_product.url | default: zmq_meta_url -%}
           {%- assign zmq_tagline = section.settings[zmq_tagline_key] | default: zmq_meta_tagline -%}
+          {%- assign zmq_variant_id = zmq_product.selected_or_first_available_variant.id -%}
           "{{ role }}": {
             "name": {{ zmq_title | json | replace: '</script', '<\/script' }},
             "url": {{ zmq_url | json | replace: '</script', '<\/script' }},
             "tagline": {{ zmq_tagline | json | replace: '</script', '<\/script' }},
-            "icon": {{ zmq_meta_icon | json }}
+            "icon": {{ zmq_meta_icon | json }},
+            "variantId": {{ zmq_variant_id | json }}
           }{% unless forloop.last %},{% endunless %}
         {%- endfor -%}
       }
@@ -314,9 +316,7 @@
           var cards = recs.map(function (role) {
             var p = products[role] || {};
             var isTop = role === recs[0] || role === 'creatine';
-            // The whole card links to the product's page: the merchant's bound product
-            // when one is set, else the fallback handle resolved server-side above.
-            return '<a class="zeta-mq__card' + (isTop ? ' is-top' : '') + '" href="' + p.url + '">' +
+            return '<div class="zeta-mq__card' + (isTop ? ' is-top' : '') + '">' +
               '<div class="zeta-mq__card-inner">' +
               '<div class="zeta-mq__card-icon">' + icon(p.icon) + '</div>' +
               '<div class="zeta-mq__card-body">' +
@@ -326,17 +326,55 @@
               '</div>' +
               '<p class="zeta-mq__card-tagline">' + esc(p.tagline) + '</p>' +
               '<p class="zeta-mq__card-blurb">' + blurb(role, ans) + '</p>' +
-              '</div></div></a>';
+              '</div></div></div>';
           }).join('');
           stage.innerHTML =
             '<p class="zeta-mq__res-label">' + esc(el.dataset.resultsLabel) + '</p>' +
             '<h2 class="zeta-mq__res-title">' + esc(el.dataset.resultsTitle) + '</h2>' +
             cards +
             '<div class="zeta-mq__cta">' +
-            '<a class="zeta-mq__btn-shop" href="' + el.dataset.shopUrl + '">' + esc(el.dataset.shopText) + '</a>' +
+            '<button type="button" class="zeta-mq__btn-shop" data-mq-shop>' + esc(el.dataset.shopText) + '</button>' +
             '<button type="button" class="zeta-mq__btn-retake" data-mq-retake>' + esc(el.dataset.retakeText) + '</button>' +
             '</div>';
           stage.querySelector('[data-mq-retake]').addEventListener('click', retake);
+          var shopBtn = stage.querySelector('[data-mq-shop]');
+          var shopLabel = shopBtn.textContent;
+          shopBtn.addEventListener('click', function () { shopStack(recs, shopBtn, shopLabel); });
+        }
+
+        // Adds every recommended product (top pick or not) to the cart in one request,
+        // then sends the shopper straight to checkout. Roles still on their fallback
+        // placeholder (no real product bound yet) have no variant id and are skipped.
+        async function shopStack(recs, btn, label) {
+          var items = recs
+            .map(function (role) { return (products[role] || {}).variantId; })
+            .filter(Boolean)
+            .map(function (id) { return { id: id, quantity: 1 }; });
+
+          var root = (window.Shopify && Shopify.routes && Shopify.routes.root) || '/';
+
+          if (!items.length) { window.location.href = root + 'checkout'; return; }
+
+          btn.setAttribute('aria-busy', 'true');
+          btn.disabled = true;
+          try {
+            var response = await fetch(root + 'cart/add.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+              body: JSON.stringify({ items: items })
+            });
+            if (!response.ok) throw new Error('cart add failed');
+            window.location.href = root + 'checkout';
+          } catch (err) {
+            btn.removeAttribute('aria-busy');
+            btn.disabled = false;
+            btn.classList.add('is-error');
+            btn.textContent = "Couldn't add — try again";
+            setTimeout(function () {
+              btn.classList.remove('is-error');
+              btn.textContent = label;
+            }, 2500);
+          }
         }
 
         function retake() { step = 0; ans = {}; render(); }
@@ -371,8 +409,7 @@
     { "type": "text", "id": "results_label", "label": "Results eyebrow", "default": "Your stack" },
     { "type": "text", "id": "results_title", "label": "Results heading", "default": "Here's what your body needs." },
     { "type": "header", "content": "Call to action" },
-    { "type": "text", "id": "shop_button_text", "label": "Shop button label", "default": "Shop my stack" },
-    { "type": "url", "id": "shop_button_link", "label": "Shop button link", "info": "Leave blank to link to the All Products collection." },
+    { "type": "text", "id": "shop_button_text", "label": "Shop button label", "default": "Shop my stack", "info": "Adds every recommended product to the cart and goes to checkout." },
     { "type": "text", "id": "retake_button_text", "label": "Retake button label", "default": "Retake quiz" },
 
     { "type": "header", "content": "Recommended products" },

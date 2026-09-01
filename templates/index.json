@@ -270,7 +270,7 @@
         "button_1_text": "Build Your Stack →",
         "button_1_link": "",
         "button_2_text": "Take the Mirror Quiz →",
-        "button_2_link": ""
+        "button_2_link": "/pages/mirror-quiz"
       }
     },
     "hwy": {
@@ -383,7 +383,7 @@
         "button_1_text": "Shop the Full Lineup",
         "button_1_link": "",
         "button_2_text": "Take the Mirror Quiz →",
-        "button_2_link": ""
+        "button_2_link": "/pages/mirror-quiz"
       }
     },
     "founder": {

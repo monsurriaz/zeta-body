@@ -586,7 +586,7 @@
         "button_1_text": "BUY ZETA MEGAS",
         "button_1_link": "",
         "button_2_text": "TAKE THE MIRROR QUIZ",
-        "button_2_link": ""
+        "button_2_link": "/pages/mirror-quiz"
       }
     }
   },

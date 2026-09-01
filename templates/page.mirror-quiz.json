@@ -25,10 +25,32 @@
         "results_label": "Your stack",
         "results_title": "Here's what your body needs.",
         "shop_button_text": "Shop my stack",
-        "shop_button_link": "",
-        "retake_button_text": "Retake quiz"
+        "retake_button_text": "Retake quiz",
+        "product_energy": "z-83",
+        "tagline_energy": "",
+        "product_gut": "pro-b-max",
+        "tagline_gut": "",
+        "product_immune": "zeta-multi",
+        "tagline_immune": "",
+        "product_greens": "fruits-veggies-powder",
+        "tagline_greens": "",
+        "product_dk": "d-k-5000",
+        "tagline_dk": "",
+        "product_bcomplete": "b-complete",
+        "tagline_bcomplete": "",
+        "product_megas": "zeta-mega",
+        "tagline_megas": "",
+        "product_longevity": "longevity-complex",
+        "tagline_longevity": "",
+        "product_muscle": "zeta-minos",
+        "tagline_muscle": "",
+        "product_creatine": "zeta-creatine",
+        "tagline_creatine": ""
       }
     }
   },
-  "order": ["main", "quiz"]
+  "order": [
+    "main",
+    "quiz"
+  ]
 }
