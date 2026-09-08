@@ -1,0 +1,70 @@
+{%- comment -%}
+  ZETA — Dig Deeper accordion (.accordion-section): centered header + expandable items.
+  Uses native <details name> for exclusive single-open behaviour (no JS). Items are blocks.
+  Styles: custom.css (.zeta-accordion).
+{%- endcomment -%}
+
+<section class="zeta zeta-accordion" {{ section.shopify_attributes }}>
+  <div class="zeta-accordion__header">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="zeta-section-eyebrow zeta-section-eyebrow--bronze zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <div class="zeta-accordion__heading">{{ section.settings.heading }}</div>
+    {%- endif -%}
+    {%- if section.settings.subtitle != blank -%}
+      <p class="zeta-accordion__subtitle">{{ section.settings.subtitle | escape }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="zeta-accordion__items">
+      {%- for block in section.blocks -%}
+        <details class="zeta-accordion__item" name="zeta-accordion-{{ section.id }}" {% if block.settings.open_by_default %}open{% endif %} {{ block.shopify_attributes }}>
+          <summary class="zeta-accordion__trigger">
+            <span class="zeta-accordion__trigger-label">{{ block.settings.label | escape }}</span>
+            <span class="zeta-accordion__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="zeta-accordion__body">{{ block.settings.content }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Dig Deeper",
+  "tag": "section",
+  "class": "shopify-section--zeta-accordion",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "For the curious" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Dig <em>deeper.</em>" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "The creatine science, full ingredients, dosing notes, and the research behind the formula." }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Description" },
+        { "type": "html", "id": "content", "label": "Content", "info": "Supports rich markup: headings (h3/h4), lists, and helper blocks — .acc-highlight (bronze callout), .acc-warn (amber warning), .ref (reference row), .research-list > .research-item (boxed, teal-bordered citation card; add .key-pub + a nested .hl-label div for a bronze-highlighted key study, or wrap the journal name in a nested span.journal for the dimmed italic treatment).", "default": "<p>Creatine is the most studied performance supplement in history — over 700 clinical trials. Decades of consistent results.</p>" },
+        { "type": "checkbox", "id": "open_by_default", "label": "Open by default", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Dig Deeper",
+      "blocks": [
+        { "type": "item", "settings": { "label": "Description", "open_by_default": true, "content": "<p>Creatine is the most studied performance supplement in history — and one of the few where the science actually backs the marketing. Over 700 clinical trials.</p><p>ZETA Creatine uses pure creatine monohydrate — the gold-standard form — at the research-validated 5g daily dose. NSF Certified for Sport.*</p>" } },
+        { "type": "item", "settings": { "label": "Ingredients", "content": "<p><strong>Creatine Monohydrate — 5g per serving.</strong></p><p>Pure creatine monohydrate. No fillers, no flavors, no excipients.</p>" } },
+        { "type": "item", "settings": { "label": "Directions & Precautions", "content": "<p>Dissolve 1 scoop (about 5g) in 8 oz of water or any beverage. Consume once daily — any time of day. No loading phase required.</p><p>Consult your healthcare professional prior to use. Keep out of reach of children.</p>" } },
+        { "type": "item", "settings": { "label": "Research", "content": "<p>Kreider RB et al. (2017) — ISSN position stand on creatine safety and efficacy. Prokopidis K et al. (2023) — creatine and memory meta-analysis. Xu C et al. (2024) — creatine and cognitive performance.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

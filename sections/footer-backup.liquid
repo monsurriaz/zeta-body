@@ -14,7 +14,7 @@
   </style>
 {%- endif -%}
 
-<div class="footer {% if section.settings.new_footer_design %}new-footer-design{% endif %}">
+<div class="footer">
   <div class="container">
     <div class="footer__wrapper">
       {%- comment -%}
@@ -30,42 +30,6 @@
               {%- when '@app' -%}
                 <div class="footer__block footer__block--app">
                   {%- render block -%}
-                </div>
-
-              {%- when 'brand' -%}
-                <div class="footer__block footer__block--brand" {{ block.shopify_attributes }}>
-                  {%- if block.settings.logo != blank -%}
-                    <a href="{{ routes.root_url }}" class="footer__brand-logo-link">
-                      {{-
-                        block.settings.logo
-                        | image_url: width: block.settings.logo.width
-                        | image_tag:
-                          widths: '120,160,200,240,320,400',
-                          sizes: '200px',
-                          alt: block.settings.logo.alt | default: shop.name,
-                          class: 'footer__brand-logo-image',
-                          style: 'width:' | append: block.settings.logo_width | append: 'px'
-                      -}}
-                    </a>
-                  {%- elsif block.settings.logo_text != blank -%}
-                    <a href="{{ routes.root_url }}" class="footer__brand-logo-text">{{ block.settings.logo_text | escape }}</a>
-                  {%- endif -%}
-
-                  {%- if block.settings.tagline != blank -%}
-                    <p class="footer__brand-tagline">{{ block.settings.tagline }}</p>
-                  {%- endif -%}
-
-                  {%- if block.settings.trinity != blank -%}
-                    <div class="footer__brand-trinity">
-                      {%- assign trinity_lines = block.settings.trinity | strip | newline_to_br | split: '<br />' -%}
-                      {%- for line in trinity_lines -%}
-                        {%- assign line_clean = line | strip -%}
-                        {%- if line_clean != blank -%}
-                          <span class="footer__trinity-line">{{ line_clean | escape }}</span>
-                        {%- endif -%}
-                      {%- endfor -%}
-                    </div>
-                  {%- endif -%}
                 </div>
 
               {%- when 'text' -%}
@@ -96,10 +60,6 @@
                       <p class="bold">{{ block.settings.menu_title | default: block.settings.menu.title }}</p>
                     {%- endif -%}
 
-                    {%- if block.settings.description != blank -%}
-                      <div class="footer__block-description prose">{{ block.settings.description }}</div>
-                    {%- endif -%}
-
                     <ul class="v-stack gap-3" role="list">
                       {%- for link in block.settings.menu.links -%}
                         <li>
@@ -109,54 +69,6 @@
                     </ul>
                   </div>
                 {%- endif -%}
-
-              {%- when 'social' -%}
-                <div class="footer__block footer__block--menu footer__block--social" {{ block.shopify_attributes }}>
-                  {%- if block.settings.title != blank -%}
-                    <p class="bold">{{ block.settings.title | escape }}</p>
-                  {%- endif -%}
-
-                  {%- if block.settings.description != blank -%}
-                    <div class="footer__block-description prose">{{ block.settings.description }}</div>
-                  {%- endif -%}
-
-                  {%- liquid
-                    assign social_links = ''
-                    if block.settings.newsletter_url != blank
-                      assign social_links = social_links | append: block.settings.newsletter_url | append: '||Newsletter,,'
-                    endif
-                    if block.settings.instagram_url != blank
-                      assign social_links = social_links | append: block.settings.instagram_url | append: '||Instagram,,'
-                    endif
-                    if block.settings.tiktok_url != blank
-                      assign social_links = social_links | append: block.settings.tiktok_url | append: '||TikTok,,'
-                    endif
-                    if block.settings.youtube_url != blank
-                      assign social_links = social_links | append: block.settings.youtube_url | append: '||YouTube,,'
-                    endif
-                    if block.settings.facebook_url != blank
-                      assign social_links = social_links | append: block.settings.facebook_url | append: '||Facebook,,'
-                    endif
-                    if block.settings.twitter_url != blank
-                      assign social_links = social_links | append: block.settings.twitter_url | append: '||X,,'
-                    endif
-                    if block.settings.custom_label != blank and block.settings.custom_url != blank
-                      assign social_links = social_links | append: block.settings.custom_url | append: '||' | append: block.settings.custom_label | append: ',,'
-                    endif
-                  -%}
-
-                  {%- if social_links != blank -%}
-                    <ul class="v-stack gap-3" role="list">
-                      {%- assign social_items = social_links | split: ',,' -%}
-                      {%- for item in social_items -%}
-                        {%- assign parts = item | split: '||' -%}
-                        <li>
-                          <a href="{{ parts[0] }}" class="inline-block link-faded break-all">{{ parts[1] }}</a>
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  {%- endif -%}
-                </div>
 
               {%- when 'newsletter' -%}
                 <div class="footer__block footer__block--newsletter" {{ block.shopify_attributes }}>
@@ -271,13 +183,9 @@
           {%- endif -%}
 
           <div class="footer__copyright v-stack gap-1">
-            {%- if section.settings.bottom_text != blank -%}
-              <div class="footer__bottom-text prose">{{ section.settings.bottom_text }}</div>
-            {%- else -%}
-              <p class="text-sm text-subdued">
-                © {{ 'now' | date: '%Y' }}, {{ shop.name }}. {% if section.settings.show_powered_by_shopify %}{{ powered_by_link }}{%- endif %}
-              </p>
-            {%- endif -%}
+            <p class="text-sm text-subdued">
+              © {{ 'now' | date: '%Y' }}, {{ shop.name }}. {% if section.settings.show_powered_by_shopify %}{{ powered_by_link }}{%- endif %}
+            </p>
 
             {%- if section.settings.show_policy_links and shop.policies.size > 0 -%}
               <ul class="footer__policy-links unstyled-list">
@@ -304,35 +212,22 @@
   "settings": [
     {
       "type": "checkbox",
-      "id": "new_footer_design",
-      "label": "Enable new footer design",
-      "default": true
-    },
-    {
-      "type": "richtext",
-      "id": "bottom_text",
-      "label": "Bottom bar text",
-      "info": "Copyright + legal/FDA disclaimer shown in the bottom bar.",
-      "default": "<p>© 2026 ZETA · zetabody.com</p><p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.</p>"
-    },
-    {
-      "type": "checkbox",
       "id": "show_social_media",
       "label": "Show social media",
       "info": "To configure social media, go to your social media settings.",
-      "default": false
+      "default": true
     },
     {
       "type": "checkbox",
       "id": "show_payment_icons",
       "label": "Show payment icons",
-      "default": false
+      "default": true
     },
     {
       "type": "checkbox",
       "id": "show_powered_by_shopify",
       "label": "Show \"Powered by Shopify\"",
-      "default": false
+      "default": true
     },
     {
       "type": "checkbox",
@@ -349,7 +244,7 @@
       "type": "checkbox",
       "id": "show_country_selector",
       "label": "Show country/region selector",
-      "default": false
+      "default": true
     },
     {
       "type": "checkbox",
@@ -374,59 +269,12 @@
       "type": "checkbox",
       "id": "show_locale_selector",
       "label": "Show language selector",
-      "default": false
+      "default": true
     }
   ],
   "blocks": [
     {
       "type": "@app"
-    },
-    {
-      "type": "brand",
-      "name": "Brand",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "paragraph",
-          "content": "The identity column: logo (image or text), tagline and the Health/Wealth/Youth lines."
-        },
-        {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Logo image",
-          "info": "Optional. If set, replaces the logo text below."
-        },
-        {
-          "type": "range",
-          "id": "logo_width",
-          "min": 80,
-          "max": 260,
-          "step": 5,
-          "unit": "px",
-          "label": "Logo image width",
-          "default": 160
-        },
-        {
-          "type": "text",
-          "id": "logo_text",
-          "label": "Logo text",
-          "info": "Used when no logo image is set.",
-          "default": "Z E T A"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "tagline",
-          "label": "Tagline",
-          "default": "Manage your ecosystem. Everyday."
-        },
-        {
-          "type": "textarea",
-          "id": "trinity",
-          "label": "Trinity lines",
-          "info": "One line each — rendered in bronze.",
-          "default": "Health.\nWealth.\nYouth."
-        }
-      ]
     },
     {
       "type": "text",
@@ -475,79 +323,6 @@
           "id": "menu_title",
           "label": "Menu title",
           "info": "Replaces the default menu title"
-        },
-        {
-          "type": "richtext",
-          "id": "description",
-          "label": "Description",
-          "info": "Optional intro text shown above the links (e.g. the Inner Circle column)."
-        }
-      ]
-    },
-    {
-      "type": "social",
-      "name": "Social",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading",
-          "default": "Join the Inner Circle"
-        },
-        {
-          "type": "richtext",
-          "id": "description",
-          "label": "Description",
-          "default": "<p>1–2 emails a month. First-bottle stories, founder notes.</p><p>Sign up &amp; get 10% off your first bottle.</p>"
-        },
-        {
-          "type": "header",
-          "content": "Social links",
-          "info": "Only links with a URL are shown."
-        },
-        {
-          "type": "url",
-          "id": "newsletter_url",
-          "label": "Newsletter"
-        },
-        {
-          "type": "url",
-          "id": "instagram_url",
-          "label": "Instagram"
-        },
-        {
-          "type": "url",
-          "id": "tiktok_url",
-          "label": "TikTok"
-        },
-        {
-          "type": "url",
-          "id": "youtube_url",
-          "label": "YouTube"
-        },
-        {
-          "type": "url",
-          "id": "facebook_url",
-          "label": "Facebook"
-        },
-        {
-          "type": "url",
-          "id": "twitter_url",
-          "label": "X (Twitter)"
-        },
-        {
-          "type": "header",
-          "content": "Custom link"
-        },
-        {
-          "type": "text",
-          "id": "custom_label",
-          "label": "Custom label"
-        },
-        {
-          "type": "url",
-          "id": "custom_url",
-          "label": "Custom URL"
         }
       ]
     },

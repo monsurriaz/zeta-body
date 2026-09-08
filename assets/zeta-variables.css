@@ -1,0 +1,92 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   ZETA BODY — DESIGN TOKENS (single source of truth)
+   ---------------------------------------------------------------------------
+   Canonical V3 tokens from the client handoff (Zeta-design-token.html).
+   Change a value HERE and it propagates everywhere the theme references it.
+   Loaded globally (theme.liquid) BEFORE custom.css, so both Impact sections
+   (header, announcement bar) and our own `.zeta` sections can use them.
+   All names are `--zeta-*` prefixed so they never collide with Impact tokens.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ──────────────────────────────────────────────────────────────────────────
+   SELF-HOSTED FONTS (@font-face) — served from Shopify Files (CDN)
+   ---------------------------------------------------------------------------
+   Heading — Cormorant Garamond: 400 (Regular), 500 (Medium), 600 (SemiBold),
+             italic (MediumItalic).  Body — Inter: 400, 500, 600, 700.
+   Note: only Medium Italic was supplied for Cormorant, so the 400-italic face
+   reuses it (renders slightly heavier). Add a Regular-Italic woff2 and update
+   that one src if a true 400 italic is needed.
+   ────────────────────────────────────────────────────────────────────────── */
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/CormorantGaramond-Regular.woff2?v=1784548550') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/CormorantGaramond-Medium.woff2?v=1784548549') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/CormorantGaramond-SemiBold.woff2?v=1784548549') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/CormorantGaramond-MediumItalic.woff2?v=1784548550') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 500; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/CormorantGaramond-MediumItalic.woff2?v=1784548550') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/Inter_18pt-Regular.woff2?v=1784548549') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/Inter_18pt-Medium.woff2?v=1784548549') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/Inter_18pt-SemiBold.woff2?v=1784548549') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('https://cdn.shopify.com/s/files/1/0011/6211/7186/files/Inter_18pt-Bold.woff2?v=1784548549') format('woff2'); }
+
+:root {
+  /* ── Color (canonical — never approximate) ── */
+  --zeta-bg:            #F4F4F5;
+  --zeta-surface:       #FFFFFF;
+  --zeta-ink:           #0A1320;
+  --zeta-teal:          #006E73;
+  --zeta-teal-dark:     #004A4E;
+  --zeta-bronze:        #B89968;
+  --zeta-sand:          #EFE9DC;
+  --zeta-sand-dark:     #8B7355;
+  --zeta-mid:           #6B7280;
+  --zeta-border:        #E2E0DC;
+  --zeta-dark-bg:       #0A1320;
+  --zeta-dark-surface:  #111B2A;
+  --zeta-footer-bg:     #060E18; /* footer-specific deep navy (client footer) */
+
+  /* ── Font families (role-based) ── */
+  --zeta-font-heading: 'Cormorant Garamond', Georgia, serif;
+  --zeta-font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ── Font weights ── */
+  --zeta-fw-light:     300;
+  --zeta-fw-regular:   400;
+  --zeta-fw-medium:    500;
+  --zeta-fw-semibold:  600;
+  --zeta-fw-bold:      700;
+  --zeta-fw-extrabold: 800;
+
+  /* ── Letter spacing (recurring tracking values) ── */
+  --zeta-tracking-tight:   -0.018em; /* display headings */
+  --zeta-tracking-label:    0.14em;  /* buttons, announcement, nav actions */
+  --zeta-tracking-sub:      0.15em;  /* product banner sub */
+  --zeta-tracking-eyebrow:  0.22em;  /* eyebrows */
+  --zeta-tracking-wide:     0.24em;
+
+  /* ── Layout ── */
+  --zeta-gutter: max(24px, calc((100vw - 1280px) / 2 + 80px));
+  --zeta-accordion-icon-size: 24px; /* accordion +/- icon box (d-k) */
+
+  /* ── Central title sizes (fallbacks; overridden by theme settings in theme.liquid) ── */
+  --zeta-title-lg: 68px;
+  --zeta-title-md: 50px;
+  --zeta-title-sm: 40px;
+  --zeta-title-lg-m: 44px; /* mobile */
+  --zeta-title-md-m: 34px;
+  --zeta-title-sm-m: 28px;
+
+  /* ── Central eyebrow sizes (fallbacks; overridden by theme settings) ── */
+  --zeta-eyebrow-md: 18px;
+  --zeta-eyebrow-sm: 15px; /* = the fixed .zeta-section-eyebrow size */
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   GLOBAL FONT ALIGNMENT
+   Impact builds --heading-font-family / --text-font-family from theme settings
+   in `css-variables` (rendered earlier in <head>). This file loads AFTER it, so
+   these :root overrides win the cascade and align the ENTIRE theme (nav, headings,
+   body, buttons) to the client's Cormorant Garamond + Inter system.
+   ────────────────────────────────────────────────────────────────────────── */
+:root {
+  --heading-font-family: var(--zeta-font-heading);
+  --text-font-family: var(--zeta-font-body);
+}

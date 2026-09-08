@@ -1,0 +1,950 @@
+<!-- Zeta Product Page, Header and Footer. The main structure for the product page. The main structure for the Header, footer. -->
+
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Zeta Creatine Page",
+  "schemaVersion": 1,
+  "description": "ZETA CREATINE product page — locked V3 template matching LONGEVITY and FV siblings. Widescreen padding fix applied (max calc). Full layout: hero, pull quote, What Changes timeline, Creapure + NSF ingredient tiles, supplement facts + how to take, formulated with NOs, reviews, Dig Deeper accordion, Workout Stack bundle, close CTA, footer."
+}
+</script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZETA Creatine — Strength. Brain. Everyday.</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+      :root {
+        color-scheme: light;
+        --bg: #F4F4F5;
+        --surface: #FFFFFF;
+        --ink: #0A1320;
+        --teal: #006E73;
+        --bronze: #B89968;
+        --sand: #EFE9DC;
+        --mid: #6B7280;
+        --border: #E2E0DC;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      /* ─── ANNOUNCEMENT BAR ─── */
+      .announce {
+        background: var(--teal);
+        color: #fff;
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      /* ─── NAV ─── */
+      nav {
+        background: var(--surface);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 48px;
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .nav-logo {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        color: var(--ink);
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      .nav-links { display: flex; gap: 32px; list-style: none; }
+      .nav-links a {
+        font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+        font-weight: 500; color: var(--ink); text-decoration: none; opacity: 0.75; transition: opacity 0.2s;
+      }
+      .nav-links a:hover { opacity: 1; }
+      .nav-actions { display: flex; gap: 20px; align-items: center; }
+      .nav-actions a {
+        font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+        font-weight: 500; color: var(--ink); text-decoration: none; opacity: 0.7;
+      }
+      .nav-cart {
+        background: var(--ink); color: #fff !important; opacity: 1 !important;
+        padding: 8px 18px; font-size: 11px !important; letter-spacing: 0.1em;
+        text-transform: uppercase; font-weight: 500; text-decoration: none; transition: background 0.2s;
+      }
+      .nav-cart:hover { background: var(--teal) !important; }
+
+      /* ─── HERO ─── */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 88vh;
+        background: var(--surface);
+      }
+      .hero-image {
+        background: #121f2e;
+        display: flex; align-items: center; justify-content: center;
+        position: relative; overflow: hidden;
+      }
+      .hero-image-placeholder {
+        width: 100%; height: 100%;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 14px; color: rgba(255,255,255,0.25);
+      }
+      .hero-image-label {
+        font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.5;
+      }
+      .product-badge {
+        position: absolute; top: 32px; right: 32px;
+        background: rgba(184,153,104,0.15); color: var(--bronze);
+        border: 1px solid rgba(184,153,104,0.35);
+        padding: 8px 14px; font-size: 10px; letter-spacing: 0.12em;
+        text-transform: uppercase; font-weight: 600;
+      }
+      .hero-content {
+        padding: 72px 64px;
+        display: flex; flex-direction: column; justify-content: center; gap: 20px;
+      }
+      .eyebrow {
+        font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+        font-weight: 600; color: var(--teal);
+      }
+      .product-banner { display: flex; flex-direction: column; gap: 12px; }
+      .product-banner-name {
+        font-size: 22px; letter-spacing: 0.22em; text-transform: uppercase;
+        font-weight: 700; color: var(--teal); line-height: 1;
+      }
+      .product-banner-sub {
+        font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+        font-weight: 500; color: var(--mid); line-height: 1;
+      }
+      .hero-h1 {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: clamp(52px, 5.5vw, 76px);
+        font-weight: 500; line-height: 1.02; color: var(--ink);
+      }
+      .hero-h1 em { font-style: italic; color: var(--teal); }
+      .hero-lede {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 20px; font-style: italic; font-weight: 400;
+        line-height: 1.5; color: var(--ink); opacity: 0.85; max-width: 440px;
+      }
+      .stars { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--bronze); }
+      .stars span { color: var(--ink); opacity: 0.6; font-size: 12px; }
+
+      /* Buy box */
+      .buy-box {
+        background: var(--bg); border: 1px solid var(--border);
+        padding: 24px; display: flex; flex-direction: column; gap: 16px; max-width: 420px;
+      }
+      .buy-options { display: flex; flex-direction: column; gap: 10px; }
+      .buy-option {
+        display: flex; align-items: center; gap: 14px;
+        border: 1.5px solid var(--border); border-radius: 8px; padding: 14px 16px;
+        cursor: pointer; background: var(--surface); transition: border-color 0.2s;
+      }
+      .buy-option.active { border-color: var(--teal); }
+      .buy-radio {
+        width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--border);
+        flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+        transition: border-color 0.2s;
+      }
+      .buy-option.active .buy-radio { border-color: var(--teal); }
+      .buy-radio-dot {
+        width: 10px; height: 10px; border-radius: 50%; background: var(--teal);
+        opacity: 0; transition: opacity 0.2s;
+      }
+      .buy-option.active .buy-radio-dot { opacity: 1; }
+      .buy-option-text { flex: 1; min-width: 0; }
+      .buy-option-label { font-size: 14px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+      .buy-option-badge {
+        font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+        background: var(--sand); color: #7A6340; padding: 3px 8px; border-radius: 4px;
+      }
+      .buy-option-sub { font-size: 12px; color: var(--mid); margin-top: 3px; white-space: nowrap; }
+      .buy-option-price { font-size: 15px; font-weight: 700; color: var(--ink); white-space: nowrap; text-align: right; flex-shrink: 0; }
+      .buy-option-price s { font-weight: 400; color: var(--mid); font-size: 13px; margin-right: 4px; }
+
+      .btn-primary {
+        display: block; width: 100%; background: var(--ink); color: #fff;
+        text-align: center; padding: 16px 24px; font-size: 12px; letter-spacing: 0.14em;
+        text-transform: uppercase; font-weight: 600; border: none; cursor: pointer;
+        transition: background 0.2s; font-family: 'Inter', sans-serif;
+      }
+      .btn-primary:hover { background: var(--teal); }
+      .btn-secondary {
+        display: block; width: 100%; background: transparent; color: var(--ink);
+        text-align: center; padding: 14px 24px; font-size: 12px; letter-spacing: 0.12em;
+        text-transform: uppercase; font-weight: 500; border: 1.5px solid var(--border);
+        cursor: pointer; transition: border-color 0.2s; font-family: 'Inter', sans-serif;
+      }
+      .btn-secondary:hover { border-color: var(--ink); }
+
+      .trust-badges { display: flex; gap: 16px; flex-wrap: wrap; }
+      .trust-badge {
+        font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+        font-weight: 500; color: var(--mid); display: flex; align-items: center; gap: 5px;
+      }
+      .trust-badge::before { content: '✓'; color: var(--teal); font-size: 11px; }
+
+      /* ─── QUOTE BAND ─── */
+      .quote-band {
+        background: var(--ink);
+        padding: 64px max(80px, calc((100vw - 1280px) / 2 + 80px));
+        text-align: center;
+      }
+      .quote-band blockquote {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: clamp(22px, 2.8vw, 32px); font-style: italic; font-weight: 400;
+        color: #fff; line-height: 1.5; max-width: 820px; margin: 0 auto 20px;
+      }
+      .quote-band blockquote em { font-style: normal; color: var(--bronze); }
+      .quote-attr {
+        font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+        color: var(--bronze); font-weight: 500;
+      }
+
+      /* ─── SECTIONS — widescreen fix ─── */
+      section {
+        padding: 80px max(80px, calc((100vw - 1280px) / 2 + 80px));
+      }
+      .section-eyebrow {
+        font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
+        font-weight: 600; color: var(--teal); margin-bottom: 12px;
+      }
+      .section-h2 {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: clamp(36px, 3.5vw, 52px); font-weight: 500;
+        line-height: 1.1; color: var(--ink); margin-bottom: 48px;
+      }
+      .section-h2 em { font-style: italic; color: var(--teal); }
+
+      /* ─── TIMELINE ─── */
+      .timeline { background: var(--surface); }
+      .timeline-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+      .timeline-panel { padding: 40px 36px; border-right: 1px solid var(--border); }
+      .timeline-panel:last-child { border-right: none; }
+      .timeline-label {
+        font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+        font-weight: 700; color: var(--bronze); margin-bottom: 12px;
+      }
+      .timeline-title {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 24px; font-style: italic; font-weight: 500;
+        color: var(--teal); margin-bottom: 10px; line-height: 1.2;
+      }
+      .timeline-body { font-size: 14px; color: var(--ink); opacity: 0.75; line-height: 1.6; }
+
+      /* ─── INGREDIENTS ─── */
+      .ingredients { background: var(--bg); }
+      .ingredients-header { margin-bottom: 48px; }
+      .ingredients-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .ingredient-tile { background: var(--surface); padding: 36px 32px; border: 1px solid var(--border); }
+      .ingredient-tag {
+        display: inline-block; background: var(--bronze); color: #fff;
+        font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+        font-weight: 700; padding: 4px 10px; margin-bottom: 16px;
+      }
+      .ingredient-name {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 28px; font-weight: 500; color: var(--ink); margin-bottom: 6px; line-height: 1.2;
+      }
+      .ingredient-source { font-size: 11px; color: var(--mid); letter-spacing: 0.06em; margin-bottom: 14px; font-style: italic; }
+      .ingredient-body { font-size: 14px; color: var(--ink); opacity: 0.75; line-height: 1.65; }
+
+      /* ─── SUPPLEMENT FACTS ─── */
+      .supp-facts-section {
+        background: var(--surface);
+        padding: 80px max(80px, calc((100vw - 1280px) / 2 + 80px));
+      }
+      .supp-facts-grid { display: flex; flex-direction: column; gap: 28px; }
+      .supp-facts-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+      .facts-panel { border: 2px solid var(--ink); font-family: 'Inter', sans-serif; }
+      .facts-header { padding: 12px 16px 8px; border-bottom: 8px solid var(--ink); }
+      .facts-title { font-size: 26px; font-weight: 700; line-height: 1; color: var(--ink); }
+      .facts-serving { font-size: 11px; color: var(--ink); margin-top: 4px; }
+      .facts-body { padding: 8px 16px; }
+      .facts-row {
+        display: grid; grid-template-columns: 1fr auto; align-items: start;
+        gap: 12px; border-bottom: 1px solid #ddd; padding: 8px 0; font-size: 13px;
+      }
+      .facts-row:last-child { border-bottom: none; }
+      .facts-row.main { font-weight: 700; font-size: 15px; border-bottom: 4px solid var(--ink); padding: 12px 0; }
+      .facts-note { font-size: 10px; color: var(--mid); padding: 8px 16px 12px; border-top: 1px solid #ddd; line-height: 1.5; }
+
+      .how-to { background: var(--bg); padding: 28px; border: 1px solid var(--border); }
+      .how-to-label {
+        font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+        font-weight: 700; color: var(--teal); margin-bottom: 16px;
+      }
+      .how-to ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+      .how-to li { font-size: 14px; color: var(--ink); line-height: 1.5; display: flex; gap: 10px; }
+      .how-to li::before { content: '→'; color: var(--teal); flex-shrink: 0; font-size: 13px; margin-top: 1px; }
+      .how-to li strong { font-weight: 600; }
+
+      .exclude-panel { background: var(--bg); border: 1px solid var(--border); padding: 32px; }
+      .exclude-heading {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 6px; line-height: 1.2;
+      }
+      .exclude-sub { font-size: 12px; color: var(--mid); margin-bottom: 20px; font-style: italic; }
+      .no-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+      .no-item { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: var(--ink); }
+      .no-item::before {
+        content: '✕'; color: var(--ink); font-size: 10px; font-weight: 700;
+        background: #E8E6E0; width: 20px; height: 20px;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0; border-radius: 50%;
+      }
+
+      /* ─── REVIEWS ─── */
+      .reviews { background: var(--bg); }
+      .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .review-card { background: var(--surface); padding: 32px 28px; border: 1px solid var(--border); }
+      .review-stars { color: var(--bronze); font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+      .review-body {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 18px; font-style: italic; font-weight: 400;
+        color: var(--ink); line-height: 1.5; margin-bottom: 16px;
+      }
+      .review-attr { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: var(--mid); }
+
+      /* ─── ACCORDION ─── */
+      .accordion-section { background: var(--surface); border-top: 1px solid var(--border); }
+      .accordion-header-block {
+        padding: 80px max(80px, calc((100vw - 1280px) / 2 + 80px)) 40px;
+        text-align: center;
+      }
+      .accordion-heading {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: clamp(44px, 4.5vw, 64px); font-weight: 500; color: var(--ink);
+        margin-bottom: 20px;
+      }
+      .accordion-heading em { font-style: italic; color: var(--teal); }
+      .accordion-subtitle {
+        font-size: 17px; color: var(--mid); line-height: 1.6;
+        max-width: 560px; margin: 0 auto;
+      }
+      .accordion-items { border-top: 1px solid var(--border); }
+      .accordion-item { border-bottom: 1px solid var(--border); }
+      .accordion-trigger {
+        width: 100%; background: none; border: none; cursor: pointer;
+        padding: 24px max(80px, calc((100vw - 1280px) / 2 + 80px));
+        display: flex; justify-content: space-between; align-items: center;
+        text-align: left; font-family: 'Inter', sans-serif; transition: background 0.15s;
+      }
+      .accordion-trigger:hover { background: var(--bg); }
+      .accordion-trigger-label {
+        font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+        font-weight: 600; color: var(--teal);
+      }
+      .accordion-icon {
+        font-size: 22px; color: var(--teal); font-weight: 300;
+        line-height: 1; transition: transform 0.2s; flex-shrink: 0;
+      }
+      .accordion-trigger[aria-expanded="true"] .accordion-icon { transform: rotate(45deg); }
+      .accordion-body {
+        display: none;
+        padding: 0 max(80px, calc((100vw - 1280px) / 2 + 80px)) 36px;
+      }
+      .accordion-body.open { display: block; }
+      .accordion-body p {
+        font-size: 15px; color: var(--ink); opacity: 0.8;
+        line-height: 1.7; max-width: 720px; margin-bottom: 14px;
+      }
+      .accordion-body ul {
+        list-style: none; display: flex; flex-direction: column;
+        gap: 10px; margin: 0 0 14px; max-width: 720px;
+      }
+      .accordion-body ul li {
+        font-size: 15px; color: var(--ink); opacity: 0.8;
+        line-height: 1.65; padding-left: 18px; position: relative;
+      }
+      .accordion-body ul li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
+      .research-list { display: flex; flex-direction: column; gap: 12px; max-width: 720px; margin-top: 4px; }
+      .research-item { padding: 14px 18px; border-left: 3px solid var(--teal); background: var(--bg); }
+      .research-item p { font-size: 13px !important; line-height: 1.6 !important; opacity: 1 !important; margin-bottom: 0 !important; }
+      .research-item.key-pub { border-left-color: var(--bronze); }
+      .research-item .hl-label { font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #8A7148; font-weight: 700; margin-bottom: 8px; }
+
+      /* ─── BUNDLE ─── */
+      .bundle {
+        background: var(--bg);
+        padding: 80px max(80px, calc((100vw - 1280px) / 2 + 80px));
+        text-align: center;
+      }
+      .bundle-eyebrow {
+        font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
+        font-weight: 600; color: var(--teal); margin-bottom: 12px;
+      }
+      .bundle-h2 {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: clamp(32px, 3.5vw, 48px); font-weight: 500;
+        color: var(--ink); margin-bottom: 16px; line-height: 1.1;
+      }
+      .bundle-h2 em { font-style: italic; color: var(--teal); }
+      .bundle-discount {
+        display: inline-block; background: var(--bronze); color: #fff;
+        font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+        font-weight: 700; padding: 6px 14px; margin-bottom: 24px;
+      }
+      .bundle-body {
+        font-size: 16px; color: var(--ink); opacity: 0.75;
+        max-width: 540px; margin: 0 auto 32px; line-height: 1.65;
+      }
+      .bundle-products {
+        display: flex; justify-content: center; align-items: center;
+        gap: 32px; margin-bottom: 32px;
+      }
+      .bundle-product {
+        background: var(--surface); padding: 24px 32px;
+        border: 1px solid var(--border); min-width: 180px; text-align: center;
+      }
+      .bundle-product-name {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 20px; font-weight: 500; color: var(--ink);
+      }
+      .bundle-product-sub { font-size: 11px; color: var(--mid); margin-top: 4px; }
+      .bundle-plus {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 36px; color: var(--mid); font-style: italic;
+      }
+      .bundle-btn {
+        display: inline-block; background: var(--ink); color: #fff;
+        padding: 16px 40px; font-size: 12px; letter-spacing: 0.14em;
+        text-transform: uppercase; font-weight: 600; border: none;
+        cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.2s;
+      }
+      .bundle-btn:hover { background: var(--teal); }
+
+      /* ─── CTA CLOSE ─── */
+      .cta-close {
+        background: var(--ink);
+        padding: 80px max(80px, calc((100vw - 1280px) / 2 + 80px));
+        text-align: center;
+      }
+      .cta-close-tagline {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: clamp(18px, 2.2vw, 26px); font-style: italic; font-weight: 400;
+        color: rgba(255,255,255,0.55); margin-bottom: 14px; line-height: 1.3;
+      }
+      .cta-close-h2 {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: clamp(40px, 5vw, 68px); font-weight: 500;
+        color: #fff; line-height: 1.05; margin-bottom: 40px;
+      }
+      .cta-actions {
+        display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap;
+      }
+      .btn-white {
+        background: #fff; color: var(--ink); padding: 16px 40px;
+        font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;
+        border: none; cursor: pointer; font-family: 'Inter', sans-serif;
+        transition: background 0.2s; display: inline-block;
+      }
+      .btn-white:hover { background: var(--sand); }
+      .btn-ghost-white {
+        background: transparent; color: #fff; padding: 14px 32px;
+        font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+        border: 1.5px solid rgba(255,255,255,0.4); cursor: pointer;
+        font-family: 'Inter', sans-serif; display: inline-block; transition: border-color 0.2s;
+      }
+      .btn-ghost-white:hover { border-color: #fff; }
+
+      /* ─── FOOTER ─── */
+      footer {
+        background: #060e18;
+        padding: 60px max(80px, calc((100vw - 1280px) / 2 + 80px));
+      }
+      .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+      .footer-logo {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 28px; font-weight: 600; letter-spacing: 0.3em;
+        text-transform: uppercase; color: #fff; margin-bottom: 12px;
+      }
+      .footer-tagline {
+        font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.4;
+        font-style: italic; font-family: 'Cormorant Garamond', Georgia, serif;
+        margin-bottom: 20px;
+      }
+      .footer-trinity-line {
+        font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+        font-weight: 600; color: var(--bronze); line-height: 1.9;
+      }
+      .footer-col-title {
+        font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+        font-weight: 700; color: rgba(255,255,255,0.5); margin-bottom: 16px;
+      }
+      .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+      .footer-col li a { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+      .footer-col li a:hover { color: #fff; }
+      .footer-inner-circle p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 8px; }
+      .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;
+        font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.7;
+      }
+
+      /* ─── STICKY CTA ─── */
+      .sticky-cta {
+        display: none; position: fixed; bottom: 0; left: 0; right: 0;
+        background: var(--surface); border-top: 1px solid var(--border);
+        padding: 12px 20px; z-index: 200; align-items: center;
+        justify-content: space-between; gap: 16px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+      }
+      .sticky-price { font-size: 17px; font-weight: 700; color: var(--ink); flex-shrink: 0; }
+      .sticky-cta-btn {
+        background: var(--ink); color: #fff; padding: 12px 24px;
+        font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+        font-weight: 600; border: none; cursor: pointer;
+        font-family: 'Inter', sans-serif; flex: 1; transition: background 0.2s;
+      }
+      .sticky-cta-btn:hover { background: var(--teal); }
+
+      /* ─── RESPONSIVE ─── */
+      @media (max-width: 900px) {
+        nav { padding: 16px 24px; }
+        .nav-links { display: none; }
+        section, .supp-facts-section, .quote-band, .bundle, .cta-close, footer { padding: 60px 24px; }
+        .accordion-header-block { padding: 60px 24px 32px; }
+        .accordion-trigger { padding: 20px 24px; }
+        .accordion-body { padding: 0 24px 28px; }
+        .hero { grid-template-columns: 1fr; min-height: auto; }
+        .hero-image { min-height: 300px; }
+        .hero-content { padding: 40px 24px; }
+        .timeline-grid { grid-template-columns: 1fr 1fr; }
+        .timeline-panel { border-right: none; border-bottom: 1px solid var(--border); }
+        .timeline-panel:last-child { border-bottom: none; }
+        .ingredients-grid { grid-template-columns: 1fr; }
+        .supp-facts-grid { grid-template-columns: 1fr; gap: 32px; }
+        .reviews-grid { grid-template-columns: 1fr; }
+        .bundle-products { flex-direction: column; gap: 16px; }
+        .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+        .sticky-cta { display: flex; }
+        body { padding-bottom: 72px; }
+      }
+      @media (max-width: 540px) {
+        .timeline-grid { grid-template-columns: 1fr; }
+        .no-list { grid-template-columns: 1fr; }
+        .buy-option-price { font-size: 13px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announce">Free Shipping Over $50 &nbsp;·&nbsp; Subscribe &amp; Save 5% &nbsp;·&nbsp; NSF Certified for Sport</div>
+
+    <!-- NAV/Header -->
+    <nav>
+      <!-- Logo -->
+      <a class="nav-logo" href="#">Zeta</a>
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#">Products</a></li>
+        <li><a href="#">The Science</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Mirror Quiz</a></li>
+      </ul>
+      <!-- Action Links -->
+      <div class="nav-actions">
+        <a href="#">Account</a>
+        <a class="nav-cart" href="#">Cart (0)</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-image">
+        <div class="hero-image-placeholder">
+          <svg width="60" height="80" fill="none" viewBox="0 0 60 80">
+            <rect x="10" y="8" width="40" height="64" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="16" y="28" width="28" height="26" rx="2" fill="currentColor" opacity="0.12"/>
+            <line x1="10" y1="20" x2="50" y2="20" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="22" y1="38" x2="38" y2="38" stroke="currentColor" stroke-width="0.8"/>
+          </svg>
+          <span class="hero-image-label">Product photo · Creatine canister</span>
+        </div>
+        <div class="product-badge">NSF Certified for Sport</div>
+      </div>
+
+      <div class="hero-content">
+        <div class="product-banner">
+          <span class="product-banner-name">Zeta Creatine</span>
+          <span class="product-banner-sub">The World's Most Studied Supplement</span>
+        </div>
+        <h1 class="hero-h1"><em>Strength.</em><br>Brain. Everyday.</h1>
+        <p class="hero-lede">Creatine isn't just a gym thing anymore. Ongoing research continues to show it does as much for your brain as it does for your muscle — developed alongside one of the world's leading biochemists who helped bring creatine to the world. NSF Certified for Sport.</p>
+        <div class="stars">★★★★★ <span>4.9 · 312 reviews</span></div>
+
+        <div class="buy-box">
+          <div class="buy-options">
+            <div class="buy-option active" onclick="selectBuyOption(this)">
+              <div class="buy-radio"><div class="buy-radio-dot"></div></div>
+              <div class="buy-option-text">
+                <div class="buy-option-label">One bottle, this time</div>
+                <div class="buy-option-sub">300g powder · 60 servings · 30-day supply</div>
+              </div>
+              <div class="buy-option-price">$34.99</div>
+            </div>
+            <div class="buy-option" onclick="selectBuyOption(this)">
+              <div class="buy-radio"><div class="buy-radio-dot"></div></div>
+              <div class="buy-option-text">
+                <div class="buy-option-label">Subscribe &amp; Save <span class="buy-option-badge">5% OFF</span></div>
+                <div class="buy-option-sub">Free shipping · Pause or cancel any time</div>
+              </div>
+              <div class="buy-option-price"><s>$34.99</s> $33.24</div>
+            </div>
+          </div>
+          <button class="btn-primary">BUY ZETA CREATINE</button>
+          <button class="btn-secondary">PAIR WITH MINOS · SAVE 10%</button>
+        </div>
+
+        <div class="trust-badges">
+          <span class="trust-badge">NSF Certified for Sport</span>
+          <span class="trust-badge">5g Creatine Monohydrate</span>
+          <span class="trust-badge">cGMP Manufactured</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL QUOTE -->
+    <div class="quote-band">
+      <blockquote>"I helped bring creatine to the world. The most exciting research on it is happening right now — and it's about the <em>brain</em>, not the bicep."</blockquote>
+      <div class="quote-attr">One of the World's Leading Biochemists · Creatine Research Pioneer</div>
+    </div>
+
+    <!-- TIMELINE -->
+    <section class="timeline">
+      <p class="section-eyebrow">What changes</p>
+      <h2 class="section-h2">The gym story<br>was just the <em>beginning.</em></h2>
+      <div class="timeline-grid">
+        <div class="timeline-panel">
+          <div class="timeline-label">Day 1</div>
+          <div class="timeline-title">Stored.</div>
+          <div class="timeline-body">Creatine starts saturating into muscle and brain tissue. Your cells are filling their tanks. Nothing dramatic yet — but the work is already happening.*</div>
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-label">Week 1</div>
+          <div class="timeline-title">Stronger.</div>
+          <div class="timeline-body">Slightly more reps in the tank. Faster recovery between sets. Your muscles have more ATP to draw from. You'll feel it before you can fully explain it.*</div>
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-label">Months</div>
+          <div class="timeline-title">Sharper.</div>
+          <div class="timeline-body">Newer studies show improved executive function — especially under sleep debt or stress. Your brain runs on energy too. Creatine feeds both.*</div>
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-label">Years</div>
+          <div class="timeline-title">Protected.</div>
+          <div class="timeline-body">Anti-sarcopenia. Neuroprotection. The muscle + brain longevity bet that decades of research keeps confirming. This is why you don't stop.*</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INGREDIENTS -->
+    <section class="ingredients">
+      <div class="ingredients-header">
+        <p class="section-eyebrow">What's inside</p>
+        <h2 class="section-h2" style="margin-bottom:0;">One ingredient.<br><em>~700 clinical trials</em> behind it.</h2>
+      </div>
+      <div class="ingredients-grid">
+        <div class="ingredient-tile">
+          <div class="ingredient-tag">The Molecule</div>
+          <div class="ingredient-name">Creatine Monohydrate</div>
+          <div class="ingredient-source">5g per serving · pure · extensively studied</div>
+          <div class="ingredient-body">The most studied performance supplement in history. Creatine stores phosphate groups as phosphocreatine, regenerating ATP — the primary fuel for muscle contraction and brain function. 5g. One ingredient. Nothing else.*</div>
+        </div>
+        <div class="ingredient-tile">
+          <div class="ingredient-tag">The Standard</div>
+          <div class="ingredient-name">NSF Certified<br>for Sport®</div>
+          <div class="ingredient-source">Third-party tested · every lot · 270+ banned substances</div>
+          <div class="ingredient-body">Every single production lot independently tested for banned substances — the certification pro athletes and Olympic teams require before they'll take a supplement. Few competitor creatines bother. We do, because if it's worth putting in your body, it's worth proving.*</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPLEMENT FACTS + HOW TO TAKE -->
+    <div class="supp-facts-section">
+      <p class="section-eyebrow" style="margin-bottom:12px;">What's in the canister</p>
+      <h2 class="section-h2" style="margin-bottom:40px;">Simple label. <em>No filler.</em></h2>
+      <div class="supp-facts-grid">
+        <!-- TOP: full-width facts panel -->
+        <div class="facts-panel">
+          <div class="facts-header">
+            <div class="facts-title">Supplement Facts</div>
+            <div class="facts-serving">Serving Size: 1 Scoop (about 5g) &nbsp;·&nbsp; Servings Per Container: 30</div>
+          </div>
+          <div class="facts-body">
+            <div class="facts-row" style="font-size:11px; color:var(--mid); border-bottom:4px solid var(--ink); padding-bottom:6px;">
+              <span></span><span>Amount Per Serving &nbsp; % DV</span>
+            </div>
+            <div class="facts-row main">
+              <span>Creatine Monohydrate</span><span>5 g &nbsp; **</span>
+            </div>
+          </div>
+          <div class="facts-note">** Daily Value not established. &nbsp; Other Ingredients: None. &nbsp; Unflavored.</div>
+        </div>
+
+        <!-- BOTTOM: two equal tiles -->
+        <div class="supp-facts-bottom">
+          <div class="how-to">
+            <div class="how-to-label">How to take it</div>
+            <ul>
+              <li><strong>1 scoop (5g) daily</strong> — dissolve in 8 oz of water or any beverage</li>
+              <li><strong>When</strong> — any time of day. Consistency beats timing</li>
+              <li><strong>No loading phase needed</strong> — steady daily dosing reaches saturation in ~3–4 weeks</li>
+              <li>One canister lasts <strong>30 days</strong></li>
+            </ul>
+          </div>
+
+          <div class="exclude-panel">
+            <div class="exclude-heading">Formulated with<br>a lot of NOs.</div>
+            <div class="exclude-sub">Here's everything we left out.</div>
+            <div class="no-list">
+              <div class="no-item">No Gluten</div>
+              <div class="no-item">No Dairy</div>
+              <div class="no-item">No Soy</div>
+              <div class="no-item">No Artificial Colors</div>
+              <div class="no-item">No Artificial Flavors</div>
+              <div class="no-item">No Artificial Sweeteners</div>
+              <div class="no-item">No Proprietary Blends</div>
+              <div class="no-item">No Fillers</div>
+              <div class="no-item">No GMOs</div>
+              <div class="no-item">No Banned Substances</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+      <p class="section-eyebrow">Real reviews</p>
+      <h2 class="section-h2">Strength. Brain. <em>Both.</em></h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-body">"My deadlift jumped 20 lbs in 6 weeks. I'm 52."</div>
+          <div class="review-attr">Marcus T. · Verified Buyer</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-body">"I take it for the brain story, honestly. Sharper afternoons. Less mental fatigue."</div>
+          <div class="review-attr">Lauren M. · Verified Buyer</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-body">"Started with my husband. Both of us notice strength holding up between sessions."</div>
+          <div class="review-attr">Joanna B. · Verified Buyer</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIG DEEPER ACCORDION -->
+    <div class="accordion-section">
+      <div class="accordion-header-block">
+        <p class="section-eyebrow" style="margin-bottom:16px; color:var(--bronze);">For the curious</p>
+        <div class="accordion-heading">Dig <em>deeper.</em></div>
+        <p class="accordion-subtitle">The creatine science, full ingredients, dosing notes, and the research behind the formula.</p>
+      </div>
+      <div class="accordion-items">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="true">
+            <span class="accordion-trigger-label">Description</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body open">
+            <p>Creatine is the most studied performance supplement in history — and one of the few where the science actually backs the marketing. Over 700 clinical trials. Decades of consistent results.</p>
+            <p>What's changed: the new emphasis is the cognitive and neuroprotective story. Improved working memory. Faster reaction time under stress. Possible neuroprotection in aging brains. Your brain uses a significant amount of ATP — creatine supports that too.</p>
+            <p>ZETA Creatine uses pure creatine monohydrate — the gold-standard form — at the research-validated 5g daily dose. NSF Certified for Sport. Nothing hidden. Nothing extra.*</p>
+            <ul>
+              <li>Supports muscular strength and power output</li>
+              <li>Supports faster recovery between training sessions</li>
+              <li>Supports cognitive function, especially under stress or sleep deprivation</li>
+              <li>Supports lean muscle mass preservation with aging (anti-sarcopenia)</li>
+              <li>May support neuroprotection over time</li>
+            </ul>
+            <p style="font-size:11px; opacity:0.5; font-style:italic; margin-top:20px;">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="accordion-trigger-label">Ingredients</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p><strong>Creatine Monohydrate — 5g per serving.</strong></p>
+            <p>Pure creatine monohydrate. No fillers, no flavors, no excipients. This is the extensively studied form of creatine with a well-established role in cellular energy production — fueling muscle and brain health across all ages and activity levels.</p>
+            <p><strong>Why NSF Certified for Sport:</strong> Every lot is independently tested for 270+ banned substances — the standard required by the NFL, MLB, NBA, and USOC. If it's good enough for Olympians, it's good enough for your daily stack.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="accordion-trigger-label">Directions &amp; Precautions</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <p>Dissolve 1 scoop (about 5g) in 8 oz of water or any beverage. Consume once daily — any time of day. No loading phase required. Steady daily dosing reaches full muscle saturation in approximately 3–4 weeks.</p>
+            <p>Consult your healthcare professional prior to use. Individuals taking medication should discuss potential interactions with their healthcare professional. Keep out of reach of children.</p>
+            <p style="font-size:11px; opacity:0.5; font-style:italic;">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="accordion-trigger-label">Research</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            <div class="research-list">
+              <div class="research-item key-pub">
+                <div class="hl-label">★ Key publication · neuroprotection &amp; sport</div>
+                <p><strong>Kreider RB, Kalman DS, Antonio J, Almada AL, et al. (2017)</strong> — International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine. <em>Journal of the International Society of Sports Nutrition.</em> 14:18. The landmark ISSN position paper co-authored by Anthony Almada establishing creatine's neuroprotective properties, including concussion protection, spinal cord neuroprotection, and applications in neurodegenerative disease.</p>
+              </div>
+              <div class="research-item">
+                <p><strong>Kreider RB, Stout JR. (2021)</strong> — Creatine in Health and Disease. <em>Nutrients.</em> 13(2):447. Comprehensive review of creatine's role in cellular energy, muscle performance, and systemic health.</p>
+              </div>
+              <div class="research-item">
+                <p><strong>Prokopidis K et al. (2023)</strong> — Effects of creatine supplementation on memory in healthy individuals: a systematic review and meta-analysis. <em>Nutrition Reviews.</em> 81(4):416–427. Meta-analysis of 8 randomized trials; creatine enhanced memory performance in adults regardless of dose, sex, or location.</p>
+              </div>
+              <div class="research-item">
+                <p><strong>Xu C et al. (2024)</strong> — Creatine and cognitive performance: meta-analysis of 16 randomized trials. <em>Frontiers in Nutrition.</em> 11:1424972. Beneficial cognitive effects in memory, attention, and processing speed across ages 20–76.</p>
+              </div>
+              <div class="research-item">
+                <p><strong>Delpino FM et al. (2022)</strong> — Creatine supplementation and lean body mass. <em>Nutrition.</em> 103–104:111791. Meta-analysis confirming creatine combined with resistance exercise increases lean body mass regardless of age.</p>
+              </div>
+              <div class="research-item">
+                <p><strong>Antonio J et al. (2025)</strong> — Common questions and misconceptions about creatine supplementation. <em>Journal of the International Society of Sports Nutrition.</em> 22(1):2441760. Updated position on safety, dosing, and broad applications.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BUNDLE -->
+    <div class="bundle">
+      <p class="bundle-eyebrow">Stack It</p>
+      <h2 class="bundle-h2">The <em>Workout</em> Stack.</h2>
+      <span class="bundle-discount">Save 10% when bundled</span>
+      <p class="bundle-body">CREATINE + MINOS = the ATP recharge and the amino acid engine, working together. Pre and post covered. The two supplements that do the actual work inside the gym — and beyond.*</p>
+      <div class="bundle-products">
+        <div class="bundle-product">
+          <div class="bundle-product-name">Zeta Creatine</div>
+          <div class="bundle-product-sub">5g · ATP recharge · Brain support</div>
+        </div>
+        <div class="bundle-plus">+</div>
+        <div class="bundle-product">
+          <div class="bundle-product-name">Zeta Minos</div>
+          <div class="bundle-product-sub">EAAs + L-Arginine · Strength + recovery</div>
+        </div>
+      </div>
+      <button class="bundle-btn">BUY THE WORKOUT STACK</button>
+    </div>
+
+    <!-- CTA CLOSE -->
+    <div class="cta-close">
+      <p class="cta-close-tagline">Take what we take.</p>
+      <p class="cta-close-h2">Strength. Brain. Everyday.</p>
+      <div class="cta-actions">
+        <button class="btn-white">BUY ZETA CREATINE</button>
+        <button class="btn-ghost-white">TAKE THE MIRROR QUIZ</button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Z E T A</div>
+          <div class="footer-tagline">Manage your ecosystem. Everyday.</div>
+          <div class="footer-trinity-line">Health.</div>
+          <div class="footer-trinity-line">Wealth.</div>
+          <div class="footer-trinity-line">Youth.</div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Shop</div>
+          <ul>
+            <li><a href="#">Creatine</a></li>
+            <li><a href="#">MINOS</a></li>
+            <li><a href="#">Z-83 · Focus</a></li>
+            <li><a href="#">Zeta Multi</a></li>
+            <li><a href="#">All Products</a></li>
+            <li><a href="#">Bundles</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Learn</div>
+          <ul>
+            <li><a href="#">Take the Quiz</a></li>
+            <li><a href="#">The ZETA Journal</a></li>
+            <li><a href="#">Free Guides</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-inner-circle">
+          <div class="footer-col-title">Join the Inner Circle</div>
+          <p>1–2 emails a month. First-bottle stories, founder notes.</p>
+          <p>Sign up &amp; get 10% off your first bottle.</p>
+          <ul>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 ZETA · zetabody.com<br>
+        *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.
+      </div>
+    </footer>
+
+    <!-- STICKY MOBILE CTA -->
+    <div class="sticky-cta">
+      <div class="sticky-price">$32.30/mo</div>
+      <button class="sticky-cta-btn">BUY ZETA CREATINE</button>
+    </div>
+
+    <script>
+      function selectBuyOption(el) {
+        el.closest('.buy-options').querySelectorAll('.buy-option').forEach(o => o.classList.remove('active'));
+        el.classList.add('active');
+      }
+
+      document.querySelectorAll('.accordion-trigger').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isOpen = btn.getAttribute('aria-expanded') === 'true';
+          document.querySelectorAll('.accordion-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
+          document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
+          if (!isOpen) {
+            btn.setAttribute('aria-expanded', 'true');
+            btn.nextElementSibling.classList.add('open');
+          }
+        });
+      });
+    </script>
+
+  </body>
+</html>

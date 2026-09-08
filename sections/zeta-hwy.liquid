@@ -1,0 +1,93 @@
+{%- comment -%}
+  ZETA — Health. Wealth. Youth. (#hwy): teal band, oversized heading + 3 pillars + body.
+  Pillars are blocks. Styles: custom.css (.zeta-hwy).
+{%- endcomment -%}
+
+<section class="zeta zeta-hwy" {{ section.shopify_attributes }} id="{{ section.settings.anchor_id | default: 'zeta-hwy' | handle }}">
+  <div class="zeta-hwy__inner">
+    <div class="zeta-hwy__top">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="zeta-hwy__eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <div class="zeta-hwy__h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading | newline_to_br }}</div>
+      {%- endif -%}
+      {%- if section.settings.lede != blank -%}
+        <div class="zeta-hwy__lede">{{ section.settings.lede }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="zeta-hwy__pillars" style="--zeta-hwy-cols: {{ section.blocks.size }};">
+        {%- for block in section.blocks -%}
+          <div class="zeta-hwy__pillar" {{ block.shopify_attributes }}>
+            {%- if block.settings.word != blank -%}
+              <div class="zeta-hwy__word">{{ block.settings.word | escape }}</div>
+            {%- endif -%}
+            {%- if block.settings.definition != blank -%}
+              <div class="zeta-hwy__def">{{ block.settings.definition | escape }}</div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.body != blank -%}
+      <div class="zeta-hwy__body">{{ section.settings.body }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.button_1_text != blank or section.settings.button_2_text != blank -%}
+      <div class="zeta-hwy__btns">
+        {%- if section.settings.button_1_text != blank -%}
+          <a href="{{ section.settings.button_1_link | default: '#' }}" class="zeta-btn zeta-btn--sand">{{ section.settings.button_1_text | escape }}</a>
+        {%- endif -%}
+        {%- if section.settings.button_2_text != blank -%}
+          <a href="{{ section.settings.button_2_link | default: '#' }}" class="zeta-btn zeta-btn--outline-light">{{ section.settings.button_2_text | escape }}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Health Wealth Youth",
+  "tag": "section",
+  "class": "shopify-section--zeta-hwy",
+  "max_blocks": 3,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The ZETA Philosophy" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Italics render in bronze.", "default": "Health.\n<em>Wealth.</em>\nYouth." },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
+    { "type": "richtext", "id": "lede", "label": "Lede", "default": "<p>Three things worth protecting. One body to do it with.</p>" },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>I was already living these three pillars hard when the seizures hit in 2013. <strong>The world doesn't stop because you need or want it to.</strong> You either adjust, fight back, and keep moving — or you get left behind.</p><p>That's why I built ZETA. Because when your brain and body are strong, everything else expands.</p>" },
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "button_1_text", "label": "Button 1 label", "default": "Shop the Lineup" },
+    { "type": "url", "id": "button_1_link", "label": "Button 1 link" },
+    { "type": "text", "id": "button_2_text", "label": "Button 2 label", "default": "The Story ↓" },
+    { "type": "url", "id": "button_2_link", "label": "Button 2 link" },
+    { "type": "text", "id": "anchor_id", "label": "Anchor ID", "info": "For in-page links (e.g. from a button)." }
+  ],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Pillar",
+      "settings": [
+        { "type": "text", "id": "word", "label": "Word", "default": "Health" },
+        { "type": "text", "id": "definition", "label": "Definition", "default": "is what you do to yourself." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Health Wealth Youth",
+      "blocks": [
+        { "type": "pillar", "settings": { "word": "Health", "definition": "is what you do to yourself." } },
+        { "type": "pillar", "settings": { "word": "Wealth", "definition": "is what you earn and invest." } },
+        { "type": "pillar", "settings": { "word": "Youth", "definition": "is what you fight to protect." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

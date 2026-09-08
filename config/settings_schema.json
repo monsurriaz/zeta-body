@@ -937,5 +937,110 @@
         "info": "180 x 180px .png recommended"
       }
     ]
+  },
+  {
+    "name": "ZETA Typography",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Central title sizes used across the home page, sections, and product pages. Each title has a size selector (Large / Medium / Small) that maps to the values below. Set desktop and mobile sizes separately."
+      },
+      {
+        "type": "header",
+        "content": "Title sizes — Desktop"
+      },
+      {
+        "type": "range",
+        "id": "zeta_title_lg",
+        "label": "Large",
+        "min": 28,
+        "max": 120,
+        "step": 1,
+        "unit": "px",
+        "default": 68
+      },
+      {
+        "type": "range",
+        "id": "zeta_title_md",
+        "label": "Medium",
+        "min": 22,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      },
+      {
+        "type": "range",
+        "id": "zeta_title_sm",
+        "label": "Small",
+        "min": 16,
+        "max": 80,
+        "step": 1,
+        "unit": "px",
+        "default": 40
+      },
+      {
+        "type": "header",
+        "content": "Title sizes — Mobile"
+      },
+      {
+        "type": "range",
+        "id": "zeta_title_lg_mobile",
+        "label": "Large",
+        "min": 22,
+        "max": 90,
+        "step": 1,
+        "unit": "px",
+        "default": 44
+      },
+      {
+        "type": "range",
+        "id": "zeta_title_md_mobile",
+        "label": "Medium",
+        "min": 18,
+        "max": 72,
+        "step": 1,
+        "unit": "px",
+        "default": 34
+      },
+      {
+        "type": "range",
+        "id": "zeta_title_sm_mobile",
+        "label": "Small",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "default": 28
+      },
+      {
+        "type": "header",
+        "content": "Eyebrow sizes"
+      },
+      {
+        "type": "paragraph",
+        "content": "The small uppercase label shown above headings. Each eyebrow has a size selector (Medium / Small)."
+      },
+      {
+        "type": "range",
+        "id": "zeta_eyebrow_md",
+        "label": "Eyebrow — Medium",
+        "min": 10,
+        "max": 28,
+        "step": 1,
+        "unit": "px",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "zeta_eyebrow_sm",
+        "label": "Eyebrow — Small",
+        "min": 9,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "default": 15
+      }
+    ]
   }
 ]

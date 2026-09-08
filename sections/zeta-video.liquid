@@ -1,0 +1,127 @@
+{%- comment -%}
+  ZETA — Video / ritual section (.zeta-video): copy on one side, a play-to-reveal video frame on the other.
+  If a video is set it lazy-loads on click; otherwise the frame is a styled teal placeholder.
+  Styles: custom.css (.zeta-video).
+{%- endcomment -%}
+
+{%- assign vid = section.settings.video_url -%}
+{%- assign embed = '' -%}
+{%- if vid != blank -%}
+  {%- if vid.type == 'youtube' -%}
+    {%- assign embed = 'https://www.youtube.com/embed/' | append: vid.id | append: '?autoplay=1&rel=0' -%}
+  {%- elsif vid.type == 'vimeo' -%}
+    {%- assign embed = 'https://player.vimeo.com/video/' | append: vid.id | append: '?autoplay=1' -%}
+  {%- endif -%}
+{%- endif -%}
+
+<section class="zeta zeta-video zeta-video--media-{{ section.settings.media_position | default: 'right' }}" style="background-color: {{ section.settings.section_bg }};" {{ section.shopify_attributes }}>
+  <div class="zeta-video__inner">
+    <div class="zeta-video__text">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="zeta-section-eyebrow zeta-section-eyebrow--bronze zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="zeta-section-h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.body != blank -%}
+        <div class="zeta-video__body">{{ section.settings.body }}</div>
+      {%- endif -%}
+      {%- if section.settings.note != blank -%}
+        <p class="zeta-video__note">{{ section.settings.note | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- assign hosted = section.settings.video -%}
+    {%- assign has_video = false -%}
+    {%- if hosted != blank or embed != blank -%}{%- assign has_video = true -%}{%- endif -%}
+    <zeta-video-play class="zeta-video__frame"{% if embed != blank %} data-embed="{{ embed }}"{% endif %}>
+      {%- if hosted != blank -%}
+        <video class="zeta-video__native" playsinline preload="none"{% if section.settings.poster != blank %} poster="{{ section.settings.poster | image_url: width: 1200 }}"{% endif %} data-native>
+          {%- for source in hosted.sources -%}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {%- endfor -%}
+        </video>
+      {%- elsif section.settings.poster != blank -%}
+        <img class="zeta-video__poster" src="{{ section.settings.poster | image_url: width: 1200 }}" alt="{{ section.settings.overlay_label | escape }}" loading="lazy" width="{{ section.settings.poster.width }}" height="{{ section.settings.poster.height }}">
+      {%- endif -%}
+      <button type="button" class="zeta-video__play" aria-label="{{ section.settings.overlay_label | default: 'Play video' | escape }}"{% unless has_video %} disabled{% endunless %} data-play></button>
+      {%- if section.settings.overlay_label != blank -%}
+        <span class="zeta-video__label">{{ section.settings.overlay_label | escape }}</span>
+      {%- endif -%}
+    </zeta-video-play>
+  </div>
+</section>
+
+<script>
+  (() => {
+    if (window.customElements.get('zeta-video-play')) return;
+    class ZetaVideoPlay extends HTMLElement {
+      connectedCallback() {
+        const btn = this.querySelector('[data-play]');
+        if (!btn || this._bound) return;
+        const native = this.querySelector('[data-native]');
+        const embed = this.getAttribute('data-embed');
+        if (!native && !embed) return; /* nothing to play — decorative placeholder */
+        this._bound = true;
+        btn.addEventListener('click', () => {
+          if (native) {
+            /* Self-hosted video: reveal native controls and play in place */
+            btn.remove();
+            const label = this.querySelector('.zeta-video__label');
+            if (label) label.remove();
+            native.setAttribute('controls', '');
+            native.classList.add('is-playing');
+            const p = native.play();
+            if (p && p.catch) p.catch(() => {});
+            return;
+          }
+          /* External embed: inject the provider iframe */
+          const iframe = document.createElement('iframe');
+          iframe.setAttribute('src', embed);
+          iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.setAttribute('title', btn.getAttribute('aria-label') || 'Video');
+          iframe.className = 'zeta-video__iframe';
+          this.innerHTML = '';
+          this.appendChild(iframe);
+        });
+      }
+    }
+    window.customElements.define('zeta-video-play', ZetaVideoPlay);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Zeta Video",
+  "tag": "section",
+  "class": "shopify-section--zeta-video",
+  "settings": [
+    { "type": "color", "id": "section_bg", "label": "Section background", "default": "#EFE9DC" },
+    {
+      "type": "select",
+      "id": "media_position",
+      "label": "Video position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "right"
+    },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Your first capsule" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Here's the <em>ritual</em>." },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>A short clip on how to take your first capsule — and what most people miss in their first week.</p>" },
+    { "type": "text", "id": "note", "label": "Note", "info": "Optional small note under the copy (e.g. video file / runtime)." },
+    { "type": "header", "content": "Video" },
+    { "type": "video", "id": "video", "label": "Self-hosted video", "info": "Upload a Shopify-hosted video. Takes priority over the external link below." },
+    { "type": "video_url", "id": "video_url", "label": "External video link", "accept": ["youtube", "vimeo"], "info": "YouTube or Vimeo — used only if no self-hosted video is set. Leave both blank to show a styled placeholder." },
+    { "type": "image_picker", "id": "poster", "label": "Poster image", "info": "Optional thumbnail shown before play." },
+    { "type": "text", "id": "overlay_label", "label": "Overlay label", "default": "Watch the video" }
+  ],
+  "presets": [
+    { "name": "Zeta Video" }
+  ]
+}
+{% endschema %}

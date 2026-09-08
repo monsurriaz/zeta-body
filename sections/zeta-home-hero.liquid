@@ -1,0 +1,178 @@
+{%- comment -%}
+  ZETA — Home Hero (#hero)
+  Two-column: editorial copy (left) + dark media panel with badge (right).
+  Design fixed to client; only content is editable. Styles in custom.css (.zeta-home-hero).
+{%- endcomment -%}
+
+<section class="zeta zeta-home-hero" {{ section.shopify_attributes }}>
+  <div class="zeta-home-hero__left">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="zeta-home-hero__eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h1 class="zeta-home-hero__h1 zeta-title zeta-title--{{ section.settings.heading_size | default: 'large' }}">{{ section.settings.heading | newline_to_br }}</h1>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <div class="zeta-home-hero__subhead">{{ section.settings.subheading }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.button_1_text != blank or section.settings.button_2_text != blank -%}
+      <div class="zeta-home-hero__btns">
+        {%- if section.settings.button_1_text != blank -%}
+          <a href="{{ section.settings.button_1_link | default: '#' }}" class="zeta-btn zeta-btn--teal">{{ section.settings.button_1_text | escape }}</a>
+        {%- endif -%}
+        {%- if section.settings.button_2_text != blank -%}
+          <a href="{{ section.settings.button_2_link | default: '#' }}" class="zeta-btn zeta-btn--outline">{{ section.settings.button_2_text | escape }}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.quote != blank -%}
+      <blockquote class="zeta-home-hero__quote">{{ section.settings.quote }}</blockquote>
+    {%- endif -%}
+  </div>
+
+  <div class="zeta-home-hero__right">
+    <div class="zeta-home-hero__media-bg" aria-hidden="true"></div>
+
+    {%- if section.settings.video != blank -%}
+      {{ section.settings.video | video_tag: image_size: '1100x', autoplay: true, loop: true, muted: true, controls: false, class: 'zeta-home-hero__media' }}
+    {%- elsif section.settings.image != blank -%}
+      {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'eager', sizes: '(max-width: 960px) 100vw, 50vw', widths: '600,900,1200,1600', class: 'zeta-home-hero__media' }}
+    {%- else -%}
+      <div class="zeta-home-hero__media-hint">{{ section.settings.media_placeholder_text | default: 'Hero video or product image' | escape }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.badge_name != blank or section.settings.badge_eyebrow != blank -%}
+      <div class="zeta-home-hero__badge">
+        {%- if section.settings.badge_eyebrow != blank -%}
+          <div class="zeta-home-hero__badge-eyebrow">{{ section.settings.badge_eyebrow | escape }}</div>
+        {%- endif -%}
+        {%- if section.settings.badge_name != blank -%}
+          <div class="zeta-home-hero__badge-name">{{ section.settings.badge_name | escape }}</div>
+        {%- endif -%}
+        {%- if section.settings.badge_sub != blank -%}
+          <div class="zeta-home-hero__badge-sub">{{ section.settings.badge_sub | escape }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Home Hero",
+  "tag": "section",
+  "class": "shopify-section--zeta-home-hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Copy (left)"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Miami · Science-Backed · No Compromises"
+    },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Use italics for the teal emphasis words.",
+      "default": "You only get\none <em>brain.</em>\nOne <em>body.</em>\nBuild them both."
+    },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "large" },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>The world doesn't stop because you need it to. Every day is a choice — to invest in your brain and body, keep them strong, and perform at the level your life demands.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "quote",
+      "label": "Quote",
+      "default": "<p>We're not perfect. But we can make choices every day that let us perform, move, and stay healthy. That's what ZETA is for.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Button 1 label",
+      "default": "Shop Z-83 — Flagship"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Button 1 link"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Button 2 label",
+      "default": "Our Story"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Button 2 link"
+    },
+    {
+      "type": "header",
+      "content": "Media (right)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Optional. Replaces the image when set."
+    },
+    {
+      "type": "text",
+      "id": "media_placeholder_text",
+      "label": "Placeholder text",
+      "info": "Shown only when no image or video is set.",
+      "default": "Hero video or product image · Z-83"
+    },
+    {
+      "type": "header",
+      "content": "Media badge"
+    },
+    {
+      "type": "text",
+      "id": "badge_eyebrow",
+      "label": "Badge eyebrow",
+      "default": "Flagship Formula"
+    },
+    {
+      "type": "text",
+      "id": "badge_name",
+      "label": "Badge name",
+      "default": "Z-83™"
+    },
+    {
+      "type": "text",
+      "id": "badge_sub",
+      "label": "Badge subtext",
+      "default": "Daily Energy + Focus"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Home Hero"
+    }
+  ]
+}
+{% endschema %}

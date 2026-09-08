@@ -1,0 +1,122 @@
+{%- comment -%}
+  ZETA — Product Lineup (#products): teal band, head + grid of dark editorial product cards.
+  Cards are blocks (editorial copy + optional image/link). Styles: custom.css (.zeta-lineup).
+{%- endcomment -%}
+
+<section class="zeta zeta-lineup" {{ section.shopify_attributes }}>
+  <div class="zeta-lineup__head">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="zeta-lineup__eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="zeta-lineup__h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading | newline_to_br }}</h2>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.link_text != blank -%}
+      <a href="{{ section.settings.link_url | default: '#' }}" class="zeta-lineup__link">{{ section.settings.link_text | escape }}</a>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="zeta-lineup__grid">
+      {%- for block in section.blocks -%}
+        {%- comment -%} Product picker drives the card; block fields override product data. {%- endcomment -%}
+        {%- assign lineup_product = block.settings.product -%}
+        {%- assign card_name = block.settings.name | default: lineup_product.title -%}
+        {%- assign card_image = block.settings.image | default: lineup_product.featured_image -%}
+        {%- if lineup_product != blank -%}
+          <a href="{{ lineup_product.url }}" class="zeta-lineup__card" {{ block.shopify_attributes }}>
+        {%- else -%}
+          <div class="zeta-lineup__card" {{ block.shopify_attributes }}>
+        {%- endif -%}
+          {%- if block.settings.flag != blank -%}
+            <span class="zeta-lineup__flag">{{ block.settings.flag }}</span>
+          {%- endif -%}
+          <div class="zeta-lineup__img{% unless card_image %} zeta-lineup__img--placeholder{% endunless %} zeta-lineup__img--{{ section.settings.image_type }}">
+            {%- if card_image != blank -%}
+              {{ card_image | image_url: width: 600 | image_tag: loading: 'lazy', sizes: '(max-width: 960px) 50vw, 25vw', widths: '300,450,600', alt: card_name | default: '' }}
+            {%- else -%}
+              <span class="zeta-lineup__img-hint">{{ block.settings.image_hint | default: 'Product photo' | escape }}</span>
+            {%- endif -%}
+          </div>
+          {%- if card_name != blank -%}
+            <div class="zeta-lineup__name">{{ card_name | escape }}</div>
+          {%- endif -%}
+          {%- if block.settings.headline != blank -%}
+            <div class="zeta-lineup__headline">{{ block.settings.headline }}</div>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <div class="zeta-lineup__desc">{{ block.settings.description | escape }}</div>
+          {%- endif -%}
+          {%- if block.settings.price != blank -%}
+            <div class="zeta-lineup__price">{{ block.settings.price | escape }}</div>
+          {%- elsif lineup_product != blank -%}
+            <div class="zeta-lineup__price">{% if lineup_product.price_varies %}From {% endif %}{{ lineup_product.price | money }}</div>
+          {%- endif -%}
+        {%- if lineup_product != blank -%}
+          </a>
+        {%- else -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Product Lineup",
+  "tag": "section",
+  "class": "shopify-section--zeta-lineup",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Lineup" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "One body.\n<em>Every edge.</em>" },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
+    { "type": "text", "id": "link_text", "label": "Link label", "default": "View All Products →" },
+    { "type": "url", "id": "link_url", "label": "Link URL" },
+    {
+      "type": "select",
+      "id": "image_type",
+      "label": "Image type",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Product card",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product", "info": "Drives the card's link, image, name and price. The fields below override the product's data when filled." },
+        { "type": "text", "id": "flag", "label": "Flag", "info": "Optional badge (e.g. Flagship)." },
+        { "type": "image_picker", "id": "image", "label": "Image", "info": "Optional. Overrides the product's featured image." },
+        { "type": "text", "id": "image_hint", "label": "Image placeholder text", "default": "Product photo" },
+        { "type": "text", "id": "name", "label": "Name", "info": "Optional. Overrides the product title." },
+        { "type": "inline_richtext", "id": "headline", "label": "Headline", "default": "Stop the drain. <em>Start the day right.</em>" },
+        { "type": "text", "id": "description", "label": "Description", "default": "Novel nootropic for energy, focus, mood, and clean performance — without the crash." },
+        { "type": "text", "id": "price", "label": "Price override", "info": "Optional. Leave blank to show the product's live price." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Product Lineup",
+      "settings": {
+        "image_type": "cover"
+      },
+      "blocks": [
+        { "type": "card", "settings": { "flag": "Flagship", "name": "Z-83™", "headline": "Stop the drain. <em>Start the day right.</em>", "description": "Novel nootropic for energy, focus, mood, and clean performance — without the crash.", "price": "From $79 · 30 servings" } },
+        { "type": "card", "settings": { "name": "D+K", "headline": "Bone. Immune. <em>The essentials.</em>", "description": "D3 + K2 — the most underdiagnosed deficiency combo. 5,000 IU where it counts.", "price": "From $— · 30 capsules" } },
+        { "type": "card", "settings": { "name": "Creatine", "headline": "Strength that <em>compounds.</em>", "description": "Targeted support for power, recovery, and performance that builds over time.", "price": "From $— · 30 servings" } },
+        { "type": "card", "settings": { "name": "Megas", "headline": "Highest EPA. <em>Deepest support.</em>", "description": "MaxSimil omega-3 with the highest EPA ratio in its class. The fat your brain actually runs on.", "price": "From $— · 30 softgels" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,67 @@
+{%- comment -%}
+  ZETA — Beliefs (#beliefs): head + auto-numbered 2-col card grid.
+  Cards are blocks (number is auto from loop index). Styles: custom.css (.zeta-beliefs).
+{%- endcomment -%}
+
+<section class="zeta zeta-beliefs" {{ section.shopify_attributes }}>
+  <div class="zeta-beliefs__top">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="zeta-eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="zeta-beliefs__h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading | newline_to_br }}</h2>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="zeta-beliefs__grid">
+      {%- for block in section.blocks -%}
+        <div class="zeta-beliefs__card" {{ block.shopify_attributes }}>
+          <div class="zeta-beliefs__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+          {%- if block.settings.text != blank -%}
+            <div class="zeta-beliefs__text">{{ block.settings.text }}</div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Beliefs",
+  "tag": "section",
+  "class": "shopify-section--zeta-beliefs",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Who We Are" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "The ZETA <em>Beliefs</em>" },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" }
+  ],
+  "blocks": [
+    {
+      "type": "belief",
+      "name": "Belief",
+      "settings": [
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>The best supplement is the one you actually keep taking. That's why we only create formulas we'd <strong>trust with our own bodies</strong> every single day.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Beliefs",
+      "blocks": [
+        { "type": "belief", "settings": { "text": "<p>The best supplement is the one you actually keep taking. That's why we only create formulas we'd <strong>trust with our own bodies</strong> every single day.</p>" } },
+        { "type": "belief", "settings": { "text": "<p>You don't need a chemistry degree to read our label — but the science behind why you're taking it? <strong>That's the only degree we care about giving you.</strong></p>" } },
+        { "type": "belief", "settings": { "text": "<p>We work with the best minds in the field to develop <strong>novel, exclusive formulations</strong> that actually solve problems — not just add another bottle to the shelf.</p>" } },
+        { "type": "belief", "settings": { "text": "<p>We never play it safe with science. <strong>Always pushing boundaries</strong> — while respecting proven clinical data.</p>" } },
+        { "type": "belief", "settings": { "text": "<p>We build for today <strong>and</strong> the long game. Biomarkers, mood, energy, skin health, and how you age all matter. <strong>That's the standard.</strong></p>" } },
+        { "type": "belief", "settings": { "text": "<p>You deserve to feel strong, sharp, and vibrant for as long as possible. ZETA is here to help you <strong>protect and enhance your energy, clarity, and vitality.</strong></p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

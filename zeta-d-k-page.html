@@ -1,0 +1,718 @@
+<!doctype html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Zeta D K Page V3 Accordion",
+  "schemaVersion": 1,
+  "description": "ZETA D+K product page — V3 with accordion deep-dive. Updated supp facts template: new facts-panel header, how-to tile with arrow list, and NOs exclude-panel with ✕ icon grid."
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZETA D+K · Daily Foundation Capsule · ZETA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --bg:#F4F4F5; --surface:#FFFFFF; --ink:#0A1320; --ink-soft:#3a4456;
+    --teal:#006E73; --teal-dark:#004A4E;
+    --bronze:#B89968; --bronze-dark:#8A7148;
+    --sand:#EFE9DC; --line:#E2E0DC; --border:#E2E0DC; --slate:#6B7280; --mid:#6B7280;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  *,*::before,*::after { box-sizing: border-box; }
+  html,body { margin:0; padding:0; background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+  body { font-size: 16px; line-height: 1.6; }
+  img,svg { max-width:100%; display:block; }
+  a { color: inherit; }
+  .annc { background: var(--ink); color: #fff; text-align:center; font-size:12px; letter-spacing:0.16em; padding: 9px 14px; text-transform: uppercase; font-weight: 500; }
+  .annc strong { color: var(--bronze); margin-right: 6px; font-weight: 700; }
+  nav { display:flex; align-items:center; justify-content:space-between; padding:18px 32px; background: var(--bg); border-bottom: 1px solid var(--line); position:sticky; top:0; z-index:50; }
+  .logo { font-family: var(--serif); font-size: 24px; letter-spacing: 0.1em; color: var(--ink); font-weight:500; }
+  .nav-links { display:flex; gap: 28px; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; }
+  .nav-links a { text-decoration:none; color: var(--ink); }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-tools { display:flex; gap: 18px; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; }
+  .nav-tools a { text-decoration:none; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .wrap-narrow { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+  .photo-note { display: inline-block; background: rgba(184, 153, 104, 0.12); border: 1px dashed var(--bronze); color: var(--bronze-dark); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 10px; margin: 6px 0; font-family: var(--sans); font-weight: 600; }
+
+  /* HERO */
+  .hero { display:grid; grid-template-columns: 1.1fr 1fr; gap: 64px; padding: 56px 0 88px; align-items: center; }
+  .hero-art { position: relative; aspect-ratio: 4/5; background: linear-gradient(155deg, #f5e8c8 0%, #d9c08a 100%); border-radius: 4px; overflow: hidden; display:flex; align-items:center; justify-content:center; }
+  .hero-art .photo-note-corner { position: absolute; top: 16px; left: 16px; }
+  .hero-art .bottle-svg { width: 56%; max-width: 320px; }
+  .hero-art .tag { position: absolute; bottom: 24px; left: 24px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); font-weight: 600; }
+  .hero-art .tag::before { content:""; display:inline-block; width:8px; height:8px; background: var(--bronze); border-radius:50%; margin-right:8px; transform: translateY(-1px); }
+  .hero-copy .eyebrow { color: var(--bronze); font-size: 12.5px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; margin-bottom: 18px; }
+.product-banner { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.product-banner-name {
+  font-size: 22px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-weight: 700; color: var(--teal); line-height: 1;
+}
+.product-banner-sub {
+  font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+  font-weight: 500; color: var(--mid); line-height: 1;
+}
+  .hero-copy h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(48px, 6.4vw, 80px); line-height: 1.0; letter-spacing: -0.018em; margin: 0 0 22px; color: var(--ink); }
+  .hero-copy h1 em { font-style: italic; color: var(--teal); }
+  .hero-copy .lede { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.45; color: var(--ink-soft); max-width: 460px; margin-bottom: 28px; }
+  .stars { display:flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+  .stars .s { color: var(--bronze); letter-spacing: 2px; font-size: 16px; }
+  .stars .count { font-size: 13px; color: var(--slate); }
+  .stars .count b { color: var(--ink); font-weight: 700; }
+
+  .buy { border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 18px 18px 20px; max-width: 480px; }
+  .buy .row { display:flex; align-items:center; gap: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 4px; cursor: pointer; transition: all .15s ease; background: var(--surface); }
+  .buy .row + .row { margin-top: 10px; }
+  .buy .row.selected { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal) inset; background: rgba(0, 110, 115, 0.03); }
+  .buy .radio { width:18px; height:18px; border:1.5px solid #b9b0a0; border-radius:50%; flex-shrink:0; display:grid; place-items:center; }
+  .buy .row.selected .radio { border-color: var(--teal); }
+  .buy .row.selected .radio::after { content:""; width:8px; height:8px; background: var(--teal); border-radius:50%; }
+  .buy .info { flex:1; min-width: 0; }
+  .buy .info .t { font-weight: 600; font-size: 14.5px; color: var(--ink); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .buy .info .d { font-size: 12.5px; color: var(--slate); margin-top: 2px; white-space: nowrap; }
+  .buy .price { font-weight: 700; font-size: 16px; color: var(--ink); white-space: nowrap; text-align: right; flex-shrink: 0; }
+  .buy .price s { color: var(--slate); font-weight: 500; margin-right: 6px; }
+  .buy .badge { display:inline-block; background: var(--bronze); color: var(--ink); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; font-weight: 700; }
+
+  .cta { display:block; width:100%; text-align:center; background: var(--ink); color:#fff; border:none; padding: 18px 22px; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; font-family: var(--sans); border-radius: 4px; margin-top: 18px; cursor: pointer; transition: background .15s ease; }
+  .cta:hover { background: var(--teal); }
+  .cta-secondary { background: transparent; color: var(--ink); border:1.5px solid var(--ink); margin-top: 10px; }
+  .cta-secondary:hover { background: var(--ink); color: #fff; }
+
+  .trust-strip { display:flex; gap: 22px; flex-wrap: wrap; margin-top: 20px; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); font-weight: 500; }
+  .trust-strip span { display:flex; align-items:center; gap: 6px; }
+  .trust-strip svg { width: 13px; height:13px; flex-shrink:0; }
+
+  /* Pull quote */
+  .quote-bar { background: var(--ink); color: #fff; padding: 56px 32px; text-align:center; }
+  .quote-bar .q { font-family: var(--serif); font-style: italic; font-size: clamp(24px, 3vw, 36px); line-height: 1.3; max-width: 900px; margin: 0 auto; font-weight: 400; }
+  .quote-bar .q em { font-style: normal; color: var(--bronze); }
+  .quote-bar .a { font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 16px; color: rgba(255,255,255,0.55); }
+
+  /* Section base */
+  section.s { padding: 96px 0; }
+  section.s.sand { background: var(--sand); }
+  section.s.ink { background: var(--ink); color:#fff; }
+  section.s h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(36px, 5vw, 60px); line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 28px; }
+  section.s h2 em { font-style: italic; color: var(--teal); }
+  section.s.ink h2 em { color: var(--bronze); }
+  section.s .kicker { color: var(--bronze); font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 700; margin-bottom: 18px; }
+  section.s p { font-size: 17px; line-height: 1.65; margin: 0 0 16px; }
+  section.s p.big { font-size: 19px; line-height: 1.55; }
+
+  /* Timeline */
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 56px; }
+  .tl { padding: 28px 0 0; border-top: 2px solid var(--ink); }
+  .tl .when { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--bronze); margin-bottom: 6px; letter-spacing: 0.02em; }
+  .tl .what { font-family: var(--serif); font-size: 28px; line-height: 1.1; margin-bottom: 14px; letter-spacing: -0.015em; font-weight: 500; }
+  .tl .body { font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+
+  /* Two ingredients */
+  .plants { display:grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; }
+  .plant { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 36px 32px; }
+  .plant .name { font-family: var(--serif); font-size: 38px; font-weight: 500; letter-spacing: -0.01em; margin: 12px 0 4px; line-height: 1.1; }
+  .plant .latin { font-style: italic; color: var(--slate); font-size: 13.5px; margin-bottom: 18px; font-family: var(--serif); }
+  .plant .origin { font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bronze); font-weight: 700; margin-bottom: 14px; }
+  .plant p { font-size: 15.5px; line-height: 1.65; margin: 0 0 14px; color: var(--ink-soft); }
+  .plant .nick { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--teal); margin-top: 14px; font-weight: 500; }
+  .leaf-svg { width: 56px; height: 56px; }
+
+  /* Supplement facts — legacy (kept for accordion deep-dive use) */
+  .inside { display:grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items:start; }
+  .inside-panel { background: var(--surface); border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+  .inside-panel h3 { font-family: var(--serif); font-size: 24px; margin: 0; padding: 18px 24px; background: var(--ink); color:#fff; font-weight: 500; letter-spacing: 0.02em; }
+  .inside-panel .row-i { display:flex; justify-content:space-between; padding: 14px 24px; border-top:1px solid var(--line); font-size:14px; }
+  .inside-panel .row-i .name { font-weight: 600; }
+  .inside-panel .row-i .amt { color: var(--slate); }
+  .inside-panel .note { padding: 14px 24px; font-size:12px; color: var(--slate); border-top:1px solid var(--line); background: #FAFAFA; }
+  .formulated h3 { font-family: var(--serif); font-size: 30px; margin: 0 0 14px; font-weight: 500; line-height: 1.15; }
+  .formulated h3 em { font-style: italic; color: var(--teal); font-weight: 500; }
+  .formulated .free-of { display:flex; flex-wrap:wrap; gap: 8px; margin-top: 16px; }
+  .formulated .free-of span { background: var(--surface); border: 1px solid var(--line); padding: 7px 12px; border-radius: 50px; font-size: 12.5px; color: var(--ink-soft); }
+
+  /* NEW SUPP FACTS TEMPLATE */
+  .facts-panel { border: 2px solid var(--ink); padding: 0; font-family: var(--sans); }
+  .facts-header { padding: 12px 16px 8px; border-bottom: 8px solid var(--ink); }
+  .facts-title { font-size: 26px; font-weight: 700; line-height: 1; color: var(--ink); }
+  .facts-serving { font-size: 12px; color: var(--ink); margin-top: 4px; }
+  .facts-body { padding: 8px 16px; }
+  .facts-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #ddd; padding: 6px 0; font-size: 13px; }
+  .facts-row:last-child { border-bottom: none; }
+  .facts-row.thick { border-bottom: 4px solid var(--ink); }
+  .facts-row.bold { font-weight: 700; }
+  .facts-note { font-size: 10px; color: var(--slate); padding: 8px 16px 12px; border-top: 1px solid #ddd; line-height: 1.5; }
+
+  .below-facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+
+  .how-to { background: var(--bg); padding: 28px; border: 1px solid var(--line); }
+  .how-to-label { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--teal); margin-bottom: 16px; }
+  .how-to ul { list-style: none; display: flex; flex-direction: column; gap: 10px; padding: 0; margin: 0; }
+  .how-to li { font-size: 14px; color: var(--ink); line-height: 1.5; display: flex; gap: 10px; }
+  .how-to li::before { content: '→'; color: var(--teal); flex-shrink: 0; font-size: 13px; margin-top: 1px; }
+  .how-to li strong { font-weight: 600; }
+
+  .exclude-panel { border: 1px solid var(--line); padding: 32px; }
+  .exclude-heading { font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--ink); margin: 0 0 6px; line-height: 1.2; }
+  .exclude-sub { font-size: 12px; color: var(--slate); margin-bottom: 20px; font-style: italic; }
+  .no-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .no-item { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: var(--ink); }
+  .no-item::before { content: '✕'; color: var(--ink); font-size: 10px; font-weight: 700; background: #E8E6E0; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border-radius: 50%; }
+
+  /* Reviews */
+  .reviews-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .rev { background: var(--surface); border: 1px solid var(--line); padding: 28px; border-radius: 4px; }
+  .rev .s { color: var(--bronze); letter-spacing: 2px; font-size: 14px; margin-bottom: 12px; }
+  .rev h4 { font-family: var(--serif); font-size: 22px; margin: 0 0 14px; font-weight: 500; line-height: 1.2; }
+  .rev p { font-size: 14.5px; line-height: 1.6; margin: 0 0 16px; color: var(--ink-soft); }
+  .rev .who { font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slate); font-weight: 500; }
+
+  /* DEEP-DIVE ACCORDION */
+  .deep { background: var(--surface); padding: 96px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .deep .heading { text-align: center; max-width: 700px; margin: 0 auto 48px; }
+  .deep .heading .kicker { color: var(--bronze); font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
+  .deep .heading h2 { font-family: var(--serif); font-size: clamp(44px, 4.5vw, 64px); margin: 0; font-weight: 500; line-height: 1.05; letter-spacing: -0.015em; }
+  .deep .heading h2 em { font-style: italic; color: var(--teal); }
+  .deep .heading p { font-size: 16.5px; color: var(--ink-soft); line-height: 1.6; margin-top: 14px; max-width: 540px; margin-left: auto; margin-right: auto; }
+
+  /* Accordion */
+  .accordion { max-width: 880px; margin: 0 auto; }
+  .acc-item { border-bottom: 1px solid var(--line); }
+  .acc-item:first-child { border-top: 1px solid var(--line); }
+  .acc-btn { width: 100%; background: transparent; border: none; padding: 24px 4px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; text-align: left; font-family: var(--sans); transition: all .15s ease; }
+  .acc-btn:hover { padding-left: 8px; }
+  .acc-btn .label { font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); font-weight: 600; transition: color .15s ease; }
+  .acc-btn:hover .label { color: var(--teal-dark); }
+  .acc-btn .icon { width: 24px; height: 24px; flex-shrink: 0; position: relative; transition: transform .25s ease; }
+  .acc-btn .icon::before, .acc-btn .icon::after { content: ""; position: absolute; background: var(--teal); transition: all .25s ease; }
+  .acc-btn .icon::before { left: 0; right: 0; top: 50%; height: 1.5px; margin-top: -0.75px; }
+  .acc-btn .icon::after { top: 0; bottom: 0; left: 50%; width: 1.5px; margin-left: -0.75px; }
+  .acc-item.open .acc-btn .icon::after { transform: scaleY(0); }
+  .acc-item.open .acc-btn .label { color: var(--teal-dark); font-weight: 700; }
+  .acc-panel { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+  .acc-item.open .acc-panel { max-height: 3000px; }
+  .acc-content { padding: 4px 4px 32px; }
+  .acc-content h3 { font-family: var(--serif); font-size: 28px; font-weight: 500; line-height: 1.2; margin: 0 0 14px; letter-spacing: -0.01em; }
+  .acc-content h3 em { font-style: italic; color: var(--teal); }
+  .acc-content h4 { font-family: var(--sans); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bronze); font-weight: 700; margin: 28px 0 10px; }
+  .acc-content p { font-size: 16px; line-height: 1.65; margin: 0 0 14px; color: var(--ink); }
+  .acc-content ul { padding-left: 20px; margin: 0 0 14px; }
+  .acc-content li { font-size: 16px; line-height: 1.65; margin-bottom: 8px; color: var(--ink); }
+  .acc-content li::marker { color: var(--bronze); }
+  .acc-content .ref { font-size: 13.5px; color: var(--slate); line-height: 1.55; padding-bottom: 12px; border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+  .acc-content .ref:last-child { border: none; }
+  .acc-content .ref strong { color: var(--ink); font-weight: 600; }
+
+  /* Bundle */
+  .bundle { background: var(--sand); border-radius: 6px; padding: 56px; display:grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; margin-top: 24px; }
+  .bundle .b-art { background: var(--surface); aspect-ratio: 1.3/1; border-radius: 4px; position: relative; display:flex; align-items:center; justify-content:center; gap: 28px; padding: 24px; }
+  .bundle h3 { font-family: var(--serif); font-size: clamp(32px, 3vw, 44px); margin: 0 0 14px; font-weight: 500; line-height: 1.05; }
+  .bundle h3 em { font-style: italic; color: var(--teal); }
+  .bundle p { font-size: 16.5px; line-height: 1.6; margin: 0 0 22px; color: var(--ink-soft); }
+  .bundle .savings { display:inline-block; background: var(--bronze); color: var(--ink); font-size:10.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; padding: 5px 12px; border-radius: 2px; margin-bottom: 14px; }
+  .bundle .cta { margin-top: 0; max-width: 360px; }
+
+  /* Close */
+  .close { padding: 96px 0; text-align: center; background: var(--surface); }
+  .close .tagline { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--slate); letter-spacing: 0.04em; margin-bottom: 16px; }
+  .close h2 { font-size: clamp(40px, 6vw, 72px); }
+  .close .promise { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--ink-soft); margin-top: 14px; }
+  .close .ctas { display: inline-flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; justify-content: center; }
+  .close .btn { display: inline-block; padding: 18px 36px; font-family: var(--sans); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; text-decoration: none; border-radius: 4px; transition: all .15s ease; }
+  .close .btn-primary { background: var(--ink); color: #fff; }
+  .close .btn-primary:hover { background: var(--teal); }
+  .close .btn-secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  .close .btn-secondary:hover { background: var(--ink); color: #fff; }
+
+  /* Sticky mobile CTA */
+  .sticky-cta { display:none; position: fixed; bottom: 0; left:0; right:0; background: #fff; border-top: 1px solid var(--line); padding: 12px 16px; gap: 12px; z-index: 100; box-shadow: 0 -4px 18px rgba(0,0,0,0.06); align-items: center; }
+  .sticky-cta .p { font-weight: 700; font-size: 16px; flex-shrink:0; color: var(--ink); }
+  .sticky-cta button { flex: 1; background: var(--ink); color: #fff; border: none; padding: 14px; border-radius: 4px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12.5px; font-family: var(--sans); }
+
+  /* Footer */
+  footer { background: var(--ink); color: var(--bg); padding: 72px 0 32px; }
+  footer .wrap { display:grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; }
+  footer h5 { font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin: 0 0 18px; font-weight: 700; }
+  footer ul { list-style: none; padding: 0; margin: 0; }
+  footer li { margin-bottom: 10px; font-size: 14px; }
+  footer a { text-decoration: none; color: var(--bg); }
+  footer a:hover { color: var(--bronze); }
+  footer .brand-foot { font-family: var(--serif); font-size: 32px; color: #fff; margin-bottom: 14px; letter-spacing: 0.06em; font-weight: 500; }
+  footer .tag { font-size: 14px; opacity: 0.7; max-width: 280px; line-height: 1.55; font-family: var(--serif); font-style: italic; }
+  footer .trinity { color: var(--bronze); font-size: 12.5px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; margin: 14px 0 10px; }
+  footer .copy-bar { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 56px; padding-top: 24px; font-size: 12px; opacity: 0.5; text-align: center; }
+  footer .socials { display:flex; gap: 14px; margin-top: 16px; }
+  footer .socials a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.25); display:grid; place-items: center; color: rgba(255,255,255,0.7); }
+  footer .socials a:hover { border-color: var(--bronze); color: var(--bronze); }
+
+  @media (max-width: 900px) {
+    .wrap, .wrap-narrow { padding: 0 22px; }
+    nav { padding: 14px 20px; }
+    .nav-links { display:none; }
+    .hero { grid-template-columns: 1fr; gap: 36px; padding: 32px 0 56px; }
+    .timeline { grid-template-columns: 1fr 1fr; }
+    .plants { grid-template-columns: 1fr; gap: 20px; }
+    .inside { grid-template-columns: 1fr; gap: 36px; }
+    .below-facts-grid { grid-template-columns: 1fr; }
+    .no-list { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .bundle { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
+    section.s { padding: 64px 0; }
+    .sticky-cta { display: flex; }
+    body { padding-bottom: 80px; }
+    footer .wrap { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="annc"><strong>FREE SHIPPING OVER $50</strong> · Subscribe &amp; Save 5%</div>
+
+<nav>
+  <div class="logo">Z E T A</div>
+  <div class="nav-links">
+    <a href="#" style="color:var(--teal); font-weight:600;">Shop</a>
+    <a href="#">Take The Quiz</a>
+    <a href="#">Learn</a>
+    <a href="#">The Story</a>
+  </div>
+  <div class="nav-tools">
+    <a href="#">Search</a>
+    <a href="#">Account</a>
+    <a href="#">Bag (0)</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-art">
+      <span class="photo-note photo-note-corner">PHOTO · ZETA D+K BOTTLE (FRONT)</span>
+      <svg class="bottle-svg" viewBox="0 0 260 380" xmlns="http://www.w3.org/2000/svg" aria-label="ZETA D+K bottle placeholder">
+        <rect x="90" y="10" width="80" height="50" rx="6" fill="#0a1320"/>
+        <rect x="40" y="60" width="180" height="115" rx="14 14 0 0" fill="#F4F4F5"/>
+        <rect x="40" y="175" width="180" height="195" rx="0 0 14 14" fill="#0a1320"/>
+        <text x="130" y="135" text-anchor="middle" font-family="Cormorant Garamond" font-size="28" fill="#006E73" font-weight="500">ZETA</text>
+        <rect x="56" y="220" width="148" height="100" rx="4" fill="#F4F4F5"/>
+        <text x="130" y="258" text-anchor="middle" font-family="Cormorant Garamond" font-size="36" fill="#0a1320" font-weight="500">D+K</text>
+        <text x="130" y="280" text-anchor="middle" font-family="Inter" font-size="9" fill="#B89968" letter-spacing="2">BONES · HEART · SKIN</text>
+        <line x1="80" y1="300" x2="180" y2="300" stroke="#006E73" stroke-width="1"/>
+        <text x="130" y="312" text-anchor="middle" font-family="Inter" font-size="7" fill="#5A6878" letter-spacing="1.5">60 CAPSULES</text>
+      </svg>
+      <span class="tag">Foundation · Daily</span>
+    </div>
+
+    <div class="hero-copy">
+          <div class="product-banner">
+      <span class="product-banner-name">Zeta D+K</span>
+      <span class="product-banner-sub">The Daily Bone &amp; Immune Foundation</span>
+    </div>
+      <h1>Your body used to make <em>this for free.</em></h1>
+      <p class="lede">Vitamin D3 + K2, in one capsule. Your skin made D3 from sunlight — until work became an inside job. Now most adults are quietly short on it, and most don't know.</p>
+
+      <div class="stars">
+        <span class="s">★★★★★</span>
+        <span class="count"><b>4.9</b> · early reviews</span>
+      </div>
+
+      <div class="buy">
+        <div class="row selected" data-buy="once">
+          <div class="radio"></div>
+          <div class="info">
+            <div class="t">One bottle, this time</div>
+            <div class="d">60 capsules · 60-day supply</div>
+          </div>
+          <div class="price">$34.99</div>
+        </div>
+        <div class="row" data-buy="sub">
+          <div class="radio"></div>
+          <div class="info">
+            <div class="t">Subscribe &amp; Save <span class="badge">5% OFF</span></div>
+            <div class="d">Free shipping · Pause or cancel any time</div>
+          </div>
+          <div class="price"><s>$34.99</s>$33.24</div>
+        </div>
+
+        <button class="cta">BUY ZETA D+K</button>
+        <button class="cta cta-secondary">PAIR WITH ZETA MULTI · SAVE 10%</button>
+      </div>
+
+      <div class="trust-strip">
+        <span><svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-9" stroke="#006E73" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Vegan</span>
+        <span><svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-9" stroke="#006E73" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>5000 IU D3</span>
+        <span><svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-9" stroke="#006E73" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>MK-7 K2 (bioactive)</span>
+        <span><svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-9" stroke="#006E73" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>cGMP</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PULL QUOTE -->
+<div class="quote-bar">
+  <div class="q">"The vitamin most adults are quietly short on — <em>finally dosed right</em>, and paired with the K2 it needs to do its job."</div>
+  <div class="a">Dr. David Karli · ZETA science partner</div>
+</div>
+
+<!-- WHAT YOU'LL FEEL -->
+<section class="s">
+  <div class="wrap">
+    <div class="kicker">What you'll feel</div>
+    <h2>This is the <em>quiet</em> one.</h2>
+    <p class="big" style="max-width:680px;">D+K isn't a "feel it in 30 minutes" product. It's a "feel it in 20 years" product. The body part of you that wakes up easy at 60 — that's where this lives.</p>
+
+    <div class="timeline">
+      <div class="tl">
+        <div class="when">Week 1</div>
+        <div class="what">Subtle.</div>
+        <div class="body">Most people feel nothing immediate. That's fine. Bloodwork is already moving.</div>
+      </div>
+      <div class="tl">
+        <div class="when">In 1 month</div>
+        <div class="what">D3 climbing.</div>
+        <div class="body">If you started deficient, after 1 month D+K is starting to make moves in the body.</div>
+      </div>
+      <div class="tl">
+        <div class="when">In 3–6 months</div>
+        <div class="what">Moment of truth.</div>
+        <div class="body">Updated labs will reveal positive trending values. Calcium and D going where they should — bones, teeth, skin — and not where they shouldn't (arteries).</div>
+      </div>
+      <div class="tl">
+        <div class="when">In a year+</div>
+        <div class="what">A foundation.</div>
+        <div class="body">Bone density. Cardiovascular markers. Skin elasticity. The slow, real wins.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE TWO INGREDIENTS -->
+<section class="s sand">
+  <div class="wrap">
+    <div class="kicker">Two vitamins, one capsule</div>
+    <h2>Done <em>right</em>. Taken <em>together</em>.</h2>
+    <p class="big" style="max-width: 720px;">D3 without K2 is half the story. K2 without D3 is the other half. Most multivitamins skim one of them. We dose both, in the forms your body actually uses.</p>
+
+    <div class="plants">
+      <div class="plant">
+        <svg class="leaf-svg" viewBox="0 0 60 60"><circle cx="30" cy="30" r="14" fill="#B89968" opacity="0.3"/><circle cx="30" cy="30" r="9" fill="#B89968"/><g stroke="#B89968" stroke-width="1.5" stroke-linecap="round"><line x1="30" y1="6" x2="30" y2="12"/><line x1="30" y1="48" x2="30" y2="54"/><line x1="6" y1="30" x2="12" y2="30"/><line x1="48" y1="30" x2="54" y2="30"/><line x1="13" y1="13" x2="17" y2="17"/><line x1="43" y1="43" x2="47" y2="47"/><line x1="13" y1="47" x2="17" y2="43"/><line x1="43" y1="17" x2="47" y2="13"/></g></svg>
+        <div class="origin">The sunshine vitamin</div>
+        <div class="name">Vitamin D3</div>
+        <div class="latin">Cholecalciferol · 5000 IU</div>
+        <p>For most of human history, this was free. Sun on skin, D3 made. Then work became an inside job — offices, commutes, fluorescent light — and we quietly cut ourselves off.</p>
+        <p>D3 supports your immune system, your mood, your bones, your hormones, and the energy you have at 4pm. Most adults are short on it. Most don't know.</p>
+        <div class="nick">The one your office light can't replace.</div>
+      </div>
+
+      <div class="plant">
+        <svg class="leaf-svg" viewBox="0 0 60 60"><path d="M15 45 Q30 20 45 45 Q45 50 30 45 Q15 50 15 45 Z" fill="#006E73" opacity="0.35"/><path d="M15 45 Q30 20 45 45" fill="none" stroke="#006E73" stroke-width="1.5"/><line x1="22" y1="38" x2="22" y2="48" stroke="#006E73" stroke-width="1.3"/><line x1="30" y1="32" x2="30" y2="48" stroke="#006E73" stroke-width="1.3"/><line x1="38" y1="38" x2="38" y2="48" stroke="#006E73" stroke-width="1.3"/></svg>
+        <div class="origin">From natto fermentation</div>
+        <div class="name">Vitamin K2</div>
+        <div class="latin">As menaquinone-7 (MK-7) · 90 mcg</div>
+        <p>The traffic cop for calcium. Without K2, calcium piles up in arteries — exactly where you don't want it. With it, calcium goes where it's supposed to: bones, teeth, the structural body.</p>
+        <p>MK-7 is the most bioavailable form. We use it. Most cheaper multis don't.</p>
+        <div class="nick">The one nobody told you about.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPLEMENT FACTS -->
+<section class="s">
+  <div class="wrap">
+    <div class="kicker">What's in the bottle</div>
+    <h2>Two ingredients. <em>No filler.</em></h2>
+
+    <div class="facts-panel" style="margin-top: 48px;">
+      <div class="facts-header">
+        <div class="facts-title">Supplement Facts</div>
+        <div class="facts-serving">Serving Size: 1 Vegetarian Capsule &nbsp;·&nbsp; Servings Per Container: 60</div>
+      </div>
+      <div class="facts-body">
+        <div class="facts-row thick" style="font-size:11px;color:#666;">
+          <span>Amount Per Serving</span><span>% Daily Value</span>
+        </div>
+        <div class="facts-row bold">
+          <span>Vitamin D3 (as cholecalciferol)</span>
+          <span>125 mcg · 5000 IU</span>
+        </div>
+        <div class="facts-row bold">
+          <span>Vitamin K2 (as menaquinone-7, MK-7)</span>
+          <span>90 mcg</span>
+        </div>
+      </div>
+      <div class="facts-note">
+        ** Daily Value not established.<br>
+        Other ingredients: Hypromellose (vegetarian capsule), microcrystalline cellulose, medium-chain triglycerides, silica. Vegan.
+      </div>
+    </div>
+
+    <div class="below-facts-grid">
+      <div class="how-to">
+        <p class="how-to-label">How to take it</p>
+        <ul>
+          <li>Take <strong>1 capsule daily</strong></li>
+          <li><strong>With a meal that has some fat</strong> — eggs, avocado, olive oil. D3 + K2 are fat-soluble; they absorb best with food.</li>
+          <li><strong>Morning or midday</strong> works best. D3 can be mildly energizing — avoid right before sleep.</li>
+          <li>60 capsules per bottle — <strong>60-day supply</strong></li>
+        </ul>
+      </div>
+
+      <div class="exclude-panel">
+        <h3 class="exclude-heading">Formulated with a <em style="font-style:italic;">lot of NOs.</em></h3>
+        <p class="exclude-sub">What's not in it matters as much as what is.</p>
+        <div class="no-list">
+          <div class="no-item">Gluten &amp; wheat</div>
+          <div class="no-item">Dairy</div>
+          <div class="no-item">Soy</div>
+          <div class="no-item">Eggs</div>
+          <div class="no-item">Fish &amp; shellfish</div>
+          <div class="no-item">Peanuts &amp; tree nuts</div>
+          <div class="no-item">GMO ingredients</div>
+          <div class="no-item">Artificial colors</div>
+          <div class="no-item">Artificial sweeteners</div>
+          <div class="no-item">Synthetic preservatives</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="s">
+  <div class="wrap">
+    <div class="kicker">Real reviews</div>
+    <h2>The quiet one people <em>don't stop taking</em>.</h2>
+    <p class="big" style="max-width: 680px;">D+K is the product people forget they're taking — until they look at their labs and remember why they started.</p>
+
+    <div class="reviews-grid">
+      <div class="rev">
+        <div class="s">★★★★★</div>
+        <h4>My D3 levels finally moved.</h4>
+        <p>"I was deficient for years and tried 3 different brands. After 3 months on ZETA D+K my bloodwork actually moved. I don't notice it day-to-day, which is exactly what I want from a foundation."</p>
+        <div class="who">Lauren M. · verified buyer</div>
+      </div>
+      <div class="rev">
+        <div class="s">★★★★★</div>
+        <h4>The K2 is the missing piece.</h4>
+        <p>"I'd been taking D3 alone for years. My cardiologist mentioned K2 is supposed to go with it. Found this. Glad to have both in one capsule now."</p>
+        <div class="who">Marcus T. · verified buyer</div>
+      </div>
+      <div class="rev">
+        <div class="s">★★★★★</div>
+        <h4>Skin and energy, quietly.</h4>
+        <p>"I'm 47 and I notice my skin looks better in winter than it used to. Hard to say if it's this or all of ZETA — but I'm not stopping."</p>
+        <div class="who">Joanna B. · verified buyer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEEP-DIVE ACCORDION -->
+<section class="deep">
+  <div class="wrap">
+    <div class="heading">
+      <div class="kicker">For the curious</div>
+      <h2>Dig <em>deeper.</em></h2>
+      <p>The meaty stuff — clinical applications, full ingredient list, dosing notes, allergen exclusions, and the research underneath. For the readers who like to know.</p>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-item open">
+        <button class="acc-btn"><span class="label">Description</span><span class="icon"></span></button>
+        <div class="acc-panel">
+          <div class="acc-content">
+            <h3>Two vitamins, one capsule — <em>done right.</em></h3>
+            <p>D+K 5000 is a complex of vitamin K2 and vitamin D3. It delivers vitamin K2 as <strong>menaquinone-7 (MK-7)</strong> — the most bioavailable and bioactive form of K2 — alongside <strong>vitamin D3 (cholecalciferol)</strong>, the identical form your body synthesizes when sunlight hits your skin.</p>
+            <p>Historical use and decades of clinical research support the role of vitamin K supplementation in bone and cardiovascular health. Vitamin D3 supports immune function, mood, hormone balance, and bone health. Together, they make the daily-foundation duo most adults are quietly short on.</p>
+            <h4>Clinical Applications</h4>
+            <ul>
+              <li>Supports bone health by promoting carboxylation of bone proteins</li>
+              <li>Supports cardiovascular health by influencing arterial calcium deposits</li>
+              <li>Supports healthy blood clotting</li>
+              <li>Supports immune function</li>
+              <li>Supports calcium absorption and utilization</li>
+            </ul>
+            <p style="font-size: 11.5px; color: var(--slate); font-style: italic; margin-top: 28px;">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn"><span class="label">Ingredients</span><span class="icon"></span></button>
+        <div class="acc-panel">
+          <div class="acc-content">
+            <h3>What's <em>in it.</em></h3>
+            <h4>Supplement Facts</h4>
+            <p><strong>Serving size:</strong> 1 vegetarian capsule · <strong>Servings per bottle:</strong> 60</p>
+            <ul>
+              <li><strong>Vitamin D3 (as cholecalciferol)</strong> — 125 mcg · 5000 IU</li>
+              <li><strong>Vitamin K2 (as menaquinone-7, MK-7)</strong> — 90 mcg</li>
+            </ul>
+            <h4>Other Ingredients</h4>
+            <p>Hypromellose (vegetarian capsule), microcrystalline cellulose, medium-chain triglycerides, silica.</p>
+            <h4>Why these forms</h4>
+            <p>MK-7 has a half-life of about three days in the body — much longer than other K2 forms (MK-4 lasts about an hour). That means one daily capsule maintains steady levels.</p>
+            <p>D3 (cholecalciferol) is the same molecule your skin makes from sunlight — far more bioavailable than D2.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn"><span class="label">Directions &amp; Precautions</span><span class="icon"></span></button>
+        <div class="acc-panel">
+          <div class="acc-content">
+            <h3>How to <em>take it.</em></h3>
+            <p><strong>Take 1 capsule daily, with a meal that has some fat</strong> — eggs, avocado, olive oil, yogurt, whatever you eat. D3 and K2 are fat-soluble; they absorb best with food.</p>
+            <h4>Best Time</h4>
+            <p>Morning or midday works best for most people. D3 can be mildly energizing — so we don't recommend it right before sleep.</p>
+            <h4>Pairs Well With</h4>
+            <ul>
+              <li><strong>ZETA MULTI</strong> — the daily Foundation of vitamins and minerals (covers everything D+K doesn't)</li>
+              <li><strong>ZETA MEGAS</strong> — omega-3s for the same fat-soluble absorption pathway</li>
+              <li><strong>ZETA LONGEVITY</strong> — for the long game</li>
+            </ul>
+            <h4>Precautions</h4>
+            <p>If you're on blood thinners (warfarin, Coumadin), check with your physician before starting D+K — vitamin K can interact with these medications. If pregnant, nursing, or under 18, consult your healthcare provider. Don't exceed the recommended serving.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn"><span class="label">Research</span><span class="icon"></span></button>
+        <div class="acc-panel">
+          <div class="acc-content">
+            <h3>The <em>research</em> underneath.</h3>
+            <p>A few of the studies we lean on. We won't pretend it's a complete bibliography — but it's the work that shaped the formula.</p>
+            <div class="ref"><strong>Schwalfenberg GK.</strong> Vitamins K1 and K2: The Emerging Group of Vitamins Required for Human Health. <em>Journal of Nutrition and Metabolism</em>, 2017.</div>
+            <div class="ref"><strong>Beulens JWJ et al.</strong> The role of menaquinones (vitamin K2) in human health. <em>British Journal of Nutrition</em>, 2013.</div>
+            <div class="ref"><strong>Holick MF.</strong> Vitamin D deficiency. <em>New England Journal of Medicine</em>, 2007.</div>
+            <div class="ref"><strong>Knapen MHJ et al.</strong> Three-year low-dose menaquinone-7 supplementation helps decrease bone loss in healthy postmenopausal women. <em>Osteoporosis International</em>, 2013.</div>
+            <div class="ref"><strong>Geleijnse JM et al.</strong> Dietary intake of menaquinone is associated with a reduced risk of coronary heart disease: the Rotterdam Study. <em>Journal of Nutrition</em>, 2004.</div>
+            <p style="margin-top: 24px;"><a href="#" style="color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--teal); padding-bottom: 2px; font-weight: 600; font-size: 14px; letter-spacing: 0.04em;">Read more on /research →</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLE -->
+<section class="s">
+  <div class="wrap">
+    <div class="bundle">
+      <div class="b-art">
+        <span class="photo-note" style="position:absolute; top:14px; left:14px;">PHOTO · D+K + MULTI · pair shot</span>
+        <svg viewBox="0 0 120 180" width="100" xmlns="http://www.w3.org/2000/svg" aria-label="D+K mini">
+          <rect x="40" y="6" width="40" height="24" rx="3" fill="#0A1320"/>
+          <rect x="14" y="30" width="92" height="50" fill="#F4F4F5"/>
+          <rect x="14" y="80" width="92" height="96" rx="0 0 8 8" fill="#0A1320"/>
+          <text x="60" y="54" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#006E73" font-weight="500">ZETA</text>
+          <rect x="22" y="98" width="76" height="56" rx="3" fill="#F4F4F5"/>
+          <text x="60" y="124" text-anchor="middle" font-family="Cormorant Garamond" font-size="22" fill="#0A1320" font-weight="500">D+K</text>
+          <text x="60" y="140" text-anchor="middle" font-family="Inter" font-size="5" fill="#B89968" letter-spacing="1.5">FOUNDATION</text>
+        </svg>
+        <span style="font-family:var(--serif); font-size: 38px; color: var(--teal); font-weight:500;">+</span>
+        <svg viewBox="0 0 120 180" width="100" xmlns="http://www.w3.org/2000/svg" aria-label="Zeta Multi mini">
+          <rect x="40" y="6" width="40" height="24" rx="3" fill="#006E73"/>
+          <rect x="14" y="30" width="92" height="146" rx="8" fill="#006E73"/>
+          <rect x="22" y="84" width="76" height="56" rx="3" fill="#F4F4F5"/>
+          <text x="60" y="106" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#006E73" font-weight="500">ZETA</text>
+          <text x="60" y="120" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#006E73" font-weight="500">MULTI</text>
+        </svg>
+      </div>
+      <div>
+        <span class="savings">Save 10% · Bundle</span>
+        <h3>The <em>Foundation Stack.</em></h3>
+        <p>D+K is the two vitamins most adults are missing. MULTI is the rest of the floor. Together they're the daily baseline ZETA is built on. Take both, every day, for the next twenty years. You'll be glad.</p>
+        <button class="cta">BUY THE FOUNDATION STACK</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <div class="wrap-narrow">
+    <div class="tagline">DRIVEN BY SCIENCE · BUILT TO PERFORM · MADE TO FEEL</div>
+    <h2><em style="color: var(--teal);">Take what</em><br>we take.</h2>
+    <div class="promise">Look. Feel. Perform. — Younger.</div>
+    <div class="ctas">
+      <a href="#" class="btn btn-primary">BUY ZETA D+K</a>
+      <a href="#" class="btn btn-secondary">Take the Mirror Quiz</a>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta">
+  <div class="p">$33.24/mo</div>
+  <button>BUY ZETA D+K</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand-foot">Z E T A</div>
+      <div class="tag">Manage your ecosystem. Daily.</div>
+      <div class="trinity">Health · Wealth · Youth</div>
+      <div class="socials">
+        <a aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 7.5a5 5 0 0 1-4-2v9.5a5 5 0 1 1-5-5h.5v2.5a2.5 2.5 0 1 0 2 2.5V3h2.5a4.5 4.5 0 0 0 4 4z"/></svg></a>
+        <a aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 8a2.5 2.5 0 0 0-1.8-1.8C18 5.7 12 5.7 12 5.7s-6 0-7.7.5A2.5 2.5 0 0 0 2.5 8 26 26 0 0 0 2 12c0 1.4.2 2.7.5 4a2.5 2.5 0 0 0 1.8 1.8c1.7.5 7.7.5 7.7.5s6 0 7.7-.5A2.5 2.5 0 0 0 21.5 16c.3-1.3.5-2.6.5-4 0-1.4-.2-2.7-.5-4zM10 15V9l5 3-5 3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h5>Shop</h5>
+      <ul>
+        <li><a href="#">Z-83 · Focus</a></li>
+        <li><a href="#" style="color:var(--bronze);">ZETA D+K</a></li>
+        <li><a href="#">ZETA MULTI</a></li>
+        <li><a href="#">ZETA LONGEVITY</a></li>
+        <li><a href="#">All products</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Learn</h5>
+      <ul>
+        <li><a href="#">Take the quiz</a></li>
+        <li><a href="#">The ZETA Journal</a></li>
+        <li><a href="#">Free guides</a></li>
+        <li><a href="#">Our story</a></li>
+        <li><a href="#">Help center</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Join the inner circle</h5>
+      <p style="font-size:14px; opacity:0.7; line-height:1.5; margin: 0 0 12px;">First-bottle stories, founder notes, the science we're reading. 1–2 emails a month. No fluff.</p>
+      <p style="font-size:12px; opacity:0.5;">Sign up &amp; get 10% off your first bottle.</p>
+    </div>
+  </div>
+  <div class="copy-bar">© 2026 ZETA · 3683 S. Miami Ave, Miami, FL · YourHealth@zetabody.com</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.buy .row').forEach(row => {
+    row.addEventListener('click', () => {
+      document.querySelectorAll('.buy .row').forEach(r => r.classList.remove('selected'));
+      row.classList.add('selected');
+      const isSub = row.dataset.buy === 'sub';
+      const stickyPrice = document.querySelector('.sticky-cta .p');
+      if (stickyPrice) stickyPrice.textContent = isSub ? '$33.24/mo' : '$34.99';
+    });
+  });
+
+  document.querySelectorAll('.acc-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>

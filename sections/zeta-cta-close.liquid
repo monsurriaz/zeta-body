@@ -1,0 +1,49 @@
+{%- comment -%}
+  ZETA — Close CTA (.cta-close): ink band, tagline + big heading + two buttons.
+  Styles: custom.css (.zeta-cta-close).
+{%- endcomment -%}
+
+<section class="zeta zeta-cta-close" style="background-color: {{ section.settings.background }};" {{ section.shopify_attributes }}>
+  {%- if section.settings.tagline != blank -%}
+    <p class="zeta-cta-close__tagline">{{ section.settings.tagline | escape }}</p>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <p class="zeta-cta-close__h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'large' }}">{{ section.settings.heading | newline_to_br }}</p>
+  {%- endif -%}
+  {%- if section.settings.promise != blank -%}
+    <p class="zeta-cta-close__promise">{{ section.settings.promise }}</p>
+  {%- endif -%}
+  {%- if section.settings.button_1_text != blank or section.settings.button_2_text != blank -%}
+    <div class="zeta-cta-close__actions">
+      {%- if section.settings.button_1_text != blank -%}
+        <a href="{{ section.settings.button_1_link | default: '#' }}" class="zeta-cta-close__btn-white">{{ section.settings.button_1_text | escape }}</a>
+      {%- endif -%}
+      {%- if section.settings.button_2_text != blank -%}
+        <a href="{{ section.settings.button_2_link | default: '#' }}" class="zeta-cta-close__btn-ghost">{{ section.settings.button_2_text | escape }}</a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Close CTA",
+  "tag": "section",
+  "class": "shopify-section--zeta-cta-close",
+  "settings": [
+    { "type": "color", "id": "background", "label": "Background", "info": "Text is styled light — keep this dark for legibility.", "default": "#0A1320" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Take what we take." },
+    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "Strength. Brain. Everyday." },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "large" },
+    { "type": "inline_richtext", "id": "promise", "label": "Promise line", "info": "Optional italic line shown under the heading." },
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "button_1_text", "label": "Button 1 label", "default": "BUY ZETA CREATINE" },
+    { "type": "url", "id": "button_1_link", "label": "Button 1 link" },
+    { "type": "text", "id": "button_2_text", "label": "Button 2 label", "default": "TAKE THE MIRROR QUIZ" },
+    { "type": "url", "id": "button_2_link", "label": "Button 2 link" }
+  ],
+  "presets": [
+    { "name": "Zeta Close CTA" }
+  ]
+}
+{% endschema %}

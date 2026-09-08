@@ -1,0 +1,625 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "zeta-product-info",
+      "blocks": {
+        "banner": {
+          "type": "banner",
+          "settings": {
+            "name": "Zeta PRO-B",
+            "sub": "The Four-Strain Probiotic",
+            "eyebrow_size": "small"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Gut.\n<em>Your Second Brain.</em>",
+            "heading_size": "large"
+          }
+        },
+        "lede": {
+          "type": "lede",
+          "settings": {
+            "text": "<p>100 billion live cultures. Four clinically researched strains. Sealed in nitrogen-purged aluminum blister packs so every organism arrives alive — and your second brain gets exactly what it needs.</p>"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "stars": "★★★★★",
+            "label": "5.0 · 3 reviews"
+          }
+        },
+        "subscription": {
+          "type": "subscription",
+          "settings": {
+            "onetime_label": "One box, this time",
+            "onetime_sub": "30 capsules · 30-day supply",
+            "subscribe_label": "Subscribe & Save",
+            "subscribe_sub": "Free shipping · Pause or cancel any time",
+            "frequency_label": "Delivery Schedule"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "button_label": "BUY PRO-B",
+            "show_payment_button": false,
+            "secondary_label": "TAKE THE MIRROR QUIZ",
+            "bundle_product": "",
+            "bundle_quantity": 1,
+            "secondary_link": "/pages/mirror-quiz"
+          }
+        },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {
+            "badges": "100B CFU\nDRcaps™\nBlister-Sealed\nVegetarian\ncGMP"
+          }
+        }
+      },
+      "block_order": [
+        "banner",
+        "heading",
+        "lede",
+        "rating",
+        "subscription",
+        "variant_picker",
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg",
+        "buy_buttons",
+        "trust_badges"
+      ],
+      "settings": {
+        "column_alignment": "normal",
+        "media_align": "middle",
+        "media_gap": "gutter",
+        "media_background_type": "border",
+        "media_badge": "Gut Health · Every Day",
+        "main_media_ratio": "portrait",
+        "main_media_fit": "contain",
+        "thumbnails_per_row": 5,
+        "thumbnail_position": "inside",
+        "show_thumbnails": false,
+        "show_thumbnails_mobile": false
+      }
+    },
+    "quote": {
+      "type": "zeta-pull-quote",
+      "settings": {
+        "quote": "\"Probiotics benefit health through multiple mechanisms — from metabolic support and epithelial adhesion to immune function and restoration of microbial balance after disruption.\"",
+        "attribution": "— Vanderpool C, Yan F, Polk DB · Inflammatory Bowel Diseases, 2008"
+      }
+    },
+    "timeline": {
+      "type": "zeta-timeline",
+      "blocks": {
+        "w1": {
+          "type": "phase",
+          "settings": {
+            "label": "Week 1–2",
+            "title": "The beginning.",
+            "body": "<p>In a 100-person Randomized Controlled Trial (RCT), B. lactis HN019® significantly reduced whole-gut transit time within 14 days. If things have been slow, this is usually the first thing you feel.</p>"
+          }
+        },
+        "m1": {
+          "type": "phase",
+          "settings": {
+            "label": "Week 2–4",
+            "title": "Microecology shifts.",
+            "body": "<p>Beneficial bacteria — bifidobacteria and lactobacilli — begin to rise. The microbiome moves toward balance. Less bloating, less unpredictability. More consistency.</p>"
+          }
+        },
+        "m3": {
+          "type": "phase",
+          "settings": {
+            "label": "Month 1–2",
+            "title": "Immune support builds.",
+            "body": "<p>About 70% of your immune system lives in the gut. Bowel regularity improves. Lactose digestion gets easier. The gut-immune axis starts working the way it's supposed to.</p>"
+          }
+        },
+        "y1": {
+          "type": "phase",
+          "settings": {
+            "label": "Ongoing",
+            "title": "Foundation, not just function.",
+            "body": "<p>The microbiome underpins energy, mood, immune response, and systemic inflammation. You're not just addressing digestion. You're maintaining the foundation everything else runs on.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "m1",
+        "m3",
+        "y1"
+      ],
+      "settings": {
+        "eyebrow": "Optimize",
+        "eyebrow_size": "small",
+        "heading": "What <em>changes</em>",
+        "heading_size": "medium",
+        "subtitle": "",
+        "border_style": "separator"
+      }
+    },
+    "ingredients": {
+      "type": "zeta-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "tile",
+          "settings": {
+            "featured": false,
+            "icon": "<svg viewbox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"30,3 55,17 55,43 30,57 5,43 5,17\" stroke=\"#006E73\" stroke-width=\"1.5\" fill=\"none\"></polygon><circle cx=\"30\" cy=\"30\" r=\"5\" stroke=\"#006E73\" stroke-width=\"1.5\" fill=\"none\"></circle><circle cx=\"30\" cy=\"19\" r=\"3\" fill=\"#006E73\" opacity=\"0.4\"></circle><circle cx=\"40\" cy=\"36\" r=\"3\" fill=\"#006E73\" opacity=\"0.4\"></circle><circle cx=\"20\" cy=\"36\" r=\"3\" fill=\"#006E73\" opacity=\"0.4\"></circle></svg>",
+            "tag": "",
+            "corner_tag": "Most Studied",
+            "label": "The Proven Anchor",
+            "label_color": "teal",
+            "name": "B. lactis HN019®",
+            "source": "HOWARU™ certified · most-studied strain in the formula",
+            "body": "<p>The anchor of this formula. In a randomized controlled trial of 100 adults, daily HN019® supplementation significantly reduced whole-gut transit time within 14 days — at both high and low doses. It adheres to epithelial cells, survives GI transit intact, and has a safety record spanning decades of published human research. The foundation every other strain is built around.</p>",
+            "nick": ""
+          }
+        },
+        "i2": {
+          "type": "tile",
+          "settings": {
+            "featured": false,
+            "icon": "<svg viewbox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"30,3 57,30 30,57 3,30\" stroke=\"#B89968\" stroke-width=\"1.5\" fill=\"none\"></polygon><polygon points=\"30,15 45,30 30,45 15,30\" stroke=\"#B89968\" stroke-width=\"1\" fill=\"none\"></polygon><circle cx=\"30\" cy=\"30\" r=\"3\" fill=\"#B89968\"></circle></svg>",
+            "tag": "",
+            "corner_tag": "",
+            "label": "The Human Native",
+            "label_color": "bronze",
+            "name": "L. acidophilus La-14",
+            "source": "of human origin · type A1 L. acidophilus",
+            "body": "<p>Found naturally in the human intestinal tract, mouth, and vagina — and in fermented milks like kefir for centuries. The La-14 strain is of human origin, which matters: strains that evolved alongside human biology tend to adhere better and colonize more effectively. Demonstrates excellent adhesion to human epithelial cell lines. It belongs here.</p>",
+            "nick": ""
+          }
+        },
+        "i3": {
+          "type": "tile",
+          "settings": {
+            "featured": false,
+            "icon": "<svg viewbox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M30 8 C30 8, 14 20, 14 34 C14 44 21 52 30 52 C39 52 46 44 46 34 C46 20 30 8 30 8Z\" stroke=\"#6B7280\" stroke-width=\"1.5\" fill=\"none\"></path><path d=\"M30 20 C30 20, 20 28, 20 36 C20 42 24 48 30 48\" stroke=\"#6B7280\" stroke-width=\"1\" stroke-dasharray=\"3 2\" fill=\"none\"></path><circle cx=\"30\" cy=\"30\" r=\"2\" fill=\"#6B7280\" opacity=\"0.5\"></circle></svg>",
+            "tag": "",
+            "corner_tag": "",
+            "label": "The Fermented Foods Strain",
+            "label_color": "mid",
+            "name": "L. plantarum Lp-115",
+            "source": "from plant origin · olives, sauerkraut, kimchi",
+            "body": "<p>Found in lactic acid-fermented foods across cultures — olives, sauerkraut, kimchi — for centuries before we understood why. The Lp-115 strain is tough in the right way: resistant to low pH conditions, bile-tolerant at duodenal concentrations, and demonstrates excellent adhesion to epithelial cell lines. It doesn't just survive the GI tract. It's built for it.</p>",
+            "nick": ""
+          }
+        },
+        "i4": {
+          "type": "tile",
+          "settings": {
+            "featured": false,
+            "icon": "<svg viewbox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"20\" width=\"40\" height=\"20\" rx=\"10\" stroke=\"#8B7355\" stroke-width=\"1.5\" fill=\"none\"></rect><rect x=\"18\" y=\"25\" width=\"24\" height=\"10\" rx=\"5\" stroke=\"#8B7355\" stroke-width=\"1\" fill=\"none\"></rect><circle cx=\"30\" cy=\"30\" r=\"2.5\" fill=\"#8B7355\" opacity=\"0.5\"></circle><circle cx=\"18\" cy=\"30\" r=\"1.5\" fill=\"#8B7355\" opacity=\"0.3\"></circle><circle cx=\"42\" cy=\"30\" r=\"1.5\" fill=\"#8B7355\" opacity=\"0.3\"></circle></svg>",
+            "tag": "",
+            "corner_tag": "",
+            "label": "The Intestinal Specialist",
+            "label_color": "sand",
+            "name": "B. longum Bl-05",
+            "source": "Bl-05 strain · intestinal environment native",
+            "body": "<p>Well-suited to the intestinal environment — which sounds simple, but it's not. B. longum Bl-05 is resistant to both low pH and bile salts, meaning it makes it to the target tissue alive and ready. Well-established safety profile, documented performance in the gut. The quiet, reliable fourth member of this stack.</p>",
+            "nick": ""
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4"
+      ],
+      "settings": {
+        "section_bg": "#f4f4f5",
+        "eyebrow": "The formula",
+        "eyebrow_size": "small",
+        "heading": "Four strains.\n<em>One ecosystem.</em>",
+        "heading_size": "medium",
+        "subtitle": ""
+      }
+    },
+    "facts": {
+      "type": "zeta-supplement-facts",
+      "blocks": {
+        "f_blend": {
+          "type": "fact",
+          "settings": {
+            "name": "Probiotic Blend · 100 Billion CFU†",
+            "desc": "Four-strain blend for gut health and immune support",
+            "desc_block": true,
+            "amount": "**",
+            "is_main": false,
+            "bold": true,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "f_hn019": {
+          "type": "fact",
+          "settings": {
+            "name": "Bifidobacterium lactis HN019® (HOWARU™)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "**",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "f_la14": {
+          "type": "fact",
+          "settings": {
+            "name": "Lactobacillus acidophilus La-14",
+            "desc": "",
+            "desc_block": false,
+            "amount": "**",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "f_lp115": {
+          "type": "fact",
+          "settings": {
+            "name": "Lactobacillus plantarum Lp-115",
+            "desc": "",
+            "desc_block": false,
+            "amount": "**",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "f_bl05": {
+          "type": "fact",
+          "settings": {
+            "name": "Bifidobacterium longum Bl-05",
+            "desc": "",
+            "desc_block": false,
+            "amount": "**",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "dir1": {
+          "type": "direction",
+          "settings": {
+            "text": "Take <strong>1 capsule daily</strong>"
+          }
+        },
+        "dir2": {
+          "type": "direction",
+          "settings": {
+            "text": "<strong>Morning is recommended</strong> — with or without food. Consistent timing matters more than perfect timing."
+          }
+        },
+        "dir3": {
+          "type": "direction",
+          "settings": {
+            "text": "Each capsule is individually blister-sealed. <strong>Open only what you're taking</strong> — the rest stays fully protected."
+          }
+        },
+        "dir4": {
+          "type": "direction",
+          "settings": {
+            "text": "30 capsules per box — <strong>30-day supply</strong>"
+          }
+        },
+        "dir5": {
+          "type": "direction",
+          "settings": {
+            "text": "Store at room temperature. No refrigeration needed with blister-pack storage."
+          }
+        },
+        "x1": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Dairy & milk products"
+          }
+        },
+        "x2": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Wheat & gluten"
+          }
+        },
+        "x3": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Soy"
+          }
+        },
+        "x4": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Animal products"
+          }
+        },
+        "x5": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Fish & shellfish"
+          }
+        },
+        "x6": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Peanuts & tree nuts"
+          }
+        },
+        "x7": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Eggs"
+          }
+        },
+        "x8": {
+          "type": "exclusion",
+          "settings": {
+            "text": "GMO ingredients"
+          }
+        },
+        "x9": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Artificial colors"
+          }
+        },
+        "x10": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Artificial sweeteners"
+          }
+        },
+        "x11": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Artificial preservatives"
+          }
+        },
+        "x12": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Synthetic fillers"
+          }
+        }
+      },
+      "block_order": [
+        "f_blend",
+        "f_hn019",
+        "f_la14",
+        "f_lp115",
+        "f_bl05",
+        "dir1",
+        "dir2",
+        "dir3",
+        "dir4",
+        "dir5",
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "x5",
+        "x6",
+        "x7",
+        "x8",
+        "x9",
+        "x10",
+        "x11",
+        "x12"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "eyebrow_size": "small",
+        "heading": "",
+        "heading_size": "medium",
+        "facts_title": "Supplement Facts",
+        "serving_line": "Serving Size: 1 Capsule · Servings Per Container: 30",
+        "amount_header": "Amount Per Serving",
+        "dv_header": "% Daily Value",
+        "facts_note": "** Daily Value not established.\n† Live colony-forming units at time of manufacture; potency maintained through best-by date when stored correctly at room temperature, away from heat and moisture.\nOther ingredients: DRcaps™ vegetarian capsule (hypromellose). Free of dairy, gluten, soy, and artificial additives.\nHOWARU™ is a registered trademark of International Flavors & Fragrances Inc. DRcaps™ is a trademark of Lonza Ltd.",
+        "how_to_label": "How to take it",
+        "exclude_heading": "Formulated with a <em>lot of NOs.</em>",
+        "exclude_sub": "What's not in it matters as much as what is.",
+        "warning_heading": "",
+        "warning_body": ""
+      }
+    },
+    "reviews": {
+      "type": "zeta-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "",
+            "body": "\"After incorporating this into my daily routine, I noticed a remarkable transformation. The anxiety I felt after eating, the bloating — it's just gone. This product has exceeded my expectations.\"",
+            "attribution": "— Edna C., verified buyer · Oct 2025"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "",
+            "body": "\"Been on other probiotics but never noticed any difference. PRO-B is noticeable in a week. My stomach has never felt better. And I love the foil pouch — every capsule is fresh. Other bottles can't say the same.\"",
+            "attribution": "— Dick B., verified buyer · Dec 2023"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "",
+            "body": "\"I have been chronically constipated all my life. Prescriptions, laxatives, everything — no real lasting results. PRO-B has me going daily for the first time. Absolutely thrilled. Feel so much better.\"",
+            "attribution": "— Verified buyer · Dec 2023"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "eyebrow": "Real results",
+        "eyebrow_size": "small",
+        "heading": "What people <em>notice</em>",
+        "heading_size": "medium",
+        "subtitle": ""
+      }
+    },
+    "digdeeper": {
+      "type": "zeta-accordion",
+      "blocks": {
+        "a1": {
+          "type": "item",
+          "settings": {
+            "label": "Description",
+            "content": "<p>ZETA PRO-B is a vegetarian, dairy-free, gluten-free four-strain probiotic delivering 100 billion CFU per capsule. The four strains — B. lactis HN019®, L. acidophilus La-14, L. plantarum Lp-115, and B. longum Bl-05 — are selected for their published research, ability to survive GI transit, and demonstrated adhesion to intestinal epithelial cells. PRO-B uses DRcaps™ gastro-resistant capsules to protect live organisms from stomach acid and ensure targeted release in the small intestine. Each capsule is individually sealed in nitrogen-purged aluminum blister packs to protect against heat, moisture, and oxygen — from the first capsule to the last. One capsule daily.</p>",
+            "open_by_default": false
+          }
+        },
+        "a2": {
+          "type": "item",
+          "settings": {
+            "label": "Ingredients",
+            "content": "<ul>\n<li>\n<strong>Bifidobacterium lactis HN019® (HOWARU™)</strong> — The flagship strain. Extensively studied in human RCTs for bowel regularity, GI transit time, and microbiome diversity. Survives GI transit, adheres to epithelial cells, has a 20+ year safety record in published literature.</li>\n<li>\n<strong>Lactobacillus acidophilus La-14</strong> — Human-origin strain, classified as type A1 L. acidophilus. Demonstrates excellent adhesion to human epithelial cell lines. Historically present in fermented milks and naturally occurring in human GI flora.</li>\n<li>\n<strong>Lactobacillus plantarum Lp-115</strong> — Isolated from plant material; abundant in lactic acid-fermented foods. Demonstrates excellent epithelial adhesion in vitro. Resistant to low pH and survives bile at duodenal concentrations.</li>\n<li>\n<strong>Bifidobacterium longum Bl-05</strong> — Well-established safety profile. Naturally resistant to low pH and bile salts. Well-suited to the intestinal environment with documented performance in the gut.</li>\n<li>Capsule: DRcaps™ vegetarian capsule (hypromellose). No additional fillers, binders, or additives.</li>\n</ul>",
+            "open_by_default": false
+          }
+        },
+        "a3": {
+          "type": "item",
+          "settings": {
+            "label": "Directions & Precautions",
+            "content": "<p>Take 1 capsule daily, preferably in the morning. The DRcaps™ capsule handles stomach transit — no need to adjust timing around meals. Consistency matters more than perfect timing. Store at room temperature, away from heat and moisture. Do not refrigerate (unnecessary with nitrogen-purged blister pack storage).</p><p><strong>Precautions:</strong> Probiotics are generally well-tolerated. Some individuals experience mild GI adjustment in the first 1–2 weeks as the microbiome shifts — this is normal. If you are immunocompromised, critically ill, or post-surgical, check with your physician before use. If pregnant or nursing, check with your provider. Not intended for use in infants without medical guidance.</p>",
+            "open_by_default": false
+          }
+        },
+        "a4": {
+          "type": "item",
+          "settings": {
+            "label": "Research",
+            "content": "<div class=\"research-list\">\n<div class=\"research-item\"><p><strong>Waller PA et al.</strong> Dose-response effect of Bifidobacterium lactis HN019 on whole gut transit time and functional gastrointestinal symptoms in adults. <span class=\"journal\">Scandinavian Journal of Gastroenterology</span> (2011). 100-subject RCT demonstrating statistically significant reduction in GI transit time with daily HN019® supplementation. The clinical anchor for the transit-time claim — and the study that set HN019® apart from other strains.</p></div>\n<div class=\"research-item\"><p><strong>Vanderpool C, Yan F, Polk DB.</strong> Mechanisms of probiotic action: Implications for therapeutic applications in inflammatory bowel diseases. <span class=\"journal\">Inflammatory Bowel Diseases</span> (2008). Comprehensive review of the seven mechanisms by which probiotics benefit health — metabolic activity, epithelial adhesion, microbial balance, immune function, and more. The scientific framework behind the multi-strain approach.</p></div>\n<div class=\"research-item\"><p><strong>Ahmed M et al.</strong> Impact of Bifidobacterium lactis HN019 on intestinal microflora of elderly subjects. <span class=\"journal\">Journal of Nutrition Health &amp; Aging</span> (2007). Statistically significant increases in beneficial microflora in subjects over 60 — the demographic where microbiome diversity declines most sharply and supplementation matters most.</p></div>\n<div class=\"research-item\"><p><strong>Gopal PK et al.</strong> Effects of Bifidobacterium lactis HN019 and galacto-oligosaccharides on gastrointestinal microflora in human subjects. <span class=\"journal\">Nutrition Research</span> (2003). Documents measurable increases in bifidobacteria and lactobacilli following HN019® supplementation — the microbiome population shift that drives downstream benefits.</p></div>\n<div class=\"research-item\"><p><strong>Collado MC, Meriluoto J, Salminen S.</strong> Role of commercial probiotic strains against human pathogen adhesion to intestinal mucus. <span class=\"journal\">Letters in Applied Microbiology</span> (2007). Establishes competitive adhesion properties of L. plantarum Lp-115 and L. acidophilus La-14 — the mechanism by which beneficial strains displace less desirable organisms from intestinal tissue.</p></div>\n</div>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "settings": {
+        "eyebrow": "For the Curious",
+        "eyebrow_size": "small",
+        "heading": "Dig <em>deeper.</em>",
+        "subtitle": "The probiotic science, full ingredients, dosing notes, and the research behind the four strains."
+      }
+    },
+    "bundle": {
+      "type": "zeta-bundle",
+      "blocks": {
+        "bp1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "PRO-B",
+            "sub": "100B CFU · Four Strains"
+          }
+        },
+        "bp2": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "F+V",
+            "sub": "Greens · Reds · Digestive Support"
+          }
+        }
+      },
+      "block_order": [
+        "bp1",
+        "bp2"
+      ],
+      "settings": {
+        "layout": "row",
+        "eyebrow": "Pair it right",
+        "heading": "<em>The Gut Support</em> Stack",
+        "heading_size": "medium",
+        "discount": "10% off when you bundle",
+        "body": "<p>PRO-B provides the beneficial bacteria. FRUITS & VEGGIES provides the prebiotic fiber and phytonutrients they need to thrive. One populates the gut. The other feeds it. Two products, one complete ecosystem.</p>",
+        "cart_mode": "with_main",
+        "button_text": "Buy The Gut Support Stack",
+        "button_link": ""
+      }
+    },
+    "ctaclose": {
+      "type": "zeta-cta-close",
+      "settings": {
+        "background": "#0a1320",
+        "tagline": "",
+        "heading": "Give your gut what it needs\nto give you everything else.",
+        "heading_size": "large",
+        "promise": "",
+        "button_1_text": "Buy PRO-B",
+        "button_1_link": "",
+        "button_2_text": "Take the Mirror Quiz",
+        "button_2_link": "/pages/mirror-quiz"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "quote",
+    "timeline",
+    "ingredients",
+    "facts",
+    "reviews",
+    "digdeeper",
+    "bundle",
+    "ctaclose"
+  ]
+}

@@ -1,0 +1,100 @@
+{%- comment -%}
+  ZETA — Blog teaser (#blog): head + 3 dynamic article cards + YouTube note.
+  Pulls latest articles from a chosen blog; shows placeholders if none. Styles: custom.css (.zeta-blog).
+{%- endcomment -%}
+
+{%- assign blog = blogs[section.settings.blog] -%}
+{%- assign post_limit = section.settings.posts_count | default: 3 -%}
+
+<section class="zeta zeta-blog" {{ section.shopify_attributes }}>
+  <div class="zeta-blog__head">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="zeta-eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="zeta-blog__h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'small' }}">{{ section.settings.heading | newline_to_br }}</h2>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.link_text != blank -%}
+      <a href="{{ blog.url | default: section.settings.link_url | default: '#' }}" class="zeta-blog__link">{{ section.settings.link_text | escape }}</a>
+    {%- endif -%}
+  </div>
+
+  <div class="zeta-blog__grid">
+    {%- if blog != blank and blog.articles_count > 0 -%}
+      {%- for article in blog.articles limit: post_limit -%}
+        <a href="{{ article.url }}" class="zeta-blog__card">
+          <div class="zeta-blog__img">
+            {%- if article.image -%}
+              {{ article.image | image_url: width: 800 | image_tag: loading: 'lazy', sizes: '(max-width: 960px) 100vw, 33vw', widths: '400,600,800', alt: article.title | escape }}
+            {%- else -%}
+              <span class="zeta-blog__img-hint">{{ 'blog' | escape }}</span>
+            {%- endif -%}
+          </div>
+          <div class="zeta-blog__body">
+            {%- if article.tags.size > 0 -%}
+              <div class="zeta-blog__cat">{{ article.tags.first | escape }}</div>
+            {%- else -%}
+              <div class="zeta-blog__cat">{{ blog.title | escape }}</div>
+            {%- endif -%}
+            <div class="zeta-blog__title">{{ article.title | escape }}</div>
+            <div class="zeta-blog__date">{{ article.published_at | date: '%b %d, %Y' }}</div>
+          </div>
+        </a>
+      {%- endfor -%}
+    {%- else -%}
+      {%- comment -%} Placeholder cards until a blog is connected {%- endcomment -%}
+      <div class="zeta-blog__card">
+        <div class="zeta-blog__img"><span class="zeta-blog__img-hint">Blog image</span></div>
+        <div class="zeta-blog__body">
+          <div class="zeta-blog__cat">Science</div>
+          <div class="zeta-blog__title">Why brain fog is more than just in your head — and what actually causes it</div>
+          <div class="zeta-blog__date">Coming Soon</div>
+        </div>
+      </div>
+      <div class="zeta-blog__card">
+        <div class="zeta-blog__img"><span class="zeta-blog__img-hint">Blog image</span></div>
+        <div class="zeta-blog__body">
+          <div class="zeta-blog__cat">Performance</div>
+          <div class="zeta-blog__title">The difference between feeling good and measuring good</div>
+          <div class="zeta-blog__date">Coming Soon</div>
+        </div>
+      </div>
+      <div class="zeta-blog__card">
+        <div class="zeta-blog__img"><span class="zeta-blog__img-hint">Blog image</span></div>
+        <div class="zeta-blog__body">
+          <div class="zeta-blog__cat">Longevity</div>
+          <div class="zeta-blog__title">Biomarkers you should be tracking by your 30s (and how to move them)</div>
+          <div class="zeta-blog__date">Coming Soon</div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.note != blank -%}
+    <div class="zeta-blog__note">{{ section.settings.note }}</div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Blog Teaser",
+  "tag": "section",
+  "class": "shopify-section--zeta-blog",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Knowledge" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "What we're <em>learning</em>" },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    { "type": "blog", "id": "blog", "label": "Blog" },
+    { "type": "range", "id": "posts_count", "label": "Posts to show", "min": 1, "max": 4, "step": 1, "default": 3 },
+    { "type": "text", "id": "link_text", "label": "Link label", "default": "All Posts →" },
+    { "type": "url", "id": "link_url", "label": "Link URL (if no blog selected)" },
+    { "type": "richtext", "id": "note", "label": "Note", "info": "Optional highlighted note under the grid.", "default": "<p>📺 <strong>YouTube:</strong> Connect ZETA's YouTube channel here — embedding video alongside posts strengthens authority signals.</p>" }
+  ],
+  "presets": [
+    { "name": "Zeta Blog Teaser" }
+  ]
+}
+{% endschema %}

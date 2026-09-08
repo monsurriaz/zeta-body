@@ -1,0 +1,75 @@
+{%- comment -%}
+  ZETA — Reviews (.reviews): eyebrow + heading + testimonial cards.
+  Cards are blocks. Styles: custom.css (.zeta-reviews).
+{%- endcomment -%}
+
+<section class="zeta zeta-reviews" {{ section.shopify_attributes }}>
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="zeta-section-eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="zeta-section-h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  {%- if section.settings.subtitle != blank -%}
+    <div class="zeta-reviews__intro">{{ section.settings.subtitle }}</div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="zeta-reviews__grid">
+      {%- for block in section.blocks -%}
+        <div class="zeta-reviews__card" {{ block.shopify_attributes }}>
+          {%- if block.settings.stars != blank -%}
+            <div class="zeta-reviews__stars">{{ block.settings.stars | escape }}</div>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <div class="zeta-reviews__title">{{ block.settings.title }}</div>
+          {%- endif -%}
+          {%- if block.settings.body != blank -%}
+            <div class="zeta-reviews__body">{{ block.settings.body }}</div>
+          {%- endif -%}
+          {%- if block.settings.attribution != blank -%}
+            <div class="zeta-reviews__attr">{{ block.settings.attribution | escape }}</div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Reviews",
+  "tag": "section",
+  "class": "shopify-section--zeta-reviews",
+  "max_blocks": 9,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Real reviews" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "The quiet one people <em>don't stop taking</em>." },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
+    { "type": "richtext", "id": "subtitle", "label": "Subtitle", "info": "Optional intro paragraph shown under the heading." }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "text", "id": "stars", "label": "Stars", "default": "★★★★★" },
+        { "type": "inline_richtext", "id": "title", "label": "Headline", "default": "My D3 levels finally moved." },
+        { "type": "inline_richtext", "id": "body", "label": "Quote", "default": "\"I was deficient for years and tried 3 different brands. After 3 months my bloodwork actually moved.\"" },
+        { "type": "text", "id": "attribution", "label": "Attribution", "default": "Lauren M. · verified buyer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Reviews",
+      "blocks": [
+        { "type": "review", "settings": { "stars": "★★★★★", "title": "My D3 levels finally moved.", "body": "\"I was deficient for years and tried 3 different brands. After 3 months my bloodwork actually moved. I don't notice it day-to-day, which is exactly what I want from a foundation.\"", "attribution": "Lauren M. · verified buyer" } },
+        { "type": "review", "settings": { "stars": "★★★★★", "title": "The K2 is the missing piece.", "body": "\"I'd been taking D3 alone for years. My cardiologist mentioned K2 is supposed to go with it. Found this. Glad to have both in one capsule now.\"", "attribution": "Marcus T. · verified buyer" } },
+        { "type": "review", "settings": { "stars": "★★★★★", "title": "Skin and energy, quietly.", "body": "\"I'm 47 and I notice my skin looks better in winter than it used to. Hard to say if it's this or all of ZETA — but I'm not stopping.\"", "attribution": "Joanna B. · verified buyer" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,95 @@
+{%- comment -%}
+  ZETA — Ingredient Tiles (.ingredients): eyebrow + heading + tile grid.
+  Tiles are blocks. Styles: custom.css (.zeta-ingredients).
+{%- endcomment -%}
+
+<section class="zeta zeta-ingredients" style="background-color: {{ section.settings.section_bg }};" {{ section.shopify_attributes }}>
+  <div class="zeta-ingredients__header">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="zeta-section-eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="zeta-section-h2 zeta-section-h2--flush zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading | newline_to_br }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subtitle != blank -%}
+      <div class="zeta-ingredients__intro">{{ section.settings.subtitle }}</div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="zeta-ingredients__grid">
+      {%- for block in section.blocks -%}
+        <div class="zeta-ingredients__tile{% if block.settings.featured %} zeta-ingredients__tile--featured{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.corner_tag != blank -%}
+            <span class="zeta-ingredients__corner-tag">{{ block.settings.corner_tag | escape }}</span>
+          {%- endif -%}
+          {%- if block.settings.tag != blank -%}
+            <span class="zeta-ingredients__tag">{{ block.settings.tag | escape }}</span>
+          {%- endif -%}
+          {%- if block.settings.icon != blank -%}
+            <div class="zeta-ingredients__icon">{{ block.settings.icon }}</div>
+          {%- endif -%}
+          {%- if block.settings.label != blank -%}
+            <p class="zeta-ingredients__label zeta-ingredients__label--{{ block.settings.label_color | default: 'teal' }}">{{ block.settings.label | escape }}</p>
+          {%- endif -%}
+          {%- if block.settings.name != blank -%}
+            <div class="zeta-ingredients__name">{{ block.settings.name }}</div>
+          {%- endif -%}
+          {%- if block.settings.source != blank -%}
+            <div class="zeta-ingredients__source">{{ block.settings.source | escape }}</div>
+          {%- endif -%}
+          {%- if block.settings.body != blank -%}
+            <div class="zeta-ingredients__body">{{ block.settings.body }}</div>
+          {%- endif -%}
+          {%- if block.settings.nick != blank -%}
+            <div class="zeta-ingredients__nick">{{ block.settings.nick }}</div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Ingredient Tiles",
+  "tag": "section",
+  "class": "shopify-section--zeta-ingredients",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "color", "id": "section_bg", "label": "Section background", "default": "#F4F4F5" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What's inside" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Line breaks (Enter) become new lines. Use <em>…</em> for teal emphasis.", "default": "One ingredient.\n<em>~700 clinical trials</em> behind it." },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
+    { "type": "richtext", "id": "subtitle", "label": "Subtitle", "info": "Optional intro paragraph shown under the heading." }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Ingredient tile",
+      "settings": [
+        { "type": "checkbox", "id": "featured", "label": "Featured tile", "info": "Adds a bronze border to highlight the standout ingredient.", "default": false },
+        { "type": "textarea", "id": "icon", "label": "Icon (SVG code)", "info": "Paste inline <svg> markup. Optional." },
+        { "type": "text", "id": "tag", "label": "Tag", "info": "Optional bronze pill shown inline at the top of the tile." },
+        { "type": "text", "id": "corner_tag", "label": "Corner tag", "info": "Optional bronze pill pinned to the top-right corner." },
+        { "type": "text", "id": "label", "label": "Label", "info": "Optional colored eyebrow shown above the name." },
+        { "type": "select", "id": "label_color", "label": "Label color", "options": [ { "value": "teal", "label": "Teal" }, { "value": "bronze", "label": "Bronze" }, { "value": "mid", "label": "Grey" }, { "value": "sand", "label": "Sand" } ], "default": "teal" },
+        { "type": "inline_richtext", "id": "name", "label": "Name", "default": "Creatine Monohydrate" },
+        { "type": "text", "id": "source", "label": "Source line", "default": "5g per serving · pure · extensively studied" },
+        { "type": "richtext", "id": "body", "label": "Body", "default": "<p>The most studied performance supplement in history. 5g. One ingredient. Nothing else.*</p>" },
+        { "type": "inline_richtext", "id": "nick", "label": "Closing line", "info": "Italic teal tagline under the body. Optional." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Ingredient Tiles",
+      "blocks": [
+        { "type": "tile", "settings": { "tag": "The Molecule", "name": "Creatine Monohydrate", "source": "5g per serving · pure · extensively studied", "body": "<p>The most studied performance supplement in history. Creatine stores phosphate groups as phosphocreatine, regenerating ATP — the primary fuel for muscle contraction and brain function. 5g. One ingredient. Nothing else.*</p>" } },
+        { "type": "tile", "settings": { "tag": "The Standard", "name": "NSF Certified for Sport®", "source": "Third-party tested · every lot · 270+ banned substances", "body": "<p>Every single production lot independently tested for banned substances — the certification pro athletes and Olympic teams require. Few competitor creatines bother. We do.*</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

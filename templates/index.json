@@ -9,376 +9,424 @@
  */
 {
   "sections": {
-    "slideshow": {
-      "type": "slideshow",
+    "hero": {
+      "type": "zeta-home-hero",
+      "settings": {
+        "eyebrow": "Miami · Science-Backed · No Compromises",
+        "eyebrow_size": "small",
+        "heading": "You only get\nOne <em>Brain.</em>\nOne <em>Body.</em>\nBuild them both.",
+        "heading_size": "large",
+        "subheading": "<p>The world doesn't stop because you need it to. Every day is a choice — to invest in your brain and body, keep them strong, and perform at the level your life demands.</p>",
+        "quote": "<p>We're not perfect. But we can make choices every day that let us perform, move, and stay healthy. That's what ZETA is for.</p>",
+        "button_1_text": "Shop Z-83 — Flagship",
+        "button_1_link": "",
+        "button_2_text": "Our Story",
+        "button_2_link": "",
+        "media_placeholder_text": "Hero video or product image · Z-83",
+        "badge_eyebrow": "Flagship Formula",
+        "badge_name": "Z-83™",
+        "badge_sub": "Daily Energy + Focus"
+      }
+    },
+    "ticker": {
+      "type": "zeta-ticker",
       "blocks": {
-        "86a98c3c-aa25-4198-a082-4ef9d9bb0bd2": {
-          "type": "image",
+        "p1": {
+          "type": "phrase",
           "settings": {
-            "image": "shopify://shop_images/sports-woman-takes-supplements-or-vitamins-at-gym-2021-09-04-12-30-04-utc_2.jpg",
-            "content_max_width": 780,
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
-            "subheading": "",
-            "title": "Vital NewTrients that",
-            "heading_tag": "h2",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "background": "",
-            "background_gradient": ""
+            "text": "Stop The Drain",
+            "highlight": true
           }
         },
-        "slide-2": {
-          "type": "image",
+        "p2": {
+          "type": "phrase",
           "settings": {
-            "image": "shopify://shop_images/portrait-of-happy-sportive-middle-aged-couple-man-2023-11-27-05-01-15-utc_1_eb423154-5eb9-4eec-b6a0-f90c39eb4d4a.jpg",
-            "content_max_width": 920,
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
-            "subheading": "",
-            "title": "Promote Vitality + Longevity",
-            "heading_tag": "h1",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 10,
-            "background": "",
-            "background_gradient": ""
+            "text": "Clear The Fog",
+            "highlight": false
           }
         },
-        "e37d4d7a-63fb-42f1-8a1a-23d82004d55d": {
-          "type": "image",
+        "p3": {
+          "type": "phrase",
           "settings": {
-            "image": "shopify://shop_images/girls-having-full-body-training-2022-02-02-04-49-08-utc.jpg",
-            "content_max_width": 780,
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
-            "subheading": "",
-            "title": "Live Healthier + Happier",
-            "heading_tag": "h1",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30,
-            "background": "",
-            "background_gradient": ""
+            "text": "Health. Wealth. Youth.",
+            "highlight": true
           }
         },
-        "slide-1": {
-          "type": "image",
+        "p4": {
+          "type": "phrase",
           "settings": {
-            "image": "shopify://shop_images/healthy-lifestyle-people-concept-2021-08-29-09-54-00-utc_1.jpg",
-            "content_max_width": 780,
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center-start sm:text-start",
-            "subheading": "",
-            "title": "Stay tuned for more",
-            "heading_tag": "h2",
-            "button_text": "",
-            "button_link": "",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "overlay_color": "#000000",
-            "overlay_opacity": 26,
-            "background": "",
-            "background_gradient": ""
+            "text": "Science-Backed",
+            "highlight": false
+          }
+        },
+        "p5": {
+          "type": "phrase",
+          "settings": {
+            "text": "Look. Feel. Perform.",
+            "highlight": true
+          }
+        },
+        "p6": {
+          "type": "phrase",
+          "settings": {
+            "text": "Built in Miami",
+            "highlight": false
+          }
+        },
+        "p7": {
+          "type": "phrase",
+          "settings": {
+            "text": "No Compromises",
+            "highlight": true
+          }
+        },
+        "p8": {
+          "type": "phrase",
+          "settings": {
+            "text": "Protect Your Power",
+            "highlight": false
           }
         }
       },
       "block_order": [
-        "86a98c3c-aa25-4198-a082-4ef9d9bb0bd2",
-        "slide-2",
-        "e37d4d7a-63fb-42f1-8a1a-23d82004d55d",
-        "slide-1"
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
       ],
-      "settings": {
-        "full_width": true,
-        "allow_transparent_header": false,
-        "image_size": "auto",
-        "controls_type": "numbers",
-        "transition_type": "fade_with_text",
-        "autoplay": true,
-        "cycle_speed": 6,
-        "background": "#f2f2f2",
-        "background_gradient": "linear-gradient(60deg, rgba(60, 65, 68, 1), rgba(23, 29, 33, 1) 98%)"
-      }
+      "settings": {}
     },
-    "0bc0ed2f-7c33-492b-97fc-a9ef640d042f": {
-      "type": "text-with-icons",
+    "trust": {
+      "type": "zeta-trust-strip",
       "blocks": {
-        "template--14774722166850__0bc0ed2f-7c33-492b-97fc-a9ef640d042f-item-1": {
+        "t1": {
           "type": "item",
           "settings": {
-            "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/physics.png",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "circle",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "CELLULAR HEALTH",
-            "content": ""
+            "label": "Formula",
+            "value": "Novel & Exclusive"
           }
         },
-        "template--14774722166850__0bc0ed2f-7c33-492b-97fc-a9ef640d042f-item-3": {
+        "t2": {
           "type": "item",
           "settings": {
-            "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/dumbbell.png",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "circle",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "STRENGTH",
-            "content": ""
+            "label": "Tested",
+            "value": "Third-Party Verified"
           }
         },
-        "41ca2410-1a2c-432c-8c54-c9811399cf03": {
+        "t3": {
           "type": "item",
           "settings": {
-            "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/battery.png",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "circle",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "ENERGY",
-            "content": ""
+            "label": "Founded",
+            "value": "Miami, Florida"
+          }
+        },
+        "t4": {
+          "type": "item",
+          "settings": {
+            "label": "Our Standard",
+            "value": "Take What We Take"
+          }
+        },
+        "t5": {
+          "type": "item",
+          "settings": {
+            "label": "Commitment",
+            "value": "Zero Compromises"
           }
         }
       },
       "block_order": [
-        "template--14774722166850__0bc0ed2f-7c33-492b-97fc-a9ef640d042f-item-1",
-        "template--14774722166850__0bc0ed2f-7c33-492b-97fc-a9ef640d042f-item-3",
-        "41ca2410-1a2c-432c-8c54-c9811399cf03"
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
       ],
-      "custom_css": [
-        "h2 {font-size: 2.5rem; font-weight: bold;}"
+      "settings": {}
+    },
+    "feel": {
+      "type": "zeta-feel",
+      "blocks": {
+        "c1": {
+          "type": "column",
+          "settings": {
+            "tag": "You'll Feel It",
+            "heading": "The Flagship. Brain First.",
+            "body": "<p>Z-83 is what ZETA is built around. It was designed to stop the daily drain on your <strong>brain</strong> — the fog, the flat energy, the mood that drags. We only have one brain and one body. Z-83 starts them both.</p><p>You'll notice it working. Clean, sustained, no crash.</p>",
+            "tags": "Z-83 - Flagship, Creatine, DHEA",
+            "active_tag": "Z-83 - Flagship"
+          }
+        },
+        "c2": {
+          "type": "column",
+          "settings": {
+            "tag": "You'll Measure It",
+            "heading": "Biomarkers. Longevity. The Long Game.",
+            "body": "<p>The rest of the lineup works at a deeper level — <strong>supporting what your bloodwork, your energy reserves, and your future self will show</strong> over time. You won't feel it after day one. That's not how this works.</p><p>These are the formulas you take because the compound interest is worth it.</p>",
+            "tags": "Longevity, Multi, D+K, Creatine, DHEA, Minos",
+            "active_tag": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2"
       ],
       "settings": {
-        "full_width": true,
-        "stack_on_mobile": false,
-        "title": "A ZETA BODY NEEDS",
-        "heading_tag": "h5",
-        "text_alignment": "center",
-        "icon_spacing": "medium",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
+        "eyebrow": "How ZETA Works",
+        "eyebrow_size": "small",
+        "heading": "There's what you <em>feel.</em>\nAnd what's quietly\nworking underneath.",
+        "heading_size": "medium",
+        "intro": "<p>Not all progress announces itself. Here's how ZETA works — and which products belong where in your stack.</p>"
       }
     },
-    "c3ad419c-f02e-4e85-a13e-420a3f72e0bb": {
-      "type": "featured-collection2",
-      "custom_css": [
-        "button {min-width: 10.3125rem; padding: 0.6875rem 2rem 0.8125rem; margin-left: 3rem; margin-bottom: 3rem;}",
-        ".section-header {justify-content: center; grid-template-columns: auto;}",
-        ".section-header h3 {font-size: 2.5rem; font-weight: bold;}",
-        "@media (max-width: 767px) {.oc-product {display: flex !important; flex-direction: column-reverse !important; background: #f0f4f7 !important; padding: 20px !important; } .oc-product .product-card__quick-buy {position: relative; margin-top: 2rem; } .button {margin-left: 0rem; margin-bottom: 1rem; }}"
+    "lineup": {
+      "type": "zeta-product-lineup",
+      "blocks": {
+        "l1": {
+          "type": "card",
+          "settings": {
+            "product": "z-83",
+            "flag": "Flagship",
+            "image": "shopify://shop_images/asd.jpg",
+            "image_hint": "Product photo",
+            "name": "Z-83",
+            "headline": "Stop the drain. <em>Start the day right.</em>",
+            "description": "Novel nootropic for energy, focus, mood, and clean performance — without the crash.",
+            "price": ""
+          }
+        },
+        "l2": {
+          "type": "card",
+          "settings": {
+            "product": "d-k-5000",
+            "flag": "",
+            "image": "shopify://shop_images/ZETACREATINE_Creatine90sv_10001185.png",
+            "image_hint": "Product photo",
+            "name": "D+K",
+            "headline": "Bone. Immune. <em>The essentials.</em>",
+            "description": "D3 + K2 — the most underdiagnosed deficiency combo. 5,000 IU where it counts.",
+            "price": ""
+          }
+        },
+        "l3": {
+          "type": "card",
+          "settings": {
+            "product": "zeta-creatine",
+            "flag": "",
+            "image": "shopify://shop_images/ZETA_DHEA_DHEA_Micronized_25_mg_60_T_10001185_c214c5eb-e214-483c-ab34-418fa88f48a2.png",
+            "image_hint": "Product photo",
+            "name": "Creatine",
+            "headline": "Strength that <em>compounds.</em>",
+            "description": "Targeted support for power, recovery, and performance that builds over time.",
+            "price": ""
+          }
+        },
+        "l4": {
+          "type": "card",
+          "settings": {
+            "product": "zeta-mega",
+            "flag": "",
+            "image": "shopify://shop_images/PRO-BMAX_PROB100_10001185.png",
+            "image_hint": "Product photo",
+            "name": "Megas",
+            "headline": "Highest EPA. <em>Deepest support.</em>",
+            "description": "MaxSimil omega-3 with the highest EPA ratio in its class. The fat your brain actually runs on.",
+            "price": ""
+          }
+        }
+      },
+      "block_order": [
+        "l1",
+        "l2",
+        "l3",
+        "l4"
       ],
       "settings": {
-        "collection": "home-page-product",
-        "products": [],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_count": 18,
-        "products_per_row_mobile": "1",
-        "products_per_row_desktop": 2,
-        "subheading": "",
-        "title": "",
-        "content": "<h3>Our Products</h3>",
+        "eyebrow": "The Lineup",
+        "eyebrow_size": "small",
+        "heading": "One body.\n<em>Every edge.</em>",
+        "heading_size": "medium",
+        "link_text": "View All Products →",
         "link_url": "",
-        "link_text": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "#ffffff",
-        "product_card_text_color": ""
+        "image_type": "contain"
       }
     },
-    "8d581cc2-d2cd-4b5a-a356-de004dfb30d9": {
-      "type": "text-with-icons",
+    "what": {
+      "type": "zeta-media-copy",
+      "settings": {
+        "media_tag": "A focused lineup. One body.",
+        "media_placeholder": "Lifestyle / founder photo",
+        "eyebrow": "What ZETA Is",
+        "eyebrow_size": "small",
+        "heading": "Built to make <em>everything else</em> in your life work better.",
+        "heading_size": "medium",
+        "tagline": "Health. Wealth. Youth. — in that order.",
+        "body": "<p>Your body was never meant to run on just one thing. That's exactly why I started with Z-83 — built to stop the drain, cut through the fog, lift your mood, and deliver <strong>clean energy you can actually trust.</strong></p><p>Then we thoughtfully built out the rest of the lineup: targeted support for longevity, strength, gut health, and foundational nutrients. <strong>All designed to work together — one body, one system</strong> you can believe in and stick with long-term.</p><p>This is the brand I built for the version of you who's done accepting constant drain as normal.</p>",
+        "button_1_text": "Build Your Stack →",
+        "button_1_link": "",
+        "button_2_text": "Take the Mirror Quiz →",
+        "button_2_link": "/pages/mirror-quiz"
+      }
+    },
+    "hwy": {
+      "type": "zeta-hwy",
       "blocks": {
-        "template--14774722166850__8d581cc2-d2cd-4b5a-a356-de004dfb30d9-item-3": {
-          "type": "item",
+        "h1": {
+          "type": "pillar",
           "settings": {
-            "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/intestines_651878c6-a98b-4303-93df-92cfa4bceb99.png",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "circle",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "GUT HEALTH",
-            "content": ""
+            "word": "Health",
+            "definition": "is what you do to yourself."
           }
         },
-        "template--14774722166850__8d581cc2-d2cd-4b5a-a356-de004dfb30d9-item-2": {
-          "type": "item",
+        "h2": {
+          "type": "pillar",
           "settings": {
-            "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/human-brain.png",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "circle",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "BRAIN HEALTH",
-            "content": ""
+            "word": "Wealth",
+            "definition": "is what you earn and invest."
           }
         },
-        "8b00a231-9832-417f-bc87-327ff2c59d56": {
-          "type": "item",
+        "h3": {
+          "type": "pillar",
           "settings": {
-            "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/hourglass.png",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "circle",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "LONGEVITY",
-            "content": ""
+            "word": "Youth",
+            "definition": "is what you fight to protect."
           }
         }
       },
       "block_order": [
-        "template--14774722166850__8d581cc2-d2cd-4b5a-a356-de004dfb30d9-item-3",
-        "template--14774722166850__8d581cc2-d2cd-4b5a-a356-de004dfb30d9-item-2",
-        "8b00a231-9832-417f-bc87-327ff2c59d56"
+        "h1",
+        "h2",
+        "h3"
       ],
       "settings": {
-        "full_width": true,
-        "stack_on_mobile": false,
-        "title": "",
-        "heading_tag": "h5",
-        "text_alignment": "center",
-        "icon_spacing": "medium",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
+        "eyebrow": "The ZETA Philosophy",
+        "eyebrow_size": "small",
+        "heading": "Health. <em>Wealth.</em> Youth.",
+        "heading_size": "medium",
+        "lede": "<p>Three things worth protecting. One body to do it with.</p>",
+        "body": "<p>I was already living these three pillars hard — building successful businesses, dialed in — when the seizures hit in 2013. That experience drove the lesson home even deeper: <strong>the world doesn't stop because you need or want it to. It doesn't stop so you can recover.</strong> The sun rises and sets no matter what you're going through. You either adjust, fight back, and keep moving — or you get left behind.</p><p>That's why I built ZETA. To touch millions. To make it simpler for anyone to <strong>deeply invest in their health.</strong> Because when your brain and body are strong, everything else expands.</p><p>Every single day is a choice. Let ZETA be part of the ones that move you forward.</p>",
+        "button_1_text": "Shop the Lineup",
+        "button_1_link": "",
+        "button_2_text": "The Story ↓",
+        "button_2_link": "",
+        "anchor_id": ""
       }
     },
-    "a0653d42-3823-4a35-85cc-f74ccda0db2b": {
-      "type": "text-with-icons",
+    "beliefs": {
+      "type": "zeta-beliefs",
       "blocks": {
-        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-1": {
-          "type": "item",
+        "b1": {
+          "type": "belief",
           "settings": {
-            "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/digestive-system.webp",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "circle",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "HEALTHY DIGESTION",
-            "content": ""
+            "text": "<p>The best supplement is the one you actually keep taking. That's why we only create formulas we'd <strong>trust with our own bodies</strong> every single day.</p>"
           }
         },
-        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-2": {
-          "type": "item",
+        "b2": {
+          "type": "belief",
           "settings": {
-            "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/strengh-syst.webp",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "circle",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "STRENGTHEN IMMUNE SYSTEM",
-            "content": ""
+            "text": "<p>You don't need a chemistry degree to read our label — but the science behind why you're taking it? <strong>That's the only degree we care about giving you.</strong> The more you understand, the more committed you'll be.</p>"
           }
         },
-        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-3": {
-          "type": "item",
+        "b3": {
+          "type": "belief",
           "settings": {
-            "icon": "picto-coupon",
-            "custom_icon": "shopify://shop_images/reduce-bloating.webp",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "circle",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "REDUCE BLOATING",
-            "content": ""
+            "text": "<p>We work with the best minds in the field to develop <strong>novel, exclusive formulations</strong> that actually solve problems — not just add another bottle to the shelf.</p>"
+          }
+        },
+        "b4": {
+          "type": "belief",
+          "settings": {
+            "text": "<p>We never play it safe with science. <strong>Always pushing boundaries</strong> — advancing research, exploring new territory, while respecting proven clinical data.</p>"
+          }
+        },
+        "b5": {
+          "type": "belief",
+          "settings": {
+            "text": "<p>We build for today <strong>and</strong> the long game. Biomarkers, mood, energy, skin health, and how you age all matter. <strong>That's the standard.</strong></p>"
+          }
+        },
+        "b6": {
+          "type": "belief",
+          "settings": {
+            "text": "<p>You deserve to feel strong, sharp, and vibrant for as long as possible. ZETA is here to help you <strong>protect and enhance your energy, clarity, and vitality</strong> — no matter where you are in your journey.</p>"
           }
         }
       },
       "block_order": [
-        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-1",
-        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-2",
-        "template--14702124924994__a0653d42-3823-4a35-85cc-f74ccda0db2b-item-3"
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
       ],
       "settings": {
-        "full_width": true,
-        "stack_on_mobile": false,
-        "title": "",
-        "heading_tag": "h5",
-        "text_alignment": "center",
-        "icon_spacing": "medium",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
+        "eyebrow": "Who We Are",
+        "eyebrow_size": "small",
+        "heading": "The ZETA <em>Beliefs</em>",
+        "heading_size": "medium"
       }
     },
-    "f19f1503-bcff-4fd3-9073-c3698b2a8800": {
-      "type": "media-with-text",
-      "blocks": {
-        "template--14702124924994__f19f1503-bcff-4fd3-9073-c3698b2a8800-image-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/sportive-people-showing-fit-bodies-and-posing-on-c-2023-11-27-04-58-51-utc_e3557036-7d6f-4a11-8a73-005203a62004.jpg",
-            "media_width": 50,
-            "media_position": "start",
-            "text_position": "place-self-center text-center",
-            "icon": "none",
-            "icon_width": 48,
-            "subheading": "",
-            "title": "Strong & Healthy",
-            "content": "<p>Build a Strong & Healthy Immune System with our products! Having a strong immune system and gut is a good way to keep healthy and improve your well-being.</p>",
-            "link_text": "Shop All",
-            "link_url": "shopify://collections/all",
-            "background": "#000000",
-            "background_gradient": "",
-            "text_color": "#ffffff",
-            "text_gradient": "",
-            "button_background": "#ffffff",
-            "button_text_color": "#1a1a1a"
-          }
-        }
-      },
-      "block_order": [
-        "template--14702124924994__f19f1503-bcff-4fd3-9073-c3698b2a8800-image-1"
-      ],
+    "cta": {
+      "type": "zeta-cta",
       "settings": {
-        "full_width": false,
-        "spacing": "small"
+        "eyebrow": "Start Here",
+        "eyebrow_size": "small",
+        "heading": "Don't accept\nthe drain\n<em>as normal.</em>",
+        "heading_size": "large",
+        "subtext": "<p>Fix it. You have the choice every single day. One brain. One body. Protect them both.</p>",
+        "button_1_text": "Shop the Full Lineup",
+        "button_1_link": "",
+        "button_2_text": "Take the Mirror Quiz →",
+        "button_2_link": "/pages/mirror-quiz"
+      }
+    },
+    "founder": {
+      "type": "zeta-founder",
+      "settings": {
+        "eyebrow": "The Founder",
+        "eyebrow_size": "small",
+        "heading": "Built from <em>winning and losing</em> the fight.",
+        "heading_size": "medium",
+        "body": "<p>I've been on both sides. The winning one. The losing one. In 2013, a grand mal seizure out of nowhere changed everything I knew about my own brain and body. What I lost most was my independence — and from there came the decision to rebuild differently.</p><p>ZETA is the daily foundation I built when I refused to accept the drain as normal.</p>",
+        "sig_role": "Founder & CEO, ZETA Body",
+        "sig_name": "Zoe Karli",
+        "button_text": "Read Our Story →",
+        "button_link": "",
+        "media_placeholder": "Founder photo — Zoe Karli"
+      }
+    },
+    "blog": {
+      "type": "zeta-blog-teaser",
+      "settings": {
+        "eyebrow": "The Knowledge",
+        "eyebrow_size": "small",
+        "heading": "What we're <em>learning</em>",
+        "heading_size": "small",
+        "blog": "",
+        "posts_count": 3,
+        "link_text": "All Posts →",
+        "link_url": "",
+        "note": "<p>📺 <strong>YouTube:</strong> Connect ZETA's YouTube channel here — embedding video alongside posts strengthens authority signals.</p>"
       }
     }
   },
   "order": [
-    "slideshow",
-    "0bc0ed2f-7c33-492b-97fc-a9ef640d042f",
-    "c3ad419c-f02e-4e85-a13e-420a3f72e0bb",
-    "8d581cc2-d2cd-4b5a-a356-de004dfb30d9",
-    "a0653d42-3823-4a35-85cc-f74ccda0db2b",
-    "f19f1503-bcff-4fd3-9073-c3698b2a8800"
+    "hero",
+    "ticker",
+    "trust",
+    "feel",
+    "lineup",
+    "what",
+    "hwy",
+    "beliefs",
+    "cta",
+    "founder",
+    "blog"
   ]
 }

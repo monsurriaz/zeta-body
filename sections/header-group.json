@@ -17,7 +17,7 @@
         "message_mmipLd": {
           "type": "message",
           "settings": {
-            "text": "JUNE 15TH IS THE LAUNCH OF OUR CREATINE + DHEA PRODUCTS AND OUR NEW WEBSITE!",
+            "text": "Free Shipping Over $50 &nbsp;·&nbsp; Subscribe &amp; Save 5% &nbsp;·&nbsp; NSF Certified for Sport",
             "url": ""
           }
         }
@@ -26,11 +26,14 @@
         "message_mmipLd"
       ],
       "settings": {
-        "enable_sticky": true,
+        "enable_sticky": false,
+        "show_on_homepage_only": false,
         "navigation_mode": "arrows",
+        "autoplay": false,
+        "cycle_speed": 6,
         "scrolling_speed": 10,
         "text_size": "text-lg",
-        "background": "#1a1a1a",
+        "background": "#006e73",
         "background_gradient": "",
         "text_color": "#ffffff"
       }
@@ -40,15 +43,20 @@
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": false,
-        "logo": "shopify://shop_images/zeta-2color-horizontal-lockup.png",
-        "logo_max_width": 300,
-        "logo_mobile_max_width": 165,
-        "menu": "main-menu",
+        "logo": "shopify://shop_images/ZH_B_TB.png",
+        "logo_max_width": 150,
+        "logo_mobile_max_width": 125,
+        "menu": "top-header",
         "sidebar_menu": "",
         "secondary_menu": "",
+        "customer_account_menu": "customer-account-main-menu",
         "menu_open_trigger": "click",
         "opening_from": "bottom",
-        "layout": "logo_center_navigation_inline",
+        "layout": "logo_left_navigation_center",
+        "action_link_style": "text",
+        "search_label": "Search",
+        "account_label": "Account",
+        "cart_label": "Cart",
         "show_social_media": true,
         "show_locale_selector": false,
         "show_country_selector": false,

@@ -1,0 +1,880 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "zeta-product-info",
+      "blocks": {
+        "banner": {
+          "type": "banner",
+          "settings": {
+            "name": "Zeta MULTI",
+            "sub": "The Daily Foundation Capsule",
+            "eyebrow_size": "small"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Every BODY needs <em>a great Multi.</em>",
+            "heading_size": "large"
+          }
+        },
+        "lede": {
+          "type": "lede",
+          "settings": {
+            "text": "<p>ZETA MULTI is your foundation. The kind of supplement that becomes habit — and you don't feel unless you stop. Essential nutrients, in 2 capsules.</p>"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "stars": "★★★★★",
+            "label": "4.9 · early reviews"
+          }
+        },
+        "subscription": {
+          "type": "subscription",
+          "settings": {
+            "onetime_label": "One bottle, this time",
+            "onetime_sub": "120 capsules · 60-day supply",
+            "subscribe_label": "Subscribe & Save",
+            "subscribe_sub": "Free shipping · Pause or cancel any time",
+            "frequency_label": "Delivery Schedule"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "button_label": "BUY ZETA MULTI",
+            "show_payment_button": false,
+            "secondary_label": "PAIR WITH ZETA D+K · SAVE 10%",
+            "bundle_product": "",
+            "bundle_quantity": 1,
+            "secondary_link": ""
+          }
+        },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {
+            "badges": "Vegan\nMethylated B-vitamins\nChelated minerals\ncGMP"
+          }
+        }
+      },
+      "block_order": [
+        "banner",
+        "heading",
+        "lede",
+        "rating",
+        "subscription",
+        "variant_picker",
+        "recharge_subscriptions_subscription_widget_v2_WtGfAg",
+        "buy_buttons",
+        "trust_badges"
+      ],
+      "settings": {
+        "column_alignment": "normal",
+        "media_align": "middle",
+        "media_gap": "gutter",
+        "media_background_type": "border",
+        "media_badge": "Foundation · Daily",
+        "main_media_ratio": "portrait",
+        "main_media_fit": "contain",
+        "thumbnails_per_row": 5,
+        "thumbnail_position": "inside",
+        "show_thumbnails": false,
+        "show_thumbnails_mobile": false
+      }
+    },
+    "quote": {
+      "type": "zeta-pull-quote",
+      "settings": {
+        "quote": "\"It's a great Multi because it was built for <em>absorption</em> — the forms your body actually uses.\"",
+        "attribution": "Dr. David Karli · ZETA science partner"
+      }
+    },
+    "timeline": {
+      "type": "zeta-timeline",
+      "blocks": {
+        "w1": {
+          "type": "phase",
+          "settings": {
+            "label": "Week 1",
+            "title": "The beginning.",
+            "body": "<p>The little things the body's been missing — it's getting. Quiet, but real.</p>"
+          }
+        },
+        "m1": {
+          "type": "phase",
+          "settings": {
+            "label": "1 month",
+            "title": "The habit.",
+            "body": "<p>MULTI fills the gaps your diet doesn't. Most of us don't eat perfectly — that's where it earns its place. Daily routine, locked in.</p>"
+          }
+        },
+        "m3": {
+          "type": "phase",
+          "settings": {
+            "label": "3–6 months",
+            "title": "Bloodwork reflects.",
+            "body": "<p>Routine 1–2× annual bloodwork starts to show it. Numbers that were low climb. Numbers that were stable hold.</p>"
+          }
+        },
+        "y1": {
+          "type": "phase",
+          "settings": {
+            "label": "A year+",
+            "title": "The foundation.",
+            "body": "<p>MULTI is the kind of supplement your body always needs. Take it daily. Forever. That's the point.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "w1",
+        "m1",
+        "m3",
+        "y1"
+      ],
+      "settings": {
+        "eyebrow": "What changes",
+        "eyebrow_size": "small",
+        "heading": "The one you forget you're taking —\nuntil you <em>stop</em>.",
+        "heading_size": "medium",
+        "subtitle": "<p>MULTI is your foundation. You won't feel it like Z-83. You'll feel its <em>absence</em> if you stop.</p>",
+        "border_style": "top"
+      }
+    },
+    "ingredients": {
+      "type": "zeta-ingredients",
+      "settings": {
+        "section_bg": "#efe9dc",
+        "eyebrow": "Done right",
+        "eyebrow_size": "small",
+        "heading": "Vitamins, minerals — in the <em>forms that work</em>.",
+        "heading_size": "medium",
+        "subtitle": "<p>So many multivitamins use the cheapest form of each nutrient. We don't. ZETA MULTI uses <strong>methylated B-vitamins</strong> (the ones your body uses directly, no conversion needed), <strong>chelated minerals</strong> (bound to amino acids for absorption), and <strong>active folate</strong> as Quatrefolic® — the form pregnant women and adults with the MTHFR variant actually need.</p><p>Plus vitamins C and E, selenium, beta-carotene, zinc — antioxidant support that backs up everything else you're doing.</p>"
+      }
+    },
+    "facts": {
+      "type": "zeta-supplement-facts",
+      "blocks": {
+        "v_a": {
+          "type": "fact",
+          "settings": {
+            "name": "Vitamin A (as mixed carotenoids + retinyl palmitate)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "1,750 mcg RAE",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "v_c": {
+          "type": "fact",
+          "settings": {
+            "name": "Vitamin C (as ascorbic acid)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "250 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "v_d": {
+          "type": "fact",
+          "settings": {
+            "name": "Vitamin D3 (as cholecalciferol)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "25 mcg · 1,000 IU",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "v_e": {
+          "type": "fact",
+          "settings": {
+            "name": "Vitamin E (natural d-alpha + mixed tocopherols)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "67 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "v_k": {
+          "type": "fact",
+          "settings": {
+            "name": "Vitamin K (K1 + K2 as MK-7)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "80 mcg",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "sh_b": {
+          "type": "fact",
+          "settings": {
+            "name": "Methylated B-Complex",
+            "desc": "",
+            "desc_block": false,
+            "amount": "",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": true
+          }
+        },
+        "b_1": {
+          "type": "fact",
+          "settings": {
+            "name": "Thiamin B1 (as benfotiamine)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "20 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "b_2": {
+          "type": "fact",
+          "settings": {
+            "name": "Riboflavin B2 (as R-5-P)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "6.8 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "b_3": {
+          "type": "fact",
+          "settings": {
+            "name": "Niacin B3",
+            "desc": "",
+            "desc_block": false,
+            "amount": "50 mg NE",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "b_6": {
+          "type": "fact",
+          "settings": {
+            "name": "Vitamin B6 (as P-5-P)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "8.5 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "b_fol": {
+          "type": "fact",
+          "settings": {
+            "name": "Folate (as Quatrefolic® 5-MTHF)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "680 mcg DFE",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "b_12": {
+          "type": "fact",
+          "settings": {
+            "name": "Vitamin B12 (as methylcobalamin)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "500 mcg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "b_bio": {
+          "type": "fact",
+          "settings": {
+            "name": "Biotin",
+            "desc": "",
+            "desc_block": false,
+            "amount": "400 mcg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "b_5": {
+          "type": "fact",
+          "settings": {
+            "name": "Pantothenic Acid B5",
+            "desc": "",
+            "desc_block": false,
+            "amount": "50 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "chol": {
+          "type": "fact",
+          "settings": {
+            "name": "Choline (bitartrate)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "50 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "sh_m": {
+          "type": "fact",
+          "settings": {
+            "name": "Albion® Chelated Minerals",
+            "desc": "",
+            "desc_block": false,
+            "amount": "",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": true
+          }
+        },
+        "m_ca": {
+          "type": "fact",
+          "settings": {
+            "name": "Calcium (chelate)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "100 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "m_mg": {
+          "type": "fact",
+          "settings": {
+            "name": "Magnesium (chelate)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "100 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "m_zn": {
+          "type": "fact",
+          "settings": {
+            "name": "Zinc (chelate)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "15 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "m_cu": {
+          "type": "fact",
+          "settings": {
+            "name": "Copper (chelate)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "1 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "m_mn": {
+          "type": "fact",
+          "settings": {
+            "name": "Manganese (chelate)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "1 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": true,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "m_io": {
+          "type": "fact",
+          "settings": {
+            "name": "Iodine (potassium iodide)",
+            "desc": "",
+            "desc_block": false,
+            "amount": "100 mcg",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "m_se": {
+          "type": "fact",
+          "settings": {
+            "name": "Selenium",
+            "desc": "",
+            "desc_block": false,
+            "amount": "100 mcg",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "m_cr": {
+          "type": "fact",
+          "settings": {
+            "name": "Chromium",
+            "desc": "",
+            "desc_block": false,
+            "amount": "200 mcg",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "m_mo": {
+          "type": "fact",
+          "settings": {
+            "name": "Molybdenum",
+            "desc": "",
+            "desc_block": false,
+            "amount": "75 mcg",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "m_bo": {
+          "type": "fact",
+          "settings": {
+            "name": "Boron",
+            "desc": "",
+            "desc_block": false,
+            "amount": "2 mg",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "m_va": {
+          "type": "fact",
+          "settings": {
+            "name": "Vanadium",
+            "desc": "",
+            "desc_block": false,
+            "amount": "25 mcg",
+            "is_main": false,
+            "bold": false,
+            "indent": false,
+            "divider": false,
+            "accent": false,
+            "section_header": false
+          }
+        },
+        "dir1": {
+          "type": "direction",
+          "settings": {
+            "text": "Take <strong>2 capsules once daily</strong>"
+          }
+        },
+        "dir2": {
+          "type": "direction",
+          "settings": {
+            "text": "Take with food — fat-soluble vitamins (A, D, E, K) absorb better with dietary fat"
+          }
+        },
+        "dir3": {
+          "type": "direction",
+          "settings": {
+            "text": "120 capsules per bottle — <strong>60-day supply</strong>"
+          }
+        },
+        "x1": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Gluten & wheat"
+          }
+        },
+        "x2": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Soy"
+          }
+        },
+        "x3": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Dairy"
+          }
+        },
+        "x4": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Eggs"
+          }
+        },
+        "x5": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Fish & shellfish"
+          }
+        },
+        "x6": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Peanuts & tree nuts"
+          }
+        },
+        "x7": {
+          "type": "exclusion",
+          "settings": {
+            "text": "GMOs"
+          }
+        },
+        "x8": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Artificial colors"
+          }
+        },
+        "x9": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Artificial sweeteners"
+          }
+        },
+        "x10": {
+          "type": "exclusion",
+          "settings": {
+            "text": "Synthetic preservatives"
+          }
+        }
+      },
+      "block_order": [
+        "v_a",
+        "v_c",
+        "v_d",
+        "v_e",
+        "v_k",
+        "sh_b",
+        "b_1",
+        "b_2",
+        "b_3",
+        "b_6",
+        "b_fol",
+        "b_12",
+        "b_bio",
+        "b_5",
+        "chol",
+        "sh_m",
+        "m_ca",
+        "m_mg",
+        "m_zn",
+        "m_cu",
+        "m_mn",
+        "m_io",
+        "m_se",
+        "m_cr",
+        "m_mo",
+        "m_bo",
+        "m_va",
+        "dir1",
+        "dir2",
+        "dir3",
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "x5",
+        "x6",
+        "x7",
+        "x8",
+        "x9",
+        "x10"
+      ],
+      "settings": {
+        "eyebrow": "What's in the bottle",
+        "eyebrow_size": "small",
+        "heading": "A focused multi. <em>No filler.</em>",
+        "heading_size": "medium",
+        "facts_title": "Supplement Facts",
+        "serving_line": "Serving Size: 2 Vegetarian Capsules · Servings Per Container: 60 · 120 capsules per bottle",
+        "amount_header": "Amount Per Serving",
+        "dv_header": "% Daily Value",
+        "facts_note": "** Daily Value not established.   Other ingredients: Vegetarian capsule (HPMC). No gluten, dairy, soy, GMOs, or artificial colors.",
+        "how_to_label": "How to take it",
+        "exclude_heading": "Formulated with a <em>lot of NOs.</em>",
+        "exclude_sub": "What's not in it matters as much as what is.",
+        "warning_heading": "",
+        "warning_body": ""
+      }
+    },
+    "reviews": {
+      "type": "zeta-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "Energy holds, even on long days.",
+            "body": "\"I stopped taking my old grocery-store multi when I started ZETA. Two weeks in, I noticed I wasn't crashing at 3pm anymore. The active B12 made the difference.\"",
+            "attribution": "Sarah K. · verified buyer"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "My bloodwork moved.",
+            "body": "\"I have MTHFR variant. My doctor recommended methylated B-vitamins. Most multis don't bother. ZETA does. My folate and B12 numbers climbed after 8 weeks.\"",
+            "attribution": "Marcus T. · verified buyer"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "The kind I keep ordering.",
+            "body": "\"In my 50s. Started this with D+K. My bloodwork moved within the first 6 months. Stayed on it because the routine works.\"",
+            "attribution": "Joanna B. · verified buyer"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "eyebrow": "Real reviews",
+        "eyebrow_size": "small",
+        "heading": "The one people <em>don't realize they need</em> until they do.",
+        "heading_size": "medium",
+        "subtitle": ""
+      }
+    },
+    "digdeeper": {
+      "type": "zeta-accordion",
+      "blocks": {
+        "a1": {
+          "type": "item",
+          "settings": {
+            "label": "Description",
+            "content": "<h3>The daily <em>foundation</em>.</h3><p>ZETA MULTI features a premium multivitamin/mineral blend of high-quality vitamin and mineral forms selected for optimum utilization. Comprehensive nutrient profile, delivered in a vegetarian capsule, that supports foundational wellness — including antioxidant activity with vitamins C and E, selenium, and beta-carotene — plus support for daily detoxification.</p><h4>Clinical Applications</h4><ul>\n<li>Supports foundational daily nutrition</li>\n<li>Supports energy production via methylated B-vitamins</li>\n<li>Supports antioxidant activity</li>\n<li>Supports daily detoxification pathways</li>\n<li>Supports mineral status with chelated forms</li>\n</ul><p style=\"font-size:11.5px;color:var(--zeta-mid);font-style:italic;margin-top:28px;\">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "open_by_default": true
+          }
+        },
+        "a2": {
+          "type": "item",
+          "settings": {
+            "label": "Ingredients",
+            "content": "<h3>What's <em>in it.</em> Every milligram.</h3><p>Every nutrient, every dose, listed.</p><h4>Per 2-capsule serving</h4><ul>\n<li>\n<strong>Vitamin A</strong> — 1,750 mcg RAE · <strong>Vitamin C</strong> — 250 mg · <strong>Vitamin D3</strong> — 25 mcg / 1,000 IU · <strong>Vitamin E</strong> — 67 mg · <strong>Vitamin K</strong> — 80 mcg (K1 + K2 as MK-7)</li>\n</ul><h4>Methylated B-Complex</h4><ul>\n<li>\n<strong>Thiamin B1</strong> — 20 mg (benfotiamine) · <strong>Riboflavin B2</strong> — 6.8 mg (R-5-P) · <strong>Niacin B3</strong> — 50 mg NE · <strong>B6</strong> — 8.5 mg (P-5-P) · <strong>Folate</strong> — 680 mcg DFE (Quatrefolic® 5-MTHF) · <strong>B12</strong> — 500 mcg (methylcobalamin) · <strong>Biotin</strong> — 400 mcg · <strong>B5</strong> — 50 mg · <strong>Choline</strong> — 50 mg</li>\n</ul><h4>Albion® Chelated Minerals + Trace</h4><ul>\n<li>\n<strong>Calcium</strong> 100 mg · <strong>Magnesium</strong> 100 mg · <strong>Zinc</strong> 15 mg · <strong>Copper</strong> 1 mg · <strong>Manganese</strong> 1 mg · <strong>Iodine</strong> 100 mcg · <strong>Selenium</strong> 100 mcg · <strong>Chromium</strong> 200 mcg · <strong>Molybdenum</strong> 75 mcg · <strong>Boron</strong> 2 mg · <strong>Vanadium</strong> 25 mcg</li>\n</ul><h4>Why these forms matter</h4><p><strong>Methylated B-vitamins</strong> skip the conversion step — people with the MTHFR variant (30–40% of the population) actually absorb them. <strong>Albion® chelated minerals</strong> are bound to amino acids — far better absorbed than cheap oxide forms. <strong>Quatrefolic® folate</strong> is already in the bioactive 5-MTHF form your body uses directly.</p>",
+            "open_by_default": false
+          }
+        },
+        "a3": {
+          "type": "item",
+          "settings": {
+            "label": "Directions & Precautions",
+            "content": "<h3>How to <em>take it.</em>\n</h3><p><strong>Take 2 capsules once daily with a meal.</strong> Fat-soluble vitamins (A, D, E, K) absorb better with some dietary fat.</p><h4>Best Time</h4><p>With your largest meal of the day. Morning or midday works well — B-vitamins can be mildly energizing.</p><h4>The Foundation Stack</h4><ul>\n<li>\n<strong>ZETA D+K</strong> — extra D3 + K2 for biomarker shifts; the longevity pair</li>\n<li>\n<strong>ZETA MEGAS</strong> — omega-3s; fat-soluble, absorb well taken together</li>\n<li>\n<strong>ZETA B COMPLETE</strong> — targeted B support on top of the multi base</li>\n<li>\n<strong>Z-83</strong> — the everyday supplement for energy and clearing brain fog</li>\n</ul><h4>Precautions</h4><p>If pregnant, nursing, or under 18, consult your healthcare provider. Iron-deficient? Talk to your doctor — ZETA MULTI does not contain iron by design. Don't exceed 2 capsules per day.</p>",
+            "open_by_default": false
+          }
+        },
+        "a4": {
+          "type": "item",
+          "settings": {
+            "label": "Research",
+            "content": "<h3>The <em>research</em> underneath.</h3><p>A handful of the studies behind the methylation + absorption story:</p><div class=\"ref\">\n<strong>Liew SC.</strong> Folic acid and diseases — supplement it or not? <em>Revista da Associação Médica Brasileira</em>, 2016.</div><div class=\"ref\">\n<strong>Pietrzik K et al.</strong> Folic acid and L-5-methyltetrahydrofolate: comparison of clinical pharmacokinetics and pharmacodynamics. <em>Clinical Pharmacokinetics</em>, 2010.</div><div class=\"ref\">\n<strong>Wallace TC et al.</strong> Multivitamin/mineral supplement use is associated with reduced risk of breast cancer mortality in postmenopausal women. <em>Breast Cancer Research and Treatment</em>, 2015.</div><div class=\"ref\">\n<strong>Ames BN.</strong> Low micronutrient intake may accelerate the degenerative diseases of aging. <em>PNAS</em>, 2006.</div><p style=\"margin-top:24px;\"><a href=\"#\" style=\"color:var(--zeta-teal); text-decoration:none; border-bottom:1px solid var(--zeta-teal); padding-bottom:2px; font-weight:600; font-size:14px;\">Read more on /research →</a></p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "settings": {
+        "eyebrow": "For the curious",
+        "eyebrow_size": "small",
+        "heading": "Dig <em>deeper.</em>",
+        "subtitle": "The full vitamin/mineral breakdown, why we picked the forms we did, dosing notes, and the research underneath."
+      }
+    },
+    "bundle": {
+      "type": "zeta-bundle",
+      "blocks": {
+        "bp1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "Zeta MULTI",
+            "sub": "The daily foundation"
+          }
+        },
+        "bp2": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "Zeta D+K",
+            "sub": "D3 + K2 · the longevity pair"
+          }
+        }
+      },
+      "block_order": [
+        "bp1",
+        "bp2"
+      ],
+      "settings": {
+        "layout": "box",
+        "eyebrow": "",
+        "heading": "The <em>Foundation Stack.</em>",
+        "heading_size": "medium",
+        "discount": "Save 10% · Bundle",
+        "body": "<p>MULTI · D+K · MEGAS · B COMPLETE · Z-83. The five products that form the complete ZETA foundation. Each one earns its place.</p>",
+        "button_text": "BUY THE FOUNDATION STACK",
+        "button_link": ""
+      }
+    },
+    "ctaclose": {
+      "type": "zeta-cta-close",
+      "settings": {
+        "background": "#0a1320",
+        "tagline": "DRIVEN BY SCIENCE · BUILT TO PERFORM · MADE TO FEEL",
+        "heading": "<em>Take what</em>\nwe take.",
+        "heading_size": "large",
+        "promise": "Look. Feel. Perform. — Younger.",
+        "button_1_text": "BUY ZETA MULTI",
+        "button_1_link": "",
+        "button_2_text": "Take the Mirror Quiz",
+        "button_2_link": "/pages/mirror-quiz"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "quote",
+    "timeline",
+    "ingredients",
+    "facts",
+    "reviews",
+    "digdeeper",
+    "bundle",
+    "ctaclose"
+  ]
+}

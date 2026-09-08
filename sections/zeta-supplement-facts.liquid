@@ -1,0 +1,175 @@
+{%- comment -%}
+  ZETA — Supplement Facts (.supp-facts-section): FDA-style facts panel + how-to + "NOs" panel.
+  Block types: fact (panel rows), direction (how-to list), exclusion (NO list).
+  Styles: custom.css (.zeta-facts).
+{%- endcomment -%}
+
+{%- assign facts = section.blocks | where: 'type', 'fact' -%}
+{%- assign directions = section.blocks | where: 'type', 'direction' -%}
+{%- assign exclusions = section.blocks | where: 'type', 'exclusion' -%}
+
+<section class="zeta zeta-facts" {{ section.shopify_attributes }}>
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="zeta-section-eyebrow zeta-eyebrow-size--{{ section.settings.eyebrow_size | default: 'small' }}">{{ section.settings.eyebrow | escape }}</p>
+  {%- endif -%}
+  {%- if section.settings.heading != blank -%}
+    <h2 class="zeta-section-h2 zeta-title zeta-title--{{ section.settings.heading_size | default: 'medium' }}">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+
+  <div class="zeta-facts__grid">
+    {%- comment -%} Facts panel {%- endcomment -%}
+    <div class="zeta-facts__panel">
+      <div class="zeta-facts__panel-header">
+        <div class="zeta-facts__panel-title">{{ section.settings.facts_title | default: 'Supplement Facts' | escape }}</div>
+        {%- if section.settings.serving_line != blank -%}
+          <div class="zeta-facts__panel-serving">{{ section.settings.serving_line | escape }}</div>
+        {%- endif -%}
+      </div>
+      <div class="zeta-facts__panel-body">
+        {%- if section.settings.amount_header != blank or section.settings.dv_header != blank -%}
+          <div class="zeta-facts__row zeta-facts__row--head">
+            <span>{{ section.settings.amount_header | escape }}</span><span>{{ section.settings.dv_header | escape }}</span>
+          </div>
+        {%- endif -%}
+        {%- for block in facts -%}
+          {%- if block.settings.section_header -%}
+            <div class="zeta-facts__row zeta-facts__row--section-header" {{ block.shopify_attributes }}>{{ block.settings.name | escape }}</div>
+          {%- else -%}
+            <div class="zeta-facts__row {% if block.settings.is_main %}zeta-facts__row--main{% endif %} {% if block.settings.bold %}zeta-facts__row--bold{% endif %} {% if block.settings.indent %}zeta-facts__row--indent{% endif %} {% if block.settings.divider %}zeta-facts__row--divider{% endif %} {% if block.settings.accent %}zeta-facts__row--accent{% endif %}" {{ block.shopify_attributes }}>
+              <span>{{ block.settings.name | escape }}{% if block.settings.desc != blank %} <span class="zeta-facts__row-desc{% if block.settings.desc_block %} zeta-facts__row-desc--block{% endif %}">{{ block.settings.desc | escape }}</span>{% endif %}</span>
+              <span>{{ block.settings.amount | escape }}</span>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.facts_note != blank -%}
+        <div class="zeta-facts__note">{{ section.settings.facts_note | newline_to_br }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} How-to + NOs {%- endcomment -%}
+    <div class="zeta-facts__bottom">
+      {%- if directions.size > 0 or section.settings.how_to_label != blank -%}
+        <div class="zeta-facts__howto">
+          {%- if section.settings.how_to_label != blank -%}
+            <div class="zeta-facts__howto-label">{{ section.settings.how_to_label | escape }}</div>
+          {%- endif -%}
+          <ul>
+            {%- for block in directions -%}
+              <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      {%- if exclusions.size > 0 or section.settings.exclude_heading != blank -%}
+        <div class="zeta-facts__exclude">
+          {%- if section.settings.exclude_heading != blank -%}
+            <div class="zeta-facts__exclude-heading">{{ section.settings.exclude_heading }}</div>
+          {%- endif -%}
+          {%- if section.settings.exclude_sub != blank -%}
+            <div class="zeta-facts__exclude-sub">{{ section.settings.exclude_sub | escape }}</div>
+          {%- endif -%}
+          <div class="zeta-facts__no-list">
+            {%- for block in exclusions -%}
+              <div class="zeta-facts__no-item" {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</div>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if section.settings.warning_heading != blank or section.settings.warning_body != blank -%}
+    <div class="zeta-facts__warning">
+      {%- if section.settings.warning_heading != blank -%}
+        <h4 class="zeta-facts__warning-heading">{{ section.settings.warning_heading | escape }}</h4>
+      {%- endif -%}
+      {%- if section.settings.warning_body != blank -%}
+        <div class="zeta-facts__warning-body">{{ section.settings.warning_body }}</div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Zeta Supplement Facts",
+  "tag": "section",
+  "class": "shopify-section--zeta-facts",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "What's in the canister" },
+    { "type": "select", "id": "eyebrow_size", "label": "Eyebrow size", "options": [ { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "small" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Simple label. <em>No filler.</em>" },
+    { "type": "select", "id": "heading_size", "label": "Title size", "options": [ { "value": "large", "label": "Large" }, { "value": "medium", "label": "Medium" }, { "value": "small", "label": "Small" } ], "default": "medium" },
+    { "type": "header", "content": "Facts panel" },
+    { "type": "text", "id": "facts_title", "label": "Panel title", "default": "Supplement Facts" },
+    { "type": "text", "id": "serving_line", "label": "Serving line", "default": "Serving Size: 1 Scoop (about 5g) · Servings Per Container: 30" },
+    { "type": "text", "id": "amount_header", "label": "Header — left", "default": "Amount Per Serving" },
+    { "type": "text", "id": "dv_header", "label": "Header — right", "default": "% DV" },
+    { "type": "textarea", "id": "facts_note", "label": "Panel note", "info": "Line breaks (Enter) become new lines. Inline HTML is allowed (e.g. <sup>, <br>).", "default": "** Daily Value not established.   Other Ingredients: None.   Unflavored." },
+    { "type": "header", "content": "How to take it" },
+    { "type": "text", "id": "how_to_label", "label": "Label", "default": "How to take it" },
+    { "type": "header", "content": "Exclusions (\"NOs\")" },
+    { "type": "inline_richtext", "id": "exclude_heading", "label": "Heading", "default": "Formulated with a lot of NOs." },
+    { "type": "text", "id": "exclude_sub", "label": "Subtext", "default": "Here's everything we left out." },
+    { "type": "header", "content": "Warning box" },
+    { "type": "text", "id": "warning_heading", "label": "Warning heading", "info": "Optional. Leave blank to hide the whole box." },
+    { "type": "richtext", "id": "warning_body", "label": "Warning body" }
+  ],
+  "blocks": [
+    {
+      "type": "fact",
+      "name": "Fact row",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name", "default": "Creatine Monohydrate" },
+        { "type": "text", "id": "desc", "label": "Descriptor", "info": "Optional grey sub-text shown after the name (e.g. the source / ingredient list in parentheses)." },
+        { "type": "checkbox", "id": "desc_block", "label": "Descriptor on its own line", "info": "On: the descriptor drops to a new line below the name. Off: it sits inline after the name.", "default": false },
+        { "type": "text", "id": "amount", "label": "Amount", "default": "5 g   **" },
+        { "type": "checkbox", "id": "is_main", "label": "Emphasized row", "default": false },
+        { "type": "checkbox", "id": "bold", "label": "Bold row", "default": false },
+        { "type": "checkbox", "id": "indent", "label": "Indented (sub-component)", "default": false },
+        { "type": "checkbox", "id": "divider", "label": "Thick divider below", "info": "Adds a heavy rule under the row (section break).", "default": false },
+        { "type": "checkbox", "id": "accent", "label": "Bronze accent", "info": "Colors the row bronze to highlight it.", "default": false },
+        { "type": "checkbox", "id": "section_header", "label": "Section sub-header", "info": "Renders as a full-width sand sub-header (name only, no amount) — e.g. a grouping like \"Chelated Minerals\".", "default": false }
+      ]
+    },
+    {
+      "type": "direction",
+      "name": "Direction",
+      "settings": [
+        { "type": "inline_richtext", "id": "text", "label": "Text", "default": "<strong>1 scoop (5g) daily</strong> — dissolve in 8 oz of water or any beverage" }
+      ]
+    },
+    {
+      "type": "exclusion",
+      "name": "Exclusion (NO)",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "No Gluten" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zeta Supplement Facts",
+      "blocks": [
+        { "type": "fact", "settings": { "name": "Creatine Monohydrate", "amount": "5 g   **", "is_main": true } },
+        { "type": "direction", "settings": { "text": "<strong>1 scoop (5g) daily</strong> — dissolve in 8 oz of water or any beverage" } },
+        { "type": "direction", "settings": { "text": "<strong>When</strong> — any time of day. Consistency beats timing" } },
+        { "type": "direction", "settings": { "text": "<strong>No loading phase needed</strong> — steady daily dosing reaches saturation in ~3–4 weeks" } },
+        { "type": "direction", "settings": { "text": "One canister lasts <strong>30 days</strong>" } },
+        { "type": "exclusion", "settings": { "text": "No Gluten" } },
+        { "type": "exclusion", "settings": { "text": "No Dairy" } },
+        { "type": "exclusion", "settings": { "text": "No Soy" } },
+        { "type": "exclusion", "settings": { "text": "No Artificial Colors" } },
+        { "type": "exclusion", "settings": { "text": "No Artificial Flavors" } },
+        { "type": "exclusion", "settings": { "text": "No Artificial Sweeteners" } },
+        { "type": "exclusion", "settings": { "text": "No Proprietary Blends" } },
+        { "type": "exclusion", "settings": { "text": "No Fillers" } },
+        { "type": "exclusion", "settings": { "text": "No GMOs" } },
+        { "type": "exclusion", "settings": { "text": "No Banned Substances" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

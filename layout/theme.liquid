@@ -70,6 +70,21 @@
     {{ content_for_header }}
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+    {{- 'zeta-variables.css' | asset_url | stylesheet_tag -}}
+    {{- 'custom.css' | asset_url | stylesheet_tag -}}
+    {%- comment -%} ZETA central title sizes — settings override the static fallbacks in zeta-variables.css {%- endcomment -%}
+    <style>
+      :root {
+        {%- if settings.zeta_title_lg %}--zeta-title-lg: {{ settings.zeta_title_lg }}px;{% endif -%}
+        {%- if settings.zeta_title_md %}--zeta-title-md: {{ settings.zeta_title_md }}px;{% endif -%}
+        {%- if settings.zeta_title_sm %}--zeta-title-sm: {{ settings.zeta_title_sm }}px;{% endif -%}
+        {%- if settings.zeta_title_lg_mobile %}--zeta-title-lg-m: {{ settings.zeta_title_lg_mobile }}px;{% endif -%}
+        {%- if settings.zeta_title_md_mobile %}--zeta-title-md-m: {{ settings.zeta_title_md_mobile }}px;{% endif -%}
+        {%- if settings.zeta_title_sm_mobile %}--zeta-title-sm-m: {{ settings.zeta_title_sm_mobile }}px;{% endif -%}
+        {%- if settings.zeta_eyebrow_md %}--zeta-eyebrow-md: {{ settings.zeta_eyebrow_md }}px;{% endif -%}
+        {%- if settings.zeta_eyebrow_sm %}--zeta-eyebrow-sm: {{ settings.zeta_eyebrow_sm }}px;{% endif -%}
+      }
+    </style>
   </head>
 
   <body class="{% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
