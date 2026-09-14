@@ -378,7 +378,10 @@
 /* ══════════════════════════════════════════════════════════════════════════
    1 · HOME HERO (#hero) — 2-col copy / dark media panel + badge
    Client: grid 1fr 1fr · min-height 92vh · surface bg · border-bottom.
-   Mobile ≤960px: single column, media becomes 50vw tall.
+   Mobile ≤960px: single column; media panel height (small/medium/large →
+   35/50/70vw) and object-fit (cover/contain) are merchant settings — see
+   .zeta-home-hero__right--mh-* and .zeta-home-hero__media--mf-* below.
+   Desktop stays fixed at 50vw-derived proportions (min-height:92vh) and cover.
    ══════════════════════════════════════════════════════════════════════════ */
 .zeta-home-hero {
   background: var(--zeta-surface);
@@ -514,8 +517,13 @@
     border-right: none;
   }
   .zeta-home-hero__right {
-    min-height: 50vw;
+    min-height: 50vw; /* fallback if no mobile-height modifier class is present */
   }
+  .zeta-home-hero__right--mh-small { min-height: 35vw; }
+  .zeta-home-hero__right--mh-medium { min-height: 50vw; }
+  .zeta-home-hero__right--mh-large { min-height: 70vw; }
+  .zeta-home-hero__media--mf-cover { object-fit: cover; }
+  .zeta-home-hero__media--mf-contain { object-fit: contain; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════════

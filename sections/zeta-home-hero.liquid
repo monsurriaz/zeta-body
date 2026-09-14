@@ -34,13 +34,18 @@
     {%- endif -%}
   </div>
 
-  <div class="zeta-home-hero__right">
+  {%- comment -%} Mobile-only controls — desktop ignores these classes entirely (rules live inside the ≤960px media query). {%- endcomment -%}
+  {%- assign zhh_mobile_fit = section.settings.mobile_media_fit | default: 'cover' -%}
+  {%- assign zhh_mobile_height = section.settings.mobile_media_height | default: 'medium' -%}
+  {%- assign zhh_media_class = 'zeta-home-hero__media zeta-home-hero__media--mf-' | append: zhh_mobile_fit -%}
+
+  <div class="zeta-home-hero__right zeta-home-hero__right--mh-{{ zhh_mobile_height }}">
     <div class="zeta-home-hero__media-bg" aria-hidden="true"></div>
 
     {%- if section.settings.video != blank -%}
-      {{ section.settings.video | video_tag: image_size: '1100x', autoplay: true, loop: true, muted: true, controls: false, class: 'zeta-home-hero__media' }}
+      {{ section.settings.video | video_tag: image_size: '1100x', autoplay: true, loop: true, muted: true, controls: false, class: zhh_media_class }}
     {%- elsif section.settings.image != blank -%}
-      {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'eager', sizes: '(max-width: 960px) 100vw, 50vw', widths: '600,900,1200,1600', class: 'zeta-home-hero__media' }}
+      {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'eager', sizes: '(max-width: 960px) 100vw, 50vw', widths: '600,900,1200,1600', class: zhh_media_class }}
     {%- else -%}
       <div class="zeta-home-hero__media-hint">{{ section.settings.media_placeholder_text | default: 'Hero video or product image' | escape }}</div>
     {%- endif -%}
@@ -145,6 +150,33 @@
       "label": "Placeholder text",
       "info": "Shown only when no image or video is set.",
       "default": "Hero video or product image · Z-83"
+    },
+    {
+      "type": "header",
+      "content": "Mobile media"
+    },
+    {
+      "type": "select",
+      "id": "mobile_media_height",
+      "label": "Mobile media height",
+      "info": "Desktop is unaffected — this only changes the stacked panel's height on mobile.",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "select",
+      "id": "mobile_media_fit",
+      "label": "Mobile media fit",
+      "info": "Desktop always covers. On mobile, choose whether the image/video fills the panel (Cover) or fits inside it in full (Contain).",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" }
+      ],
+      "default": "cover"
     },
     {
       "type": "header",

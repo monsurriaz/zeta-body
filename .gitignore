@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Shopify CLI local state (auth/session/theme-dev cache — not for version control)
+.shopify/
+
+# Client design source files — static reference mockups, not theme code.
+# (CLAUDE.md and impact-discovery-notes.md stay tracked; they're project docs, not client source.)
+/ZETA_Homepage_V2.html
+/Zeta-design-token.html
+/mirror-quiz.html
+/zeta-d-k-page.html
+/zeta-dhea-page.html
+/zeta-fruits-veggies-page.html
+/zeta-longevity-page.html
+/zeta-megas-page.html
+/zeta-minos-page.html
+/zeta-multi-page.html
+/zeta-pro-b-page.html
+/zeta-product-page-header-footer.html
+/zeta-z83-product-page.html

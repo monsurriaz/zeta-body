@@ -205,7 +205,6 @@
           "settings": {
             "product": "d-k-5000",
             "flag": "",
-            "image": "shopify://shop_images/ZETACREATINE_Creatine90sv_10001185.png",
             "image_hint": "Product photo",
             "name": "D+K",
             "headline": "Bone. Immune. <em>The essentials.</em>",
@@ -218,7 +217,6 @@
           "settings": {
             "product": "zeta-creatine",
             "flag": "",
-            "image": "shopify://shop_images/ZETA_DHEA_DHEA_Micronized_25_mg_60_T_10001185_c214c5eb-e214-483c-ab34-418fa88f48a2.png",
             "image_hint": "Product photo",
             "name": "Creatine",
             "headline": "Strength that <em>compounds.</em>",
@@ -229,11 +227,10 @@
         "l4": {
           "type": "card",
           "settings": {
-            "product": "zeta-mega",
+            "product": "b-complete",
             "flag": "",
-            "image": "shopify://shop_images/PRO-BMAX_PROB100_10001185.png",
             "image_hint": "Product photo",
-            "name": "Megas",
+            "name": "B-Complete",
             "headline": "Highest EPA. <em>Deepest support.</em>",
             "description": "MaxSimil omega-3 with the highest EPA ratio in its class. The fat your brain actually runs on.",
             "price": ""
@@ -259,6 +256,7 @@
     "what": {
       "type": "zeta-media-copy",
       "settings": {
+        "image": "shopify://shop_images/300-712A1464.jpg",
         "media_tag": "A focused lineup. One body.",
         "media_placeholder": "Lifestyle / founder photo",
         "eyebrow": "What ZETA Is",
@@ -398,6 +396,7 @@
         "sig_name": "Zoe Karli",
         "button_text": "Read Our Story →",
         "button_link": "",
+        "image": "shopify://shop_images/IMG_6043.jpg",
         "media_placeholder": "Founder photo — Zoe Karli"
       }
     },
