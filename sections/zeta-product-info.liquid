@@ -50,11 +50,31 @@
             <div class="zeta-gallery__track">
               {%- for media in product.media -%}
                 <div class="zeta-gallery__slide {% if media == default_media %}is-active{% endif %}" data-media-id="{{ media.id }}">
-                  {{-
-                    media
-                    | image_url: width: 1400
-                    | image_tag: loading: 'lazy', sizes: '(max-width: 900px) 100vw, 50vw', widths: '600,900,1200,1400', alt: media.alt | default: product.title
-                  -}}
+                  {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                    <div class="zeta-gallery__video" data-zeta-video>
+                      {{-
+                        media.preview_image
+                        | image_url: width: 1400
+                        | image_tag: loading: 'lazy', sizes: '(max-width: 900px) 100vw, 50vw', widths: '600,900,1200,1400', class: 'zeta-gallery__poster', alt: media.alt | default: product.title
+                      -}}
+                      <button type="button" class="zeta-gallery__play" data-zeta-play aria-label="{{ 'general.accessibility.play_video' | t }}">
+                        {%- render 'icon' with 'play-button' -%}
+                      </button>
+                      <template data-zeta-player>
+                        {%- if media.media_type == 'video' -%}
+                          {{- media | video_tag: controls: true, playsinline: true, preload: 'metadata' -}}
+                        {%- else -%}
+                          {{- media | external_video_tag: autoplay: true -}}
+                        {%- endif -%}
+                      </template>
+                    </div>
+                  {%- else -%}
+                    {{-
+                      media
+                      | image_url: width: 1400
+                      | image_tag: loading: 'lazy', sizes: '(max-width: 900px) 100vw, 50vw', widths: '600,900,1200,1400', alt: media.alt | default: product.title
+                    -}}
+                  {%- endif -%}
                 </div>
               {%- endfor -%}
             </div>
@@ -262,8 +282,6 @@
                       {%- endif -%}
                     </button>
                   </zeta-bundle-add>
-                {%- else -%}
-                  <a href="{{ block.settings.secondary_link | default: '#' }}" class="zeta-pdp__atc-secondary">{{ block.settings.secondary_label | escape }}</a>
                 {%- endif -%}
               {%- endif -%}
             </div>
@@ -311,11 +329,16 @@
         this.index = this.slides.findIndex((s) => s.classList.contains('is-active'));
         if (this.index < 0) this.index = 0;
 
-        const prev = this.querySelector('[data-prev]');
-        const next = this.querySelector('[data-next]');
-        if (prev) prev.addEventListener('click', () => this.go(this.index - 1));
-        if (next) next.addEventListener('click', () => this.go(this.index + 1));
+        this.prevBtn = this.querySelector('[data-prev]');
+        this.nextBtn = this.querySelector('[data-next]');
+        if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.go(this.index - 1));
+        if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.go(this.index + 1));
         this.thumbs.forEach((t, i) => t.addEventListener('click', () => this.go(i)));
+
+        this.slides.forEach((slide) => {
+          const playBtn = slide.querySelector('[data-zeta-play]');
+          if (playBtn) playBtn.addEventListener('click', () => this.playVideo(slide));
+        });
 
         const tp = this.querySelector('[data-thumb-prev]');
         const tn = this.querySelector('[data-thumb-next]');
@@ -355,12 +378,28 @@
         this.index = Math.max(0, Math.min(this.slides.length - 1, i));
         this.render();
       }
+      playVideo(slide) {
+        const wrap = slide.querySelector('[data-zeta-video]');
+        const template = wrap && wrap.querySelector('template[data-zeta-player]');
+        if (!wrap || !template) return;
+        wrap.appendChild(template.content.cloneNode(true));
+        template.remove();
+        wrap.classList.add('is-playing');
+        const video = wrap.querySelector('video');
+        if (video) video.play();
+      }
       scrollThumbs(dir) {
         if (this.thumbStrip) this.thumbStrip.scrollBy({ left: dir * this.thumbStrip.clientWidth * 0.8, behavior: 'smooth' });
       }
       render() {
         this.track.style.transform = 'translateX(' + (this.index * -100) + '%)';
-        this.slides.forEach((s, i) => s.classList.toggle('is-active', i === this.index));
+        this.slides.forEach((s, i) => {
+          s.classList.toggle('is-active', i === this.index);
+          if (i !== this.index) {
+            const video = s.querySelector('video');
+            if (video && !video.paused) video.pause();
+          }
+        });
         this.thumbs.forEach((t, i) => {
           const on = i === this.index;
           t.classList.toggle('is-active', on);
@@ -368,6 +407,8 @@
         });
         const at = this.thumbs[this.index];
         if (at) at.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+        if (this.prevBtn) this.prevBtn.disabled = this.index === 0;
+        if (this.nextBtn) this.nextBtn.disabled = this.index === this.slides.length - 1;
       }
     }
     window.customElements.define('zeta-gallery', ZetaGallery);
@@ -724,8 +765,7 @@
         { "type": "header", "content": "Secondary / bundle button" },
         { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "PAIR WITH MINOS · SAVE 10%" },
         { "type": "product", "id": "bundle_product", "label": "Bundle add-on product", "info": "When set, the secondary button becomes a bundle button: clicking it adds THIS product together with the main product (respecting the customer's one-time / subscribe choice, variant and quantity). To show the savings, create an automatic discount in Shopify Admin for this product combination." },
-        { "type": "range", "id": "bundle_quantity", "label": "Add-on quantity", "min": 1, "max": 10, "step": 1, "default": 1 },
-        { "type": "url", "id": "secondary_link", "label": "Fallback link", "info": "Used only when no bundle add-on product is selected — the button becomes a normal link." }
+        { "type": "range", "id": "bundle_quantity", "label": "Add-on quantity", "min": 1, "max": 10, "step": 1, "default": 1 }
       ]
     },
     {

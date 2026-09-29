@@ -19,10 +19,13 @@
         "subheading": "<p>The world doesn't stop because you need it to. Every day is a choice — to invest in your brain and body, keep them strong, and perform at the level your life demands.</p>",
         "quote": "<p>We're not perfect. But we can make choices every day that let us perform, move, and stay healthy. That's what ZETA is for.</p>",
         "button_1_text": "Shop Z-83 — Flagship",
-        "button_1_link": "",
+        "button_1_link": "shopify://products/z-83",
         "button_2_text": "Our Story",
-        "button_2_link": "",
+        "button_2_link": "shopify://pages/about",
+        "video_url": "https://www.youtube.com/watch?v=NtxNcrFLXec",
         "media_placeholder_text": "Hero video or product image · Z-83",
+        "mobile_media_height": "medium",
+        "mobile_media_fit": "cover",
         "badge_eyebrow": "Flagship Formula",
         "badge_name": "Z-83™",
         "badge_sub": "Daily Energy + Focus"
@@ -227,10 +230,10 @@
         "l4": {
           "type": "card",
           "settings": {
-            "product": "b-complete",
+            "product": "zeta-mega",
             "flag": "",
             "image_hint": "Product photo",
-            "name": "B-Complete",
+            "name": "Megas",
             "headline": "Highest EPA. <em>Deepest support.</em>",
             "description": "MaxSimil omega-3 with the highest EPA ratio in its class. The fat your brain actually runs on.",
             "price": ""
@@ -249,7 +252,7 @@
         "heading": "One body.\n<em>Every edge.</em>",
         "heading_size": "medium",
         "link_text": "View All Products →",
-        "link_url": "",
+        "link_url": "shopify://collections/all",
         "image_type": "contain"
       }
     },
@@ -264,11 +267,11 @@
         "heading": "Built to make <em>everything else</em> in your life work better.",
         "heading_size": "medium",
         "tagline": "Health. Wealth. Youth. — in that order.",
-        "body": "<p>Your body was never meant to run on just one thing. That's exactly why I started with Z-83 — built to stop the drain, cut through the fog, lift your mood, and deliver <strong>clean energy you can actually trust.</strong></p><p>Then we thoughtfully built out the rest of the lineup: targeted support for longevity, strength, gut health, and foundational nutrients. <strong>All designed to work together — one body, one system</strong> you can believe in and stick with long-term.</p><p>This is the brand I built for the version of you who's done accepting constant drain as normal.</p>",
-        "button_1_text": "Build Your Stack →",
-        "button_1_link": "",
-        "button_2_text": "Take the Mirror Quiz →",
-        "button_2_link": "/pages/mirror-quiz"
+        "body": "<p>Your body was never meant to run on just one thing. That's exactly why I started with Z-83 — built to stop the drain, cut through the fog, lift your mood, and deliver&nbsp;<strong>clean energy you can actually trust.</strong></p><p>Then we thoughtfully built out the rest of the lineup: targeted support for longevity, strength, gut health, and foundational nutrients.&nbsp;<strong>All designed to work together — one body, one system</strong>&nbsp;you can believe in and stick with long-term.</p><p>This is the brand I built for the version of you who's done accepting constant drain as normal.</p>",
+        "button_1_text": "Take the Mirror Quiz →",
+        "button_1_link": "shopify://pages/mirror-quiz",
+        "button_2_text": "",
+        "button_2_link": ""
       }
     },
     "hwy": {
@@ -307,11 +310,11 @@
         "heading": "Health. <em>Wealth.</em> Youth.",
         "heading_size": "medium",
         "lede": "<p>Three things worth protecting. One body to do it with.</p>",
-        "body": "<p>I was already living these three pillars hard — building successful businesses, dialed in — when the seizures hit in 2013. That experience drove the lesson home even deeper: <strong>the world doesn't stop because you need or want it to. It doesn't stop so you can recover.</strong> The sun rises and sets no matter what you're going through. You either adjust, fight back, and keep moving — or you get left behind.</p><p>That's why I built ZETA. To touch millions. To make it simpler for anyone to <strong>deeply invest in their health.</strong> Because when your brain and body are strong, everything else expands.</p><p>Every single day is a choice. Let ZETA be part of the ones that move you forward.</p>",
+        "body": "<p>I was already living these three pillars hard — building successful businesses, dialed in — when the seizures hit in 2013. That experience drove the lesson home even deeper:&nbsp;<strong>the world doesn't stop because you need or want it to. It doesn't stop so you can recover.</strong>&nbsp;The sun rises and sets no matter what you're going through. You either adjust, fight back, and keep moving — or you get left behind.</p><p>That's why I built ZETA. To touch millions. To make it simpler for anyone to&nbsp;<strong>deeply invest in their health.</strong>&nbsp;Because when your brain and body are strong, everything else expands.</p><p>Every single day is a choice. Let ZETA be part of the ones that move you forward.</p>",
         "button_1_text": "Shop the Lineup",
-        "button_1_link": "",
+        "button_1_link": "shopify://collections/all",
         "button_2_text": "The Story ↓",
-        "button_2_link": "",
+        "button_2_link": "shopify://pages/about",
         "anchor_id": ""
       }
     },
@@ -379,9 +382,9 @@
         "heading_size": "large",
         "subtext": "<p>Fix it. You have the choice every single day. One brain. One body. Protect them both.</p>",
         "button_1_text": "Shop the Full Lineup",
-        "button_1_link": "",
+        "button_1_link": "shopify://collections/all",
         "button_2_text": "Take the Mirror Quiz →",
-        "button_2_link": "/pages/mirror-quiz"
+        "button_2_link": "shopify://pages/mirror-quiz"
       }
     },
     "founder": {
@@ -395,7 +398,7 @@
         "sig_role": "Founder & CEO, ZETA Body",
         "sig_name": "Zoe Karli",
         "button_text": "Read Our Story →",
-        "button_link": "",
+        "button_link": "shopify://pages/about",
         "image": "shopify://shop_images/IMG_6043.jpg",
         "media_placeholder": "Founder photo — Zoe Karli"
       }
@@ -410,8 +413,7 @@
         "blog": "",
         "posts_count": 3,
         "link_text": "All Posts →",
-        "link_url": "",
-        "note": "<p>📺 <strong>YouTube:</strong> Connect ZETA's YouTube channel here — embedding video alongside posts strengthens authority signals.</p>"
+        "link_url": ""
       }
     }
   },

@@ -8,10 +8,6 @@
  * ------------------------------------------------------------
  */
 {
-  "order": [
-    "banner",
-    "main"
-  ],
   "sections": {
     "banner": {
       "type": "collection-banner",
@@ -51,5 +47,9 @@
         "open_first_filter_group": false
       }
     }
-  }
+  },
+  "order": [
+    "banner",
+    "main"
+  ]
 }

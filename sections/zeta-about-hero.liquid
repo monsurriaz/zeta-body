@@ -2,19 +2,26 @@
   ZETA — About Hero (.zeta-about-hero): vertical (top→bottom) hero for the About page.
   Stacked: eyebrow (optional) → title → paragraph → video. References the Home Hero look
   (big serif title, our title/eyebrow size system) but simpler and single-column.
-  The video reuses the shared <zeta-video-play> element + .zeta-video__* styles
-  (self-hosted video first, then YouTube/Vimeo, else a styled placeholder).
+  The video reuses the shared <zeta-video-play> element + .zeta-video__* styles.
+  External (YouTube/Vimeo) embeds directly — no custom placeholder/button, just the provider's
+  own player. Self-hosted video shows a click-to-play button over a thumbnail (merchant poster,
+  else the video's own preview frame). With neither set, the frame is a styled placeholder.
   Styles: custom.css (.zeta-about-hero, reusing .zeta-video__frame).
 {%- endcomment -%}
 
+{%- assign hosted = section.settings.video -%}
 {%- assign vid = section.settings.video_url -%}
 {%- assign embed = '' -%}
-{%- if vid != blank -%}
+{%- if hosted == blank and vid != blank -%}
   {%- if vid.type == 'youtube' -%}
-    {%- assign embed = 'https://www.youtube.com/embed/' | append: vid.id | append: '?autoplay=1&rel=0' -%}
+    {%- assign embed = 'https://www.youtube.com/embed/' | append: vid.id | append: '?rel=0' -%}
   {%- elsif vid.type == 'vimeo' -%}
-    {%- assign embed = 'https://player.vimeo.com/video/' | append: vid.id | append: '?autoplay=1' -%}
+    {%- assign embed = 'https://player.vimeo.com/video/' | append: vid.id -%}
   {%- endif -%}
+{%- endif -%}
+{%- assign poster_image = section.settings.poster -%}
+{%- if poster_image == blank and hosted != blank -%}
+  {%- assign poster_image = hosted.preview_image -%}
 {%- endif -%}
 
 <section class="zeta zeta-about-hero zeta-about-hero--align-{{ section.settings.text_align | default: 'center' }}" style="background-color: {{ section.settings.section_bg }};" {{ section.shopify_attributes }}>
@@ -32,24 +39,29 @@
     {%- endif -%}
 
     {%- if section.settings.show_video -%}
-      {%- assign hosted = section.settings.video -%}
-      {%- assign has_video = false -%}
-      {%- if hosted != blank or embed != blank -%}{%- assign has_video = true -%}{%- endif -%}
-      <zeta-video-play class="zeta-video__frame zeta-about-hero__frame"{% if embed != blank %} data-embed="{{ embed }}"{% endif %}>
-        {%- if hosted != blank -%}
-          <video class="zeta-video__native" playsinline preload="none"{% if section.settings.poster != blank %} poster="{{ section.settings.poster | image_url: width: 1400 }}"{% endif %} data-native>
-            {%- for source in hosted.sources -%}
-              <source src="{{ source.url }}" type="{{ source.mime_type }}">
-            {%- endfor -%}
-          </video>
-        {%- elsif section.settings.poster != blank -%}
-          <img class="zeta-video__poster" src="{{ section.settings.poster | image_url: width: 1400 }}" alt="{{ section.settings.overlay_label | escape }}" loading="lazy" width="{{ section.settings.poster.width }}" height="{{ section.settings.poster.height }}">
-        {%- endif -%}
-        <button type="button" class="zeta-video__play" aria-label="{{ section.settings.overlay_label | default: 'Play video' | escape }}"{% unless has_video %} disabled{% endunless %} data-play></button>
-        {%- if section.settings.overlay_label != blank -%}
-          <span class="zeta-video__label">{{ section.settings.overlay_label | escape }}</span>
-        {%- endif -%}
-      </zeta-video-play>
+      {%- if embed != blank -%}
+        <div class="zeta-video__frame zeta-video__frame--embed zeta-about-hero__frame">
+          <iframe class="zeta-video__iframe" src="{{ embed }}" title="{{ section.settings.overlay_label | default: 'Video' | escape }}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" frameborder="0"></iframe>
+        </div>
+      {%- else -%}
+        {%- assign has_video = false -%}
+        {%- if hosted != blank -%}{%- assign has_video = true -%}{%- endif -%}
+        <zeta-video-play class="zeta-video__frame zeta-about-hero__frame">
+          {%- if hosted != blank -%}
+            <video class="zeta-video__native" playsinline preload="none"{% if poster_image != blank %} poster="{{ poster_image | image_url: width: 1400 }}"{% endif %} data-native>
+              {%- for source in hosted.sources -%}
+                <source src="{{ source.url }}" type="{{ source.mime_type }}">
+              {%- endfor -%}
+            </video>
+          {%- elsif poster_image != blank -%}
+            <img class="zeta-video__poster" src="{{ poster_image | image_url: width: 1400 }}" alt="{{ section.settings.overlay_label | escape }}" loading="lazy" width="{{ poster_image.width }}" height="{{ poster_image.height }}">
+          {%- endif -%}
+          <button type="button" class="zeta-video__play" aria-label="{{ section.settings.overlay_label | default: 'Play video' | escape }}"{% unless has_video %} disabled{% endunless %} data-play></button>
+          {%- if section.settings.overlay_label != blank -%}
+            <span class="zeta-video__label">{{ section.settings.overlay_label | escape }}</span>
+          {%- endif -%}
+        </zeta-video-play>
+      {%- endif -%}
     {%- endif -%}
   </div>
 </section>
@@ -60,30 +72,17 @@
     class ZetaVideoPlay extends HTMLElement {
       connectedCallback() {
         const btn = this.querySelector('[data-play]');
-        if (!btn || this._bound) return;
         const native = this.querySelector('[data-native]');
-        const embed = this.getAttribute('data-embed');
-        if (!native && !embed) return; /* nothing to play — decorative placeholder */
+        if (!btn || !native || this._bound) return; /* nothing to play — decorative placeholder */
         this._bound = true;
         btn.addEventListener('click', () => {
-          if (native) {
-            btn.remove();
-            const label = this.querySelector('.zeta-video__label');
-            if (label) label.remove();
-            native.setAttribute('controls', '');
-            native.classList.add('is-playing');
-            const p = native.play();
-            if (p && p.catch) p.catch(() => {});
-            return;
-          }
-          const iframe = document.createElement('iframe');
-          iframe.setAttribute('src', embed);
-          iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
-          iframe.setAttribute('allowfullscreen', '');
-          iframe.setAttribute('title', btn.getAttribute('aria-label') || 'Video');
-          iframe.className = 'zeta-video__iframe';
-          this.innerHTML = '';
-          this.appendChild(iframe);
+          btn.remove();
+          const label = this.querySelector('.zeta-video__label');
+          if (label) label.remove();
+          native.setAttribute('controls', '');
+          native.classList.add('is-playing');
+          const p = native.play();
+          if (p && p.catch) p.catch(() => {});
         });
       }
     }
@@ -117,8 +116,8 @@
     { "type": "header", "content": "Video" },
     { "type": "checkbox", "id": "show_video", "label": "Show video", "default": true },
     { "type": "video", "id": "video", "label": "Self-hosted video", "info": "Upload a Shopify-hosted video. Takes priority over the external link below." },
-    { "type": "video_url", "id": "video_url", "label": "External video link", "accept": ["youtube", "vimeo"], "info": "YouTube or Vimeo — used only if no self-hosted video is set. Leave both blank to show a styled placeholder." },
-    { "type": "image_picker", "id": "poster", "label": "Poster image", "info": "Optional thumbnail shown before play." },
+    { "type": "video_url", "id": "video_url", "label": "External video link", "accept": ["youtube", "vimeo"], "info": "YouTube or Vimeo — embeds directly (used only if no self-hosted video is set). Leave both blank to show a styled placeholder." },
+    { "type": "image_picker", "id": "poster", "label": "Poster image", "info": "Optional thumbnail shown before play (self-hosted video only). If left blank, the video's own preview frame is used." },
     { "type": "text", "id": "overlay_label", "label": "Overlay label", "default": "Watch our story" }
   ],
   "presets": [

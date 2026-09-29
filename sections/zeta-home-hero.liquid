@@ -4,6 +4,16 @@
   Design fixed to client; only content is editable. Styles in custom.css (.zeta-home-hero).
 {%- endcomment -%}
 
+{%- assign zhh_vid = section.settings.video_url -%}
+{%- assign zhh_embed = '' -%}
+{%- if section.settings.video == blank and zhh_vid != blank -%}
+  {%- if zhh_vid.type == 'youtube' -%}
+    {%- assign zhh_embed = 'https://www.youtube.com/embed/' | append: zhh_vid.id | append: '?autoplay=1&mute=1&loop=1&playlist=' | append: zhh_vid.id | append: '&controls=0&modestbranding=1&playsinline=1&rel=0' -%}
+  {%- elsif zhh_vid.type == 'vimeo' -%}
+    {%- assign zhh_embed = 'https://player.vimeo.com/video/' | append: zhh_vid.id | append: '?autoplay=1&muted=1&loop=1&background=1&controls=0' -%}
+  {%- endif -%}
+{%- endif -%}
+
 <section class="zeta zeta-home-hero" {{ section.shopify_attributes }}>
   <div class="zeta-home-hero__left">
     {%- if section.settings.eyebrow != blank -%}
@@ -44,6 +54,15 @@
 
     {%- if section.settings.video != blank -%}
       {{ section.settings.video | video_tag: image_size: '1100x', autoplay: true, loop: true, muted: true, controls: false, class: zhh_media_class }}
+    {%- elsif zhh_embed != blank -%}
+      <iframe
+        class="{{ zhh_media_class }} zeta-home-hero__media--embed"
+        src="{{ zhh_embed }}"
+        title="{{ section.settings.badge_name | default: 'Hero video' | escape }}"
+        allow="autoplay; fullscreen; picture-in-picture"
+        loading="lazy"
+        frameborder="0"
+      ></iframe>
     {%- elsif section.settings.image != blank -%}
       {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'eager', sizes: '(max-width: 960px) 100vw, 50vw', widths: '600,900,1200,1600', class: zhh_media_class }}
     {%- else -%}
@@ -141,8 +160,15 @@
     {
       "type": "video",
       "id": "video",
-      "label": "Video",
-      "info": "Optional. Replaces the image when set."
+      "label": "Self-hosted video",
+      "info": "Optional. Replaces the image when set. Takes priority over the external link below."
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "External video link",
+      "accept": ["youtube", "vimeo"],
+      "info": "YouTube or Vimeo — used only if no self-hosted video is set above."
     },
     {
       "type": "text",

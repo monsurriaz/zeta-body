@@ -459,6 +459,7 @@
   height: 100%;
   object-fit: cover;
 }
+.zeta-home-hero__media--embed { border: 0; pointer-events: none; }
 .zeta-home-hero__media-bg {
   position: absolute;
   inset: 0;
@@ -1321,6 +1322,8 @@
 }
 .zeta-blog__note p { margin: 0; }
 .zeta-blog__note strong { color: var(--zeta-ink); font-weight: var(--zeta-fw-semibold); }
+.zeta-blog__note a { color: var(--zeta-teal); font-weight: var(--zeta-fw-semibold); text-decoration: underline; }
+.zeta-blog__note a:hover { color: var(--zeta-teal-dark); }
 @media screen and (max-width: 960px) {
   .zeta-blog { padding: 4rem 2rem; }
   .zeta-blog__grid { grid-template-columns: 1fr; }
@@ -1897,6 +1900,8 @@
   inset: 0;
   background: radial-gradient(circle at 30% 70%, rgba(184, 153, 104, 0.3) 0%, transparent 60%);
 }
+.zeta-video__frame--embed { background: var(--zeta-ink); }
+.zeta-video__frame--embed::before { display: none; }
 .zeta-video__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .zeta-video__native { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: var(--zeta-ink); }
 .zeta-video__native.is-playing { object-fit: contain; z-index: 3; }
@@ -2436,6 +2441,41 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
 .zeta-gallery__arrow svg { width: 16px; height: 16px; }
 .zeta-gallery__arrow--prev { left: 20px; }
 .zeta-gallery__arrow--next { right: 20px; }
+.zeta-gallery__arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.zeta-gallery__video { position: relative; width: 100%; height: 100%; }
+.zeta-gallery__video .zeta-gallery__poster { width: 100%; height: 100%; object-fit: cover; }
+.zeta-gallery__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.zeta-gallery__play:hover { transform: translate(-50%, -50%) scale(1.08); }
+.zeta-gallery__play svg { width: 100%; height: 100%; }
+.zeta-gallery__video.is-playing .zeta-gallery__poster,
+.zeta-gallery__video.is-playing .zeta-gallery__play { display: none; }
+.zeta-gallery__video video,
+.zeta-gallery__video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+}
 
 .zeta-gallery__thumbs-wrap {
   display: flex;
@@ -2531,7 +2571,7 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
 }
 
 /* Main image fit — Contain shows the whole image (Cover is the default) */
-.zeta-gallery--fit-contain .zeta-gallery__slide img { object-fit: contain; }
+.zeta-gallery--fit-contain .zeta-gallery__slide img { object-fit: cover; }
 
 /* ─── Central title sizing ─────────────────────────────────────────────
    Size selectors map to theme-level settings (ZETA Typography → Title sizes).

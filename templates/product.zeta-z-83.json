@@ -72,8 +72,7 @@
             "show_payment_button": false,
             "secondary_label": "PAIR WITH ZETA MULTI · SAVE 10%",
             "bundle_product": "",
-            "bundle_quantity": 1,
-            "secondary_link": ""
+            "bundle_quantity": 1
           }
         },
         "trust_badges": {
@@ -221,7 +220,7 @@
         "i3"
       ],
       "settings": {
-        "section_bg": "#F4F4F5",
+        "section_bg": "#f4f4f5",
         "eyebrow": "Three plants, one capsule",
         "eyebrow_size": "small",
         "heading": "Plants you've never heard of,\ndoing what they do <em>best</em>.",
@@ -424,7 +423,7 @@
     "video": {
       "type": "zeta-video",
       "settings": {
-        "section_bg": "#F4F4F5",
+        "section_bg": "#f4f4f5",
         "media_position": "right",
         "eyebrow": "Your first capsule",
         "eyebrow_size": "small",
@@ -432,7 +431,7 @@
         "heading_size": "medium",
         "body": "<p>A short clip from David and me on how to take your first Z-83 — and what most people miss in their first week.</p>",
         "note": "VIDEO · KARLI_TYPESOFCAFFEINE.MP4 — Zo + Dr. Karli, caffeine/Z-83 explainer · 1:26",
-        "video_url": "",
+        "video_url": "https://www.youtube.com/watch?v=bJJt2HCUbTM",
         "overlay_label": "Video · The First Z-83 · 1:26"
       }
     },
@@ -560,6 +559,7 @@
         "heading_size": "medium",
         "discount": "Save 10% · Bundle",
         "body": "<p>Z-83 is the lift. ZETA MULTI is the floor. One you feel in 30 minutes. The other you'll feel in 30 years. Together they're the foundation of every other thing you do for your body.</p>",
+        "cart_mode": "with_main",
         "button_text": "BUY THE DAILY FOUNDATION",
         "button_link": ""
       }
