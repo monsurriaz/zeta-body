@@ -309,6 +309,23 @@
   color: var(--zeta-bronze);
   line-height: 1.9;
 }
+.shopify-section--footer .footer__brand-social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+.shopify-section--footer .footer__brand-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.shopify-section--footer .footer__brand-social-link:hover { opacity: 1; }
+.shopify-section--footer .footer__brand-social-link svg { width: 20px; height: 20px; }
+.shopify-section--footer .footer__brand-social-icon { width: 20px; height: 20px; object-fit: contain; }
 
 /* Column titles (Impact renders menu/text titles as p.bold).
    Title → links spacing comes from --footer-block-gap (16px) — no margin here. */

@@ -66,6 +66,31 @@
                       {%- endfor -%}
                     </div>
                   {%- endif -%}
+
+                  <div class="footer__brand-social">
+                    <a href="{{ block.settings.instagram_url | default: '#' }}" class="footer__brand-social-link" aria-label="Instagram">
+                      {%- if block.settings.instagram_icon != blank -%}
+                        {{-
+                          block.settings.instagram_icon
+                          | image_url: width: 64
+                          | image_tag: loading: 'lazy', widths: '32,48,64', sizes: '24px', alt: 'Instagram', class: 'footer__brand-social-icon'
+                        -}}
+                      {%- else -%}
+                        {%- render 'icon' with 'instagram', width: 20, height: 20 -%}
+                      {%- endif -%}
+                    </a>
+                    <a href="{{ block.settings.youtube_url | default: '#' }}" class="footer__brand-social-link" aria-label="YouTube">
+                      {%- if block.settings.youtube_icon != blank -%}
+                        {{-
+                          block.settings.youtube_icon
+                          | image_url: width: 64
+                          | image_tag: loading: 'lazy', widths: '32,48,64', sizes: '24px', alt: 'YouTube', class: 'footer__brand-social-icon'
+                        -}}
+                      {%- else -%}
+                        {%- render 'icon' with 'youtube', width: 20, height: 20 -%}
+                      {%- endif -%}
+                    </a>
+                  </div>
                 </div>
 
               {%- when 'text' -%}
@@ -425,6 +450,30 @@
           "label": "Trinity lines",
           "info": "One line each — rendered in bronze.",
           "default": "Health.\nWealth.\nYouth."
+        },
+        {
+          "type": "header",
+          "content": "Social icons"
+        },
+        {
+          "type": "image_picker",
+          "id": "instagram_icon",
+          "label": "Instagram icon"
+        },
+        {
+          "type": "url",
+          "id": "instagram_url",
+          "label": "Instagram link"
+        },
+        {
+          "type": "image_picker",
+          "id": "youtube_icon",
+          "label": "YouTube icon"
+        },
+        {
+          "type": "url",
+          "id": "youtube_url",
+          "label": "YouTube link"
         }
       ]
     },
