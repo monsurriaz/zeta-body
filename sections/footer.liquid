@@ -117,8 +117,8 @@
               {%- when 'links' -%}
                 {%- if block.settings.menu != blank -%}
                   <div class="footer__block footer__block--menu" {{ block.shopify_attributes }}>
-                    {%- if block.settings.show_menu_title -%}
-                      <p class="bold">{{ block.settings.menu_title | default: block.settings.menu.title }}</p>
+                    {%- if block.settings.menu_title != blank -%}
+                      <p class="bold">{{ block.settings.menu_title }}</p>
                     {%- endif -%}
 
                     {%- if block.settings.description != blank -%}

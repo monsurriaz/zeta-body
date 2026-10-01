@@ -101,6 +101,7 @@
         "p7",
         "p8"
       ],
+      "disabled": true,
       "settings": {}
     },
     "trust": {
@@ -383,7 +384,7 @@
         "subtext": "<p>Fix it. You have the choice every single day. One brain. One body. Protect them both.</p>",
         "button_1_text": "Shop the Full Lineup",
         "button_1_link": "shopify://collections/all",
-        "button_2_text": "Take the Mirror Quiz →",
+        "button_2_text": "Quiz Yourself",
         "button_2_link": "shopify://pages/mirror-quiz"
       }
     },

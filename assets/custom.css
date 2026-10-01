@@ -313,7 +313,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .shopify-section--footer .footer__brand-social-link {
   display: flex;
@@ -2588,7 +2588,16 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
 }
 
 /* Main image fit — Contain shows the whole image (Cover is the default) */
-.zeta-gallery--fit-contain .zeta-gallery__slide img { object-fit: cover; }
+.zeta-gallery--fit-contain .zeta-gallery__slide img {
+  object-fit: contain;
+  object-position: center center;
+  padding: 80px;
+  margin-block: auto;
+}
+
+.collection__results .product-card__image {
+  padding: 80px;
+}
 
 /* ─── Central title sizing ─────────────────────────────────────────────
    Size selectors map to theme-level settings (ZETA Typography → Title sizes).
@@ -2601,6 +2610,12 @@ button.zeta-pdp__atc-secondary { cursor: pointer; font-family: inherit; line-hei
   .zeta-title.zeta-title--large { font-size: var(--zeta-title-lg-m); }
   .zeta-title.zeta-title--medium { font-size: var(--zeta-title-md-m); }
   .zeta-title.zeta-title--small { font-size: var(--zeta-title-sm-m); }
+  .zeta-gallery--fit-contain .zeta-gallery__slide img {
+    padding: 60px;
+  }
+  .collection__results .product-card__image {
+    padding: 40px;
+  }
 }
 
 /* ─── Central eyebrow sizing ────────────────────────────────────────────

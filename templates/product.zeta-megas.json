@@ -72,8 +72,7 @@
             "show_payment_button": false,
             "secondary_label": "PAIR WITH ZETA D+K · SAVE 10%",
             "bundle_product": "",
-            "bundle_quantity": 1,
-            "secondary_link": ""
+            "bundle_quantity": 1
           }
         },
         "trust_badges": {
@@ -585,7 +584,7 @@
         "promise": "",
         "button_1_text": "BUY ZETA MEGAS",
         "button_1_link": "",
-        "button_2_text": "TAKE THE MIRROR QUIZ",
+        "button_2_text": "Quiz Yourself",
         "button_2_link": "/pages/mirror-quiz"
       }
     }

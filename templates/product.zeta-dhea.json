@@ -72,8 +72,7 @@
             "show_payment_button": false,
             "secondary_label": "PAIR WITH ZETA D+K · SAVE 10%",
             "bundle_product": "",
-            "bundle_quantity": 1,
-            "secondary_link": ""
+            "bundle_quantity": 1
           }
         },
         "trust_badges": {
@@ -205,7 +204,7 @@
         "i2"
       ],
       "settings": {
-        "section_bg": "#F4F4F5",
+        "section_bg": "#f4f4f5",
         "eyebrow": "The hormone story",
         "eyebrow_size": "small",
         "heading": "One hormone. <em>Most others depend on it.</em>",
@@ -505,7 +504,7 @@
         "promise": "Look. Feel. Perform. — Younger.",
         "button_1_text": "BUY ZETA DHEA",
         "button_1_link": "",
-        "button_2_text": "Take the Mirror Quiz",
+        "button_2_text": "Quiz Yourself",
         "button_2_link": "/pages/mirror-quiz"
       }
     }

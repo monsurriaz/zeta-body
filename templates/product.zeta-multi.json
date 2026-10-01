@@ -72,8 +72,7 @@
             "show_payment_button": false,
             "secondary_label": "PAIR WITH ZETA D+K · SAVE 10%",
             "bundle_product": "",
-            "bundle_quantity": 1,
-            "secondary_link": ""
+            "bundle_quantity": 1
           }
         },
         "trust_badges": {
@@ -847,6 +846,7 @@
         "heading_size": "medium",
         "discount": "Save 10% · Bundle",
         "body": "<p>MULTI · D+K · MEGAS · B COMPLETE · Z-83. The five products that form the complete ZETA foundation. Each one earns its place.</p>",
+        "cart_mode": "with_main",
         "button_text": "BUY THE FOUNDATION STACK",
         "button_link": ""
       }
@@ -861,7 +861,7 @@
         "promise": "Look. Feel. Perform. — Younger.",
         "button_1_text": "BUY ZETA MULTI",
         "button_1_link": "",
-        "button_2_text": "Take the Mirror Quiz",
+        "button_2_text": "Quiz Yourself",
         "button_2_link": "/pages/mirror-quiz"
       }
     }
